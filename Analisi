@@ -1,0 +1,22 @@
+Utenti
+Form per contatti
+Acquisto di biglietti: cancellazione e modifica dei biglietti
+
+BIGLIETTI
+Gratis, bambini, adulti
+    - tipo questo: https://shop.ranatick.com/parcocappeller/biglietto-regalo
+    - salvo a db il biglietto, lo vedo nell'area personale
+
+Home: presentazione
+Contatti
+Mappa, aree zoo con animali
+    - varie sezioni di animali(2/3 schermate)
+Sezione eventi
+Registrazione: nome, cognome, email, telefono (la pass la diamo noi)
+    - Form classico, aggiunge riga in tabella utenti (invio mail?)
+
+Area utente: login/logout/Registrazione
+Bisogna mantenere la sessione, devo sapere se l'utente è loggato
+    - acquisto biglietti
+    - cronologia acquisti
+
