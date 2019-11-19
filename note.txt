@@ -1,3 +1,6 @@
+File con le considerazioni generali in merito alla scelta iniziale dei linguaggi e della codifica
+
+*****************************************************************************************************************************************************
 *** XHTML ***
 
 XHTML è migliore di HTML perchè:
@@ -37,4 +40,4 @@ Fasi della progettazione:
 La progettazione di un sito web è un’attività molto complessa, che tiene conto di diversi settori disciplinari -> il team di sviluppo comprende persone di diversa estrazione: Project Manager, Information Designer, Web Designer, Gruppo di esperti Informatici (reti, standard web, database, grafica), Responsabile Editoriale, Esperto in Marketing, Esperto in usabilità
 
 *****************************************************************************************************************************************************
-*** ***
+
