@@ -1,11 +1,10 @@
 CREATE DATABASE Zoo;
 
 CREATE TABLE IF NOT EXISTS Utenti (
-    Username varchar(20),
+    Email varchar(30),
     Password varchar(20),
     Nome varchar(50),
     Cognome varchar(50),
-    Email varchar(30),
     PRIMARY KEY(Username)
 );
 
