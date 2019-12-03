@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1575201144 "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.tex" "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.pdf" "Relazione" 1575201144
-  "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.aux" 1575201144 8 a94a2480d3289e625eea47cd1b285758 ""
+["pdflatex"] 1575384812 "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.tex" "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.pdf" "Relazione" 1575384812
+  "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.aux" 1575384812 8 a94a2480d3289e625eea47cd1b285758 ""
   "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.tex" 1575201026 277 398c750fd93a064e6e7bf46afe236afb ""
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -194,12 +194,12 @@
   "Relazione.out" 0 -1 0 ""
   "Relazione.tex" 1575201026 277 398c750fd93a064e6e7bf46afe236afb ""
   "img/logoippopotamo.png" 1575200805 9436 4aaac04bbfebdd530e5e56ba97f403db ""
-  "stile.sty" 1575201139 8755 187e5db6f96633fbea8a50c93d5b9981 ""
+  "stile.sty" 1575384807 8755 187e5db6f96633fbea8a50c93d5b9981 ""
   (generated)
-  "Relazione.toc"
-  "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.pdf"
   "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.log"
-  "Relazione.log"
-  "Relazione.out"
   "Relazione.pdf"
+  "Relazione.out"
+  "/Users/giacomo/Desktop/progettoTecnologieWeb2019-2020/relazione/Relazione.pdf"
   "Relazione.aux"
+  "Relazione.toc"
+  "Relazione.log"

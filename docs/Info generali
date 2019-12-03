@@ -1,0 +1,31 @@
+NOME PROGETTO: Parco faunistico euganeo
+NOME GRUPPO: Nutria Group
+
+Come spunto di analisi abbiamo deciso di usare la relazione dei LumBooks. L'analisi che faremo sarà una parte fondamentale della relazione,
+ogni pagina analizzata deve comprendere: scopo, funzionalità, interazioni con db...
+Meglio analizzare sia backend (DB e  PHP) che frontend (JS e HTML inteso come disposizione degli elementi).
+
+Chi vuole può già buttare giù qualcosa a livello grafico anche su carta, in modo da avere un'idea generale di ciò che verrà fuori
+
+BIGLIETTI
+Gratis, bambini, adulti
+    - tipo questo: https://shop.ranatick.com/parcocappeller/biglietto-regalo
+    - salvo a db il biglietto, lo vedo nell'area personale
+
+Menù:
+    - menù orizzontale
+    - tab per spostamento
+    - etichettare bene
+
+Registrazione: nome, cognome, email, password
+    - mail come username
+    - Password: almeno 8 caratteri alfanumerici, un numero e una lettera
+    - Form classico, aggiunge riga in tabella utenti (invio mail?)
+
+Acquista:
+    - se sono loggato posso acquistare biglietti o eventi
+    - altrimenti redirect a pagina accedi
+
+PER IL MOMENTO NO
+    Mappa, aree zoo con animali
+        - varie sezioni di animali(2/3 schermate)

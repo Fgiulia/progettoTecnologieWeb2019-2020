@@ -1,38 +1,32 @@
-Utenti
-Form per contatti
-Acquisto di biglietti: cancellazione e modifica dei biglietti
+NOME PROGETTO: Parco faunistico euganeo
+NOME GRUPPO: Nutria Group
 
-BIGLIETTI
-Gratis, bambini, adulti
-    - tipo questo: https://shop.ranatick.com/parcocappeller/biglietto-regalo
-    - salvo a db il biglietto, lo vedo nell'area personale
+IL SIMBOLO "#" INDICA UNA PAGINI/SEZIONE/VOCE del menù
 
-Home: presentazione
+# HOME: presentazione del parco con info generali
 
-Animali:
-    - tutti gli animali
-    - cuccioli
+# ANIMALI (è voce del menù non una pagina):
+    - pagina con tutti gli animali, possibilità di filtrare per specie (mammiferi, rettili)
+    - pagina con i cuccioli
+Funzione di ricerca sulle pagine.
+Si è deciso di salvare i dati degli animali (NomeComune, NomeScientifico,Ordine,Famiglia,Descrizione) a database,
+i filtri sono una chiama a db con parametro la specie
 
-Info generali, come arrivare, orari
+#  EVENTI
+    - pagina con l'elenco degli eventi (descrizione evento, data ora, altro?)
+Possibilità di prenotare un evento: se sono loggato mi manda in Acquista -> Eventi, altrimenti redirect a pagina accedi
 
-Contattaci
+# INFO 
+    - pagina con info generali, come arrivare, orario, form per messaggi (in questo ordine)
+    - voce di menù "Contattaci" sotto a Info, se cliccata si viene mandati alla pagina info, posizionati sul form dei contatti
 
-Mappa, aree zoo con animali
-    - varie sezioni di animali(2/3 schermate)
+# ACQUISTA (è voce del menù non una pagina)
+    - pagina biglietti (vedere sito https://shop.ranatick.com/parcocappeller/biglietto-regalo compere spunto)
+    - pagina prenotazioni eventi (per prenotarsi ad un evento)
+Attenzione: devo essere loggato per effettuare queste operazioni, altrimenti redirect a pagina accedi (con messaggio) 
 
-Sezione eventi
-    - pagina di prenotazione
-
-Registrazione: nome, cognome, email, password
-    - mail come username
-    - Password: almeno 8 caratteri alfanumerici, un numero e una lettera
-    - Form classico, aggiunge riga in tabella utenti (invio mail?)
-
-Area utente: login/logout/Registrazione
+# AREA PRIVATA
     - area in cui modificare dati personali, aggiungere info
     - storico biglietti
-
-Bisogna mantenere la sessione, devo sapere se l'utente è loggato
-    - acquisto biglietti
-    - cronologia acquisti
-
+Utente: vede sue prenotazioni, può fare modifiche
+Admin: vede tutte prenotazioni, può fare modifiche a eventi o animali

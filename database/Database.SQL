@@ -13,14 +13,42 @@ CREATE TABLE IF NOT EXISTS Prezzi (
     Prezzo decimal(3,2),
     PRIMARY KEY(Tipo)
 );
-
-CREATE TABLE IF NOT EXISTS Prenotazioni (
+/*
+CREATE TABLE IF NOT EXISTS Eventi (
     ID int AUTO_INCREMENT,
     Utente varchar(20),
     Gratis int(2),
     Ridotto int(2),
     Intero int(2),
     PRIMARY KEY(ID)
+);
+*/
+
+CREATE TABLE IF NOT EXISTS PrenotazioneBiglietti (
+    ID int AUTO_INCREMENT,
+    Utente varchar(20),
+    Gratis int(2),
+    Ridotto int(2),
+    Intero int(2),
+    PRIMARY KEY(ID)
+);
+
+CREATE TABLE IF NOT EXISTS PrenotazioneEventi (
+    ID int AUTO_INCREMENT,
+    Utente varchar(20),
+    Gratis int(2),
+    Ridotto int(2),
+    Intero int(2),
+    PRIMARY KEY(ID)
+);
+
+CREATE TABLE IF NOT EXISTS Animali (
+    NomeComune varchar(20),
+    NomeScientifico varchar(50),
+    Ordine varchar(20),
+    Famiglia varchar(20),
+    Descrizione varchar(250),
+    PRIMARY KEY(NomeComune)
 );
 
 ALTER TABLE Prenotazioni
