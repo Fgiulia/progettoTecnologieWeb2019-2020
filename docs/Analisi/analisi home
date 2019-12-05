@@ -1,0 +1,20 @@
+# ANALISI HOME
+è la homepage del sito, la prima a cui l'utente accede
+deve contenere le 5 W e una breve descrizione
+
+la home prevede 4 sezioni:
+- il testo semplice con le informazioni generiche (5W+descrizione)
+- una sezione "news" (novità del parco (per esempio:nuovo cucciolo nato))
+- una sezione "prossimi eventi" (viene riportato il risultato di una query al db)
+- una parte con alcune immagini rappresentative del parco
+
+l'utente generico è l’utente che visita il sito senza essersi registrato o l'utente che visita il 
+sito senza effettuare il login, tale utente può visitare e vedere tutte le parti della homepage
+
+l'utente registrato al sito vede la homepage come l'utente generico
+
+(?) l'utente amministratore, che è l'utente che gestisce il sito, può modificare e/o aggiungere 
+informazioni nella sezione dedicata alle news
+
+casi d'uso
+semplice lettura delle informazioni e possibilità di navigare liberamente

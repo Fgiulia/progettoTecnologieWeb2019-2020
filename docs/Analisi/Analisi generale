@@ -1,5 +1,5 @@
 NOME PROGETTO: Parco faunistico euganeo
-NOME GRUPPO: Nutria Group
+NOME GRUPPO: Le Nutrie Group
 
 IL SIMBOLO "#" INDICA UNA PAGINI/SEZIONE/VOCE del menù
 
@@ -10,7 +10,7 @@ IL SIMBOLO "#" INDICA UNA PAGINI/SEZIONE/VOCE del menù
     - pagina con i cuccioli
 Funzione di ricerca sulle pagine.
 Si è deciso di salvare i dati degli animali (NomeComune, NomeScientifico,Ordine,Famiglia,Descrizione) a database,
-i filtri sono una chiama a db con parametro la specie
+i filtri sono una chiamata a db con parametro la specie
 
 #  EVENTI
     - pagina con l'elenco degli eventi (descrizione evento, data ora, altro?)
