@@ -1,0 +1,32 @@
+NOME PROGETTO: Parco faunistico euganeo
+NOME GRUPPO: Nutria Group
+
+IL SIMBOLO "#" INDICA UNA PAGINI/SEZIONE/VOCE del menù
+
+# HOME: presentazione del parco con info generali
+
+# ANIMALI (è voce del menù non una pagina):
+    - pagina con tutti gli animali, possibilità di filtrare per specie (mammiferi, rettili)
+    - pagina con i cuccioli
+Funzione di ricerca sulle pagine.
+Si è deciso di salvare i dati degli animali (NomeComune, NomeScientifico,Ordine,Famiglia,Descrizione) a database,
+i filtri sono una chiama a db con parametro la specie
+
+#  EVENTI
+    - pagina con l'elenco degli eventi (descrizione evento, data ora, altro?)
+Possibilità di prenotare un evento: se sono loggato mi manda in Acquista -> Eventi, altrimenti redirect a pagina accedi
+
+# INFO 
+    - pagina con info generali, come arrivare, orario, form per messaggi (in questo ordine)
+    - voce di menù "Contattaci" sotto a Info, se cliccata si viene mandati alla pagina info, posizionati sul form dei contatti
+
+# ACQUISTA (è voce del menù non una pagina)
+    - pagina biglietti (vedere sito https://shop.ranatick.com/parcocappeller/biglietto-regalo compere spunto)
+    - pagina prenotazioni eventi (per prenotarsi ad un evento)
+Attenzione: devo essere loggato per effettuare queste operazioni, altrimenti redirect a pagina accedi (con messaggio) 
+
+# AREA PRIVATA
+    - area in cui modificare dati personali, aggiungere info
+    - storico biglietti
+Utente: vede sue prenotazioni, può fare modifiche
+Admin: vede tutte prenotazioni, può fare modifiche a eventi o animali
