@@ -1,0 +1,48 @@
+Area privata
+Pagina principale costituita dal login (e-mail e password), con la possibilità di registrarsi. L’utente loggato potrà vedere lo storico degli acquisti, modificarli, aggiungere modificare i dati personali. L’amministratore vedrà gli acquisti degli utenti, potrà modificare gli eventi e gli animali.
+
+Casi d’uso
+
+Utente generico
+È l’utente che:
+-	visita il sito senza essersi registrato; 
+-	visita il sito senza effettuare il login.
+L’utente generico dispone dei seguenti casi d’uso:
+-	può registrarsi
+-	può effettuare il login
+Se vuole registrarsi verrà reindirizzato in una pagina apposita di registrazione; dovrà inserire i seguenti campi: e-mail, nome, cognome, password. Una volta loggato potrà inserire altri dati.
+Se vuole fare il login, dovrà inserire e-mail e password.
+Un utente che ha fatto il login potrà consultare lo storico dei propri acquisti, modificarli o eliminarli. Inoltre, potrà acquistare biglietti per il parco e prenotarsi agli eventi.
+
+Utente amministratore
+È l’utente che:
+-	gestisce il sito;
+-	ha effettuato il login con le credenziali di amministratore.
+-	visualizzare/modificare le prenotazioni agli eventi;
+-	visualizzare/modificare gli acquisti degli utenti;
+-	visualizzare/modificare/aggiungere/eliminare gli eventi;
+-	visualizzare/modificare/aggiungere/eliminare gli animali/cuccioli.
+
+Pagine
+
+Utente generico
+-	Pagina di login
+-	Pagina con storico degli acquisti da cui può anche eliminare/modificare
+-	Pagina con i dati personali
+
+Utente amministratore
+-	Pagina di login
+-	Pagina con storico degli acquisti da cui può anche eliminare/modificare
+-	Pagina elenco degli eventi da cui può anche eliminare/modificare
+-	Pagina elenco degli animali da cui può anche eliminare/modificare
+
+Utente amministratore
+
+Pagina con elenco degli animali (la stessa che vede un utente generico ma ci saranno i pulsanti “Modifica” e “Elimina”), elenco o griglia, possibilità di eliminazione (chiamata a script php) e modifica/inserimento (reindirizzamento a pagina)
+Form per inserimento/modifica nuovo animale, accessibile da un pulsante “Aggiungi animale” nella pagina “Animali”, visibile solo se sono amministratore.
+Script PHP per l’inserimento dei dati a database.
+Pagina con i messaggi degli utenti (tipo sito vecchio), possibilità di rispondere ai messaggi (?)
+Pagina con elenco dei biglietti acquistati, filtro per data e box di ricerca.
+Script PHP per prendere i dati dal database.
+
+
