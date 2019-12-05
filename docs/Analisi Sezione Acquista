@@ -1,0 +1,42 @@
+                     Analisi della sezione "Acquista"
+                          Prima Implementazione
+
+                          //Parte di ConteR
+//# ACQUISTA (è voce del menù non una pagina)
+//    - pagina biglietti
+//      (vedere sito https://shop.ranatick.com/parcocappeller/biglietto-regalo)
+//    - pagina prenotazioni eventi (per prenotarsi ad un evento)
+
+
+-->UTENZA
+
+    L'utenza del sito non può essere inquadrata in un target specifico poichè
+    destinata al pubblico del parco faunistico Euganeo/LungoPiovego il quale
+    non presenta restrizioni o interesse per gruppi definiti.
+    Ciò si traduce nell'esigenza di un sito dalla facile e immediata
+    comprensione e nella piena ottemperanza dei canoni di accessibilità.
+
+
+-->CASI D'USO
+
+    -->Utente generico (utente che non ha effettuato l'accesso)
+        L'utente che non ha eseguito l'accesso non possiede le credenziali
+        necessarie per qualunque tipo di prevendita; per tali considerazioni
+        non potrà in alcun modo visualizzare la pagina: per qualunque provenienza
+        (clicando un evento dalla pagina Eventi?/cliccando Acquista nel menu)
+        verrà rediretto alla pagina di Registrazione dopo aver visualizzato un
+        breve messaggio di warning.
+
+    -->Utente Loggato (utente che ha effettuato l'accesso)
+        Per l'utente loggato questa pagina prevede due schede:
+            -->Biglietti: può essere visuallizata cliccandovici dalla scheda
+                          "Prenotazione Eventi" oppure cliccando la voce "Acquista"
+                          nella barra del menu.
+                          Vi si trovano tutte le informazioni per tipologia di biglietto.
+                          L'utente può modificare quantità e tipo di biglietti e
+                          confermare l'acquisto attraverso un semplice form.
+            -->Prenotazione Eventi: può essere visuallizata cliccandovici dalla scheda
+                          "Acquista" oppure cliccando prenota dal dettaglio di
+                          un evento futuro della pagina "Eventi" del sito.
+                          L'utente può scegliere l'evento desiderato attraverso
+                          un menu a tendina e in seguito confermare la prenotazione.
