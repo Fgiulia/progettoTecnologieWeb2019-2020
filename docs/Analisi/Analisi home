@@ -16,7 +16,8 @@ l'utente registrato al sito vede la homepage come l'utente generico
 (?) l'utente amministratore, che è l'utente che gestisce il sito, può modificare e/o aggiungere 
 informazioni nella sezione dedicata alle news
 
+se si desidera raggiungere la homepage mentre si sta visitando una pagina interna del sito, è 
+possibile cliccare sulla voce home del menù oppure sul titolo/logo presente nell'header
+
 casi d'uso
 semplice lettura delle informazioni e possibilità di navigare liberamente
-
-# ANALISI ANIMALI (è solo una voce del menù, non una pagina)

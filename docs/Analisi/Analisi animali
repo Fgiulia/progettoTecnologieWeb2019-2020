@@ -1,0 +1,27 @@
+# ANALISI ANIMALI (è solo una voce del menù, non una pagina)
+è composta dalle pagine:
+- tutti gli animali
+- i cuccioli
+
+la pagina desiderata si raggiunge cliccando la voce omonima del menù a tendina che appare sotto 
+la voce principale animalil'utente generico e l'utente loggato vedono e possono interagire 
+allo stesso modo con questa pagina, ovvero possono consultare le informazioni sugli animali 
+semplicemente selezionando e cliccando sopra il nome comune dell'animale
+
+# la pagina tutti gli animali prevede la visualizzazione di tutti gli animali (solo nome e una foto) 
+con la possibilità di scorrere tra tutte le voci, oppure fare una ricerca scegliendo tra due possibilità:
+- scrivere in un campo editing il nome dell'animale cercato o di una specie in particolare
+- scegliere da un menù a tendina una categoria predefinita di animali
+
+# la pagina i cuccioli prevede la visualizzazione dei soli cuccioli (nome proprio, nome comune(data?) 
+e una foto) l'utente può cliccare sul nome comune per avere maggiori informazioni sulla specie a cui 
+il cucciolo appartiene
+
+l'utente generico e l'utente loggato vedono e possono interagire allo stesso modo con questa pagina, 
+ovvero possono consultare le informazioni sugli animali semplicemente selezionando e cliccando sopra 
+il nome comune dell'animale
+l'utente amministratore in aggiunta può anche eliminare/aggiungere voci dalla lista e/o modificare le 
+informazioni sugli animali (interazioni con il db)
+
+DATABASE
+per la gestione delle informazioni di entrambe le pagine si utilizzano dati memorizzati in una tabella del db
