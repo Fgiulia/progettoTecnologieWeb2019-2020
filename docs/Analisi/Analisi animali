@@ -8,6 +8,8 @@ la voce principale animalil'utente generico e l'utente loggato vedono e possono 
 allo stesso modo con questa pagina, ovvero possono consultare le informazioni sugli animali 
 semplicemente selezionando e cliccando sopra il nome comune dell'animale
 
+in entrambe le pagine si può scegliere se visualizzare l'elenco degli animali come griglia o come lista
+
 # la pagina tutti gli animali prevede la visualizzazione di tutti gli animali (solo nome e una foto) 
 con la possibilità di scorrere tra tutte le voci, oppure fare una ricerca scegliendo tra due possibilità:
 - scrivere in un campo editing il nome dell'animale cercato o di una specie in particolare
