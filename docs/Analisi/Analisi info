@@ -1,0 +1,36 @@
+                                                                   
+                                                                                          ì
+        
+    ANALISI INFO 
+
+        La pagina contiene tutte le informazioni utili per mettersi in contatto con il personale del parco ed informazioni utili a fin che gli utenti riescano a raggiungere il parco comodamente, 
+        vi sono quindi:
+           • L’indirizzo del parco. 
+           • Un link che reindirizza al parco su google maps o in alternativa la mappa direttamente importata nel sito.
+           • Un indirizzo email.
+           • Un numero di telefono.
+           • Un numero di fax.
+           • Un form che l’utente puo utilizzare per mandare messaggi al personale del parco. 
+             Il form sarà composto dai campi nome, cognome, email ed un textbox da completare obbligatoriamente oltre ad un campo telefono opzionale.
+             Dopo essere stato inoltrato il form eseguirà uno script php per inviare il messaggio in una sezione dedicata del database, 
+             il codice dovrà inoltre elaborare i campi nome, cognome, email ed eventualmente telefono in modo da creare un header per il messaggio, 
+             in alternativa lo script manderà il messaggio direttamente all’ indirizzo email del parco.
+
+        CASI D'USO
+
+          UTENTE GENERICO E REGISTRATO:
+             Tutti gli utenti potranno vedere ogni sezione della pagina e Il form potra essere utilizzato ugualmente da utenti loggati e non, 
+             in questa pagina non vi è quindi distinzione tra utente generico e registrato.
+
+          UTENTE AMMINISTRATORE:
+             L'utente amministratore avrà la possibilità di modificare l'indirizzo email,il numero di telefono e quello di fax che la pagina offre
+             per contattare il personale del parco.                   
+
+
+                    
+                     
+                      
+                       
+
+
+

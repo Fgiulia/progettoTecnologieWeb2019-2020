@@ -1,0 +1,34 @@
+                  
+
+  ANALISI EVENTI                  
+
+    Nella pagina eventi gli utenti possono informarsi su tutti gli spettacoli e attività speciali
+    che il parco offre ai visitatori,la pagina offrira:
+      • Una lista di tutti gli spettacoli ed attività che il parco offre ai visitatori,ogni evento sarà accompagnato dà:
+           1) Una breve descrizione dell' evento che si andrà a svolgere.
+           2) Una sezione con informazioni sui giorni e gli orari in cui i visitatori possono partecipare all' evento.
+           3) Un tasto prenota che reinderizza alla pagina acquisti->eventi nel caso l'utente sia loggato.
+      • Un filtro che gli utenti possono utilizzare per visualizzare solo gli eventi che si svolgono in uno 
+        specifico giorno della settimana. 
+
+         
+      CASI D'USO
+
+        UTENTE GENERICO (non loggato):
+            L'utente generico puo visualizzare ogni sezione della pagina ma se proverà a prenotare un evento tramite
+            l'apposito tasto verrà reindirizzato alla pagina di login.
+
+       UTENTE REGISTRATO:
+            L'utente registrato puo visualizzare ogni sezione della pagina è se proverà a prenotare un evento
+            verrà mandato alla pagina acquisti->eventi.
+
+       UTENTE AMMINISTRATORE:
+            L'utente amministratore puo aggiungere e rimuovere eventi dalla pagina, 
+            puo inoltre modificarne le descrizione e gli orari. 
+
+
+
+
+
+                    
+	
