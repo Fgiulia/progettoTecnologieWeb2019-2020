@@ -42,12 +42,14 @@ CREATE TABLE IF NOT EXISTS PrenotazioneEventi (
     PRIMARY KEY(ID)
 );
 
-CREATE TABLE IF NOT EXISTS Animali (
+CREATE TABLE IF NOT EXISTS Animali(
     NomeComune varchar(20),
+    NomeProprio varchar(20) NULL,
     NomeScientifico varchar(50),
-    Ordine varchar(20),
     Famiglia varchar(20),
-    Descrizione varchar(250),
+    SezioneParco varchar(20),
+    Descrizione text,
+    Ritratto image,
     PRIMARY KEY(NomeComune)
 );
 
