@@ -1,0 +1,53 @@
+<html>
+
+    <head>
+        <title>Info</title>
+        <meta name="title" content="Info" />
+        <meta name="description" content="Indicazioni stradali e contatti" />
+        <meta name="language" content="italian it" />
+    </head>
+
+    <body>
+        <div id="indirizzo">
+        <h2>DOVE TROVARCI?</h2>
+            <ul>
+            <li>Parco Faunistico Euganeo (PD)</li>
+            <l1>Via xxxxxxxxxxxxxx</l1>
+            </ul>
+        </div>
+
+        <!--Importare mappa da Goole Maps qui-->
+
+        <div id="contatti">
+            <h2>COME CONTATTARCI?</h2>
+            <ul>
+            <li>Email:</li>
+            <l1>Numero di telefono:</l1>
+            <l1>Numero di fax:</l1>
+            </ul>
+        </div>
+        <span>In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</span>
+        
+        <form id="formContatti" action="" method="post">
+            <p>I campi marcati con * sono obbligatori</p>
+            <label for="nome">Nome *</label>
+            <input type="text" name="nome" id="nome" tabindex="1" required="required" />
+
+            <label for="cognome">Cognome *</label>
+            <input type="text" name="Cognome" id="Cognome" tabindex="2" required="required" />
+
+            <label for="email">*Email</label>
+            <input type="email" name="email" id="email" tabindex="3" required="required" />
+
+            <label for="numeroTelefono">Numero telefono</label>
+            <input type="text" name="numeroTelefono" id="numeroTelefono" tabindex="4" />
+
+            <label for="messaggio">Il tuo messaggio *</label>
+            <textarea name="messaggio" id="messaggio" tabindex="5" placeholder="Scrivi qui il tuo messaggio" required="required"></textarea>
+            
+            <input type="submit" id="inviaMessaggio" value="Invia" />
+        </form>
+
+    </body>
+
+</html> 
