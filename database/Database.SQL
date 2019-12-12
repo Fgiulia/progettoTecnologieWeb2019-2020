@@ -1,5 +1,7 @@
 CREATE DATABASE Zoo;
 
+USE Zoo;
+
 CREATE TABLE IF NOT EXISTS Utente (
     Email varchar(30),
     Password varchar(20),
@@ -7,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Utente (
     Cognome varchar(50),
     Telefono varchar(15),
     Indirizzo varchar(100),
-    DataNascita date(),
+    DataNascita date,
     PRIMARY KEY(Email)
 );
 
@@ -21,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Evento (
     ID int AUTO_INCREMENT,
     Nome varchar(50),
     Prezzo decimal(3,2),
-    Data date(),
+    Data date,
     Giorno varchar(10),
     PRIMARY KEY(ID)
 );
@@ -40,7 +42,7 @@ CREATE TABLE IF NOT EXISTS EventoUtente (
     Utente varchar(30),
     NumeroPersone int(2),
     IDEvento int(11),
-    PRIMARY KEY(ID)
+    PRIMARY KEY(NumeroPrenotazione)
 );
 
 CREATE TABLE IF NOT EXISTS Animale(
@@ -55,7 +57,7 @@ CREATE TABLE IF NOT EXISTS Animale(
 );
 
 ALTER TABLE EventoUtente
-ADD CONSTRAINT FK_utenti FOREIGN KEY (Utente)
+ADD CONSTRAINT FK_eventoUtenti FOREIGN KEY (Utente)
 REFERENCES Utenti(Email)
 ON DELETE SET NULL ON UPDATE CASCADE;
 
@@ -65,6 +67,6 @@ REFERENCES Eventi(ID)
 ON DELETE SET NULL ON UPDATE CASCADE;
 
 ALTER TABLE BigliettoUtente
-ADD CONSTRAINT FK_utenti FOREIGN KEY (Utente)
+ADD CONSTRAINT FK_bigliettiUtenti FOREIGN KEY (Utente)
 REFERENCES Utenti(Email)
 ON DELETE SET NULL ON UPDATE CASCADE;

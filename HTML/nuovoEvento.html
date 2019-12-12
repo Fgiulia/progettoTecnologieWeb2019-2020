@@ -1,38 +1,41 @@
-<!DOCTYPE html>
-<html lang="it">
+<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it"><html lang="it">
 
-<head>
-	<meta charset="UTF-8">
-	<title>Nuovo evento</title>
-	<meta name="title" content="nuovo evento" />
-	<meta name="description" content="Pagina di inserimento nuovo evento" />
-	<meta name="language" content="italian it" />
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Nuovo evento</title>
+		<meta name="title" content="nuovo evento" />
+		<meta name="description" content="Pagina di inserimento nuovo evento" />
+		<meta name="keywords" content="parco faunistico, zoo, animali, Padova, cuccioli, nuovo animale" />
+        <meta name="language" content="italian it" />
+        <meta name="author" content="Giacomo Corro" />
+	</head>
 
-<body>
-	<div>
-		<section id="registerBox">
-			<h1>Aggiungi un evento</h1>
-			<form id="registerForm" action="" method="post">
-				<fieldset>
-					<legend>Dati generali</legend>
-					<p>I campi marcati con * sono obbligatori</p>
+	<body>
+		<div>
+			<section id="registerBox">
+				<h1>Aggiungi un evento</h1>
+				<form id="registerForm" action="" method="post">
+					<fieldset>
+						<legend>Dati generali</legend>
+						<p>I campi marcati con * sono obbligatori</p>
 
-					<label for="nome">*Nome</label>
-					<input type="text" name="nome" id="nome" tabindex="1" required="required"/>
+						<label for="nome">*Nome</label>
+						<input type="text" name="nome" id="nome" tabindex="1" required="required"/>
 
-					<label for="prezzo">*Prezzo</label>
-					<input type="number" name="prezzo" id="prezzo" tabindex="2" required="required"/>
+						<label for="prezzo">*Prezzo</label>
+						<input type="number" name="prezzo" id="prezzo" tabindex="2" required="required"/>
 
-					<label for="data">Data</label>
-					<input type="date" name="data" id="data" tabindex="3" />
+						<label for="data">Data</label>
+						<input type="date" name="data" id="data" tabindex="3" />
 
-					<label for="giorno">Giorno della settimana</label>
-					<input type="text" name="giorno" id="giorno" tabindex="4" />
+						<label for="giorno">Giorno della settimana</label>
+						<input type="text" name="giorno" id="giorno" tabindex="4" />
 
-					<input type="submit" id="submitAnimale" value="SalvaAnimale" />
-				</fieldset>
-			</form>
-		</section>
-	</div>
-</body>
+						<input type="submit" id="submitAnimale" value="SalvaAnimale" />
+					</fieldset>
+				</form>
+			</section>
+		</div>
+	</body>
+</html>
