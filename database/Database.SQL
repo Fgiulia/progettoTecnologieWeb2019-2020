@@ -1,23 +1,25 @@
 CREATE DATABASE Zoo;
 
-CREATE TABLE IF NOT EXISTS Utenti (
+USE Zoo;
+
+CREATE TABLE IF NOT EXISTS Utente (
     Email varchar(30),
     Password varchar(20),
     Nome varchar(50),
     Cognome varchar(50),
     Telefono varchar(15),
     Indirizzo varchar(100),
-    Eta int(3),
+    DataNascita date,
     PRIMARY KEY(Email)
 );
 
-CREATE TABLE IF NOT EXISTS Biglietti (
+CREATE TABLE IF NOT EXISTS Biglietto (
     Tipo varchar(20),
     Prezzo decimal(3,2),
     PRIMARY KEY(Tipo)
 );
 
-CREATE TABLE IF NOT EXISTS Eventi (
+CREATE TABLE IF NOT EXISTS Evento (
     ID int AUTO_INCREMENT,
     Nome varchar(50),
     Prezzo decimal(3,2),
@@ -26,7 +28,7 @@ CREATE TABLE IF NOT EXISTS Eventi (
     PRIMARY KEY(ID)
 );
 
-CREATE TABLE IF NOT EXISTS BigliettiUtenti (
+CREATE TABLE IF NOT EXISTS BigliettoUtente (
     NumeroOrdine int AUTO_INCREMENT,
     Utente varchar(30),
     NumGratis int(2),
@@ -35,7 +37,7 @@ CREATE TABLE IF NOT EXISTS BigliettiUtenti (
     PRIMARY KEY(NumeroOrdine)
 );
 
-CREATE TABLE IF NOT EXISTS EventiUtenti (
+CREATE TABLE IF NOT EXISTS EventoUtente (
     NumeroPrenotazione int AUTO_INCREMENT,
     Utente varchar(30),
     NumeroPersone int(2),
@@ -43,7 +45,7 @@ CREATE TABLE IF NOT EXISTS EventiUtenti (
     PRIMARY KEY(NumeroPrenotazione)
 );
 
-CREATE TABLE IF NOT EXISTS Animali(
+CREATE TABLE IF NOT EXISTS Animale(
     NomeComune varchar(20),
     NomeProprio varchar(20) NULL,
     NomeScientifico varchar(50),
@@ -54,17 +56,18 @@ CREATE TABLE IF NOT EXISTS Animali(
     PRIMARY KEY(NomeComune)
 );
 
-ALTER TABLE EventiUtenti
-ADD CONSTRAINT FK_utenti FOREIGN KEY (Utente)
+ALTER TABLE EventoUtente
+ADD CONSTRAINT FK_eventoUtenti FOREIGN KEY (Utente)
 REFERENCES Utenti(Email)
 ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE EventiUtenti
+ALTER TABLE EventoUtente
 ADD CONSTRAINT FK_IDEvento FOREIGN KEY (IDEvento)
 REFERENCES Eventi(ID)
 ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE BigliettiUtenti
-ADD CONSTRAINT FK_utente FOREIGN KEY (Utente)
+ALTER TABLE BigliettoUtente
+ADD CONSTRAINT FK_bigliettiUtenti FOREIGN KEY (Utente)
+
 REFERENCES Utenti(Email)
 ON DELETE SET NULL ON UPDATE CASCADE;
