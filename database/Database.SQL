@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS Eventi (
     ID int AUTO_INCREMENT,
     Nome varchar(50),
     Prezzo decimal(3,2),
-    Data date(),
+    Data date,
     Giorno varchar(10),
     PRIMARY KEY(ID)
 );
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS EventiUtenti (
     Utente varchar(30),
     NumeroPersone int(2),
     IDEvento int(11),
-    PRIMARY KEY(ID)
+    PRIMARY KEY(NumeroPrenotazione)
 );
 
 CREATE TABLE IF NOT EXISTS Animali(
@@ -65,6 +65,6 @@ REFERENCES Eventi(ID)
 ON DELETE SET NULL ON UPDATE CASCADE;
 
 ALTER TABLE BigliettiUtenti
-ADD CONSTRAINT FK_utenti FOREIGN KEY (Utente)
+ADD CONSTRAINT FK_utente FOREIGN KEY (Utente)
 REFERENCES Utenti(Email)
 ON DELETE SET NULL ON UPDATE CASCADE;
