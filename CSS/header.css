@@ -1,0 +1,53 @@
+* {
+    margin: auto;
+}
+
+html, body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+body {
+    background-color: F1F1F1;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#header {
+    font-size: 100%;
+    max-width: 98%;
+    margin: 1% 2%;
+    border: 1px solid black;
+    -webkit-box-shadow:-1px 0 15px -1px black;
+    -moz-box-shadow:-1px 0 15px -1px black;
+    box-shadow:-1px 0 15px -1px black;
+    overflow: auto;
+    background-color: F1F1F1;
+}
+
+.logoHeader {
+    float: left;
+    width: 10%;
+    height: auto;
+}
+
+h1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 300%;
+    font-style: italic;
+    text-align: center;
+    padding: 4%;
+    color: black;
+}
