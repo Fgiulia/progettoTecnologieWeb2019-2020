@@ -16,42 +16,42 @@
             }
 
             $menu_form = '<div id="menu">'."\n"
-                        . '<a href="">Home</a>'."\n"
-                        . '<div class="closeMenu">'."\n"
-                        . '<div id="chiudiMenu">'."\n"
-                        . '</div>'."\n"
-                        . '</div>'."\n"
-                        . '<div class="dropdown">'."\n"
-                        . '<button class="dropbtn">Animali<i class="fa fa-caret-down"></i></button>'."\n"
-                        . '<div class="dropdown-content">'."\n"
-                        . '<a href="">Tutti gli animali</a>'."\n"
-                        . '<a href="">I cuccioli</a>'."\n"
-                        . '</div>'."\n"
-                        . '</div>'."\n"
-                        . '<a href="">Eventi</a>'."\n"
-                        . '<div class="dropdown">'."\n"
-                        . '<button class="dropbtn"><a href="">Informazioni</a><i class="fa fa-caret-down"></i></button>'."\n"
-                        . '<div class="dropdown-content">'."\n"
-                        . '<a href="">Contattaci</a>'."\n"
-                        . '</div>'."\n"
-                        . '</div>'."\n"
-                        . '<a href="">Acquista</a>'."\n";
+                        .'  <a href="">Home</a>'."\n"
+                        .'  <div class="closeMenu">'."\n"
+                        .'      <div id="chiudiMenu">'."\n"
+                        .'      </div>'."\n"
+                        .'  </div>'."\n"
+                        .'  <div class="dropdown">'."\n"
+                        .'      <button class="dropbtn">Animali<i class="fa fa-caret-down"></i></button>'."\n"
+                        .'      <div class="dropdown-content">'."\n"
+                        .'          <a href="">Tutti gli animali</a>'."\n"
+                        .'          <a href="">I cuccioli</a>'."\n"
+                        .'      </div>'."\n"
+                        .'  </div>'."\n"
+                        .'  <a href="">Eventi</a>'."\n"
+                        .'  <div class="dropdown">'."\n"
+                        .'      <button class="dropbtn">Informazioni<i class="fa fa-caret-down"></i></button>'."\n"
+                        .'      <div class="dropdown-content">'."\n"
+                        .'          <a href="">Contattaci</a>'."\n"
+                        .'      </div>'."\n"
+                        .'  </div>'."\n"
+                        .'  <a href="">Acquista</a>'."\n";
             #gestione di accedi/area personale
             if(isset($_SESSION['email']) && $_SESSION['email']=="admin@admin.com"){
                 $menu_form .= '<div class="dropdown">'."\n";
-                $menu_form .= '<button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
-                $menu_form .= '<div class="dropdown-content">'."\n";
-                $menu_form .= '<a href="">Pannello Amministrativo</a>'."\n";
-                $menu_form .= '</div>'."\n";
+                $menu_form .= '   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
+                $menu_form .= '   <div class="dropdown-content">'."\n";
+                $menu_form .= '      <a href="">Pannello Amministrativo</a>'."\n";
+                $menu_form .= '   </div>'."\n";
                 $menu_form .= '</div>'."\n";
             }
             else{
-                if(isset($_SESSION)){
+                if(isset($_SESSION["logged"])){
                     $menu_form .= '<div class="dropdown">'."\n";
-                    $menu_form .= '<button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
-                    $menu_form .= '<div class="dropdown-content">'."\n";
-                    $menu_form .= '<a href="">Modifica i tuoi dati</a>'."\n";
-                    $menu_form .= '</div>'."\n";
+                    $menu_form .= '   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
+                    $menu_form .= '   <div class="dropdown-content">'."\n";
+                    $menu_form .= '      <a href="">Modifica i tuoi dati</a>'."\n";
+                    $menu_form .= '   </div>'."\n";
                     $menu_form .= '</div>'."\n";
                 }
                 else{

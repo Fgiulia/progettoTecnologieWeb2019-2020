@@ -9,27 +9,44 @@
         <meta name="keywords" content="parco faunistico, zoo, animali, Padova, cuccioli, login" />
         <meta name="language" content="italian it" />
         <meta name="author" content="Giacomo Corro" />
+        <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/login.css" type="text/css" />
+        
+        <script src="../PHP/modulesInit.php"></script>
     </head>
 
     <body>
 		<div id="header">
-            <a href="home.php"><img id="" src="" alt="logo del Parco faunistico" /></a>
+            <a href="home.php"><img id="" src="../styles/images/logo-nutria.svg" alt="logo del Parco faunistico" /></a>
             <a href="home.php"><h1>PARCO FAUNISTICO EUGANEO</h1></a>
         </div>
         
+        <breadcrumb></breadcrumb>
+        <menu></menu>
+
         <div>
-            <section>
-                <h1>Accedi al tuo account</h1>
-                <form id="loginForm" action="" method="post">
+            <section id="loginBox" class="outerBox">
+                <h1 class="titolo">Accedi al tuo account</h1>
+                <form id="loginForm" class="innerBox" action="../PHP/login/login.php" method="post">
                     <fieldset>
                         <legend>Email e password</legend>
-                        <label for="loginEmail">Email:</label>
-                        <input type="email" id="loginEmail" placeholder="Email" name="mail" tabindex="1" />
-                        <label for="inputPsw">Password:</label>
-                        <input type="password" id="inputPsw" placeholder="Password" name="password" tabindex="2" />
-                        <input type="submit" id="loginSubmit" value="Login" />
+                        <p id='loginError' class='hidden'>Email o Password sbagliata</p>
+
+                        <div class="campoLogin">
+                            <label for="loginEmail">Email:</label>
+                            <input type="email" id="loginEmail" placeholder="Email" name="mail" class="formText" tabindex="1" />
+                        </div>
+
+                        <div class="campoLogin">
+                            <label for="inputPsw">Password:</label>
+                            <input type="password" id="inputPsw" placeholder="Password" name="password" class="formText required" tabindex="2" />
+                        </div>
+
+                        <input type="submit" id="loginSubmit" value="Login"/>
                     </fieldset>
                 </form>
+    
             </section>
         </div>
 
