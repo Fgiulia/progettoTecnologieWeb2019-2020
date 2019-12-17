@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS Utente (
     Telefono varchar(15),
     Indirizzo varchar(100),
     DataNascita date,
+    FlAdmin boolean,
     PRIMARY KEY(Email)
 );
 
