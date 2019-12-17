@@ -1,0 +1,41 @@
+#loginForm{
+    padding:2.5em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#loginBox{
+    margin: 3% auto;
+    background-color: #fafafa;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
+}
+
+.campoLogin {
+    margin: 3%;
+}
+
+.campoLogin  input {
+    font-size: 1em;
+}
+
+#outerbox, section{
+    max-width: none;
+    padding: 1em;
+    margin: 0em;
+}
+section{
+    padding: 0em;
+}
+
+#loginError {
+    text-align: center;
+    background: #c13636;
+    width: 100%;
+    color: white;
+    padding: 0.3em 0em 0.3em 0em;
+}
+
+.hidden{
+    /* non togliere */
+    display: none !important;
+}
