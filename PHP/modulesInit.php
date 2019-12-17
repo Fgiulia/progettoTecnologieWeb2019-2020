@@ -15,27 +15,27 @@
                 session_start();
             }
 
-            $menu_form = '<div id="menu">'."\n";
-            $menu_form .= '<a href="">Home</a>'."\n";
-            $menu_form .= '<div class="closeMenu">'."\n";
-            $menu_form .= '<div id="chiudiMenu">'."\n";
-            $menu_form .= '</div>'."\n";
-            $menu_form .= '</div>'."\n";
-            $menu_form .= '<div class="dropdown">'."\n";
-            $menu_form .= '<button class="dropbtn">Animali<i class="fa fa-caret-down"></i></button>'."\n";
-            $menu_form .= '<div class="dropdown-content">'."\n";
-            $menu_form .= '<a href="">Tutti gli animali</a>'."\n";
-            $menu_form .= '<a href="">I cuccioli</a>'."\n";
-            $menu_form .= '</div>'."\n";
-            $menu_form .= '</div>'."\n";
-            $menu_form .= '<a href="">Eventi</a>'."\n";
-            $menu_form .= '<div class="dropdown">'."\n";
-            $menu_form .= '<button class="dropbtn"><a href="">Informazioni</a><i class="fa fa-caret-down"></i></button>'."\n";
-            $menu_form .= '<div class="dropdown-content">'."\n";
-            $menu_form .= '<a href="">Contattaci</a>'."\n";
-            $menu_form .= '</div>'."\n";
-            $menu_form .= '</div>'."\n";
-            $menu_form .= '<a href="">Acquista</a>'."\n";
+            $menu_form = '<div id="menu">'."\n"
+                        . '<a href="">Home</a>'."\n"
+                        . '<div class="closeMenu">'."\n"
+                        . '<div id="chiudiMenu">'."\n"
+                        . '</div>'."\n"
+                        . '</div>'."\n"
+                        . '<div class="dropdown">'."\n"
+                        . '<button class="dropbtn">Animali<i class="fa fa-caret-down"></i></button>'."\n"
+                        . '<div class="dropdown-content">'."\n"
+                        . '<a href="">Tutti gli animali</a>'."\n"
+                        . '<a href="">I cuccioli</a>'."\n"
+                        . '</div>'."\n"
+                        . '</div>'."\n"
+                        . '<a href="">Eventi</a>'."\n"
+                        . '<div class="dropdown">'."\n"
+                        . '<button class="dropbtn"><a href="">Informazioni</a><i class="fa fa-caret-down"></i></button>'."\n"
+                        . '<div class="dropdown-content">'."\n"
+                        . '<a href="">Contattaci</a>'."\n"
+                        . '</div>'."\n"
+                        . '</div>'."\n"
+                        . '<a href="">Acquista</a>'."\n";
             #gestione di accedi/area personale
             if(isset($_SESSION['email']) && $_SESSION['email']=="admin@admin.com"){
                 $menu_form .= '<div class="dropdown">'."\n";
