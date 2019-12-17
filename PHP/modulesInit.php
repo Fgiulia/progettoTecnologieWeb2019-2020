@@ -58,7 +58,7 @@
                     $menu_form .= '<a href="">Accedi</a>'."\n";
                 }
             }
-            $menu_form .= '<a href="javascript:void(0);" class="icon" onclick="myFunction()">'."\n";
+            $menu_form .= '<a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>'."\n";
             $menu_form .= '</div>'."\n";
 
             return $menu_form;
