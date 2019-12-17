@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8"  />
+    <title>Acquista</title>
+    <meta name="title" content="acquista" />
+    <meta name="description" content="Pagina di Acquisto biglietti ed eventi" />
+    <meta name="language" content="italian it" />
+    <script src="../JS/AcquistaJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS/Acquista.css">
+    <link rel="icon" href="../styles/images/logo-nutria.svg"/>
+</head>
+
+<body>
+  <div id="header">
+  <a href="home.php"><img id="" src="icon" alt="logo del parco faunistico euganeo"></a>
+  <a href="home.php"><h1>PARCO FAUNISTICO EUGANEO</h1></a>
+  </div>
+
+  <div class="tab">
+    <button class="linkTab" onclick="apriTab(event, 'biglietti')" id="tabBiglietti">Biglietti</button>
+    <button class="linkTab" onclick="apriTab(event, 'eventi')">Eventi</button>
+  </div>
+
+  <!--Contenuto Tab-->
+  <div id="biglietti" class="contenutoTab">
+    <h2>Biglietti</h2>
+    <form id="formAcquistoBiglietti" action="" method="post">
+        <label for="quantitaInteri">N° Biglietti interi</label>
+        <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
+        <label for="quantitaRidotti">N° Biglietti ridotti</label>
+        <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
+        <input type="submit" id="acquistaSubmit" value="Acquista" />
+    </form>
+    <script>
+    document.getElementById("tabBiglietti").click();
+    </script>
+  </div>
+  <div id="eventi" class="contenutoTab">
+    <h2>Eventi</h2>
+    <div id="formEventi">
+        <form id="cercaData" action="">
+            <label for="searchDate">Filtra le date</label>
+            <input type="date" name="searchDate" />
+            <input type="submit" value="Cerca"></input>
+        </form>
+        <form id="selectEventi" action="">
+            <label for="eventi">Seleziona Evento</label>
+            <select name="eventi" />
+            <input type="submit" value="Prenota"></input>
+        </form>
+    </div>
+  </div>
+
+
+  <div id="footer">
+        <img src="../styles/images/logo-nutria.svg" alt="logo del parco faunistico euganeo" width=95>
+        <p>Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
+  </div>
+</body>
+
+</html>
