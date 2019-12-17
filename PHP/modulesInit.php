@@ -38,14 +38,24 @@
             $menu_form .= '<a href="">Acquista</a>'."\n";
             #gestione di accedi/area personale
             #if(isset($_SESSION['email']) && $_SESSION['email']=="admin@admin.com"){
+                #$menu_form .= '<div class="dropdown">'."\n";
+                #$menu_form .= '<button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
+                #$menu_form .= '<div class="dropdown-content">'."\n";
                 #$menu_form .= '<a href=""></a>'."\n";
+                #$menu_form .= '</div>'."\n";
+                #$menu_form .= '</div>'."\n";
             #}
             #else{
                 #if(isset($_SESSION)){
+                    #$menu_form .= '<div class="dropdown">'."\n";
+                    #$menu_form .= '<button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
+                    #$menu_form .= '<div class="dropdown-content">'."\n";
                     #$menu_form .= '<a href=""></a>'."\n";
+                    #$menu_form .= '</div>'."\n";
+                    #$menu_form .= '</div>'."\n";
                 #}
                 #else{
-                    #$menu_form .= '<a href=""></a>'."\n";
+                    #$menu_form .= '<a href="">Accedi</a>'."\n";
                 #}
             #}
             $menu_form .= '<a href="javascript:void(0);" class="icon" onclick="myFunction()">'."\n";
