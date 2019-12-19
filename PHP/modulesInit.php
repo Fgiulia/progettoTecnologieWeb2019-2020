@@ -16,7 +16,7 @@
             }
 
             $menu_form = '<div id="menu">'."\n"
-                        .'  <a href="">Home</a>'."\n"
+                        .'  <a href="home.php">Home</a>'."\n"
                         .'  <div class="closeMenu">'."\n"
                         .'      <div id="chiudiMenu">'."\n"
                         .'      </div>'."\n"
@@ -24,8 +24,8 @@
                         .'  <div class="dropdown">'."\n"
                         .'      <button class="dropbtn">Animali<i class="fa fa-caret-down"></i></button>'."\n"
                         .'      <div class="dropdown-content">'."\n"
-                        .'          <a href="">Tutti gli animali</a>'."\n"
-                        .'          <a href="">I cuccioli</a>'."\n"
+                        .'          <a href="animali.php">Tutti gli animali</a>'."\n"
+                        .'          <a href="cuccioli.php">I cuccioli</a>'."\n"
                         .'      </div>'."\n"
                         .'  </div>'."\n"
                         .'  <a href="">Eventi</a>'."\n"
