@@ -1,3 +1,7 @@
+* {
+    margin: auto;
+}
+
 html, body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 100%;
@@ -10,10 +14,78 @@ body {
     background-color: #f1f1f1;
 }
 
+abbr {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .titolo {
     text-align: center;
     font-weight: bolder;
     display: block;
     padding: 20px;
     font-size: 3em;
+}
+
+/* STILE DELL'HEADER */
+
+#header {
+    font-size: 100%;
+    max-width: 98%;
+    margin: 1% 2%;
+    border: 1px solid black;
+    -webkit-box-shadow:-1px 0 15px -1px black;
+    -moz-box-shadow:-1px 0 15px -1px black;
+    box-shadow:-1px 0 15px -1px black;
+    overflow: auto;
+    background-color: #f1f1f1;
+}
+
+.logoHeader {
+    float: left;
+    width: 10%;
+    height: auto;
+}
+
+#header h1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 300%;
+    font-style: italic;
+    text-align: center;
+    padding: 4%;
+    color: black;
+}
+
+/* STILE DEL FOOTER */
+
+#footer {
+    text-align: center;
+    max-width: 98%;
+    margin: 0.5% 1%;
+    border: 1px solid black;
+    -webkit-box-shadow:-1px 0 15px -1px black;
+    -moz-box-shadow:-1px 0 15px -1px black;
+    box-shadow:-1px 0 15px -1px black;
+    overflow: auto;
+    background-color: #f1f1f1;
+}
+
+.logoFooter {
+    float: left;
+    width: 3%;
+    height: auto;
+    padding-left: 12%;
+    padding-right: 1%;
+}
+
+.parFooter {
+    font-size: 100%;
+    padding: 1%;
 }
