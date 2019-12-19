@@ -17,13 +17,13 @@ try {
 	if ($dbh) {
 
 		if (isset($mail)) {
-			$params = [$username];
+			$params = [$mail];
 			$sql = "SELECT
 						Email 
 						,Password
 						,Admin
 					FROM Utenti
-					WHERE ut_username = ?";
+					WHERE Email = ?";
 			$query = query($dbh, $sql, $params);
 	
 			if ($query->status) {
