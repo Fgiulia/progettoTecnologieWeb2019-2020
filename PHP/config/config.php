@@ -4,7 +4,7 @@
 $session_logged				= "TecWeb";
 # DB
 $db_host					= "localhost";
-$db_name					= "TecWeb";
+$db_name					= "Zoo";
 $db_user					= "admin";
 $db_pass					= "admin";
 

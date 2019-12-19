@@ -76,6 +76,12 @@ $beansMaps->UtenteBean = (Object) [
 				"type" => "date"
 			]
 		]
+		,"FlAdmin" => (Object) [
+			"name" => "FlAdmin"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
 	]
 	,"pksMap" => [
 		"Email" => (Object) [
@@ -89,7 +95,7 @@ $beansMaps->UtenteBean = (Object) [
 # BigliettoBean
 $beansMaps->BigliettoBean = (Object) [
 	"dbh" => $dbh
-	,"sqlTableName" => "Biglietto"
+	,"sqlTableName" => "Biglietti"
 	,"sqlFieldsMap" => (Object) [
 		"Tipo" => (Object) [
 			"name" => "Tipo"
@@ -116,7 +122,7 @@ $beansMaps->BigliettoBean = (Object) [
 # EventoBean
 $beansMaps->EventoBean = (Object) [
 	"dbh" => $dbh
-	,"sqlTableName" => "Evento"
+	,"sqlTableName" => "Eventi"
 	,"sqlFieldsMap" => (Object) [
 		"ID" => (Object) [
 			"name" => "ID"
@@ -161,7 +167,7 @@ $beansMaps->EventoBean = (Object) [
 # BigliettoUtenteBean
 $beansMaps->BigliettoUtenteBean = (Object) [
 	"dbh" => $dbh
-	,"sqlTableName" => "BigliettoUtente"
+	,"sqlTableName" => "BigliettiUtenti"
 	,"sqlFieldsMap" => (Object) [
 		"NumeroOrdine" => (Object) [
 			"name" => "NumeroOrdine"
@@ -206,7 +212,7 @@ $beansMaps->BigliettoUtenteBean = (Object) [
 # EventoUtenteBean
 $beansMaps->EventoUtenteBean = (Object) [
 	"dbh" => $dbh
-	,"sqlTableName" => "EventoUtente"
+	,"sqlTableName" => "EventiUtenti"
 	,"sqlFieldsMap" => (Object) [
 		"NumeroPrenotazione" => (Object) [
 			"name" => "NumeroPrenotazione"
@@ -245,7 +251,7 @@ $beansMaps->EventoUtenteBean = (Object) [
 # AnimaleBean
 $beansMaps->AnimaleBean = (Object) [
 	"dbh" => $dbh
-	,"sqlTableName" => "Animale"
+	,"sqlTableName" => "Animali"
 	,"sqlFieldsMap" => (Object) [
 		"NomeComune" => (Object) [
 			"name" => "NomeComune"
