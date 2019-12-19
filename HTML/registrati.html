@@ -22,38 +22,41 @@
 
 	<body>
 		<div id="header">
-			<a href="home.php"><img id="" src="" alt="logo del Parco faunistico" /></a>
-			<a href="home.php"><h1>PARCO FAUNISTICO EUGANEO</h1></a>
+            <a href="home.php"><img class="logoHeader" src="../styles/images/logo-nutria.svg" alt="logo del Parco faunistico" /></a>
+            <a href="home.php"><h1>PARCO FAUNISTICO EUGANEO</h1></a>
 		</div>
 		
-		<div>
-			<section id="registerBox">
+		<breadcrumb></breadcrumb>
+        <menu></menu>
+		
+		<div class="main">
+			<section id="registerBox" class="outerBox">
 				<h1>Crea il tuo account!</h1>
-				<form id="registerForm" action="" method="post">
+				<form id="registerForm" class="innerBox " action="../PHP/login/registra.php" method="post" >
 					<fieldset>
 						<legend>Dati personali</legend>
-						<p>I campi marcati con * sono obbligatori</p>
-						<p>Password da 6 a 16 caratteri, fra cui almeno una maiuscola e un simbolo</p>
-						<label for="email">*Email</label>
-						<input type="email" name="email" id="email" tabindex="1" required="required" />
+						<p class="required">I campi marcati con (*) sono obbligatori</p>
 
-						<label for="nome">*Nome</label>
-						<input type="text" name="nome" id="nome" tabindex="2" required="required" />
+						<label for="email">Email*</label>
+						<input type="email" name="email" id="email" class="required" tabindex="1" required/>
 
-						<label for="cognome">*Cognome</label>
-						<input type="text" name="cognome" id="cognome" tabindex="3" required="required" />
+						<label for="nome">Nome*</label>
+						<input type="text" name="nome" id="nome" class="required" tabindex="2" required/>
 
-						<label for="cel">Numero di telefono</label>
-						<input type="tel" name="cel" id="cel" tabindex="4" />
+						<label for="cognome">Cognome*</label>
+						<input type="text" name="cognome" id="cognome" class="required" tabindex="3" required/>
 
-						<label for="nascita">*Data di nascita</label>
-						<input type="date" name="nascita" id="nascita" tabindex="5" required="required" />
+						<label for="cel">Telefono</label>
+						<input type="text" name="cel" id="cel" class="required" tabindex="4" />
 
-						<label for="password">*Password</label>
-						<input type="password" name="password" id="password" class="required" tabindex="6" required="required"/>
+						<label for="nascita">Data di nascita*</label>
+						<input type="date" name="nascita" id="nascita" class="required" tabindex="5" required />
 
-						<label for="repeatpassword">*Ripeti password</label>
-						<input type="password" name="repeatpassword" id="repeatpassword" tabindex="7" required="required"/>
+						<label for="password">Password*</label>
+						<input type="password" name="password" id="password" class="required" tabindex="6" required/>
+
+						<label for="repeatpassword">Ripeti password*</label>
+						<input type="password" name="repeatpassword" id="repeatpassword" tabindex="7" required/>
 
 						<input type="submit" id="registerSubmit" value="Registrati" class="button internal-button" />
 					</fieldset>

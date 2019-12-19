@@ -2,8 +2,11 @@
 
 #loginForm{
     padding:2.5em;
-    text-align: center;
-    font-size: 1.5em;
+    margin: 0;
+}
+
+#loginForm input{
+    display: block;
 }
 
 #loginBox{
@@ -16,8 +19,27 @@
     margin: 3%;
 }
 
-.campoLogin  input {
+.campoLogin input {
     font-size: 1em;
+}
+
+.outerBox select,.outerBox input, textarea#insertDescrizione {
+    display: block;
+    padding:0.3em 1% 0.3em 1%;
+    border: 1px solid grey;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .3);
+    border-radius: 2px;  
+}
+
+.outerBox  label,select,input{
+
+    display:inline-block;
+}
+
+.outerBox  label{
+    width:30%;
+    padding:1em 0.4em 0 0;
+    text-align:right;
 }
 
 #outerbox, section{
@@ -25,23 +47,49 @@
     padding: 1em;
     margin: 0em;
 }
-section{
-    padding: 0em;
+
+.outerBox  input[type="text"],
+.outerBox  input[list="titleInput"],
+.outerBox  input[type="date"],
+.outerBox  input[type="email"],
+.outerBox  input[type="password"],
+.outerBox  input[type="number"],
+.outerBox  input[type="file"],
+textarea#insertDescrizione,
+.outerBox  select
+{
+    display: inline-block;
+    box-sizing: content-box;
+    width:60%;
+    background-color:white;
 }
 
-#loginError {
+section {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1em;
+    min-width: 30%;  
+}
+
+fieldset{
+	padding: 0.3em 0.5em 0.5em 0.5em;
+}
+
+#registrati {
     text-align: center;
-    background: #c13636;
-    width: 100%;
-    color: white;
-    padding: 0.3em 0em 0.3em 0em;
+    padding-bottom: 30px;
 }
 
-.hidden{
-    /* non togliere */
-    display: none !important;
+#loginBox, #registerBox {
+    display: flex;
+    flex-direction: column;
+    margin: 3% auto;
+    max-width:40em;
+    background-color: #fafafa;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
 
-
-/*  REGISTRAZIONE
-  */
+#registerForm{
+    padding: 1em 10%;
+    margin: 0;
+}

@@ -4,9 +4,11 @@ require("../api/base/fnQuery.php");
 require("../api/session_recovery.php");
 
 $response = (Object) [
-	"status" => false
+	"status" => 0
 	,"response" => "init"
 ];
+
+# Status:  0 -> login fallito, 1 -> altri errori, 2 -> login ok
 
 try {
 
@@ -35,7 +37,7 @@ try {
 						unset($utente->password);
 
 						$response->response = $utente;
-						$response->status = true;
+						$response->status = 2;
 					} else {
 						$response->response = "Login errato";
 					}
@@ -44,22 +46,24 @@ try {
 				}
 			} else {
 				$response->response = $query->error;
+				$response->status = 1;
 			}
 		} else {
 			$response->response = "Login errato";
 		}
 	} else {
 		$response->response = "Connessione database fallita";
+		$response->status = 1;
 	}
 } catch (Exception $e) {
 	$response->response = "Fatal error: $e";
+	$response->status = 1;
 	echo $e->getMessage();
 }
 
 $_SESSION["login"]  = $response;
-echo json_encode($response);
 
-if($response->status) {
+if($_SESSION["login"]->status == 2) {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/home.php");
 } else {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
