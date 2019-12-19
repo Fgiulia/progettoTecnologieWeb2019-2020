@@ -36,22 +36,22 @@
                         .'      </div>'."\n"
                         .'  </div>'."\n"
                         .'  <a href="">Acquista</a>'."\n";
-            #gestione di accedi/area personale
+            #gestione di accedi area personale
             if(isset($_SESSION['email']) && $_SESSION['email']=="admin@admin.com"){
-                $menu_form .= '<div class="dropdown">'."\n";
-                             .'   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
-                             .'   <div class="dropdown-content">'."\n";
-                             .'      <a href="">Pannello Amministrativo</a>'."\n";
-                             .'   </div>'."\n";
+                $menu_form .= '<div class="dropdown">'."\n"
+                             .'   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n"
+                             .'   <div class="dropdown-content">'."\n"
+                             .'      <a href="">Pannello Amministrativo</a>'."\n"
+                             .'   </div>'."\n"
                              .'</div>'."\n";
             }
             else{
                 if(isset($_SESSION["logged"])){
-                    $menu_form .= '<div class="dropdown">'."\n";
-                                 .'   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n";
-                                 .'   <div class="dropdown-content">'."\n";
-                                 .'      <a href="">Modifica i tuoi dati</a>'."\n";
-                                 .'   </div>'."\n";
+                    $menu_form .= '<div class="dropdown">'."\n"
+                                 .'   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n"
+                                 .'   <div class="dropdown-content">'."\n"
+                                 .'      <a href="">Modifica i tuoi dati</a>'."\n"
+                                 .'   </div>'."\n"
                                  .'</div>'."\n";
                 }
                 else{
