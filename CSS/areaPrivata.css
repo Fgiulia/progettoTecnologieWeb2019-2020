@@ -1,3 +1,5 @@
+/*  LOGIN  */
+
 #loginForm{
     padding:2.5em;
     text-align: center;
@@ -39,3 +41,7 @@ section{
     /* non togliere */
     display: none !important;
 }
+
+
+/*  REGISTRAZIONE
+  */

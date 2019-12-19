@@ -2,7 +2,7 @@ CREATE DATABASE Zoo;
 
 USE Zoo;
 
-CREATE TABLE IF NOT EXISTS Utente (
+CREATE TABLE IF NOT EXISTS Utenti (
     Email varchar(30),
     Password varchar(20),
     Nome varchar(50),
@@ -14,14 +14,14 @@ CREATE TABLE IF NOT EXISTS Utente (
     PRIMARY KEY(Email)
 );
 
-CREATE TABLE IF NOT EXISTS Biglietto (
+CREATE TABLE IF NOT EXISTS Biglietti (
     Tipo varchar(20),
     Prezzo decimal(3,2),
     PRIMARY KEY(Tipo)
 );
 
-CREATE TABLE IF NOT EXISTS Evento (
-    ID int AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS Eventi (
+    ID int(11) AUTO_INCREMENT,
     Nome varchar(50),
     Prezzo decimal(3,2),
     Data date,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS Evento (
     PRIMARY KEY(ID)
 );
 
-CREATE TABLE IF NOT EXISTS BigliettoUtente (
+CREATE TABLE IF NOT EXISTS BigliettiUtenti (
     NumeroOrdine int AUTO_INCREMENT,
     Utente varchar(30),
     NumGratis int(2),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS BigliettoUtente (
     PRIMARY KEY(NumeroOrdine)
 );
 
-CREATE TABLE IF NOT EXISTS EventoUtente (
+CREATE TABLE IF NOT EXISTS EventiUtenti (
     NumeroPrenotazione int AUTO_INCREMENT,
     Utente varchar(30),
     NumeroPersone int(2),
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS EventoUtente (
     PRIMARY KEY(NumeroPrenotazione)
 );
 
-CREATE TABLE IF NOT EXISTS Animale(
+CREATE TABLE IF NOT EXISTS Animali (
     NomeComune varchar(20),
     NomeProprio varchar(20) NULL,
     NomeScientifico varchar(50),
@@ -57,18 +57,17 @@ CREATE TABLE IF NOT EXISTS Animale(
     PRIMARY KEY(NomeComune)
 );
 
-ALTER TABLE EventoUtente
+ALTER TABLE EventiUtenti
 ADD CONSTRAINT FK_eventoUtenti FOREIGN KEY (Utente)
 REFERENCES Utenti(Email)
 ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE EventoUtente
+ALTER TABLE EventiUtenti
 ADD CONSTRAINT FK_IDEvento FOREIGN KEY (IDEvento)
 REFERENCES Eventi(ID)
 ON DELETE SET NULL ON UPDATE CASCADE;
 
-ALTER TABLE BigliettoUtente
+ALTER TABLE BigliettiUtenti
 ADD CONSTRAINT FK_bigliettiUtenti FOREIGN KEY (Utente)
-
 REFERENCES Utenti(Email)
 ON DELETE SET NULL ON UPDATE CASCADE;

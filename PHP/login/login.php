@@ -1,5 +1,4 @@
 <?php
-ob_start();
 require("../config/config.php");
 require("../api/base/fnQuery.php");
 require("../api/session_recovery.php");
@@ -60,10 +59,7 @@ try {
 	echo $e->getMessage();
 }
 
-$obStr = ob_get_clean();
-$response->response = $response->status ? $response->response : $response->response . ($obStr ? ". More info: " . $obStr : "");
-ob_end_clean();
-
-
+$response->response = $response->status ? $response->response : $response->response;
+$_SESSION["login"]  = $response;
 
 ?>
