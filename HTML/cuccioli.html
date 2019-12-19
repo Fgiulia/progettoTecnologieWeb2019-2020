@@ -10,12 +10,10 @@
 	<meta name="language" content="italian it" />
 	<meta name="author" content="Giulia Fiorese" />
 
-<!--<link rel="stylesheet" media="screen" href="" type="text/css" />
-	<link rel="stylesheet" media="handheld,screen and(max-width:480px),only screen and(max-device-width:480px)" href="" type="text/css" />
-	<link rel="stylesheet" media="print" href="" type="text/css" />
-	<link rel="stylesheet" media="aural" href="" type="text/css" />
+	<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
+	<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
 	
-	<script src=""></script> per file JavaScript-->
+	<script src="../PHP/modulesInit.php"></script>
 </head>
 
 <body>	
@@ -24,14 +22,14 @@
 		<a href="home.php"><h1>PARCO FAUNISTICO EUGANEO</h1></a>
 	</div>
 
-	<breadcrumb />
-	<menu />
+	<breadcrumb></breadcrumb>
+	<menu></menu>
 	
 	<div id="cuccioli">
 		<h1 class="titolo">I NOSTRI CUCCIOLI</h1>
 		<p>Scopri tutti i cuccioli che sono nati nel nostro Parco e vieni a trovarli!</p>
 		
-		<selezionaCuccioli /> <!-- richiama il file php che legge dal database il prossimo evento organizzato -->
+		<selezionaCuccioli></selezionaCuccioli> <!-- richiama il file php che legge dal database il prossimo evento organizzato -->
 	</div>
 	
 	<div id="footer">
