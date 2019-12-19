@@ -11,8 +11,7 @@ $response = (Object) [
 try {
 
 	$mail = $_POST["mail"];
-	$passw = $_POST["password"];
-	$_POST["password"] = "";
+	$password = $_POST["password"];
 
 	if ($dbh) {
 
@@ -21,7 +20,7 @@ try {
 			$sql = "SELECT
 						Email 
 						,Password
-						,Admin
+						,FlAdmin
 					FROM Utenti
 					WHERE Email = ?";
 			$query = query($dbh, $sql, $params);
@@ -30,12 +29,10 @@ try {
 				if ($query->rows && count($query->rows) > 0) {
 					$utente = $query->rows[0];
 
-					if (isset($password) && password_verify($password, $utente->password)) {
+					if (isset($password) && password_verify($password, $utente->Password)) {
 
 						//Tolgo la password, non voglio vederla anche se scriptata
 						unset($utente->password);
-
-						$_SESSION[$session_logged] = $utente;
 
 						$response->response = $utente;
 						$response->status = true;
@@ -55,11 +52,17 @@ try {
 		$response->response = "Connessione database fallita";
 	}
 } catch (Exception $e) {
-	$response->response = "Fatal error";
+	$response->response = "Fatal error: $e";
 	echo $e->getMessage();
 }
 
-$response->response = $response->status ? $response->response : $response->response;
 $_SESSION["login"]  = $response;
+echo json_encode($response);
+
+if($response->status) {
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/home.php");
+} else {
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
+}
 
 ?>
