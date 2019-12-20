@@ -11,6 +11,8 @@
 		<meta name="author" content="Erik Tabacchi" />
 
 		<link rel="icon" type="images/png" href="/styles/images/logo-solo-nutria.png" />
+		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
+	    <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
 	</head>  
 
 	<body>
@@ -22,23 +24,24 @@
 		<breadcrumb></breadcrumb>
         <menu></menu>
 				
-		<span>Filtra per giorno della settimana</span>
+		
 		<div id="filtroEventi">
-		<form action="Eventi.php" method="POST">
-			<select>
-			<option selected >tutti i giorni</option>
-			<option>Lunedì</option>
-			<option>Martedì</option>
-			<option>Mercoledì</option>
-			<option>Giovedì</option>
-			<option>Venerdì</opton>
-			<option>Sabato</option>
-			<option>Domenica</option>
-			</select>           
-		</form>
+			<p>Filtra per giorno della settimana</p>
+			<form action="Eventi.php" method="POST">
+				<select>
+					<option selected >tutti i giorni</option>
+					<option>Lunedì</option>
+					<option>Martedì</option>
+					<option>Mercoledì</option>
+					<option>Giovedì</option>
+					<option>Venerdì</opton>
+					<option>Sabato</option>
+					<option>Domenica</option>
+				</select>           
+			</form>
 		</div>
 
-		<div id="listaEventi">£Eventi£</div>
+		<eventiselezionati/>
 
 		<div id="footer">
 			<img class="logoFooter" src="../styles/images/logo-solo-nutria.svg" alt="logo del parco faunistico euganeo" />
