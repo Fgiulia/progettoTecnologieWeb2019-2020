@@ -37,25 +37,28 @@
                         .'  </div>'."\n"
                         .'  <a href="">Acquista</a>'."\n";
             #gestione di accedi area personale
-            if(isset($_SESSION['email']) && $_SESSION['email']=="admin@admin.com"){
+            if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
                 $menu_form .= '<div class="dropdown">'."\n"
-                             .'   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n"
+                             .'   <button class="dropbtn">Area Personale<i class="fa fa-caret-down"></i></button>'."\n"
                              .'   <div class="dropdown-content">'."\n"
-                             .'      <a href="">Pannello Amministrativo</a>'."\n"
+                             .'      <a href="areaPrivata.php">Pannello Amministrativo</a>'."\n"
+                             .'      <a href="">Logout</a>'."\n"
                              .'   </div>'."\n"
                              .'</div>'."\n";
             }
             else{
-                if(isset($_SESSION["logged"])){
+                if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
                     $menu_form .= '<div class="dropdown">'."\n"
                                  .'   <button class="dropbtn"><a href="">Area Personale</a><i class="fa fa-caret-down"></i></button>'."\n"
                                  .'   <div class="dropdown-content">'."\n"
+                                 .'      <a href="areaPrivata.php">I tuoi acquisti</a>'."\n"
                                  .'      <a href="">Modifica i tuoi dati</a>'."\n"
+                                 .'      <a href="">Logout</a>'."\n"
                                  .'   </div>'."\n"
                                  .'</div>'."\n";
                 }
                 else{
-                    $menu_form .= '   <a href="">Accedi</a>'."\n";
+                    $menu_form .= '   <a href="login.php">Accedi</a>'."\n";
                 }
             }
             $menu_form .= '   <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>'."\n";
