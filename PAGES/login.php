@@ -7,11 +7,11 @@ echo str_replace("<menu></menu>",modulesInit::menu(),$output);
 if(!isset($_SESSION))
     session_start();
 
-if(isset($_SESSION["login"])) {
+if(isset($_SESSION["logged"])) {
 
-    $errorMessage = $_SESSION["login"]->response;
+    $errorMessage = $_SESSION["logged"]->response;
 
-    switch($_SESSION["login"]->status) {
+    switch($_SESSION["logged"]->status) {
         case 0:
             $output = str_replace("<loginError></loginError>","<p id='loginError'>$errorMessage</p>",$output);
             break;
@@ -19,7 +19,6 @@ if(isset($_SESSION["login"])) {
             $output = str_replace("<errorMessage></errorMessage>","<p id='errorMessage'>$errorMessage</p>",$output);
             break;
     }
-    session_destroy();
 }
 
 ?>

@@ -38,6 +38,8 @@ try {
 
 						$response->response = $utente;
 						$response->status = 2;
+
+						$_SESSION["admin"] = $utente->FlAdmin;
 					} else {
 						$response->response = "Login errato";
 					}
@@ -61,9 +63,9 @@ try {
 	echo $e->getMessage();
 }
 
-$_SESSION["login"]  = $response;
+$_SESSION["logged"] = $response;
 
-if($_SESSION["login"]->status == 2) {
+if($_SESSION["logged"]->status == 2) {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/home.php");
 } else {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");

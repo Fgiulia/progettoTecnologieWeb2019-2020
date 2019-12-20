@@ -11,6 +11,14 @@
 		<meta name="author" content="Giacomo Corro" />
 		
 		<link rel="icon" type="images/png" href="/styles/images/logo-solo-nutria.png" />
+
+		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
+        <link rel="stylesheet" media="screen" href="../CSS/header.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+        <link rel="stylesheet" media="handheld,screen and(max-width:480px),only screen and(max-device-width:480px)" href="" type="text/css" />
+        <link rel="stylesheet" media="print" href="" type="text/css" />
+        <link rel="stylesheet" media="aural" href="" type="text/css" />
+		<link rel="stylesheet" href="../CSS/areaPrivata.css" type="text/css" />
 	</head>
 
 	<body>
@@ -22,38 +30,36 @@
 		<breadcrumb></breadcrumb>
         <menu></menu>
 		
-		<div>
-			<section id="registerBox">
+		<div class="main">
+			<section id="registerBox" class="outerBox">
 				<h1>Aggiungi un animale</h1>
-				<form id="registerForm" action="" method="post">
+				<form id="registerForm" class="innerBox" action="" method="post">
 					<fieldset>
 						<legend>Dati generali</legend>
 						<p>I campi marcati con * sono obbligatori</p>
-						<label for="email">*Email</label>
-						<input type="email" name="email" id="email" tabindex="1" required="required" />
 
 						<label for="nomeComune">*Nome comune</label>
-						<input type="text" name="nomeComune" id="nomeComune" tabindex="2" required="required" />
+						<input type="text" name="nomeComune" id="nomeComune" tabindex="1" required />
 
 						<label for="nomeProprio">Nome proprio</label>
-						<input type="text" name="nomeProprio" id="nomeProprio" tabindex="3" />
+						<input type="text" name="nomeProprio" id="nomeProprio" tabindex="2" />
 
 						<label for="nomeScientifico">*None scientifico</label>
-						<input type="text" name="nomeScientifico" id="nomeScientifico" tabindex="4" required="required" />
+						<input type="text" name="nomeScientifico" id="nomeScientifico" tabindex="3" required />
 
 						<label for="famiglia">Famiglia</label>
-						<input type="text" name="famiglia" id="famiglia" tabindex="5" />
+						<input type="text" name="famiglia" id="famiglia" tabindex="4" />
 
 						<label for="sezioneParco">Sezione del parco</label>
-						<input type="text" name="sezioneParco" id="sezioneParco" tabindex="6" />
+						<input type="text" name="sezioneParco" id="sezioneParco" tabindex="5" />
+
+						<label for="Immagine">Immagine</label>
+						<input type="file" name="immagineAnimale" id="immagineAnimale" tabindex="6" />
 
 						<label for="descrizione">Descrizione</label>
-						<textarea type="text" name="descrizione" id="descrizione" tabindex="7"></textarea>
+						<textarea id="descrizioneAnimale" type="text" name="descrizione" id="descrizione" tabindex="7"></textarea>
 
-						<label for="Immagine">*Immagine</label>
-						<input type="file" name="repeatpassword" id="repeatpassword" tabindex="8" required="required" />
-
-						<input type="submit" id="submitAnimale" value="SalvaAnimale" />
+						<input type="submit" id="submitAnimale" value="Salva" />
 					</fieldset>
 				</form>
 			</section>

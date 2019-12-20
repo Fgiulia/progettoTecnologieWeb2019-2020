@@ -11,6 +11,14 @@
 		<meta name="author" content="Giacomo Corro" />
 		
 		<link rel="icon" type="images/png" href="/styles/images/logo-solo-nutria.png" />
+
+		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
+        <link rel="stylesheet" media="screen" href="../CSS/header.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+        <link rel="stylesheet" media="handheld,screen and(max-width:480px),only screen and(max-device-width:480px)" href="" type="text/css" />
+        <link rel="stylesheet" media="print" href="" type="text/css" />
+        <link rel="stylesheet" media="aural" href="" type="text/css" />
+		<link rel="stylesheet" href="../CSS/areaPrivata.css" type="text/css" />
 	</head>
 
 	<body>
@@ -23,9 +31,9 @@
         <menu></menu>
 		
 		<div>
-			<section id="registerBox">
+			<section id="registerBox" class="outerBox">
 				<h1>Aggiungi un evento</h1>
-				<form id="registerForm" action="" method="post">
+				<form id="registerForm" class="innerBox" action="" method="post">
 					<fieldset>
 						<legend>Dati generali</legend>
 						<p>I campi marcati con * sono obbligatori</p>
@@ -42,7 +50,7 @@
 						<label for="giorno">Giorno della settimana</label>
 						<input type="text" name="giorno" id="giorno" tabindex="4" />
 
-						<input type="submit" id="submitAnimale" value="SalvaAnimale" />
+						<input type="submit" id="submitAnimale" value="Salva" />
 					</fieldset>
 				</form>
 			</section>
