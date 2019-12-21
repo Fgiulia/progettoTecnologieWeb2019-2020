@@ -1,12 +1,7 @@
 <?php
 
-require("../../config/config.php");
-require("../base/fnQuery.php");
-require("../session_recovery.php");
-
-require("../lib/PHPMailer-6.0.1/src/Exception.php");
-require("../lib/PHPMailer-6.0.1/src/PHPMailer.php");
-require("../lib/PHPMailer-6.0.1/src/SMTP.php");
+require("../config/config.php");
+require("../api/base/fnQuery.php");
 
 $response = (Object) [
 	"status" => false
@@ -34,7 +29,10 @@ try {
 			if ($query->rows && count($query->rows) > 0) {
 				$response->response = "Nome utente già utilizzato";
 			} else {
-				$params = [$mail, $pw, $nome, $cognome, "", $cell, $nascita, 0];
+
+				$passHash = password_hash($pw, PASSWORD_DEFAULT);
+
+				$params = [$mail, $passHash, $nome, $cognome, "", $cell, $nascita, 0];
 				$sql = "INSERT INTO Utenti (
 							Email
 							,Password
@@ -50,6 +48,7 @@ try {
 
 				if ($query->status) {
 					$response->response = "Registrazione effettuata con successo";
+					$response->status = true;
 				} else  {
 					$response->response = $query->error;
 				}
@@ -65,10 +64,12 @@ try {
 	echo $e->getMessage();
 }
 
+$_SESSION["registrazione"] = $response;
+
 if($response->status) {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
 } else {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/registra.php");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/registrati.php");
 }
 
 ?>

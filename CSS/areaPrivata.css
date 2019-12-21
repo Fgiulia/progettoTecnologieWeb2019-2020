@@ -107,12 +107,21 @@ fieldset{
     height: 100%;
 	display:block;
 	float:left;
-    font-size:1.5em;
     border: 1px solid black;
 }
 
 #nav ul{
-	list-style-type:none;
+    list-style-type:none;
+    margin-top: 2em;
+}
+
+#nav li {
+    padding: 1em 0;
+}
+
+#nav h3 {
+    margin-top: 2em;
+    text-align: center;
 }
 
 #content{
@@ -134,4 +143,8 @@ fieldset{
     font-weight: bold;
     border: 1px solid black;
     border-radius: 10px;
+}
+
+#container {
+    margin-top: 100px;
 }

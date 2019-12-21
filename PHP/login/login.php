@@ -1,7 +1,6 @@
 <?php
 require("../config/config.php");
 require("../api/base/fnQuery.php");
-require("../api/session_recovery.php");
 
 $response = (Object) [
 	"status" => 0
@@ -41,17 +40,18 @@ try {
 
 						$_SESSION["admin"] = $utente->FlAdmin;
 					} else {
-						$response->response = "Login errato";
+						$response->response = "Email e/o password sbagliati.";
 					}
 				} else {
-					$response->response = "Login errato";
+					$response->response = "Non risulti registrato. Verifica di aver inserito i dati corretti o registrati";
+					$response->status = 1;
 				}
 			} else {
 				$response->response = $query->error;
 				$response->status = 1;
 			}
 		} else {
-			$response->response = "Login errato";
+			$response->response = "Errore durante il login.";
 		}
 	} else {
 		$response->response = "Connessione database fallita";
@@ -66,7 +66,7 @@ try {
 $_SESSION["logged"] = $response;
 
 if($_SESSION["logged"]->status == 2) {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/home.php");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/areaPrivata.php");
 } else {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
 }
