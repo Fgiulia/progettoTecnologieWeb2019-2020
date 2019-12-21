@@ -31,15 +31,26 @@ a:hover {
     font-weight: bolder;
     display: block;
     padding: 20px;
-    font-size: 3em;
+    font-size: 2em;
+}
+
+.main {
+    height: calc(100vh - 357px);
+}
+
+/* BREADCRUMBS */
+
+.map-position {
+    background: #00b6ff;
+    padding: 9px
 }
 
 /* STILE DELL'HEADER */
 
 #header {
     font-size: 100%;
-    max-width: 98%;
-    margin: 1% 2%;
+    max-width: 100%;
+    margin: 1% 0;
     border: 1px solid black;
     -webkit-box-shadow:-1px 0 15px -1px black;
     -moz-box-shadow:-1px 0 15px -1px black;
@@ -67,8 +78,8 @@ a:hover {
 
 #footer {
     text-align: center;
-    max-width: 98%;
-    margin: 0.5% 1%;
+    max-width: 100%;
+    margin: 0.5% 0;
     border: 1px solid black;
     -webkit-box-shadow:-1px 0 15px -1px black;
     -moz-box-shadow:-1px 0 15px -1px black;
@@ -89,6 +100,8 @@ a:hover {
     font-size: 100%;
     padding: 1%;
 }
+
+/* STILE DEI PULSANTI SUBMIT */
 
 input[type=submit] {
     background-color: #4CAF50;

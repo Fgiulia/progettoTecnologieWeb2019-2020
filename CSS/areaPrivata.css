@@ -101,3 +101,37 @@ fieldset{
     padding: 1em 10%;
     margin: 0;
 }
+
+#nav{
+	width:20%;
+    height: 100%;
+	display:block;
+	float:left;
+    font-size:1.5em;
+    border: 1px solid black;
+}
+
+#nav ul{
+	list-style-type:none;
+}
+
+#content{
+	float:left;
+    width:78%;
+    height: 100%;
+    text-align: center;
+}
+
+#footer{
+	clear:both;
+}
+
+.azioniRapide {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.7em 1em;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 10px;
+}
