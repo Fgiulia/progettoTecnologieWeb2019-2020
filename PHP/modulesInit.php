@@ -65,7 +65,7 @@
 		 */
 		public static function setMessaggio($messaggio, $errore){
 
-			$class  = $errore ? "errorMessage" : "message";
+			$class  = $errore ? "errorMessage" : "messaggio";
 
 			$output = file_get_contents("../HTML/paginaVuota.html");
 			$output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
