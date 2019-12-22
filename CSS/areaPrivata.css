@@ -104,10 +104,10 @@ fieldset{
 
 #nav{
 	width:20%;
-    height: 100%;
 	display:block;
 	float:left;
     border: 1px solid black;
+    margin-bottom: 20px;
 }
 
 #nav ul{
@@ -127,7 +127,6 @@ fieldset{
 #content{
 	float:left;
     width:78%;
-    height: 100%;
     text-align: center;
 }
 

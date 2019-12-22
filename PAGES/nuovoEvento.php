@@ -19,6 +19,6 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 
 	echo modulesInit::setMessaggio($response->response, true);
 
-    //header("refresh:3; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
+    header("refresh:3; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
 }
 ?>

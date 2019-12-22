@@ -36,10 +36,11 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 
 	} else {
 		$sideNav = "<div id='nav'>"."\n"
+					."	<h3>Pannello gestione</h3>"."\n"
 					."	<ul>"."\n"
 					."	   <li><a href='areaPrivata.php'>Area privata</a></li>"."\n"
-					."	   <li><a href='bigliettiAquistati.php'>Eventi</a></li>"."\n"
-					."	   <li><a href='eventiPrenotati.php'>Animale</a></li>"."\n"
+					."	   <li><a href='bigliettiAquistati.php'>Biglietti acquistati</a></li>"."\n"
+					."	   <li><a href='eventiPrenotati.php'>Eventi prenotati</a></li>"."\n"
 					."	   <li><a href='messaggi.php'>Messaggi</a></li>"."\n"
 					."	   <li><a href='datiPersonali.php'>Dati personali</a></li>"."\n"
 					."	   <li><a href='../PHP/login/logout.php'>Logout</a></li>"."\n"
