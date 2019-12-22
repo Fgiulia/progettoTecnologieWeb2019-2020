@@ -1,6 +1,9 @@
 <?php
 require_once "../PHP/modulesInit.php";
 
+require("../PHP/config/config.php");
+require("../PHP/api/base/fnQuery.php");
+
 if(!isset($_SESSION))
 	session_start();
 	
@@ -16,11 +19,11 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 		$sideNav = "<div id='nav'>"."\n"
 					."	<h3>Pannello gestione</h3>"."\n"
 					."	<ul>"."\n"
-					."	   <li><a href='areaPrivata.php'>Area privata</a></li>"."\n"
-					."	   <li><a href='gestioneEventi.php'>Eventi</a></li>"."\n"
-					."	   <li><a href='gestioneAnimali.php'>Animali</a></li>"."\n"
-					."	   <li><a href='gestioneAcquisti.php'>Acquisti</a></li>"."\n"
-					."	   <li><a href='messaggi.php'>Messaggi</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=principale'>Area privata</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=eventi'>Eventi</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=animali'>Animali</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=acquisti'>Acquisti</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
 					."	   <li><a href='../PHP/login/logout.php'>Logout</a></li>"."\n"
 					."	</ul>"."\n"
 					."</div>"."\n";
@@ -38,26 +41,51 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 		$sideNav = "<div id='nav'>"."\n"
 					."	<h3>Pannello gestione</h3>"."\n"
 					."	<ul>"."\n"
-					."	   <li><a href='areaPrivata.php'>Area privata</a></li>"."\n"
-					."	   <li><a href='bigliettiAquistati.php'>Biglietti acquistati</a></li>"."\n"
-					."	   <li><a href='eventiPrenotati.php'>Eventi prenotati</a></li>"."\n"
-					."	   <li><a href='messaggi.php'>Messaggi</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=principale'>Area privata</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=biglietti'>Biglietti acquistati</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=eventi'>Eventi prenotati</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
 					."	   <li><a href='datiPersonali.php'>Dati personali</a></li>"."\n"
 					."	   <li><a href='../PHP/login/logout.php'>Logout</a></li>"."\n"
 					."	</ul>"."\n"
 					."</div>"."\n";
-		
-		$contentItems = "<div id='content'>"."\n"
-						."	<h1 class='titolo'>Area privata</h1>"."\n"
-						."	<h3>Azioni rapide</h3>"."\n"
-						."	<div id='container'>"."\n"
-						."		<a class='azioniRapide' href=''>boh</a>"."\n"
-						."		<a class='azioniRapide' href=''>boh</a>"."\n"
-						."	</div>"."\n"
-						."</div>"."\n";
 	}
 
 	$output = str_replace("<sideNav></sideNav>",$sideNav, $output);
+
+	if(isset($_GET["pageName"])) {
+
+		$pageName = $_GET["pageName"];
+		$contentItems = "";
+		$query = null;
+
+		switch($pageName) {
+			case "principale":
+				$contentItems = "<div id='content'>"."\n"
+				."	<h1 class='titolo'>Area privata</h1>"."\n"
+				."	<h3>Azioni rapide</h3>"."\n"
+				."	<div id='container'>"."\n"
+				."		<a class='azioniRapide' href=''>boh</a>"."\n"
+				."		<a class='azioniRapide' href=''>boh</a>"."\n"
+				."	</div>"."\n"
+				."</div>"."\n";
+				break;
+			case "eventi":
+				$query = find("EventoBean", null);
+				break;
+			case "animali":
+				$query = find("AnimaleBean", null);
+				break;
+			case "acquisti":
+				$query = find("BigliettoUtenteBean", null);
+				$query = find("EventoUtenteBean", null);
+				break;
+			case "messaggi":
+				//$query = find("MessaggioBean", null);
+				break;
+		}
+	}
+
 	$output = str_replace("<contentItems></contentItems>",$contentItems, $output);
 
 	echo $output;
