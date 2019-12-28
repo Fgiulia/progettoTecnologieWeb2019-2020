@@ -35,6 +35,8 @@ a:hover {
 }
 
 .main {
+    display: flex;
+    height: auto;
 }
 
 .messaggio {
@@ -93,14 +95,19 @@ a:hover {
 
 #footer {
     text-align: center;
-    max-width: 100%;
-    margin: 0.5% 0;
+    max-width: 95%;
     border: 1px solid black;
     -webkit-box-shadow:-1px 0 15px -1px black;
     -moz-box-shadow:-1px 0 15px -1px black;
     box-shadow:-1px 0 15px -1px black;
     overflow: auto;
     background-color: #f1f1f1;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 10px;
 }
 
 .logoFooter {

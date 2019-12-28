@@ -1,7 +1,7 @@
 <?php
 
 require("../config/config.php");
-require("../api/base/fnQuery.php");
+require("../api/fnQuery.php");
 
 $response = (Object) [
 	"status" => false

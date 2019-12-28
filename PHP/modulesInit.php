@@ -40,11 +40,13 @@
 			#gestione di accedi area personale
 			if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
 
-				if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1) { //Sono l'admin
+				if($_SESSION['admin'] == 1) { //Sono l'admin
 					$menu_form .= '<a class="menuItem" href="areaPrivata.php">Pannello Amministrativo</a>'."\n";
 				} else {
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php">Area Personale</a></a>'."\n";
+					$menu_form .= '<a class="menuItem" href="areaPrivata.php">Area Personale</a>'."\n";
 				}
+
+				$menu_form .= '<a class="menuItem" href="../PHP/login/logout.php">Logout</a>'."\n";
 			} else { //non ho fatto il login oppure qualcosa è andato storto
 				$menu_form .= '   <a class="menuItem" href="login.php">Accedi</a>'."\n";
 			}
@@ -69,6 +71,58 @@
 
 			$output = file_get_contents("../HTML/paginaVuota.html");
 			$output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
+
+			return $output;
+		}
+
+		/**
+		 * Funzione per la creazione della lista dei biglietti acquistati
+		 * 
+		 * @return string l'HTML della pagina
+		 */
+		public static function bigliettiAcquistati(){
+
+			$utente = "";
+			$data = "";
+			$biglietti = "";
+			
+			$sql = "SELECT CONCAT(Nome, ' ', Cognome) AS Utente, NumGratis, NumRidotti, NumInteri, Data
+					FROM `BigliettiUtenti`
+					LEFT JOIN Utenti ON `Utente` = Utenti.Email";
+
+			global $dbh; // rendo visibile $dbh dichiarato nel file config.php
+
+			$query = query($dbh, $sql, null);
+			$output = "";
+			if($query->status) {
+				foreach($query->rows as $row) {
+
+					$output .= '<div class="acquisto">'."\n";
+					
+					if($_SESSION['admin'] == 1) {
+						$output .= '	<div>'."\n"
+									.'		<h4>Utente</h4>'."\n"
+									.'		<p>'.$row->Utente.'</p>'."\n"
+									.'	</div>'."\n";
+					}
+
+					$output .= '	<div>'."\n"
+								.'		<h4>Data acquisto</h4>'."\n"
+								.'		<p>'.$row->Data.'</p>'."\n"
+								.'	</div>'."\n"
+								.'  <div>'."\n"
+								.'		<h4>Biglietti acquistati</h4>'."\n"
+								.'		<ul>'."\n"
+								.'			<li>'.$row->NumGratis.' biglietti gratuiti</li>'."\n"
+								.'			<li>'.$row->NumRidotti.' biglietti ridotti</li>'."\n"
+								.'			<li>'.$row->NumInteri.' biglietti interi</li>'."\n"
+								.'		</ul>'."\n"
+								.'	</div>'."\n"
+								.'</div>';
+				}
+			} else {
+				$output = "Errore: ".$query->error;
+			}
 
 			return $output;
 		}

@@ -16,14 +16,14 @@ CREATE TABLE IF NOT EXISTS Utenti (
 
 CREATE TABLE IF NOT EXISTS Biglietti (
     Tipo varchar(20),
-    Prezzo decimal(3,2),
+    Prezzo decimal(5,2),
     PRIMARY KEY(Tipo)
 );
 
 CREATE TABLE IF NOT EXISTS Eventi (
     ID int(11) AUTO_INCREMENT,
     Nome varchar(50),
-    Prezzo decimal(3,2),
+    Prezzo decimal(5,2),
     Data date,
     Giorno varchar(10),
     PRIMARY KEY(ID)
@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS BigliettiUtenti (
     NumGratis int(2),
     NumRidotti int(2),
     NumInteri int(2),
+    Data date,
     PRIMARY KEY(NumeroOrdine)
 );
 
