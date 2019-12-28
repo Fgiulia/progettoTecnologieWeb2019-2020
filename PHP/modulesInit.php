@@ -41,9 +41,9 @@
 			if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
 
 				if($_SESSION['admin'] == 1) { //Sono l'admin
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php">Pannello Amministrativo</a>'."\n";
+					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Pannello Amministrativo</a>'."\n";
 				} else {
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php">Area Personale</a>'."\n";
+					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Area Personale</a>'."\n";
 				}
 
 				$menu_form .= '<a class="menuItem" href="../PHP/login/logout.php">Logout</a>'."\n";
@@ -98,7 +98,7 @@
 				foreach($query->rows as $row) {
 
 					$output .= '<div class="acquisto">'."\n";
-					
+
 					if($_SESSION['admin'] == 1) {
 						$output .= '	<div>'."\n"
 									.'		<h4>Utente</h4>'."\n"
