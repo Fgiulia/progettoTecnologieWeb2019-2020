@@ -88,7 +88,7 @@ fieldset{
     padding-bottom: 30px;
 }
 
-#loginBox, #registerBox {
+#loginBox, #registrationBox {
     display: flex;
     flex-direction: column;
     margin: 3% auto;
@@ -97,7 +97,7 @@ fieldset{
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
 }
 
-#registerForm{
+#registrationForm{
     padding: 1em 10%;
     margin: 0;
 }

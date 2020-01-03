@@ -19,6 +19,8 @@
         <link rel="stylesheet" media="print" href="" type="text/css" />
         <link rel="stylesheet" media="aural" href="" type="text/css" />
 		<link rel="stylesheet" href="../CSS/areaPrivata.css" type="text/css" />
+
+		<script src="../JS/registrati.js"></script>
 		
 	</head>
 
@@ -32,9 +34,9 @@
         <menu></menu>
 		
 		<div class="main">
-			<section id="registerBox" class="outerBox">
+			<section id="registrationBox" class="outerBox">
 				<h1>Crea il tuo account!</h1>
-				<form id="registerForm" class="innerBox " action="../PHP/login/registra.php" method="post" >
+				<form id="registrationForm" class="innerBox " action="../PHP/login/registra.php" onsubmit="checkRegistrazione()" method="post" >
 					<fieldset>
 						<legend>Dati personali</legend>
 						<p class="required">I campi marcati con (*) sono obbligatori</p>
@@ -48,8 +50,8 @@
 						<label for="cognome">Cognome*</label>
 						<input type="text" name="cognome" id="cognome" class="required" tabindex="3" required/>
 
-						<label for="cel">Telefono</label>
-						<input type="text" name="cel" id="cel" class="required" tabindex="4" />
+						<label for="cel">Telefono*</label>
+						<input type="text" name="cel" id="cel" class="required" tabindex="4" required/>
 
 						<label for="nascita">Data di nascita*</label>
 						<input type="date" name="nascita" id="nascita" class="required" tabindex="5" required />
@@ -58,12 +60,14 @@
 						<input type="password" name="password" id="password" class="required" tabindex="6" required/>
 
 						<label for="repeatpassword">Ripeti password*</label>
-						<input type="password" name="repeatpassword" id="repeatpassword" tabindex="7" required/>
+						<input type="password" name="ripetiPassword" id="repeatpassword" tabindex="7" required/>
 
 						<input type="submit" id="registerSubmit" value="Registrati" class="button internal-button" />
 					</fieldset>
 				</form>
 			</section>
+
+			<p id="error" class="errorMessage"></p>
 		</div>
 
 		<div id="footer">
