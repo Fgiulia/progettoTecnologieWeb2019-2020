@@ -3,7 +3,7 @@ require_once "../PHP/modulesInit.php";
 
 $output = file_get_contents("../HTML/login.html");
 $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
-$output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Login"),$output);
+$output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Accedi"),$output);
 
 if(!isset($_SESSION))
     session_start();

@@ -2,9 +2,9 @@
 	class modulesInit{
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
-			$breadcrumb = "Ti trovi in:";
+			$breadcrumb = "Ti trovi in: ";
 			foreach($sequenza as $element){
-				$breadcrumb .= " $element ";
+				$breadcrumb .= "$element ";
 			}
 			return "<p class=\"map-position\">$breadcrumb</p>";
 		}
@@ -22,7 +22,7 @@
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
 						.'  <div class="dropdown menuItem">'."\n"
-						.'	  <a href="" class="dropbtn">Animali</a>'."\n"
+						.'	  <p class="dropbtn">Animali</p>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
 						.'		  <a href="animali.php">Tutti gli animali</a>'."\n"
 						.'		  <a href="cuccioli.php">I cuccioli</a>'."\n"
