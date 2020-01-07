@@ -2,9 +2,9 @@
 	class modulesInit{
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
-			$breadcrumb = "Ti trovi in: Home ";
+			$breadcrumb = "Ti trovi in:";
 			foreach($sequenza as $element){
-				$breadcrumb .= "> $element ";
+				$breadcrumb .= " $element ";
 			}
 			return "<p class=\"map-position\">$breadcrumb</p>";
 		}
