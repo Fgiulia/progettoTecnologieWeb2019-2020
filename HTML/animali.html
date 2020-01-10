@@ -28,28 +28,27 @@
 	<menu></menu>
 	
 	<div id="ricerca">
-		<h1 class="titolo">SCOPRI TUTTI I NOSTRI ANIMALI</h1class="titolo">
-		<p></p>
-		<form id="formRicerca" action="" method="post">
+		<h1 class="titolo">I NOSTRI ANIMALI</h1 class="titolo">
+		<p>Scopri tutti gli animali presentinel nostro Parco e vieni a trovarli!</p>
+		<p>Scrivi il nome dell'animale che cerchi oppure seleziona una categoria dal men&ugrave; a tendina.</p>
+		<form id="formRicerca" action="animali.php" method="post">
             <input type="text" placeholder="Scrivi qui..." name="cerca" />
-
             <select name="scegliAnimali">
                 <option value="animali">Tutti gli animali</option>
                 <option value="mammiferi">Mammiferi</option>
                 <option value="rettili">Rettili</option>
                 <option value="uccelli">Uccelli</option>
             </select>
-            
             <button type="submit" id="inviaRicerca">Cerca</button>
         </form>
 	</div>
 	
 	<div id="animali">
-		<tuttiAnimali /> <!-- richiama il file php che legge dal database il prossimo evento organizzato -->
+		<tuttiAnimali></tuttiAnimali>
 	</div>
 	
 	<div id="footer">
-        <img class="logoFooter" src="../styles/images/logo-solo-nutria.svg" alt="logo del parco faunistico euganeo" />
+        <img class="logoFooter" src="../styles/images/logo-solo-nutria.png" alt="logo del parco faunistico euganeo" />
         <p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
     </div>
 </body>

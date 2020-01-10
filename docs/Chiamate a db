@@ -4,8 +4,7 @@ Esempio: voglio tutti gli utenti nel db
 
 $response = find("UtenteBean",null)
 
-Ritorna un oggetto con campi "status" (Bool) e "response" (array di oggetti). Quindi $response->status mi indica se la chiamata
-a db è andata a buon fine, mentre in $response->response ho l'array di oggetti.
+Ritorna un oggetto con campi "status" (Bool) e "response" (array di oggetti). Quindi $response->status mi indica se la chiamata a db è andata a buon fine, mentre in $response->response ho l'array di oggetti.
 Il primo utente sarà:
     $utente  =  $response->response[0];
 dove $utente è un oggetto 
@@ -27,5 +26,4 @@ $dbh è una variabile globale definita nel file config.php
 
 Ogni file php che usa quelle funzioni dovrà includere config.php, fnQuery.php e session_recovery.php.
 
-config.php è un file di configurazione, cercate di configurare il database con i dati presenti in quel file in modo da non doverlo
-modificare ad ogni pull.
+config.php è un file di configurazione, cercate di configurare il database con i dati presenti in quel file in modo da non doverlo modificare ad ogni pull.
