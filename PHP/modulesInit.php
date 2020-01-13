@@ -28,14 +28,14 @@
 						.'		  <a href="cuccioli.php">I cuccioli</a>'."\n"
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
-						.'  <a class="menuItem" href="">Eventi</a>'."\n"
+						.'  <a class="menuItem" href="Eventi.php">Eventi</a>'."\n"
 						.'  <div class="dropdown menuItem">'."\n"
-						.'	  <a href="" class="dropbtn">Informazioni</a>'."\n"
+						.'	  <a href="Info.php" class="dropbtn">Informazioni</a>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
-						.'		  <a href="">Contattaci</a>'."\n"
+						.'		  <a href="Info.php">Contattaci</a>'."\n"
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
-						.'  <a class="menuItem" href="">Acquista</a>'."\n";
+						.'  <a class="menuItem" href="acquista.php">Acquista</a>'."\n";
 
 			#gestione di accedi area personale
 			if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
