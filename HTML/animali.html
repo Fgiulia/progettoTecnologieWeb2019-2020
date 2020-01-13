@@ -1,57 +1,57 @@
 <DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" />
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Animali | Parco Faunistico Euganeo</title>
-	<meta name="title" content="Tutti gli animali del Parco Faunistico Euganeo" />
-	<meta name="description" content="pagina riguardante tutti gli animali del sito del Parco Faunistico Euganeo" />
-	<meta name="keywords" content="parco faunistico, zoo, animali, Padova, ricerca, mammiferi, rettili, uccelli" />
-	<meta name="language" content="italian it" />
-	<meta name="author" content="Giulia Fiorese" />
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Animali | Parco Faunistico Euganeo</title>
+		<meta name="title" content="Tutti gli animali del Parco Faunistico Euganeo" />
+		<meta name="description" content="pagina riguardante tutti gli animali del sito del Parco Faunistico Euganeo" />
+		<meta name="keywords" content="parco faunistico, zoo, animali, Padova, ricerca, mammiferi, rettili, uccelli" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="Giulia Fiorese" />
 
-	<link rel="icon" type="images/png" href="/styles/images/logo-solo-nutria.png" />
-	
-	<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
-	<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
-	
-	<script src="../PHP/modulesInit.php"></script>
-	<script src="../PHP/sqlInteractios.php"></script>
-</head>
+		<link rel="icon" type="images/png" href="/styles/images/logo-solo-nutria.png" />
+		
+		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
+		<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+		
+		<script src="../PHP/modulesInit.php"></script>
+		<script src="../PHP/sqlInteractios.php"></script>
+	</head>
 
-<body>
-	<div id="header">
-		<a href="home.php"><img class="logoHeader" src="../styles/images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
-		<a href="home.php"><h1 class="nomeSito">PARCO FAUNISTICO EUGANEO</h1></a>
-  </div>
-    
-	<breadcrumb></breadcrumb>
-	<menu></menu>
-	
-	<div id="ricerca">
-		<h1 class="titolo">I NOSTRI ANIMALI</h1 class="titolo">
-		<p>Scopri tutti gli animali presentinel nostro Parco e vieni a trovarli!</p>
-		<p>Cerca l'animale che cerchi scrivendo il nome oppure seleziona una categoria dal men&ugrave; a tendina.</p>
-		<p><strong>* Attenzione! Il nome dell'animale deve essere completo. *</strong></p>
-		<form id="formRicerca" action="animali.php" method="post">
-            <input type="text" placeholder="Scrivi qui..." id="cerca" name="cerca" />
-            <select name="scegliFamiglia">
-                <option value="animali">Tutti gli animali</option>
-                <option value="mammiferi">Mammiferi</option>
-                <option value="rettili">Rettili</option>
-                <option value="uccelli">Uccelli</option>
-            </select>
-            <button type="submit" id="inviaRicerca">Cerca</button>
-        </form>
-	</div>
-	
-	<div id="animali">
-		<tuttiAnimali></tuttiAnimali>
-	</div>
-	
-	<div id="footer">
-        <img class="logoFooter" src="../styles/images/logo-solo-nutria.png" alt="logo del parco faunistico euganeo" />
-        <p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
-    </div>
-</body>
+	<body>
+		<div id="header">
+			<a href="home.php"><img class="logoHeader" src="../styles/images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
+			<a href="home.php"><h1 class="nomeSito">PARCO FAUNISTICO EUGANEO</h1></a>
+		</div>
+		
+		<breadcrumb></breadcrumb>
+		<menu></menu>
+		
+		<div id="ricerca">
+			<h1 class="titolo">I NOSTRI ANIMALI</h1 class="titolo">
+			<p>Scopri tutti gli animali presentinel nostro Parco e vieni a trovarli!</p>
+			<p>Cerca l'animale che vuoi vedere, scrivendo il nome oppure seleziona una categoria dal men&ugrave; a tendina.</p>
+			<p><strong>* Attenzione! Il nome dell'animale deve essere completo. *</strong></p>
+			<form id="formRicerca" action="animali.php" method="post">
+				<input type="text" placeholder="Scrivi qui..." id="cerca" name="cerca" />
+				<select id="scegliFamiglia" name="scegliFamiglia">
+					<option value="animali">Tutti gli animali</option>
+					<option value="mammiferi">Mammiferi</option>
+					<option value="rettili">Rettili</option>
+					<option value="uccelli">Uccelli</option>
+				</select>
+				<button type="submit" id="inviaRicerca">Cerca</button>
+			</form>
+		</div>
+		
+		<div id="animali">
+			<tuttiAnimali></tuttiAnimali>
+		</div>
+		
+		<div id="footer">
+			<img class="logoFooter" src="../styles/images/logo-solo-nutria.png" alt="logo del parco faunistico euganeo" />
+			<p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
+		</div>
+	</body>
 </html>

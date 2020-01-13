@@ -8,7 +8,6 @@ $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
 $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb('Animali > Tutti gli animali'),$output);
 
 $cercaTesto = $_POST['cerca'];
-$cercaFamiglia = $_POST['scegliFamiglia'];
 
 $oggettoPagina = new sqlInteractions();
 $connessione = $oggettoPagina->apriConnessioneDB();
@@ -18,11 +17,12 @@ if($connessione){
         $animali = $oggettoPagina->getSelect($cercaTesto);
     }
     else{
-        if($cercaFamiglia!=null){
-            $animali = $oggettoPagina->getFamily($cercaFamiglia);
+        $cercaTesto = $_POST['scegliFamiglia'];
+        if($cercaTesto!=null){
+            $animali = $oggettoPagina->getFamily($cercaTesto);
         }
         else{
-            $animali = null;
+            $animali = $oggettoPagina->getSelect($cercaTesto);
         }
     }
 
@@ -30,7 +30,10 @@ if($connessione){
         $stringaAnimali = "<p>Non abbiamo trovato nessun animale collegato alla tua ricerca.</p><p>Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo.</p>";
     }
     else{
-        $stringaAnimali = "<dl id=\"risultatiAnimali\">";
+        if($cercaTesto!=null){
+            $stringaAnimali = "<p>Risultati per \"".$cercaTesto."\"</p>";
+        }
+        $stringaAnimali .= "<dl id=\"risultatiAnimali\">";
         foreach($animali as $animals){
 			$stringaAnimali .= "<dt>".$animals['Ritratto']."</dt><dt>".$puppies['NomeComune']."</dt><dt>".$puppies['NomeScientifico']."</dt>";
 			}

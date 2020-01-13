@@ -3,9 +3,9 @@
 class sqlInteractions {
 #credenziali DB
     const host = 'localhost';
-	const user = 'root';
-	const pass = 'giulia95';
-	const dbName = 'zoo';
+	const user = 'admin';
+	const pass = 'admin';
+	const dbName = 'Zoo';
 #inizializzazione di variabili
 	public $connection = null;
 	public $testo = null;
