@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
 	
 	<script src="../PHP/modulesInit.php"></script>
+	<script src="../PHP/sqlInteractios.php"></script>
 </head>
 
 <body>
@@ -30,10 +31,11 @@
 	<div id="ricerca">
 		<h1 class="titolo">I NOSTRI ANIMALI</h1 class="titolo">
 		<p>Scopri tutti gli animali presentinel nostro Parco e vieni a trovarli!</p>
-		<p>Scrivi il nome dell'animale che cerchi oppure seleziona una categoria dal men&ugrave; a tendina.</p>
+		<p>Cerca l'animale che cerchi scrivendo il nome oppure seleziona una categoria dal men&ugrave; a tendina.</p>
+		<p><strong>* Attenzione! Il nome dell'animale deve essere completo. *</strong></p>
 		<form id="formRicerca" action="animali.php" method="post">
-            <input type="text" placeholder="Scrivi qui..." name="cerca" />
-            <select name="scegliAnimali">
+            <input type="text" placeholder="Scrivi qui..." id="cerca" name="cerca" />
+            <select name="scegliFamiglia">
                 <option value="animali">Tutti gli animali</option>
                 <option value="mammiferi">Mammiferi</option>
                 <option value="rettili">Rettili</option>

@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS EventiUtenti (
 );
 
 CREATE TABLE IF NOT EXISTS Animali (
-    NomeComune varchar(20),
+    NomeComune varchar(30),
     NomeProprio varchar(20) NULL,
     NomeScientifico varchar(50),
     Famiglia varchar(20),
