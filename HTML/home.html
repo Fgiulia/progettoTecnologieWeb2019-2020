@@ -1,64 +1,56 @@
 <DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" />
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Home | Parco Faunistico Euganeo</title>
+		<meta name="title" content="Parco Faunistico Euganeo - sito web" />
+		<meta name="description" content="homepage del sito del Parco Faunistico Euganeo" />
+		<meta name="keywords" content="parco faunistico, zoo, animali, Padova" />
+		<meta name="language" content="italian it" />
+		<meta name="author" content="TecWeb Group" />
+		
+		<link rel="icon" type="images/png" href="../styles/images/logo-solo-nutria.png" />
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Home | Parco Faunistico Euganeo</title>
-	<meta name="title" content="Parco Faunistico Euganeo - sito web" />
-	<meta name="description" content="homepage del sito del Parco Faunistico Euganeo" />
-	<meta name="keywords" content="parco faunistico, zoo, animali, Padova" />
-	<meta name="language" content="italian it" />
-	<meta name="author" content="TecWeb Group" />
-	
-	<link rel="icon" type="images/png" href="../styles/images/logo-solo-nutria.png" />
+		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
+		<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+	</head>
 
-	<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
-	<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
-	
-	<link rel="stylesheet" media="screen" href="" type="text/css" />
-	<link rel="stylesheet" media="handheld,screen and(max-width:480px),only screen and(max-device-width:480px)" href="" type="text/css" />
-	<link rel="stylesheet" media="print" href="" type="text/css" />
-	<link rel="stylesheet" media="aural" href="" type="text/css" />
-	
-	<script src="../PHP/modulesInit.php"></script>
-</head>
+	<body>
+		<div id="header">
+			<a href="home.php"><img class="logoHeader" src="../styles/images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
+			<a href="home.php"><h1 class="nomeSito">PARCO FAUNISTICO EUGANEO</h1></a>
+		</div>
 
-<body>
-	<div id="header">
-		<a href="home.php"><img class="logoHeader" src="../styles/images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
-		<a href="home.php"><h1 class="nomeSito">PARCO FAUNISTICO EUGANEO</h1></a>
-  	</div>
+		<breadcrumb></breadcrumb>
+		<menu></menu>
+		
+		<div id="presentazione">
+			<p>Il parco nasce dalla nostra passione per gli animali. &Eacute; stato aperto al pubblico nel dicembre 2019, ma esisteva gi&aacute; da molti anni come parco privato. Esteso su 40.000 metri quadrati, ospita decine di specie animali alle quali si &eacute; cercato di ricreare l'habitat ideale, tra stagni, rocce, prati, alberi e arbusti che offrono al visitatore colori spettacolari in tutte le stagioni.</p>
+			<p>Il principale scopo del Parco faunistico Euganeo &eacute; quello di salvaguardare le specie minacciate di estinzione. Per raggiungere tale scopo queste strutture lavorano coordinate in Piani di conservazione, in cui l’istruzione e l’educazione ambientale sono attività imprescindibili. Il nostro Parco Faunistico lavora per essere il pi&uacute; vicino possibile a tali piani di conservazione.</p>
+		</div>
+		
+		<div id="boxProssimiEventi">
+			<prossimiEventi></prossimiEventi>
+		</div>
 
-	<breadcrumb></breadcrumb>
-	<menu></menu>
-	
-	<div id="presentazione">
-		<p>Il parco nasce dalla nostra passione per gli animali. &Eacute; stato aperto al pubblico nel dicembre 2019, ma esisteva gi&aacute; da molti anni come parco privato. Esteso su 40.000 metri quadrati, ospita decine di specie animali alle quali si &eacute; cercato di ricreare l'habitat ideale, tra stagni, rocce, prati, alberi e arbusti che offrono al visitatore colori spettacolari in tutte le stagioni.</p>
-		<p>Il principale scopo del Parco faunistico Euganeo &eacute; quello di salvaguardare le specie minacciate di estinzione. Per raggiungere tale scopo queste strutture lavorano coordinate in Piani di conservazione, in cui l’istruzione e l’educazione ambientale sono attività imprescindibili. Il nostro Parco Faunistico lavora per essere il pi&uacute; vicino possibile a tali piani di conservazione.</p>
-	</div>
-	
-	<div id="boxProssimiEventi">
-		<prossimiEventi></prossimiEventi> <!-- richiama il file php che legge dal database il prossimo evento organizzato -->
-	</div>
+		<div id="regole">
+			<p>Nella speranza che la visita al Parco non sia soltanto per i visitatori una bella giornata da trascorrere con la famiglia all'aria aperta, ma sia anche un'opportunit&aacute; per poter conoscere ed osservare una piccola parte del patrimonio faunistico della Terra, &eacute; opportuno rispettare alcune piccole regole, al fine di non deturpare il paesaggio:
+			<ul>
+				<li>&Eacute; VIETATO L'INGRESSO AGLI ANIMALI DOMESTICI (per disposizioni sanitarie)</li>
+				<li>GETTARE I RIFIUTI NEGLI APPOSITI CONTENITORI</li>
+				<li>NON OLTREPASSARE GLI STECCATI E NON DARE DA MANGIARE AGLI ANIMALI</li>
+				<li>I BAMBINI DEVONO ESSERE SORVEGLIATI ED ACCOMPAGNATI DA UNA PERSONA ADULTA</li>
+			</ul></p>
+		</div>
 
-	<div id="regole">
-		<p>Nella speranza che la visita al Parco non sia soltanto per i visitatori una bella giornata da trascorrere con la famiglia all'aria aperta, ma sia anche un'opportunit&aacute; per poter conoscere ed osservare una piccola parte del patrimonio faunistico della Terra, &eacute; opportuno rispettare alcune piccole regole, al fine di non deturpare il paesaggio:
-		<ul>
-			<li>&Eacute; VIETATO L'INGRESSO AGLI ANIMALI DOMESTICI (per disposizioni sanitarie)</li>
-			<li>GETTARE I RIFIUTI NEGLI APPOSITI CONTENITORI</li>
-			<li>NON OLTREPASSARE GLI STECCATI E NON DARE DA MANGIARE AGLI ANIMALI</li>
-			<li>I BAMBINI DEVONO ESSERE SORVEGLIATI ED ACCOMPAGNATI DA UNA PERSONA ADULTA</li>
-		</ul></p>
-	</div>
-
-	<div id="immaginiHome">
-		<p><img src="../styles/images/foto_home_1.jpg" alt="immagine del recinto dell'orso bruno" /></p>
-		<p><img src="../styles/images/foto_home_2.jpeg" alt="immagine delle cascatelle presenti nel parco" /></p>
-	</div>
-	
-	<div id="footer">
-        <img class="logoFooter" src="../styles/images/logo-solo-nutria.png" alt="logo del parco faunistico euganeo" />
-        <p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
-    </div>
-</body>
+		<div id="immaginiHome">
+			<p><img src="../styles/images/foto_home_1.jpg" alt="immagine del recinto dell'orso bruno" /></p>
+			<p><img src="../styles/images/foto_home_2.jpeg" alt="immagine delle cascatelle presenti nel parco" /></p>
+		</div>
+		
+		<div id="footer">
+			<img class="logoFooter" src="../styles/images/logo-solo-nutria.png" alt="logo del parco faunistico euganeo" />
+			<p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
+		</div>
+	</body>
 </html>

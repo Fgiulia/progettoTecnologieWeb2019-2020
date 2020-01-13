@@ -1,6 +1,6 @@
 <?php
     require_once "../PHP/modulesInit.php";
-    require_once "../PHP/sqlInteractios.php";
+    require_once "../PHP/sqlInteractions.php";
 
     $oggettoPagina = new sqlInteractions();
     $connessione = $oggettoPagina->apriConnessioneDB();
@@ -14,7 +14,7 @@
         else{
             $stringaCuccioli = "<dl id=\"risultatiCuccioli\">";
             foreach($cuccioli as $puppies){
-                $stringaCuccioli .= "<dt>".$puppies['NomeProprio']."</dt><dt>".$puppies['Ritratto']."</dt><dt>".$puppies['NomeComune']."</dt>";
+                $stringaCuccioli .= "<dt>".$puppies['NomeProprio']."</dt><dt>".$puppies['Ritratto']."</dt><dt>".$puppies['NomeComune']."</dt><dt>".$puppies['Descrizione']."</dt>";
                 }
                 $stringaCuccioli .= "</dl>";
         }

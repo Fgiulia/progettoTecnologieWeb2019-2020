@@ -1,6 +1,6 @@
 <?php
     require_once "../PHP/modulesInit.php";
-    require_once "../PHP/sqlInteractios.php";
+    require_once "../PHP/sqlInteractions.php";
 
 #se non vengono inseriti filtri di ricerca
     if(!(isset($_POST['cerca']) || isset($_POST['scegliFamiglia']))){
@@ -36,7 +36,7 @@
                 $stringaAnimali = "<dl id=\"risultatiAnimali\">";
             }
             foreach($animali as $animals){
-                $stringaAnimali .= "<dt>".$animals['Ritratto']."</dt><dt>".$animals['NomeComune']."</dt><dt>".$animals['NomeScientifico']."</dt>";
+                $stringaAnimali .= "<dt>".$animals['Ritratto']."</dt><dt>".$animals['NomeComune']."</dt><dt>".$animals['NomeScientifico']."</dt><dt>".$animals['Descrizione']."</dt>";
                 }
                 $stringaAnimali .= "</dl>";
         }
