@@ -2,10 +2,18 @@
     require_once "../PHP/modulesInit.php";
     require_once "../PHP/sqlInteractions.php";
 
+#controllo sul testo in input
+    $validText=true;
+    if(isset($_POST['cerca'])){
+        if(!preg_match("/^[a-zA-Z ]*$/",$_POST['cerca']) || empty(trim($_POST["nome"]))){
+            $validText = false;
+        }
+    }
+
 #se non vengono inseriti filtri di ricerca
     if(!(isset($_POST['cerca']) || isset($_POST['scegliFamiglia']))){
-        $_POST['cerca']=null;
-        $_POST['scegliFamiglia']=null;
+        $_POST['cerca'] = null;
+        $_POST['scegliFamiglia'] = null;
     }
 
     $oggettoPagina = new sqlInteractions();
@@ -43,6 +51,11 @@
     }
     else{
         $stringaAnimali = "<p class=\"msgErr\">Connessione al database degli animali fallita.</p><p class=\"msgErr\">Per favore, riprova.</p>";
+    }
+
+#se la ricerca non è valida
+    if($validText==false){
+        $stringaAnimali = "<p class=\"msgErr\">La ricerca non &egrave; valida, per favore riprova.</p>";
     }
 
     $output = file_get_contents("../HTML/animali.html");

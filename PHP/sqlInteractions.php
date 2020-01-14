@@ -21,7 +21,7 @@
 		}
 	}
     
-#funzione per la lettura da DB dei cuccioli
+#funzione per la lettura da DB dela pagina "cuccioli"
 	public function getCuccioli(){
 		$query = 'SELECT NomeComune, NomeProprio, Ritratto, Descrizione FROM Animali WHERE Famiglia=\'Cuccioli\' ORDER BY NomeComune ASC';
 		$queryResult = mysqli_query($this->connection,$query);
@@ -39,7 +39,7 @@
 		}
 	}
 
-#funzione per la lettura da DB con passaggio del nome (ricerca da input)
+#funzione per la lettura da DB con testo in input (ricerca per parole-chiave)
 	public function getSelect($testo) {
 		if($testo==null){
 			$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
@@ -62,7 +62,7 @@
 		}
 	}
 
-#funzione per la lettura da DB con passaggio della famiglia (menu a tendina)
+#funzione per la lettura da DB con passaggio della famiglia (ricerca da menu a tendina)
     public function getFamily($famiglia) {
         if($famiglia==null || $famiglia=='animali'){
             $family = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
