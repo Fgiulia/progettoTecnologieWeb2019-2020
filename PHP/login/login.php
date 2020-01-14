@@ -39,6 +39,7 @@ try {
 						$response->status = 2;
 
 						$_SESSION["admin"] = $utente->FlAdmin;
+						$_SESSION["user"] = $mail;
 					} else {
 						$response->response = "Email e/o password sbagliati.";
 					}

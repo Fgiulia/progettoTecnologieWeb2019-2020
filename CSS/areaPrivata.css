@@ -153,6 +153,19 @@ fieldset{
     margin-top: 100px;
 }
 
+.containerAcquisti {
+    float:left;
+    width:78%;
+    text-align: center;
+    display: flex;
+}
+
+.contentAcquisti {
+    max-height: 600px;
+    overflow: scroll;
+    width: 49%;
+}
+
 .acquisto {
     margin: 20px;
     padding: 1em;

@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS EventiUtenti (
     Utente varchar(30),
     NumeroPersone int(2),
     IDEvento int(11),
+    Data date,
     PRIMARY KEY(NumeroPrenotazione)
 );
 

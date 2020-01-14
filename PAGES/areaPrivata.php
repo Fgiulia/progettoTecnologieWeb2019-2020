@@ -6,6 +6,7 @@ require("../PHP/api/fnQuery.php");
 require("../PHP/api/fnFind.php");
 
 require_once "../PHP/modulesInit.php";
+require_once "../PHP/sqlInteractions.php";
 
 if(!isset($_SESSION))
 	session_start();
@@ -20,6 +21,8 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 	$sideNav = "";
 	$breadcrumb = "";
 
+
+
 	if($_SESSION["admin"] == 1) {
 
 		$sideNav = "<div id='nav'>"."\n"
@@ -30,7 +33,6 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."	   <li><a href='areaPrivata.php?pageName=animali'>Animali</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=acquisti'>Acquisti</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
-					."	   <li><a href='../PHP/login/logout.php'>Logout</a></li>"."\n"
 					."	</ul>"."\n"
 					."</div>"."\n";
 		
@@ -54,6 +56,15 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."	   <li><a href='datiPersonali.php'>Dati personali</a></li>"."\n"
 					."	</ul>"."\n"
 					."</div>"."\n";
+
+		$contentItems = "<div id='content'>"."\n"
+					."	<h1 class='titolo'>Area privata</h1>"."\n"
+					."	<h3>Azioni rapide</h3>"."\n"
+					."	<div id='container'>"."\n"
+					."		<a class='azioniRapide' href=''>boh</a>"."\n"
+					."		<a class='azioniRapide' href=''>boh</a>"."\n"
+					."	</div>"."\n"
+					."</div>"."\n";
 	}
 
 	$output = str_replace("<sideNav></sideNav>",$sideNav, $output);
@@ -66,14 +77,6 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 
 		switch($pageName) {
 			case "principale":
-				$contentItems = "<div id='content'>"."\n"
-								."	<h1 class='titolo'>Area privata</h1>"."\n"
-								."	<h3>Azioni rapide</h3>"."\n"
-								."	<div id='container'>"."\n"
-								."		<a class='azioniRapide' href=''>boh</a>"."\n"
-								."		<a class='azioniRapide' href=''>boh</a>"."\n"
-								."	</div>"."\n"
-								."</div>"."\n";
 				$breadcrumb = "";
 				break;
 			case "eventi":
@@ -86,12 +89,17 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				break;
 			case "acquisti":
 				$breadcrumb = " -> Gestione acquisti";
+				$contentItems = "<div class='containerAcquisti'>"."\n"
+								."	<div class='contentAcquisti'>"."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n"
+								."	<div class='contentAcquisti'>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n"
+								."</div>"."\n";
 				break;
 			case "biglietti":
 				$contentItems = "<div id='content'>"."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n";
 				$breadcrumb = " -> Biglietti acquistati";
 				break;
 			case "prenotazioni":
+				$contentItems = "<div id='content'>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n";
 				$breadcrumb = " -> Eventi prenotati";
 				break;
 			case "messaggi":

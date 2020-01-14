@@ -83,7 +83,44 @@
 			}
             return $animale;
         }
-    }
+	}
+
+	/**
+	 * Funzione per la lettura da DB degli acquisti
+	 * 
+	 * @param String $user l'email dell'utente di cui si vogliono gli acuisti. Se passato null ritorna tutti gli acquisti
+	 * 
+	 * @return Array di oggetti che rappresentano un record della query
+	*/
+	public function getAcquisti($user) {
+		$sql = "SELECT CONCAT(Nome, ' ', Cognome) AS Utente, NumGratis, NumRidotti, NumInteri, Data
+				FROM `BigliettiUtenti`
+				LEFT JOIN Utenti ON `Utente` = Utenti.Email ";
+		
+		if(isset($user)) {
+			$sql .= "WHERE Utente = $user";
+		}
+
+		$result = mysqli_query($this->connection,$sql);
+
+		if(mysqli_num_rows($result)==0){
+			return null;
+		}
+		else{
+			$acquisti = array();
+			while($row=mysqli_fetch_assoc($result)){
+				$item = (Object) [
+					"Utente" => $row['Utente']
+					,"NumGratis" => $row['NumGratis']
+					,"NumRidotti" => $row['NumRidotti']
+					,"NumInteri" => $row['NumInteri']
+					,"Data" => $row['Data']
+				];
+				array_push($acquisti,$item);
+			}
+            return $acquisti;
+        }
+	}
 }
 
 ?>

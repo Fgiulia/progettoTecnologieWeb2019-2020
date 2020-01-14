@@ -126,5 +126,58 @@
 
 			return $output;
 		}
+
+		/**
+		 * Funzione per la creazione della lista dei eventi acquistati
+		 * 
+		 * @return string l'HTML della pagina
+		 */
+		public static function eventiPrenotati(){
+
+			$utente = "";
+			$data = "";
+			$biglietti = "";
+			
+			$sql = "SELECT CONCAT(Utenti.Nome, ' ', Cognome) AS Utente, Eventi.Nome as Evento, Prezzo, EventiUtenti.Data as DataAcquisto, NumeroPersone
+					FROM `EventiUtenti`
+					LEFT JOIN Utenti ON `Utente` = Utenti.Email
+					LEFT JOIN Eventi ON IDEvento = Eventi.ID";
+
+			global $dbh; // rendo visibile $dbh dichiarato nel file config.php
+
+			$query = query($dbh, $sql, null);
+			$output = "";
+			if($query->status) {
+				foreach($query->rows as $row) {
+
+					$output .= '<div class="acquisto">'."\n";
+
+					if($_SESSION['admin'] == 1) {
+						$output .= '	<div>'."\n"
+									.'		<h4>Utente</h4>'."\n"
+									.'		<p>'.$row->Utente.'</p>'."\n"
+									.'	</div>'."\n";
+					}
+
+					$output .= '	<div>'."\n"
+								.'		<h4>Evento</h4>'."\n"
+								.'		<p>'.$row->Evento.'</p>'."\n"
+								.'	</div>'."\n"
+								.'  <div>'."\n"
+								.'		<h4>Dati acquisto</h4>'."\n"
+								.'		<ul>'."\n"
+								.'			<li>Data: '.$row->DataAcquisto.'</li>'."\n"
+								.'			<li>'.$row->NumeroPersone.' persone</li>'."\n"
+								.'			<li>Prezzo: € '.$row->Prezzo.'</li>'."\n"
+								.'		</ul>'."\n"
+								.'	</div>'."\n"
+								.'</div>';
+				}
+			} else {
+				$output = "Errore: ".$query->error;
+			}
+
+			return $output;
+		}
 	}
 ?>
