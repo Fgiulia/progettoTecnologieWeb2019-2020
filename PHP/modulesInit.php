@@ -32,7 +32,7 @@
 						.'  <div class="dropdown menuItem">'."\n"
 						.'	  <a href="Info.php" class="dropbtn">Informazioni</a>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
-						.'		  <a href="Info.php">Contattaci</a>'."\n"
+						.'		  <a href="Info.php#contatti">Contattaci</a>'."\n"
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
 						.'  <a class="menuItem" href="acquista.php">Acquista</a>'."\n";
