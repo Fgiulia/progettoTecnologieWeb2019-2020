@@ -21,8 +21,6 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 	$sideNav = "";
 	$breadcrumb = "";
 
-
-
 	if($_SESSION["admin"] == 1) {
 
 		$sideNav = "<div id='nav'>"."\n"
@@ -53,7 +51,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."	   <li><a href='areaPrivata.php?pageName=biglietti'>Biglietti acquistati</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=prenotazioni'>Eventi prenotati</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
-					."	   <li><a href='datiPersonali.php'>Dati personali</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=datiPersonali'>Dati personali</a></li>"."\n"
 					."	</ul>"."\n"
 					."</div>"."\n";
 
@@ -61,8 +59,9 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."	<h1 class='titolo'>Area privata</h1>"."\n"
 					."	<h3>Azioni rapide</h3>"."\n"
 					."	<div id='container'>"."\n"
-					."		<a class='azioniRapide' href=''>boh</a>"."\n"
-					."		<a class='azioniRapide' href=''>boh</a>"."\n"
+					."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Messaggi</a>"."\n"
+					."		<a class='azioniRapide' href='acquista.php'>Acquista biglietti</a>"."\n"
+					."		<a class='azioniRapide' href='Info.php'>Contatta l'amministratore</a>"."\n"
 					."	</div>"."\n"
 					."</div>"."\n";
 	}
@@ -84,14 +83,16 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				$breadcrumb = " -> Gestione eventi";
 				break;
 			case "animali":
-				$query = find("AnimaleBean", null);
 				$breadcrumb = " -> Gestione animali";
+				$contentItems = "<div class='content'>"."\n"
+								.modulesInit::getAnimali()
+								."</div>"."\n";
 				break;
 			case "acquisti":
 				$breadcrumb = " -> Gestione acquisti";
 				$contentItems = "<div class='containerAcquisti'>"."\n"
-								."	<div class='contentAcquisti'>"."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n"
-								."	<div class='contentAcquisti'>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n"
+								."	<div class='contentAcquisti'><h3>Biglietti</h3> "."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n"
+								."	<div class='contentAcquisti'><h3>Eventi</h3>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n"
 								."</div>"."\n";
 				break;
 			case "biglietti":
@@ -103,8 +104,43 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				$breadcrumb = " -> Eventi prenotati";
 				break;
 			case "messaggi":
-				//$query = find("MessaggioBean", null);
+				$contentItems = "<div id='content'> Messaggi dell'utente </div>"."\n";
 				$breadcrumb = " -> Messaggi";
+				break;
+			case "datiPersonali":
+				$response = find("UtenteBean",(Object)['Email' => $_SESSION["user"]]);
+
+				if($response->status) {
+
+					$utente = $response->response[0];
+
+					$contentItems ="<div id='content'>"."\n"
+								."	<h2>I tuoi dati personali</h2>"."\n"
+								."	<div>"."\n"
+								."		<div>"."\n"
+								."			<span>Nome:</span>"."\n"
+								."			<span id='nome'>".$utente->Nome."</span>"."\n"
+								."		</div>"."\n"
+								."		<div>"."\n"
+								."			<span>Cognome:</span>"."\n"
+								."			<span id='cognome'>".$utente->Cognome."</span>"."\n"
+								."		</div>"."\n"
+								."		<div>"."\n"
+								."			<span>Data di nascita:</span>"."\n"
+								."			<span id='data'>".$utente->DataNascita."</span>"."\n"
+								."		</div>"."\n"
+								."		<div>"."\n"
+								."			<span>E-mail:</span>"."\n"
+								."			<span id='email'>".$utente->Email."</span>"."\n"
+								."		</div>"."\n"
+								."	</div>"."\n"
+								."</div>"."\n";
+				}
+				
+				$breadcrumb = " -> I tuoi dati";
+				break;
+			default:
+				$breadcrumb = "";
 				break;
 		}
 	}

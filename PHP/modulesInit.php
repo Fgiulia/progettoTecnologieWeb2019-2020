@@ -41,7 +41,7 @@
 			if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
 
 				if($_SESSION['admin'] == 1) { //Sono l'admin
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Pannello Amministrativo</a>'."\n";
+					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Pannello Amministratore</a>'."\n";
 				} else {
 					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Area Personale</a>'."\n";
 				}
@@ -82,17 +82,22 @@
 		 */
 		public static function bigliettiAcquistati(){
 
-			$utente = "";
-			$data = "";
-			$biglietti = "";
+			if(!isset($_SESSION))
+				session_start();
+			
+			$user = $_SESSION["user"];
 			
 			$sql = "SELECT CONCAT(Nome, ' ', Cognome) AS Utente, NumGratis, NumRidotti, NumInteri, Data
 					FROM `BigliettiUtenti`
 					LEFT JOIN Utenti ON `Utente` = Utenti.Email";
 
+			if($_SESSION["admin"] == 0) {
+				$sql .= " WHERE BigliettiUtenti.Utente = ? ";
+			}
+
 			global $dbh; // rendo visibile $dbh dichiarato nel file config.php
 
-			$query = query($dbh, $sql, null);
+			$query = query($dbh, $sql, [$user]);
 			$output = "";
 			if($query->status) {
 				foreach($query->rows as $row) {
@@ -134,9 +139,8 @@
 		 */
 		public static function eventiPrenotati(){
 
-			$utente = "";
-			$data = "";
-			$biglietti = "";
+			if(!isset($_SESSION))
+				session_start();
 			
 			$sql = "SELECT CONCAT(Utenti.Nome, ' ', Cognome) AS Utente, Eventi.Nome as Evento, Prezzo, EventiUtenti.Data as DataAcquisto, NumeroPersone
 					FROM `EventiUtenti`
@@ -145,7 +149,16 @@
 
 			global $dbh; // rendo visibile $dbh dichiarato nel file config.php
 
-			$query = query($dbh, $sql, null);
+			if(!isset($_SESSION))
+				session_start();
+
+			if($_SESSION["admin"] == 0) {
+				$sql .= " WHERE EventiUtenti.Utente = ? ";
+			}
+
+			$user = $_SESSION["user"];
+
+			$query = query($dbh, $sql, [$user]);
 			$output = "";
 			if($query->status) {
 				foreach($query->rows as $row) {
@@ -175,6 +188,46 @@
 				}
 			} else {
 				$output = "Errore: ".$query->error;
+			}
+
+			return $output;
+		}
+
+		/**
+		* Funzione per la creazione della lista dei eventi acquistati
+		* 
+		* @return string l'HTML della pagina
+		*/
+		public static function getAnimali() {
+
+			if(!isset($_SESSION))
+				session_start();
+
+			$query = find("AnimaleBean", null);
+			$output = "";
+			if($query->status) {
+				foreach($query->response as $row) {
+
+					$output .= '<div class="acquisto">'."\n";
+
+					$output .= "	<img class='logoHeader' src='../".$row->Ritratto."' alt='immagine animale' />"."\n"
+								.'	<div>'."\n"
+								.'		<h4>Nome</h4>'."\n"
+								.'		<p>'.$row->NomeComune.'</p>'."\n"
+								.'	</div>'."\n"
+								.'	<div>'."\n"
+								.'		<h4>Nome scientifico</h4>'."\n"
+								.'		<p>'.$row->NomeScientifico.'</p>'."\n"
+								.'	</div>'."\n"
+								.'	<div>'."\n"
+								.'	<form action="../PHP/eliminaAnimale.php" method="post">'."\n"
+								.'		<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'	</form>'."\n"
+								.'	</div>'."\n"
+								.'</div>';
+				}
+			} else {
+				$output = "Errore: ".$query->response;
 			}
 
 			return $output;

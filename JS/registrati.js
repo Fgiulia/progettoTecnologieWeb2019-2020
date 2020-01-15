@@ -25,7 +25,7 @@ function checkRegistrazione() {
 
     let diff_ms = Date.now() - new Date(document.getElementById("nascita").value);
     let age_dt = new Date(diff_ms); 
-  
+
     if(Math.abs(age_dt.getUTCFullYear() - 1970 < 18)) {
         text += "Devi essere maggiorenne per poterti iscrivere.";
     }

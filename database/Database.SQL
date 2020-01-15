@@ -4,7 +4,7 @@ USE Zoo;
 
 CREATE TABLE IF NOT EXISTS Utenti (
     Email varchar(30),
-    Password varchar(20),
+    Password varchar(100),
     Nome varchar(50),
     Cognome varchar(50),
     Telefono varchar(15),

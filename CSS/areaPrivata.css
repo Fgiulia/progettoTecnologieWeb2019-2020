@@ -63,7 +63,7 @@ textarea#descrizioneAnimale {
 .outerBox  input[type="password"],
 .outerBox  input[type="number"],
 .outerBox  input[type="file"],
-textarea #descrizioneAnimale,
+.outerBox  textarea,
 .outerBox  select
 {
     display: inline-block;
