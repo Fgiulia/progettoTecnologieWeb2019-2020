@@ -5,7 +5,7 @@
 #controllo sul testo in input
     $validText=true;
     if(isset($_POST['cerca'])){
-        if(!preg_match("/^[a-zA-Z ]*$/",$_POST['cerca']) || empty(trim($_POST["nome"]))){
+        if(!preg_match("/^[a-zA-Z ]*$/",$_POST['cerca'])){
             $validText = false;
         }
     }
