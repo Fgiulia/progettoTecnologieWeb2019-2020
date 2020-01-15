@@ -194,7 +194,7 @@
 		}
 
 		/**
-		* Funzione per la creazione della lista dei eventi acquistati
+		* Funzione per la creazione della lista degli animali dell'area privata
 		* 
 		* @return string l'HTML della pagina
 		*/
@@ -222,6 +222,48 @@
 								.'	<div>'."\n"
 								.'	<form action="../PHP/eliminaAnimale.php" method="post">'."\n"
 								.'		<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'	</form>'."\n"
+								.'	</div>'."\n"
+								.'</div>';
+				}
+			} else {
+				$output = "Errore: ".$query->response;
+			}
+
+			return $output;
+		}
+
+		/**
+		* Funzione per la creazione della lista degli eventi dell'area privata
+		* 
+		* @return string l'HTML della pagina
+		*/
+		public static function getEventi() {
+
+			if(!isset($_SESSION))
+				session_start();
+
+			$query = find("EventoBean", null);
+			$output = "";
+			if($query->status) {
+				foreach($query->response as $row) {
+
+					$output .= '<div class="acquisto">'."\n";
+
+					$time = strtotime($row->Data);
+					$dateInLocal = date("d-m-Y", $time);
+
+					$output .=	'	<div>'."\n"
+								.'		<h4>Nome evento</h4>'."\n"
+								.'		<p>'.$row->Nome.'</p>'."\n"
+								.'	</div>'."\n"
+								.'	<div>'."\n"
+								.'		<h4>Data evento</h4>'."\n"
+								.'		<p>'.$dateInLocal.'</p>'."\n"
+								.'	</div>'."\n"
+								.'	<div>'."\n"
+								.'	<form action="../PHP/eliminaEvento.php" method="post">'."\n"
+								.'		<button type="submit" name="eliminaEvento" value="'.$row->ID.'" class="button internal-button">Elimina</button>'."\n"
 								.'	</form>'."\n"
 								.'	</div>'."\n"
 								.'</div>';

@@ -79,12 +79,14 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				$breadcrumb = "";
 				break;
 			case "eventi":
-				$query = find("EventoBean", null);
 				$breadcrumb = " -> Gestione eventi";
+				$contentItems = "<div id='content'>"."\n"
+								.modulesInit::getEventi()
+								."</div>"."\n";
 				break;
 			case "animali":
 				$breadcrumb = " -> Gestione animali";
-				$contentItems = "<div class='content'>"."\n"
+				$contentItems = "<div id='content'>"."\n"
 								.modulesInit::getAnimali()
 								."</div>"."\n";
 				break;
