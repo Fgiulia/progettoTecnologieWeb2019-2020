@@ -4,7 +4,7 @@
     const host = 'localhost';
 	const user = 'admin';
 	const pass = 'admin';
-	const dbName = 'Zoo';
+	const dbName = 'zoo';
 #inizializzazione di variabili
 	public $connection = null;
 	public $testo = null;
@@ -83,6 +83,12 @@
 			}
             return $animale;
         }
+	}
+
+#funzione per la lettura da DB dei prossimi (max 2) eventi
+	public function getEventi(){
+#		if(){}
+		return ;
 	}
 
 	/**

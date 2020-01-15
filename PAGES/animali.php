@@ -34,7 +34,7 @@
             }
         }
         if($animali==null){
-            $stringaAnimali = "<p class=\"msgErr\">Non abbiamo trovato nessun animale collegato alla tua ricerca.</p><p class=\"msgErr\">Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo.</p>";
+            $stringaAnimali = "<p class=\"msgErr\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;</p><p class=\"msgErr\">Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
         }
         else{
             if($cercaTesto!=null){
@@ -50,12 +50,12 @@
         }
     }
     else{
-        $stringaAnimali = "<p class=\"msgErr\">Connessione al database degli animali fallita.</p><p class=\"msgErr\">Per favore, riprova.</p>";
+        $stringaAnimali = "<p class=\"msgErr\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
     }
 
 #se la ricerca non è valida
     if($validText==false){
-        $stringaAnimali = "<p class=\"msgErr\">La ricerca non &egrave; valida, per favore riprova.</p>";
+        $stringaAnimali = "<p class=\"msgErr\">La ricerca non &egrave; valida&comma; per favore riprova&period;</p>";
     }
 
     $output = file_get_contents("../HTML/animali.html");
