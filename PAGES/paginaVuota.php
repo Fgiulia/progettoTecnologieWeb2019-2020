@@ -11,7 +11,7 @@ $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
 $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb(),$output);
 
 if(isset($_SESSION["messagge"])) {
-    $mess = $_SESSION["messagge"]->response.". Verrai reindirizzato alla Homepage.";
+    $mess = $_SESSION["messagge"]->response;
 
     $output = str_replace("<messaggio></messaggio>","<p class='messaggio'>$mess</p>",$output);
     unset($_SESSION["messagge"]);

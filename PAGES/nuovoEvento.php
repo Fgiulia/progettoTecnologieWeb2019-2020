@@ -7,13 +7,13 @@ if(!isset($_SESSION))
 if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
     $output = file_get_contents("../HTML/nuovoEvento.html");
     $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
-    $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Pannello Amministratore > Eventi"),$output);
+	$output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Pannello Amministratore > Eventi"),$output);
     
     echo $output;
 }  else {
 	$response = (Object) [
 		"status" => -1
-		,"response" => "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login."
+		,"response" => "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login&period;"
 	];
 	$_SESSION["logged"] = $response;
 
