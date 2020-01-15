@@ -2,7 +2,7 @@
 	class modulesInit{
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
-			$breadcrumb = "Ti trovi in: ";
+			$breadcrumb = "Ti trovi in&colon; ";
 			foreach($sequenza as $element){
 				$breadcrumb .= "$element ";
 			}
@@ -22,17 +22,17 @@
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
 						.'  <div class="dropdown menuItem">'."\n"
-						.'	  <p class="dropbtn">Animali</p>'."\n"
+						.'	  <a class="dropbtn" href="">Animali</a>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
 						.'		  <a href="animali.php">Tutti gli animali</a>'."\n"
 						.'		  <a href="cuccioli.php">I cuccioli</a>'."\n"
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
-						.'  <a class="menuItem" href="Eventi.php">Eventi</a>'."\n"
+						.'  <a class="menuItem" href="eventi.php">Eventi</a>'."\n"
 						.'  <div class="dropdown menuItem">'."\n"
-						.'	  <a href="Info.php" class="dropbtn">Informazioni</a>'."\n"
+						.'	  <a href="info.php" class="dropbtn">Informazioni</a>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
-						.'		  <a href="Info.php#contatti">Contattaci</a>'."\n"
+						.'		  <a href="info.php#contatti">Contattaci</a>'."\n"
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
 						.'  <a class="menuItem" href="acquista.php">Acquista</a>'."\n";
