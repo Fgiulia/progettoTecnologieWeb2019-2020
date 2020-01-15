@@ -10,10 +10,11 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
     $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Pannello amministratore > Animali"),$output);
 
     echo $output;
-}  else {
+}
+else {
     $response = (Object) [
 		"status" => -1
-		,"response" => "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login."
+		,"response" => "Attenzione: non hai effettuato il login&comma; verrai reindirizzato alla pagina di login&period;"
 	];
 	$_SESSION["logged"] = $response;
 

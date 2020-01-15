@@ -1,5 +1,5 @@
 <?php
-require_once "../PHP/modulesInit.php";
+    require_once "../PHP/modulesInit.php";
 
 require("../PHP/config/config.php");
 require("../PHP/api/beansMaps.php");
@@ -11,5 +11,5 @@ $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Regis
 
 echo str_replace("<menu></menu>",modulesInit::menu(),$output);
 
-unset($_SESSION["registrazione"]);
+    unset($_SESSION["registrazione"]);
 ?>

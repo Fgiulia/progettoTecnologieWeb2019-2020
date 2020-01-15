@@ -3,16 +3,20 @@
 
     <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Info</title>
+        <title>Informazioni &vert; Parco Faunistico Euganeo</title>
         <meta name="title" content="Info" />
         <meta name="description" content="Indicazioni stradali e contatti" />
         <meta name="keywords" content="parco faunistico, zoo, animali, Padova, info parco, contatti" />
 		<meta name="language" content="italian it" />
         <meta name="author" content="Erik Tabacchi" />
         
-        <link rel="icon" type="images/png" href="/styles/images/logo-solo-nutria.png" />
+        <link rel="icon" type="images/png" href="../styles/images/logo-solo-nutria.png" />
+
         <link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
-	    <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+        
+        <script src="../JS/ControlloForm.js"></script>
+
     </head>
 
     <body>
@@ -32,7 +36,8 @@
             </ul>
         </div>
 
-        <p>Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br /></p>
+        <p>Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br /></p>
+        
         <!--Importare mappa da Goole Maps qui-->
 
         <div id="contatti">
@@ -45,14 +50,14 @@
         </div>
         <span>In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</span>
         
-        <form id="formContatti" action="" method="post">
+        <form id="formContatti" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
             <p>I campi marcati con * sono obbligatori</p>
             
             <label for="nome">Nome *</label>
             <input type="text" name="nome" id="nome" tabindex="1" required="required" />
 
             <label for="cognome">Cognome *</label>
-            <input type="text" name="Cognome" id="Cognome" tabindex="2" required="required" />
+            <input type="text" name="cognome" id="cognome" tabindex="2" required="required" />
 
             <label for="email">*Email</label>
             <input type="email" name="email" id="email" tabindex="3" required="required" />
