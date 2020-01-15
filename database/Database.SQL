@@ -59,6 +59,15 @@ CREATE TABLE IF NOT EXISTS Animali (
     PRIMARY KEY(NomeComune)
 );
 
+CREATE TABLE IF NOT EXISTS Messaggi (
+    Nome varchar(30),
+    Cognome varchar(30),
+    Email varchar(30),
+    NumeroTelefono varchar(10),
+    Messaggio  text,
+    PRIMARY KEY(Email)
+);
+
 ALTER TABLE EventiUtenti
 ADD CONSTRAINT FK_eventoUtenti FOREIGN KEY (Utente)
 REFERENCES Utenti(Email)
