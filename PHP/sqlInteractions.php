@@ -8,7 +8,8 @@
 #inizializzazione di variabili
 	public $connection = null;
 	public $testo = null;
-    public $sezioneParco = null;
+	public $sezioneParco = null;
+	public $data = null;
     
 #funzione per la connessione ad DB	
 	public function apriConnessioneDB(){
@@ -160,13 +161,22 @@ public function getSectionPark($sezioneParco) {
 	}
 }
 
-#funzione per la lettura da DB dei prossimi (max 2) eventi
-	public function getEventi(){
-#		if(){}
-		return ;
+#funzione per la lettura da DB del prossimo evento del mese
+	public function getEventi($data){
+		$selectEventi = 'SELECT Nome, Prezzo, Data, Giorno FROM Eventi WHERE Data=\''.$data.'\'';
+		$selectEventiResult = mysqli_query($this->connection,$selectEventi);
+
+		if(mysqli_num_rows($selectEventiResult)==0){
+		#	$newData = DATEADD(DD,1,$data);
+		#	$this->getEventi($newData);
+			return null;
+		}
+		else{
+			$evento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data'],'Giorno'=>$row['Giorno']);
+			return $evento;
+		}
 	}
 
-	
    /**
 	 * Funzione per la lettura da DB degli acquisti
 	 * 
