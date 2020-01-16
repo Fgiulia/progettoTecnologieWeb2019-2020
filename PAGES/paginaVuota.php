@@ -7,7 +7,7 @@
 
     $output = file_get_contents("../HTML/paginaVuota.html");
     $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
-    $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb(),$output);
+    $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Stai per essere reindirizzato..."),$output);
 
     if(isset($_SESSION["messagge"])) {
         $mess = $_SESSION["messagge"]->response;
