@@ -248,6 +248,63 @@ $beansMaps->EventoUtenteBean = (Object) [
 	]
 ];
 
+# MessaggioBean
+$beansMaps->MessaggioBean = (Object) [
+	"dbh" => $dbh
+	,"sqlTableName" => "Messaggi"
+	,"sqlFieldsMap" => (Object) [
+		"ID" => (Object) [
+			"name" => "Id"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
+		,"Nome" => (Object) [
+			"name" => "Nome"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
+		,"Cognome" => (Object) [
+			"name" => "Cognome"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
+		,"Email" => (Object) [
+			"name" => "Email"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
+		,"Data" => (Object) [
+			"name" => "Data"
+			,"options" => (Object) [
+				"type" => "date"
+			]
+		]
+		,"NumeroTelefono" => (Object) [
+			"name" => "Data"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
+		,"Messaggio" => (Object) [
+			"name" => "Messaggio"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
+	]
+	,"pksMap" => [
+		"ID" => (Object) [
+			"options" => (Object) [
+				"autoincrement" => true
+			]
+		]
+	]
+];
+
 # AnimaleBean
 $beansMaps->AnimaleBean = (Object) [
 	"dbh" => $dbh

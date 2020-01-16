@@ -234,6 +234,46 @@
 		}
 
 		/**
+		* Funzione per la creazione della lista dei messaggi dell'area privata
+		* 
+		* @return string l'HTML della pagina
+		*/
+		public static function getMessaggi() {
+
+			if(!isset($_SESSION))
+				session_start();
+
+			$query = find("MessaggioBean", [$_SESSION["user"]]);
+			$output = "";
+			if($query->status) {
+				foreach($query->response as $row) {
+
+					$output .= '<div class="acquisto">'."\n";
+
+					$output .= "	<img class='logoHeader' src='../".$row->Ritratto."' alt='immagine animale' />"."\n"
+								.'	<div>'."\n"
+								.'		<h4>Nome</h4>'."\n"
+								.'		<p>'.$row->NomeComune.'</p>'."\n"
+								.'	</div>'."\n"
+								.'	<div>'."\n"
+								.'		<h4>Nome scientifico</h4>'."\n"
+								.'		<p>'.$row->NomeScientifico.'</p>'."\n"
+								.'	</div>'."\n"
+								.'	<div>'."\n"
+								.'	<form action="../PHP/eliminaAnimale.php" method="post">'."\n"
+								.'		<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'	</form>'."\n"
+								.'	</div>'."\n"
+								.'</div>';
+				}
+			} else {
+				$output = "Errore: ".$query->response;
+			}
+
+			return $output;
+		}
+
+		/**
 		* Funzione per la creazione della lista degli eventi dell'area privata
 		* 
 		* @return string l'HTML della pagina

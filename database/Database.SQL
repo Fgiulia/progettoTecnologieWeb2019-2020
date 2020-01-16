@@ -60,12 +60,13 @@ CREATE TABLE IF NOT EXISTS Animali (
 );
 
 CREATE TABLE IF NOT EXISTS Messaggi (
+    ID int AUTO_INCREMENT,
     Nome varchar(30),
     Cognome varchar(30),
     Email varchar(30),
     NumeroTelefono varchar(10),
     Messaggio  text,
-    PRIMARY KEY(Email)
+    PRIMARY KEY(ID)
 );
 
 ALTER TABLE EventiUtenti
