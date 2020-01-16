@@ -45,9 +45,16 @@
 						<label for="nomeScientifico">* Nome scientifico</label>
 						<input type="text" name="nomeScientifico" id="nomeScientifico" tabindex="3" required />
 
-						<label for="famiglia">  Famiglia</label>
-						<input type="text" name="famiglia" id="famiglia" tabindex="4" />
-
+						<label for="famiglia">* Famiglia</label>
+						<input type="text" name="famiglia" id="famiglia" tabindex="4" required>
+<!--					<select name="famiglia" id="famiglia" tabindex="4" required>
+							<opzion value="" disabled selection>Scegli una famiglia...</opzion>
+							<option value="mammiferi">Mammiferi</option>
+							<option value="rettili">Rettili</option>
+							<option value="uccelli">Uccelli</option>
+							<option value="cuccioli">Cuccioli</option>
+						</select>
+-->
 						<label for="sezioneParco">  Sezione del parco</label>
 						<input type="text" name="sezioneParco" id="sezioneParco" tabindex="5" />
 
@@ -55,7 +62,7 @@
 						<input type="file" name="immagineAnimale" id="immagineAnimale" tabindex="6" />
 
 						<label for="descrizione">  Descrizione</label>
-						<textarea id="descrizioneAnimale" type="text" name="descrizione" id="descrizione" tabindex="7"></textarea>
+						<textarea type="text" name="descrizione" id="descrizione" tabindex="7"></textarea>
 
 						<input type="submit" id="submitAnimale" value="Salva" />
 					</fieldset>

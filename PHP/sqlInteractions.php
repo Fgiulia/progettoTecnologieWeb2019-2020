@@ -8,7 +8,7 @@
 #inizializzazione di variabili
 	public $connection = null;
 	public $testo = null;
-    public $famiglia = null;
+    public $sezioneParco = null;
     
 #funzione per la connessione ad DB	
 	public function apriConnessioneDB(){
@@ -20,7 +20,26 @@
 			return true;
 		}
 	}
-    
+
+#funzione per l'inserimento nel DB di un nuovo animale
+	public function insertAnimal(){
+		$nomeComune = $_POST['nomeComune'];
+		$nomeProprio = $_POST['nomeProprio'];
+		$nomeScientifico = $_POST['nomeScientifico'];
+		$famiglia = $_POST['famiglia'];
+		$sezione = $_POST['sezioneParco'];
+		$descrizione = $_POST['descrizione'];
+		$ritratto = $_POST['immagineAnimale'];
+
+		$insert = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descrizione','$ritratto')";
+		if ($this->connection->query($insert) === TRUE){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 #funzione per la lettura da DB dela pagina "cuccioli"
 	public function getCuccioli(){
 		$query = 'SELECT NomeComune, NomeProprio, Ritratto, Descrizione FROM Animali WHERE Famiglia=\'Cuccioli\' ORDER BY NomeComune ASC';
@@ -63,14 +82,14 @@
 	}
 
 #funzione per la lettura da DB con passaggio della famiglia (ricerca da menu a tendina)
-    public function getFamily($famiglia) {
-        if($famiglia==null || $famiglia=='animali'){
-            $family = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
+    public function getFamily($sezioneParco) {
+        if($sezioneParco==null || $sezioneParco=='animali'){
+            $section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
         }
         else{
-			$family = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia=\''.$famiglia.'\' ORDER BY NomeComune ASC';
+			$section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
         }
-        $familyResult = mysqli_query($this->connection,$family);
+        $familyResult = mysqli_query($this->connection,$section);
 
         if(mysqli_num_rows($familyResult)==0){
 			return null;
@@ -84,6 +103,29 @@
             return $animale;
         }
 	}
+
+#funzione per la lettura da DB con passaggio della sezione del parco (ricerca da menu a tendina)
+public function getSectionPark($sezioneParco) {
+	if($sezioneParco==null){
+		$section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
+	}
+	else{
+		$section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+	}
+	$sectionResult = mysqli_query($this->connection,$section);
+
+	if(mysqli_num_rows($sectionResult)==0){
+		return null;
+	}
+	else{
+		$animale = array();
+		while($row=mysqli_fetch_assoc($sectionResult)){
+			$arrayAnimaleSingolo = array('NomeComune'=>$row['NomeComune'],'NomeScientifico'=>$row['NomeScientifico'],'Ritratto'=>$row['Ritratto'],'Descrizione'=>$row['Descrizione']);
+			array_push($animale,$arrayAnimaleSingolo);
+		}
+		return $animale;
+	}
+}
 
 #funzione per la lettura da DB dei prossimi (max 2) eventi
 	public function getEventi(){
