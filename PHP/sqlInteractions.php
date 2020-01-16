@@ -31,8 +31,41 @@
 		$descrizione = $_POST['descrizione'];
 		$ritratto = $_POST['immagineAnimale'];
 
-		$insert = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descrizione','$ritratto')";
-		if ($this->connection->query($insert) === TRUE){
+		$insertAnimale = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descrizione','$ritratto')";
+		if ($this->connection->query($insertAnimale) === TRUE){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+#funzione per l'inserimento nel DB di un nuovo messaggio
+	public function insertMessage(){
+		$nome = $_POST['nome'];
+		$cognome = $_POST['cognome'];
+		$email = $_POST['email'];
+		$numTel = $_POST['numeroTelefono'];
+		$messaggio = $_POST['messaggio'];
+
+		$insertMessaggio = "INSERT INTO Messaggi() VALUES ('$nome','$cognome','$email','$numTel','$messaggio')";
+		if ($this->connection->query($insertMessaggio) === TRUE){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+#funzione per l'inserimento nel DB di un nuovo evento
+	public function insertEvent(){
+		$nome = $_POST['nome'];
+		$prezzo = $_POST['prezzo'];
+		$data = $_POST['data'];
+		$giorno = $_POST['giorno'];
+
+		$insertEvento = "INSERT INTO Eventi() VALUES ('$nome','$prezzo','$data','$giorno')";
+		if ($this->connection->query($insertEvento) === TRUE){
 			return true;
 		}
 		else{

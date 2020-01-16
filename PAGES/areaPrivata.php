@@ -24,9 +24,9 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 	if($_SESSION["admin"] == 1) {
 
 		$sideNav = "<div id='nav'>"."\n"
-					."	<h3>Pannello gestione</h3>"."\n"
+					."	<h3>Pannello Gestione</h3>"."\n"
 					."	<ul>"."\n"
-					."	   <li><a href='areaPrivata.php?pageName=principale'>Area privata</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=principale'>Area Privata</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=eventi'>Eventi</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=animali'>Animali</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=acquisti'>Acquisti</a></li>"."\n"
@@ -35,33 +35,33 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."</div>"."\n";
 		
 		$contentItems = "<div id='content'>"."\n"
-						."	<h1 class='titolo'>Area privata</h1>"."\n"
-						."	<h3>Azioni rapide</h3>"."\n"
+						."	<h1 class='titolo'>Area Privata</h1>"."\n"
+						."	<h3>Azioni Rapide</h3>"."\n"
 						."	<div id='container'>"."\n"
-						."		<a class='azioniRapide' href='nuovoEvento.php'>Nuovo evento</a>"."\n"
-						."		<a class='azioniRapide' href='nuovoAnimale.php'>Nuovo animale</a>"."\n"
+						."		<a class='azioniRapide' href='nuovoEvento.php'>Nuovo Evento</a>"."\n"
+						."		<a class='azioniRapide' href='nuovoAnimale.php'>Nuovo Animale</a>"."\n"
 						."	</div>"."\n"
 						."</div>"."\n";
 
 	} else {
 		$sideNav = "<div id='nav'>"."\n"
-					."	<h3>Pannello gestione</h3>"."\n"
+					."	<h3>Pannello Gestione</h3>"."\n"
 					."	<ul>"."\n"
-					."	   <li><a href='areaPrivata.php?pageName=principale'>Area privata</a></li>"."\n"
-					."	   <li><a href='areaPrivata.php?pageName=biglietti'>Biglietti acquistati</a></li>"."\n"
-					."	   <li><a href='areaPrivata.php?pageName=prenotazioni'>Eventi prenotati</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=principale'>Area Privata</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=biglietti'>Biglietti Acquistati</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=prenotazioni'>Eventi Prenotati</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
-					."	   <li><a href='areaPrivata.php?pageName=datiPersonali'>Dati personali</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=datiPersonali'>Dati Personali</a></li>"."\n"
 					."	</ul>"."\n"
 					."</div>"."\n";
 
 		$contentItems = "<div id='content'>"."\n"
-					."	<h1 class='titolo'>Area privata</h1>"."\n"
+					."	<h1 class='titolo'>Area Privata</h1>"."\n"
 					."	<h3>Azioni rapide</h3>"."\n"
 					."	<div id='container'>"."\n"
 					."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Messaggi</a>"."\n"
-					."		<a class='azioniRapide' href='acquista.php'>Acquista biglietti</a>"."\n"
-					."		<a class='azioniRapide' href='Info.php'>Contatta l'amministratore</a>"."\n"
+					."		<a class='azioniRapide' href='acquista.php'>Acquista Biglietti</a>"."\n"
+					."		<a class='azioniRapide' href='info.php'>Contatta l&apos;Amministratore</a>"."\n"
 					."	</div>"."\n"
 					."</div>"."\n";
 	}
@@ -79,19 +79,19 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				$breadcrumb = "";
 				break;
 			case "eventi":
-				$breadcrumb = " -> Gestione eventi";
+				$breadcrumb = " >> Gestione eventi";
 				$contentItems = "<div id='content'>"."\n"
 								.modulesInit::getEventi()
 								."</div>"."\n";
 				break;
 			case "animali":
-				$breadcrumb = " -> Gestione animali";
+				$breadcrumb = " >> Gestione animali";
 				$contentItems = "<div id='content'>"."\n"
 								.modulesInit::getAnimali()
 								."</div>"."\n";
 				break;
 			case "acquisti":
-				$breadcrumb = " -> Gestione acquisti";
+				$breadcrumb = " >> Gestione acquisti";
 				$contentItems = "<div class='containerAcquisti'>"."\n"
 								."	<div class='contentAcquisti'><h3>Biglietti</h3> "."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n"
 								."	<div class='contentAcquisti'><h3>Eventi</h3>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n"
@@ -103,11 +103,11 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				break;
 			case "prenotazioni":
 				$contentItems = "<div id='content'>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n";
-				$breadcrumb = " -> Eventi prenotati";
+				$breadcrumb = " >> Eventi prenotati";
 				break;
 			case "messaggi":
 				$contentItems = "<div id='content'> Messaggi dell'utente </div>"."\n";
-				$breadcrumb = " -> Messaggi";
+				$breadcrumb = " >> Messaggi";
 				break;
 			case "datiPersonali":
 				$response = find("UtenteBean",(Object)['Email' => $_SESSION["user"]]);
@@ -139,7 +139,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 								."</div>"."\n";
 				}
 				
-				$breadcrumb = " -> I tuoi dati";
+				$breadcrumb = " >> I tuoi dati";
 				break;
 			default:
 				$breadcrumb = "";
@@ -154,13 +154,13 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 } else {
 	$response = (Object) [
 		"status" => -1
-		,"response" => "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login."
+		,"response" => "Attenzione&colon; non hai effettuato il login&perio; Verrai reindirizzato alla pagina di login&period;"
 	];
 	$_SESSION["logged"] = $response;
 
 	echo modulesInit::setMessaggio($response->response, true);
 
-	header("refresh:3; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
+	header("refresh:5; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
 }
 
 ?>
