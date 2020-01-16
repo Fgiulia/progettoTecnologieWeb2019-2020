@@ -30,30 +30,31 @@
 		<div class="main">
 			<section id="registerBox" class="outerBox">
 				<h1>Aggiungi un animale</h1>
-				<form id="registerForm" class="innerBox" action="" method="post">
+				<inserimentoNuovoAnimale></inserimentoNuovoAnimale>
+				<form id="registerForm" class="innerBox" action="nuovoAnimale.php" method="post">
 					<fieldset>
 						<legend>Dati generali</legend>
 						<p>I campi marcati con * sono obbligatori</p>
 
-						<label for="nomeComune">*Nome comune</label>
+						<label for="nomeComune">* Nome comune</label>
 						<input type="text" name="nomeComune" id="nomeComune" tabindex="1" required />
 
-						<label for="nomeProprio">Nome proprio</label>
+						<label for="nomeProprio">  Nome proprio</label>
 						<input type="text" name="nomeProprio" id="nomeProprio" tabindex="2" />
 
-						<label for="nomeScientifico">*None scientifico</label>
+						<label for="nomeScientifico">* Nome scientifico</label>
 						<input type="text" name="nomeScientifico" id="nomeScientifico" tabindex="3" required />
 
-						<label for="famiglia">Famiglia</label>
+						<label for="famiglia">  Famiglia</label>
 						<input type="text" name="famiglia" id="famiglia" tabindex="4" />
 
-						<label for="sezioneParco">Sezione del parco</label>
+						<label for="sezioneParco">  Sezione del parco</label>
 						<input type="text" name="sezioneParco" id="sezioneParco" tabindex="5" />
 
-						<label for="Immagine">Immagine</label>
+						<label for="Immagine">  Immagine</label>
 						<input type="file" name="immagineAnimale" id="immagineAnimale" tabindex="6" />
 
-						<label for="descrizione">Descrizione</label>
+						<label for="descrizione">  Descrizione</label>
 						<textarea id="descrizioneAnimale" type="text" name="descrizione" id="descrizione" tabindex="7"></textarea>
 
 						<input type="submit" id="submitAnimale" value="Salva" />

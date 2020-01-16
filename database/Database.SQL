@@ -1,4 +1,4 @@
-CREATE DATABASE Zoo;
+CREATE DATABASE IF NOT EXISTS Zoo;
 
 USE Zoo;
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS Animali (
     SezioneParco varchar(20),
     Descrizione text,
     Ritratto varchar(100),
-    PRIMARY KEY(NomeComune)
+    PRIMARY KEY(NomeComune,Famiglia)
 );
 
 CREATE TABLE IF NOT EXISTS Messaggi (
