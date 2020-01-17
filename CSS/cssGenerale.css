@@ -70,10 +70,8 @@ a:hover {
     background-color: #4CAF50;
     color:white;
     text-decoration: none;
-    
     margin-left: 0.3em;
     font-weight: 500;
-    
     box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
     padding: 0.2em 0.3em;
     border: 3px solid transparent;
@@ -99,7 +97,7 @@ a:hover {
 .map-position {
     background: #616161;
     padding: 9px;
-    border: 1px solid black;
+    color: white;
 }
 
 /* STILE DELL'HEADER */
