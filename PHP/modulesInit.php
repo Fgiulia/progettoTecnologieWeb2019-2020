@@ -226,7 +226,7 @@
 
 					$output .= '<div class="acquisto">'."\n";
 
-					$output .= "	<img class='logoHeader' src='../".$row->Ritratto."' alt='immagine animale' />"."\n"
+					$output .= "	<img class='logoHeader' src='".$row->Ritratto."' alt='immagine animale' />"."\n"
 								.'	<div>'."\n"
 								.'		<h4>Nome</h4>'."\n"
 								.'		<p>'.$row->NomeComune.'</p>'."\n"
