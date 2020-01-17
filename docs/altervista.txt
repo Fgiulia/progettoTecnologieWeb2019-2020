@@ -1,0 +1,9 @@
+Login al pannello di controllo
+Username: parcofaunisticoeuganeopd
+Password: 5ZmxpRfGQ5Mz
+
+Login via FTP
+Server: ftp.parcofaunisticoeuganeopd.altervista.org
+Username: parcofaunisticoeuganeopd
+Password: 5ZmxpRfGQ5Mz
+Tipo di connessione: PASV (modalità passiva)
