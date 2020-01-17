@@ -30,17 +30,10 @@
 		
 		<div id="filtroEventi">
 			<p>Filtra per giorno della settimana</p>
-			<form action="Eventi.php" method="POST">
-				<select>
-					<option selected >tutti i giorni</option>
-					<option>Lunedì</option>
-					<option>Martedì</option>
-					<option>Mercoledì</option>
-					<option>Giovedì</option>
-					<option>Venerdì</opton>
-					<option>Sabato</option>
-					<option>Domenica</option>
-				</select>           
+			<form id="FiltraData" action="../PAGES/eventi.php" method="POST">
+				<label for="cercaData"> Filtra per data </label>
+				<input type="date" id = "cercaData" name = "cercaData"/>
+				<input type="submit" id="FiltraEventi" value="Cerca" />  
 			</form>
 		</div>
 

@@ -31,7 +31,7 @@ $response = (Object) [
         }
     }
     else
-        echo "impossibile connetersi al database";
+        echo "impossibile connettersi al database";
     
     echo $response->response;
     
