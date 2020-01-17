@@ -10,8 +10,6 @@
     $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
 
     echo $output;
-    
-    echo $output;
 
     unset($_SESSION["registrazione"]);
 ?>
