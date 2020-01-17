@@ -9,5 +9,7 @@
     $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Registrazione"),$output);
     $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
     
+    echo $output;
+
     unset($_SESSION["registrazione"]);
 ?>

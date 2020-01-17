@@ -4,7 +4,7 @@
     const host = 'localhost';
 	const user = 'admin';
 	const pass = 'admin';
-	const dbName = 'zoo';
+	const dbName = 'Zoo';
 #inizializzazione di variabili
 	public $connection = null;
 	public $data = null;
@@ -163,7 +163,7 @@
 		}
 	}
 
-   /**
+	/**
 	 * Funzione per la lettura da DB degli acquisti
 	 * 
 	 * @param String $user l'email dell'utente di cui si vogliono gli acuisti. Se passato null ritorna tutti gli acquisti

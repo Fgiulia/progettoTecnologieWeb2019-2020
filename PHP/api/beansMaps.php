@@ -254,7 +254,7 @@ $beansMaps->MessaggioBean = (Object) [
 	,"sqlTableName" => "Messaggi"
 	,"sqlFieldsMap" => (Object) [
 		"ID" => (Object) [
-			"name" => "Id"
+			"name" => "ID"
 			,"options" => (Object) [
 				"type" => null
 			]
@@ -277,14 +277,8 @@ $beansMaps->MessaggioBean = (Object) [
 				"type" => null
 			]
 		]
-		,"Data" => (Object) [
-			"name" => "Data"
-			,"options" => (Object) [
-				"type" => "date"
-			]
-		]
 		,"NumeroTelefono" => (Object) [
-			"name" => "Data"
+			"name" => "NumeroTelefono"
 			,"options" => (Object) [
 				"type" => null
 			]
