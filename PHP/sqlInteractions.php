@@ -31,8 +31,13 @@
 		$famiglia = $_POST['famiglia'];
 		$sezione = $_POST['sezioneParco'];
 		$descrizione = $_POST['descrizioneAnimale'];
-		$ritratto = $_FILES['immagineAnimale'];
-		
+		if(is_uploaded_file($_FILES['immagineAnimale']['tmp_name'])){
+			$destination = "../styles/".$_FILES['immagineAnimale']['tmp_name'];
+			if(move_uploaded_file($_FILES['immagineAnimale']['tmp_name'],$destination)){
+				$ritratto = "../styles/".$_FILES['immagineAnimale']['tmp_name'];
+			}
+		}
+
 		$insertAnimale = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descrizione','$ritratto')";
 		if ($this->connection->query($insertAnimale) === TRUE){
 			return true;

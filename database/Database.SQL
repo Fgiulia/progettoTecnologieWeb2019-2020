@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS Animali (
     Famiglia varchar(20),
     SezioneParco varchar(20),
     Descrizione text,
-    Ritratto blob,
+    Ritratto text,
     PRIMARY KEY(NomeComune,Famiglia)
 );
 
