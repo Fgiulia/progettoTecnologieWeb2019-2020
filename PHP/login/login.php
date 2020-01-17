@@ -22,6 +22,8 @@ try {
 						Email 
 						,Password
 						,FlAdmin
+						,Nome
+						,Cognome
 					FROM Utenti
 					WHERE Email = ?";
 			$query = query($dbh, $sql, $params);
@@ -40,6 +42,7 @@ try {
 
 						$_SESSION["admin"] = $utente->FlAdmin;
 						$_SESSION["user"] = $mail;
+						$_SESSION["utente"] = $utente->Nome." ".$utente->Cognome;
 					} else {
 						$response->response = "Email e/o password sbagliati.";
 					}

@@ -21,6 +21,8 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 	$sideNav = "";
 	$breadcrumb = "";
 
+	$utente = $_SESSION["utente"];
+
 	if($_SESSION["admin"] == 1) {
 
 		$sideNav = "<div id='nav'>"."\n"
@@ -37,6 +39,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 		$contentItems = "<div id='content'>"."\n"
 						."	<h1 class='titolo'>Area Privata</h1>"."\n"
 						."	<h3>Azioni Rapide</h3>"."\n"
+						."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
 						."	<div id='container'>"."\n"
 						."		<a class='azioniRapide' href='nuovoEvento.php'>Nuovo Evento</a>"."\n"
 						."		<a class='azioniRapide' href='nuovoAnimale.php'>Nuovo Animale</a>"."\n"
@@ -58,6 +61,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 		$contentItems = "<div id='content'>"."\n"
 					."	<h1 class='titolo'>Area Privata</h1>"."\n"
 					."	<h3>Azioni rapide</h3>"."\n"
+					."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
 					."	<div id='container'>"."\n"
 					."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Messaggi</a>"."\n"
 					."		<a class='azioniRapide' href='acquista.php'>Acquista Biglietti</a>"."\n"
@@ -106,7 +110,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				$breadcrumb = " >> Eventi prenotati";
 				break;
 			case "messaggi":
-				$contentItems = "<div id='content'> Messaggi dell'utente </div>"."\n";
+				$contentItems = "<div id='content'>"."\n".modulesInit::getMessaggi()."\n"."</div>"."\n";
 				$breadcrumb = " >> Messaggi";
 				break;
 			case "datiPersonali":

@@ -36,7 +36,7 @@ a:hover {
 
 .main {
     display: flex;
-    height: auto;
+    min-height: 60%;
 }
 
 .messaggio {
@@ -65,11 +65,41 @@ a:hover {
     padding: 1em ;
     margin:  0.6em 0 0.6em 0 ;
 }
+
+.button{
+    background-color: #4CAF50;
+    color:white;
+    text-decoration: none;
+    
+    margin-left: 0.3em;
+    font-weight: 500;
+    
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    padding: 0.2em 0.3em;
+    border: 3px solid transparent;
+    border-radius: 4px;
+    float: right ;
+}
+
+.button:hover, .internal-button:hover{
+    color: #f0e9e9;
+    background-color: #58c25d;;
+}
+
+.internal-button{
+    cursor: pointer;
+    font-weight: 400;
+    padding: 0.3em 0.5em;
+    float: initial;
+    margin-left:0;
+}
+
 /* BREADCRUMBS */
 
 .map-position {
-    background: #00b6ff;
-    padding: 9px
+    background: #616161;
+    padding: 9px;
+    border: 1px solid black;
 }
 
 /* STILE DELL'HEADER */
@@ -77,7 +107,7 @@ a:hover {
 #header {
     font-size: 100%;
     max-width: 100%;
-    margin: 1% 0;
+    margin: 1% 0 0 0;
     border: 1px solid black;
     -webkit-box-shadow:-1px 0 15px -1px black;
     -moz-box-shadow:-1px 0 15px -1px black;
@@ -142,5 +172,5 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #58c25d;
 }

@@ -11,5 +11,7 @@
 
     echo $output;
     
+    echo $output;
+
     unset($_SESSION["registrazione"]);
 ?>

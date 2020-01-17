@@ -144,9 +144,14 @@ fieldset{
     text-decoration: none;
     font-size: 1em;
     padding: 0.7em 1em;
-    font-weight: bold;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.azioniRapide:hover {
+    background-color: #58c25d;
 }
 
 #container {
@@ -161,7 +166,7 @@ fieldset{
 }
 
 .contentAcquisti {
-    max-height: 600px;
+    max-height: 550px;
     overflow: scroll;
     width: 49%;
 }
@@ -174,4 +179,8 @@ fieldset{
     border-radius: 10px;
     text-align: justify;
     display: flex;
+}
+
+.testoMessaggio {
+    max-width: 40%;
 }

@@ -22,7 +22,9 @@
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
 						.'  <div class="dropdown menuItem">'."\n"
-						.'	  <a class="dropbtn" href="animali.php">Animali</a>'."\n"
+						.'	  <a class="dropbtn" href="animali.php">Animali'."\n"
+						.'		 <i class="fa fa-caret-down"></i>'."\n"
+						.'	  </a>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
 						.'		  <a href="animali.php">Tutti gli animali</a>'."\n"
 						.'		  <a href="cuccioli.php">I cuccioli</a>'."\n"
@@ -30,7 +32,9 @@
 						.'  </div>'."\n"
 						.'  <a class="menuItem" href="eventi.php">Eventi</a>'."\n"
 						.'  <div class="dropdown menuItem">'."\n"
-						.'	  <a href="info.php" class="dropbtn">Informazioni</a>'."\n"
+						.'	  <a href="info.php" class="dropbtn">Informazioni'."\n"
+						.'		 <i class="fa fa-caret-down"></i>'."\n"
+						.'	  </a>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
 						.'		  <a href="info.php#contatti">Contatti</a>'."\n"
 						.'	  </div>'."\n"
@@ -100,6 +104,10 @@
 			$query = query($dbh, $sql, [$user]);
 			$output = "";
 			if($query->status) {
+
+				if(count($query->rows) == 0)
+					return "<h3>Non ci sono biglietti da visualizzare</h3>";
+
 				foreach($query->rows as $row) {
 
 					$output .= '<div class="acquisto">'."\n";
@@ -161,6 +169,10 @@
 			$query = query($dbh, $sql, [$user]);
 			$output = "";
 			if($query->status) {
+
+				if($query->rowCount == 0)
+					return "<h3>Non ci sono eventi da visualizzare</h3>";
+				
 				foreach($query->rows as $row) {
 
 					$output .= '<div class="acquisto">'."\n";
@@ -206,6 +218,10 @@
 			$query = find("AnimaleBean", null);
 			$output = "";
 			if($query->status) {
+
+				if(count($query->response) == 0)
+					return "<h3>Non ci sono animali da visualizzare</h3>";
+
 				foreach($query->response as $row) {
 
 					$output .= '<div class="acquisto">'."\n";
@@ -246,24 +262,32 @@
 			$query = find("MessaggioBean", [$_SESSION["user"]]);
 			$output = "";
 			if($query->status) {
+
+				if(count($query->response) == 0)
+					return "<h3>Non ci sono messaggi da visualizzare</h3>";
+
 				foreach($query->response as $row) {
 
-					$output .= '<div class="acquisto">'."\n";
+					if($_SESSION['admin'] == 1) {
+						$output .= '<div class="acquisto">'."\n";
 
-					$output .= "	<img class='logoHeader' src='../".$row->Ritratto."' alt='immagine animale' />"."\n"
-								.'	<div>'."\n"
-								.'		<h4>Nome</h4>'."\n"
-								.'		<p>'.$row->NomeComune.'</p>'."\n"
+						$output .= '	<div>'."\n"
+									.'		<h4>Utente</h4>'."\n"
+									.'		<p>'.$row->Nome.' '.$row->Cognome.'</p>'."\n"
+									.'	</div>'."\n"
+									.'	<div>'."\n"
+									.'		<h4>Email</h4>'."\n"
+									.'		<p>'.$row->Email.'</p>'."\n"
+									.'	</div>'."\n";
+					}
+
+					$output .=  '	<div class="testoMessaggio">'."\n"
+								.'		<h4>Messaggio</h4>'."\n"
+								.'		<p>'.$row->Messaggio.'</p>'."\n"
 								.'	</div>'."\n"
-								.'	<div>'."\n"
-								.'		<h4>Nome scientifico</h4>'."\n"
-								.'		<p>'.$row->NomeScientifico.'</p>'."\n"
-								.'	</div>'."\n"
-								.'	<div>'."\n"
-								.'	<form action="../PHP/eliminaAnimale.php" method="post">'."\n"
-								.'		<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'	<form action="" method="post">'."\n"
+								.'		<button type="submit" name="risposta" value="'.$row->ID.'" class="button internal-button">Rispondi</button>'."\n"
 								.'	</form>'."\n"
-								.'	</div>'."\n"
 								.'</div>';
 				}
 			} else {
@@ -286,6 +310,10 @@
 			$query = find("EventoBean", null);
 			$output = "";
 			if($query->status) {
+
+				if(count($query->response) == 0)
+					return "<h3>Non ci sono eventi da visualizzare</h3>";
+
 				foreach($query->response as $row) {
 
 					$output .= '<div class="acquisto">'."\n";
