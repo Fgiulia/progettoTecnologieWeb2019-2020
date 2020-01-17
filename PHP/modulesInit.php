@@ -259,7 +259,15 @@
 			if(!isset($_SESSION))
 				session_start();
 
-			$query = find("MessaggioBean", [$_SESSION["user"]]);
+			$model = null;
+
+			if($_SESSION["admin"] == 0) {
+				$model = (Object) [
+					"Email" => $_SESSION["user"]
+				];
+			}
+
+			$query = find("MessaggioBean", $model);
 			$output = "";
 			if($query->status) {
 
@@ -268,8 +276,9 @@
 
 				foreach($query->response as $row) {
 
+					$output .= '<div class="acquisto">'."\n";
+
 					if($_SESSION['admin'] == 1) {
-						$output .= '<div class="acquisto">'."\n";
 
 						$output .= '	<div>'."\n"
 									.'		<h4>Utente</h4>'."\n"
@@ -284,11 +293,15 @@
 					$output .=  '	<div class="testoMessaggio">'."\n"
 								.'		<h4>Messaggio</h4>'."\n"
 								.'		<p>'.$row->Messaggio.'</p>'."\n"
-								.'	</div>'."\n"
-								.'	<form action="" method="post">'."\n"
+								.'	</div>'."\n";
+
+					if($_SESSION["admin"] == 1) {			
+						$output .= '<form action="" method="post">'."\n"
 								.'		<button type="submit" name="risposta" value="'.$row->ID.'" class="button internal-button">Rispondi</button>'."\n"
-								.'	</form>'."\n"
-								.'</div>';
+								.'	</form>'."\n";
+					}
+
+					$output .= '</div>';
 				}
 			} else {
 				$output = "Errore: ".$query->response;
