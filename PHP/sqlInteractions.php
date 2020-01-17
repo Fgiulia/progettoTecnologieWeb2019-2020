@@ -7,9 +7,10 @@
 	const dbName = 'zoo';
 #inizializzazione di variabili
 	public $connection = null;
-	public $testo = null;
-	public $sezioneParco = null;
 	public $data = null;
+	public $testo = null;
+	public $famiglia = null;
+	public $sezioneParco = null;
     
 #funzione per la connessione ad DB	
 	public function apriConnessioneDB(){
@@ -29,7 +30,7 @@
 		$nomeScientifico = $_POST['nomeScientifico'];
 		$famiglia = $_POST['famiglia'];
 		$sezione = $_POST['sezioneParco'];
-		$descrizione = $_POST['descrizione'];
+		$descrizione = $_POST['descrizioneAnimale'];
 		$ritratto = $_POST['immagineAnimale'];
 
 		$insertAnimale = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descrizione','$ritratto')";
@@ -74,7 +75,7 @@
 		}
 	}
 
-#funzione per la lettura da DB dela pagina "cuccioli"
+#funzione per la lettura da DB per la pagina "cuccioli"
 	public function getCuccioli(){
 		$query = 'SELECT NomeComune, NomeProprio, Ritratto, Descrizione FROM Animali WHERE Famiglia=\'Cuccioli\' ORDER BY NomeComune ASC';
 		$queryResult = mysqli_query($this->connection,$query);
@@ -92,13 +93,44 @@
 		}
 	}
 
-#funzione per la lettura da DB con testo in input (ricerca per parole-chiave)
-	public function getSelect($testo) {
-		if($testo==null){
+#funzione per la lettura da DB con filtri di ricerca
+	public function getResultSearch() {
+		$testo = $_POST['testo'];
+        $famiglia = $_POST['scegliFamiglia'];
+        $sezioneParco = $_POST['sezioneParco'];
+		
+		if($testo==null && $famiglia==null && $sezioneParco==null){
 			$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
 		}
 		else{
-			$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\' OR Famiglia LIKE \'%'.$testo.'%\' OR SezioneParco LIKE \'%'.$testo.'%\' ORDER BY NomeComune ASC';
+			#tutti i campi settati
+			if($testo!=null && $famiglia!=null && $sezioneParco!=null){
+				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia=\''.$famiglia.'\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+			}
+			#ricerca per famiglia e sezioneParco
+			if($testo==null && $famiglia!=null && $sezioneParco!=null){
+				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia=\''.$famiglia.'\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+			}
+			#ricerca per testo e sezioneParco
+			if($testo!=null && $famiglia==null && $sezioneParco!=null){
+				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia!=\'Cuccioli\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+			}
+			#ricerca per testo e famiglia
+			if($testo!=null && $famiglia!=null && $sezioneParco==null){
+				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia=\''.$famiglia.'\' ORDER BY NomeComune ASC';
+			}
+			#ricerca per solo testo in input
+			if($testo!=null && $famiglia==null && $sezioneParco==null){
+				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\' AND Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
+			}
+			#ricerca per solo campo famiglia
+			if($testo==null && $famiglia!=null && $sezioneParco==null){
+				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia=\''.$famiglia.'\' ORDER BY NomeComune ASC';
+			}
+			#ricerca per solo campo sezioneParco
+			if($testo==null && $famiglia==null && $sezioneParco!=null){
+				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+			}
 		}
 		$selectResult = mysqli_query($this->connection,$select);
 
@@ -106,62 +138,16 @@
 			return null;
 		}
 		else{
-			$animal = array();
+			$animali = array();
 			while($row=mysqli_fetch_assoc($selectResult)){
 				$arraySingoloAnimale = array('NomeComune'=>$row['NomeComune'],'NomeScientifico'=>$row['NomeScientifico'],'Ritratto'=>$row['Ritratto'],'Descrizione'=>$row['Descrizione']);
-				array_push($animal,$arraySingoloAnimale);
+				array_push($animali,$arraySingoloAnimale);
 			}
-			return $animal;
+			return $animali;
 		}
 	}
 
-#funzione per la lettura da DB con passaggio della famiglia (ricerca da menu a tendina)
-    public function getFamily($sezioneParco) {
-        if($sezioneParco==null || $sezioneParco=='animali'){
-            $section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
-        }
-        else{
-			$section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
-        }
-        $familyResult = mysqli_query($this->connection,$section);
-
-        if(mysqli_num_rows($familyResult)==0){
-			return null;
-		}
-		else{
-			$animale = array();
-			while($row=mysqli_fetch_assoc($familyResult)){
-				$arrayAnimaleSingolo = array('NomeComune'=>$row['NomeComune'],'NomeScientifico'=>$row['NomeScientifico'],'Ritratto'=>$row['Ritratto'],'Descrizione'=>$row['Descrizione']);
-				array_push($animale,$arrayAnimaleSingolo);
-			}
-            return $animale;
-        }
-	}
-
-#funzione per la lettura da DB con passaggio della sezione del parco (ricerca da menu a tendina)
-public function getSectionPark($sezioneParco) {
-	if($sezioneParco==null){
-		$section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
-	}
-	else{
-		$section = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
-	}
-	$sectionResult = mysqli_query($this->connection,$section);
-
-	if(mysqli_num_rows($sectionResult)==0){
-		return null;
-	}
-	else{
-		$animale = array();
-		while($row=mysqli_fetch_assoc($sectionResult)){
-			$arrayAnimaleSingolo = array('NomeComune'=>$row['NomeComune'],'NomeScientifico'=>$row['NomeScientifico'],'Ritratto'=>$row['Ritratto'],'Descrizione'=>$row['Descrizione']);
-			array_push($animale,$arrayAnimaleSingolo);
-		}
-		return $animale;
-	}
-}
-
-#funzione per la lettura da DB del prossimo evento del mese
+#funzione per la lettura da DB del prossimo evento (per la homepage)
 	public function getEventi($data){
 		$selectEventi = 'SELECT Nome, Prezzo, Data, Giorno FROM Eventi WHERE Data=\''.$data.'\'';
 		$selectEventiResult = mysqli_query($this->connection,$selectEventi);

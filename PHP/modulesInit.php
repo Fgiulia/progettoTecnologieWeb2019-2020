@@ -22,7 +22,7 @@
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
 						.'  <div class="dropdown menuItem">'."\n"
-						.'	  <a class="dropbtn" href="">Animali</a>'."\n"
+						.'	  <a class="dropbtn" href="animali.php">Animali</a>'."\n"
 						.'	  <div class="dropdown-content">'."\n"
 						.'		  <a href="animali.php">Tutti gli animali</a>'."\n"
 						.'		  <a href="cuccioli.php">I cuccioli</a>'."\n"

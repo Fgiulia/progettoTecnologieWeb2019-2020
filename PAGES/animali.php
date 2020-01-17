@@ -10,35 +10,26 @@
         }
     }
 
-#se non vengono inseriti filtri di ricerca
-    if(!(isset($_POST['cerca']) || isset($_POST['scegliFamiglia']))){
-        $_POST['cerca'] = null;
+#se non vengono inseriti filtri di ricerca (per esempio la prima volta che carico la pagina)
+    if(!(isset($_POST['testo']) || isset($_POST['scegliFamiglia']) || isset($_POST['sezioneParco']))){
+        $_POST['testo'] = null;
         $_POST['scegliFamiglia'] = null;
+        $_POST['sezioneParco'] = null;
     }
 
     $oggettoPagina = new sqlInteractions();
     $connessione = $oggettoPagina->apriConnessioneDB();
     
     if($connessione){
-        $cercaTesto = $_POST['cerca'];
-        if($cercaTesto!=null){
-            $animali = $oggettoPagina->getSelect($cercaTesto);
-        }
-        else{
-            $cercaTesto = $_POST['scegliFamiglia'];
-            if($cercaTesto!=null){
-                $animali = $oggettoPagina->getFamily($cercaTesto);
-            }
-            else{
-                $animali = $oggettoPagina->getSelect($cercaTesto);
-            }
-        }
+        $animali = $oggettoPagina->getResultSearch();
+
         if($animali==null){
-            $stringaAnimali = "<p class=\"msgErr\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;</p><p class=\"msgErr\">Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
+            $stringaAnimali = "<p>Risultati per \" ".$_POST['testo']." ".$_POST['scegliFamiglia']." ".$_POST['sezioneParco']." \"</p>";
+            $stringaAnimali .= "<p class=\"msgErr\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;</p><p class=\"msgErr\">Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
         }
         else{
-            if($cercaTesto!=null){
-                $stringaAnimali = "<p>Risultati per \"".$cercaTesto."\"</p><dl id=\"risultatiAnimali\">";
+            if($_POST['testo']!=null || $_POST['scegliFamiglia']!=null || $_POST['sezioneParco']!=null){
+                $stringaAnimali = "<p>Risultati per \" ".$_POST['testo']." ".$_POST['scegliFamiglia']." ".$_POST['sezioneParco']." \"</p><dl id=\"risultatiAnimali\">";
             }
             else{
                 $stringaAnimali = "<dl id=\"risultatiAnimali\">";
@@ -53,7 +44,7 @@
         $stringaAnimali = "<p class=\"msgErr\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
     }
 
-#se la ricerca non è valida
+#se la ricerca non è valida (input non valido)
     if($validText==false){
         $stringaAnimali = "<p class=\"msgErr\">La ricerca non &egrave; valida&comma; per favore riprova&period;</p>";
     }
