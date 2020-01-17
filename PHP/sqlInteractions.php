@@ -31,8 +31,8 @@
 		$famiglia = $_POST['famiglia'];
 		$sezione = $_POST['sezioneParco'];
 		$descrizione = $_POST['descrizioneAnimale'];
-		$ritratto = $_POST['immagineAnimale'];
-
+		$ritratto = $_FILES['immagineAnimale'];
+		
 		$insertAnimale = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descrizione','$ritratto')";
 		if ($this->connection->query($insertAnimale) === TRUE){
 			return true;

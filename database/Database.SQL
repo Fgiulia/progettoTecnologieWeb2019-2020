@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS Animali (
     Famiglia varchar(20),
     SezioneParco varchar(20),
     Descrizione text,
-    Ritratto varchar(100),
+    Ritratto blob,
     PRIMARY KEY(NomeComune,Famiglia)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS Messaggi (
     Cognome varchar(30),
     Email varchar(30),
     NumeroTelefono varchar(10),
-    Messaggio  text,
+    Messaggio text,
     PRIMARY KEY(ID)
 );
 
