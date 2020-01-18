@@ -22,18 +22,32 @@
     
     if($connessione){
         $animali = $oggettoPagina->getResultSearch();
+        $stringaAnimali = "";
+        
+        if($_POST['testo']!=null || $_POST['scegliFamiglia']!=null || $_POST['sezioneParco']!=null){                
+            $stringaAnimali .= "<p class=\"messaggio\">Hai cercato&colon; ";
+            if($_POST['testo']!=null){
+                $stringaAnimali .= "\"".$_POST['testo']."\" in ";
+            }
+            if($_POST['scegliFamiglia']!=null){
+                $stringaAnimali .= $_POST['scegliFamiglia']." presenti in ";
+            }
+            else{
+                $stringaAnimali .= "tutti gli animali presenti in ";
+            }
+            if($_POST['sezioneParco']!=null){
+                $stringaAnimali .= $_POST['sezioneParco']."&period;</p>";
+            }
+            else{
+                $stringaAnimali .= "tutti i continenti&period;</p>";
+            }
+        }
 
         if($animali==null){
-            $stringaAnimali = "<p>Risultati per \" ".$_POST['testo']." ".$_POST['scegliFamiglia']." ".$_POST['sezioneParco']." \"</p>";
             $stringaAnimali .= "<p class=\"msgErr\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;</p><p class=\"msgErr\">Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
         }
         else{
-            if($_POST['testo']!=null || $_POST['scegliFamiglia']!=null || $_POST['sezioneParco']!=null){
-                $stringaAnimali = "<p>Risultati per \" ".$_POST['testo']." ".$_POST['scegliFamiglia']." ".$_POST['sezioneParco']." \"</p><dl id=\"risultatiAnimali\">";
-            }
-            else{
-                $stringaAnimali = "<dl id=\"risultatiAnimali\">";
-            }
+            $stringaAnimali .= "<dl id=\"risultatiAnimali\">";
             foreach($animali as $animals){
                 $stringaAnimali .= "<dt>".$animals['Ritratto']."</dt><dt>".$animals['NomeComune']."</dt><dt>".$animals['NomeScientifico']."</dt><dt>".$animals['Descrizione']."</dt>";
                 }

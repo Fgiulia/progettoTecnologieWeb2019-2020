@@ -16,7 +16,7 @@ try {
 	$response->status = true;
 
 } catch (Exception $e) {
-	$response->response = "Errore, ".$e->getMessage()."Riprova ad effettuare il logout, se il problema presiste contatta l'amministratore";
+	$response->response = "Errore&comma; ".$e->getMessage()."Riprova ad effettuare il logout&comma; se il problema presiste contatta l&apos;amministratore";
 }
 
 $_SESSION["messagge"] = $response;

@@ -26,7 +26,7 @@ $output = str_replace("<opzioni></opzioni>",$options,$output);
 
 
 if(!isset($_SESSION["logged"])) {
-  $_SESSION["messagge"] = "Devi effettuare l'accesso prima di procedere con gli acquisti"
+  $_SESSION["messagge"] = "Devi effettuare l'accesso prima di procedere con gli acquisti";
   header('url=/Progetto/PAGES/paginaVuota.php');
 }
 else {
