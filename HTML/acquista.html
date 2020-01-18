@@ -8,8 +8,6 @@
     <meta name="description" content="Pagina di Acquisto biglietti ed eventi" />
     <meta name="language" content="italian it" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <link rel="icon" type="images/png" href="../styles/images/logo-solo-nutria.png" />
 
     <link rel="stylesheet" type="text/css" href="../CSS/acquista.css">
@@ -36,28 +34,29 @@
   <!--Contenuto Tab-->
   <div id="biglietti" class="contenutoTab">
     <h2>Biglietti</h2>
-    <form id="formAcquistoBiglietti" action="" method="post">
+    <form id="formAcquistoBiglietti" action="acquistaBiglietti.php" method="post">
         <label for="quantitaInteri">N° Biglietti interi</label>
         <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
         <label for="quantitaRidotti">N° Biglietti ridotti</label>
-        <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
+        <input type="number" name="quantitaRidotti" id="quantita" tabindex="2" value="0" step="1" min="0" />
         <input type="submit" id="acquistaSubmit" value="Acquista" />
     </form>
-    <script>
-    document.getElementById("tabBiglietti").click();
-    </script>
   </div>
   <div id="eventi" class="contenutoTab">
     <h2>Eventi</h2>
     <div id="formEventi">
-        <form id="cercaData" action="">
+        <form id="cercaData" action="acquista.php">
             <label for="searchDate">Filtra le date</label>
             <input type="date" name="searchDate" />
             <input type="submit" value="Cerca"></input>
         </form>
-        <form id="selectEventi" action="">
+        <form id="selectEventi" action="prenotaEventi.php" method="post">
             <label for="eventi">Seleziona Evento</label>
-            <select name="eventi" />
+            <select name="eventi">
+              <opzioni></opzioni>
+            </select>
+            <label for="NumeroPersone">N° Partecipanti</label>
+            <input type="number" name="NumeroPersone" id="quantita" tabindex="3" value="0" step="1" min="0" />
             <input type="submit" value="Prenota"></input>
         </form>
     </div>
@@ -66,6 +65,9 @@
   <div id="footer">
     <p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
 </div>
+<script>
+document.getElementById("tabBiglietti").click();
+</script>
 </body>
 
 </html>
