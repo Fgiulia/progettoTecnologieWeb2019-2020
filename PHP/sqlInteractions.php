@@ -11,8 +11,8 @@
 	public $testo = null;
 	public $famiglia = null;
 	public $sezioneParco = null;
-    
-#funzione per la connessione ad DB	
+
+#funzione per la connessione ad DB
 	public function apriConnessioneDB(){
 		$this->connection = mysqli_connect(static::host,static::user,static::pass,static::dbName);
 		if(!$this->connection){
@@ -103,7 +103,7 @@
 		$testo = $_POST['testo'];
         $famiglia = $_POST['scegliFamiglia'];
         $sezioneParco = $_POST['sezioneParco'];
-		
+
 		if($testo==null && $famiglia==null && $sezioneParco==null){
 			$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
 		}
@@ -168,18 +168,36 @@
 		}
 	}
 
+	#semplice select per la lettura da DB di tutti gli eventi 
+	public function getAllEventi(){
+		$selectEventi = 'SELECT Nome, Prezzo, Data FROM Eventi';
+		$selectEventiResult = mysqli_query($this->connection,$selectEventi);
+
+		if(mysqli_num_rows($selectEventiResult)==0){
+			return null;
+		}
+		else{
+			$eventi = array();
+			while($row=mysqli_fetch_assoc($selectResult)){
+				$singoloEvento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data']);
+				array_push($eventi,$singoloEvento);
+			}
+			return $eventi;
+		}
+	}
+
 	/**
 	 * Funzione per la lettura da DB degli acquisti
-	 * 
+	 *
 	 * @param String $user l'email dell'utente di cui si vogliono gli acuisti. Se passato null ritorna tutti gli acquisti
-	 * 
+	 *
 	 * @return Array di oggetti che rappresentano un record della query
 	*/
 	public function getAcquisti($user) {
 		$sql = "SELECT CONCAT(Nome, ' ', Cognome) AS Utente, NumGratis, NumRidotti, NumInteri, Data
 				FROM `BigliettiUtenti`
 				LEFT JOIN Utenti ON `Utente` = Utenti.Email ";
-		
+
 		if(isset($user)) {
 			$sql .= "WHERE Utente = $user";
 		}
