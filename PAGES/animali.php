@@ -47,11 +47,17 @@
             $stringaAnimali .= "<p class=\"msgErr\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;</p><p class=\"msgErr\">Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
         }
         else{
-            $stringaAnimali .= "<dl id=\"risultatiAnimali\">";
+            $stringaAnimali .= "<div id=\"risultatiAnimali\">";
             foreach($animali as $animals){
-                $stringaAnimali .= "<dt>".$animals['Ritratto']."</dt><dt>".$animals['NomeComune']."</dt><dt>".$animals['NomeScientifico']."</dt><dt>".$animals['Descrizione']."</dt>";
+                $stringaAnimali .= "<div class=\"containerAnimal\">";
+                $stringaAnimali .= "<div class=\"photoAnimal\"><img src=\"".$animals['Ritratto']."\" /></div>
+                                    <div class=\"nameAnimal\">".$animals['NomeComune']."</div>
+                                    <div class=\"scientificNameAnimal\">".$animals['NomeScientifico']."</div>
+                                    <div class=\"descAnimal\">".$animals['Descrizione']."</div>";
+                $stringaAnimali .= "</div>";
                 }
-                $stringaAnimali .= "</dl>";
+            $stringaAnimali .= "</div>";
+            $stringaAnimali .= "<div class=\"clear\"></div>";
         }
     }
     else{
@@ -66,7 +72,7 @@
     $output = file_get_contents("../HTML/animali.html");
     $output = str_replace('<a href="animali.php">','</a>',$output);
     $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
-    $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb('Animali >> Tutti gli animali'),$output);
+    $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb('Animali &gt;&gt; Tutti gli animali'),$output);
     $output = str_replace("<tuttiAnimali></tuttiAnimali>",$stringaAnimali,$output);
 
     echo $output;

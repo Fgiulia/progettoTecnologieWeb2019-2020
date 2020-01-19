@@ -31,9 +31,10 @@
 		$famiglia = $_POST['famiglia'];
 		$sezione = $_POST['sezioneParco'];
 		$descrizione = $_POST['descrizioneAnimale'];
+		$ritratto = "";
 		if(is_uploaded_file($_FILES["immagineAnimale"]["tmp_name"])){
 			$destination = "../styles/". basename($_FILES["immagineAnimale"]["name"]);
-			if(move_uploaded_file($_FILES['immagineAnimale']['tmp_name'],$destination)){
+			if(move_uploaded_file($_FILES['immagineAnimale']["tmp_name"], $destination)){
 				$ritratto = "../styles/". basename($_FILES["immagineAnimale"]["name"]);
 			}
 		}
