@@ -168,9 +168,10 @@
 		}
 	}
 
-	#semplice select per la lettura da DB di tutti gli eventi 
-	public function getAllEventi(){
-		$selectEventi = 'SELECT Nome, Prezzo, Data FROM Eventi';
+	#semplice select per la lettura da DB di tutti gli eventi disponibili da oggi
+	public function getAllEventiFromToday(){
+		$data = date("Ymd");
+		$selectEventi = 'SELECT Nome, Prezzo, Data FROM Eventi WHERE Data>\''.$data.'\'';
 		$selectEventiResult = mysqli_query($this->connection,$selectEventi);
 
 		if(mysqli_num_rows($selectEventiResult)==0){

@@ -12,7 +12,7 @@ if($SqlInterf->apriConnessioneDB()){
     $options = $options."<option>$eventi</option>";
   }
   else{
-    $eventi = $SqlInterf->getAllEventi();
+    $eventi = $SqlInterf->getAllEventiFromToday();
     foreach ($eventi as &$value) {
       $options = $options."<option>$value</option>";
     }
