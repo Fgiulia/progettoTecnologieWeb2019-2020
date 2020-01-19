@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS Eventi (
     Nome varchar(50),
     Prezzo decimal(5,2),
     Data date,
+    Descrizione text,
     PRIMARY KEY(ID)
 );
 

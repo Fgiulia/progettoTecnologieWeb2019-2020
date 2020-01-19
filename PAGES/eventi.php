@@ -13,30 +13,38 @@ if($dbh) {
 
     if(isset($_POST['cercaData'])) {
         $data = $_POST['cercaData'];
-       $sql = "SELECT * FROM Eventi
+        $sql = "SELECT * FROM Eventi
         WHERE Data = ?";
         $query=query($dbh,$sql,$data);
     }
     else {
-    $params = ["*"];    
-    $sql = "SELECT ? FROM Eventi";
+    $params = array();    
+    $sql = "SELECT * FROM Eventi";
     $query=query($dbh,$sql,$params);
     }
     if ($query->status) {
         if ($query->rows && count($query->rows) > 0) {
-            $result = $query->rows[0];
-            $output = str_replace("<eventiselezionati/>",$result->Nome,$output);
-        }
+            $result .= "<dl id=\"risultatiEventi\">";
+            foreach($query->rows as $eventi) {
+                $result .= "<dt>".$eventi->Nome."</dt><dt>".$eventi->Prezzo."</dt><dt>".$eventi->Data."</dt><dt>".$eventi->Descrizione."</dt>";
+            }
+            $result .= "</dl>";
+            $output = str_replace("<eventiselezionati/>",$result,$output);
+          
+        } 
         else {
             $result = "Nessun evento disponibile nel giorno selezionato";
             $output = str_replace("<eventiselezionati/>",$result,$output);
         }
+        
     }
 
 }
+else {
+    $result .= "<p class=\"msgErr\">Connessione al database degli eventi fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+    $output = str_replace("<eventiselezionati/>",$result,$output);
+}
 
-
-    
 
 echo $output;
 if(isset($data))

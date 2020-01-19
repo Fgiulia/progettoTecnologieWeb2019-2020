@@ -12,6 +12,6 @@ INSERT INTO Animali() VALUES
 ('Lemure Catta','Julien','Lemur Catta','Cuccioli','Africa','&Egrave; un mammifero con una lunghezza di 40 cm circa&comma; un peso di 2&comma;5 kg e la coda&comma; solitamente pi&ugrava; lunga del corpo&comma; pu&ograva; raggiungere i 56 cm&period; Vive nelle foreste&comma; nei boschi e nei deserti spinosi del Madagascar meridionale&period; Si nutre di frutta&comma; foglie e occasionalmente di qualche insetto&period; Dopo un periodo di gestazione di 135 giorni&comma; nascono da 1 a 2 cuccioli&period; Il Madagascar &egrave; noto per essere la madrepatria dei lemuri ed essendo un&apos;isola circoscritta la famiglia dei lemuridi &egrave; riuscita a differenziarsi in molte specie&period; Se ne contano pi&ugrave; di 30 e quella pi&ugrave; nota e pi&ugrave; diffusa nel sud del Madagascar &egrave; il Lemure dalla Coda ad Anelli&period; I Lemuri Catta sono abili saltatori e ottimi arrampicatori&period; Nelle prime ore del mattino amano scaldarsi al sole in una caratteristica posizione yoga&period;','NULL');
 
 INSERT INTO Eventi() VALUE
-(NULL,'Spettacolo delfini','12.50','2020-02-20'),
-(NULL,'Animal explorer','15.00','2020-02-20'),
-(NULL,'Spettacolo tigri','7.50','2020-03-01');
+(NULL,'Spettacolo delfini','12.50','2020-02-20','Non c&apos;è bambino al mondo che non si emozioni alla vista di un delfino: ed è per questo motivo che il nostro zoo è la location più indicata per le famiglie, grazie variegati spettacoli di delfini che vengono organizzati ogni giorno e che permettono di scoprire le meraviglie della vita marina in tutto il loro splendore.'),
+(NULL,'Animal explorer','15.00','2020-02-20','Il programma prevede una visita guidata e interattiva nelle aree zoologiche dei delfini, foche e leoni marini, pappagalli, pinguini e amici di zampa. La durata totale del programma è di 2 ore e mezza circa.'),
+(NULL,'Spettacolo tigri','7.50','2020-03-01','spettacolo tigri');
