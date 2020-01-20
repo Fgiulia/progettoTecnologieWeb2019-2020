@@ -5,12 +5,10 @@
 	const user = 'admin';
 	const pass = 'admin';
 	const dbName = 'Zoo';
-#inizializzazione di variabili
-	public $connection = null;
-	public $data = null;
 
 #funzione per la connessione ad DB
 	public function apriConnessioneDB(){
+		$connection = "";
 		$this->connection = mysqli_connect(static::host,static::user,static::pass,static::dbName);
 		if(!$this->connection){
 			return false;
@@ -154,18 +152,21 @@
 	}
 
 #funzione per la lettura da DB del prossimo evento (per la homepage)
-	public function getEventi($data){
-		$selectEventi = 'SELECT Nome, Prezzo, Data FROM Eventi WHERE Data=\''.$data.'\'';
-		$selectEventiResult = mysqli_query($this->connection,$selectEventi);
+	public function getEventi(){
+		$data = date("YYYY-mm-dd");
+		$selectEvents = 'SELECT Nome, Prezzo, Data, Descrizione FROM Eventi WHERE Data=\''.$data.'\' OR Data>\''.$data.'\' ORDER BY Data ASC LIMIT 1';
+		$selectEventsResult = mysqli_query($this->connection,$selectEvents);
 
-		if(mysqli_num_rows($selectEventiResult)==0){
-		#	$newData = DATEADD(DD,1,$data);
-		#	$this->getEventi($newData);
+		if(mysqli_num_rows($selectEventsResult)==0){
 			return null;
 		}
 		else{
-			$evento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data'],'Giorno'=>$row['Giorno']);
-			return $evento;
+			$eventi = array();
+			while($row=mysqli_fetch_assoc($selectEventsResult)){
+				$arraySingoloEvento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data'],'Descrizione'=>$row['Descrizione']);
+				array_push($eventi,$arraySingoloEvento);
+			}
+			return $eventi;
 		}
 	}
 

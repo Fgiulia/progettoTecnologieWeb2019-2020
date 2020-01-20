@@ -4,24 +4,28 @@
 
 #funzione per sapere la data odierna
     $oggi = date("d/m/Y");
-    $prossimiEventi = "<div id=\"prossimiEventi\"><p>Oggi&comma; ".$oggi."</p>";
+    $prossimiEventi = "<div class=\"prossimiEventi\">";
 
     $oggettoPagina = new sqlInteractions();
     $connessione = $oggettoPagina->apriConnessioneDB();
 
     if($connessione){
-        $eventi = $oggettoPagina->getEventi($oggi);
+        $evento = $oggettoPagina->getEventi();
 
-        if($eventi==null){
-            $prossimiEventi .= "<p class=\"msgErr\">Non ci sono eventi in programma al Parco Faunistico Euganeo&period;</p></div>";
+        if($evento==null){
+            $prossimiEventi .= "<p class=\"dataOdierna\">Oggi&comma; ".$oggi."</p><p class=\"messaggio\">Non ci sono eventi in programma al Parco Faunistico Euganeo&period;</p></div>";
         }
         else{
-            $prossimiEventi .= "<div id=\"prossimiEventi\">";
-            $prossimiEventi .= "</div></div>";
+            foreach($evento as $event)
+            $prossimiEventi .= "<div class=\"dataOdierna\">".$event['Data']."</div>
+                                <div class=\"eventName\">".$event['Nome']."</div>
+                                <div class=\"eventDesc\">".$event['Descrizione']."</div>
+                                <div class=\"eventPrice\"> Costo&colon; &euro; ".$event['Prezzo']."</div>
+                                </div>";
         }
     }
     else{
-        $prossimiEventi .= "<p class=\"msgErr\">Connessione al database degli eventi fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p></div>";
+        $prossimiEventi .= "<p class=\"errorMessage\">Connessione al database degli eventi fallita&period;<br />Per favore&comma; riprova&period;</p></div>";
     }
 
     $output = file_get_contents("../HTML/home.html");

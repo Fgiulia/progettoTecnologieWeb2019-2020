@@ -160,7 +160,7 @@ a:hover {
     padding: 0.5%;
 }
 
-/* STILE HOME PAGE */
+/* STILE DELLA HOME PAGE */
 #presentazioneSito{
     text-align: justify;
     font-size: 1vw;
@@ -183,9 +183,37 @@ a:hover {
 
 .boxProssimiEventi{
     width: 35%;
-    height: 20%;
+    height: 35%;
     float: right;
-    border: 1px solid #000000;
+    border: 5px double #4CAF50;
+    text-align: center;
+}
+
+.boxProssimiEventi .titoloBoxEventi{
+    font-size: 1.2vw;
+    font-style: italic;
+    border-bottom: 3px double #4CAF50;
+}
+
+.prossimiEventi .dataOdierna{
+    margin: 2%;
+    font-weight: bold;
+}
+
+.prossimiEventi .eventName{
+    font-size: 1.2vw;
+    font-style: inherit;
+    background-color: lightgray;
+}
+
+.prossimiEventi .eventDesc{
+    text-align: justify;
+    font-size: 1vw;
+    margin: 1%;
+}
+
+.prossimiEventi .eventPrice{
+    margin: 1%;
 }
 
 .immaginiHome img{
