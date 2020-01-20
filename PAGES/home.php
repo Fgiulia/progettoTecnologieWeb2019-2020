@@ -21,6 +21,7 @@
                                 <div class=\"eventName\">".$event['Nome']."</div>
                                 <div class=\"eventDesc\">".$event['Descrizione']."</div>
                                 <div class=\"eventPrice\"> Costo&colon; &euro; ".$event['Prezzo']."</div>
+                                <button id=\"buttonHome\" name=\"buttonHome\"><a href=\"acquista.php\">PRENOTA ORA</a></button>
                                 </div>";
         }
     }
