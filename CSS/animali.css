@@ -4,12 +4,16 @@
     font-size: 1em;
 }
 
-#ricercaAnimali p{
+#ricercaAnimali p, #introCuccioli p{
     width: 90%;
     text-align: center;
 }
 
-#risultatiAnimali{
+#introCuccioli p{
+    margin: 1%;
+}
+
+#risultatiAnimali, #risultatiCuccioli{
     width: 100%;
     margin-left: 5%; 
 }

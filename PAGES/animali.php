@@ -4,8 +4,8 @@
 
 #controllo sul testo in input
     $validText=true;
-    if(isset($_POST['cerca'])){
-        if(!preg_match("/^[a-zA-Z ]*$/",$_POST['cerca'])){
+    if(isset($_POST['testo'])){
+        if(!preg_match("/^[a-zA-Z ]*$/",$_POST['testo'])){
             $validText = false;
         }
     }
@@ -61,12 +61,12 @@
         }
     }
     else{
-        $stringaAnimali = "<p class=\"erroreMessaggio\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+        $stringaAnimali = "<p class=\"errorMessage\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
     }
 
 #se la ricerca non è valida (input non valido)
     if($validText==false){
-        $stringaAnimali = "<p class=\"erroreMessaggio\">La ricerca non &egrave; valida&comma; per favore riprova&period;</p>";
+        $stringaAnimali = "<p class=\"errorMessage\">La ricerca non &egrave; valida&comma; per favore riprova&period;<br />Il nome pu&ograve; contenere solo lettere e spazi&period;</p>";
     }
 
     $output = file_get_contents("../HTML/animali.html");

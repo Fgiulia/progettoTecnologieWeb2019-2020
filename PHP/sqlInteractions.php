@@ -83,7 +83,7 @@
 
 #funzione per la lettura da DB per la pagina "cuccioli"
 	public function getCuccioli(){
-		$query = 'SELECT NomeComune, NomeProprio, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE Famiglia=\'Cuccioli\' ORDER BY NomeComune ASC';
+		$query = 'SELECT NomeComune, NomeProprio, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE Famiglia=\'Cuccioli\' ORDER BY NomeComune ASC';
 		$queryResult = mysqli_query($this->connection,$query);
 
 		if(mysqli_num_rows($queryResult)==0){
@@ -92,7 +92,7 @@
 		else{
 			$result = array();
 			while($row=mysqli_fetch_assoc($queryResult)){
-				$arraySingoloCucciolo = array('NomeComune'=>$row['NomeComune'],'NomeProprio'=>$row['NomeProprio'],'DescrizioneAnimale'=>$row['DescrizioneAnimale'],'Immagine'=>$row['Immagine'],'DescrizioneImmagine'=>$row['DescrizioneImmagine'],);
+				$arraySingoloCucciolo = array('NomeComune'=>$row['NomeComune'],'NomeProprio'=>$row['NomeProprio'],'NomeScientifico'=>$row['NomeScientifico'],'DescrizioneAnimale'=>$row['DescrizioneAnimale'],'Immagine'=>$row['Immagine'],'DescrizioneImmagine'=>$row['DescrizioneImmagine'],);
 				array_push($result,$arraySingoloCucciolo);
 			}
 			return $result;
