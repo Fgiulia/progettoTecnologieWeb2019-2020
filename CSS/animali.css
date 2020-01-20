@@ -1,12 +1,13 @@
 .messaggioRicerca{
     color: #616161;
     margin-left: 5%;
-    font-size: 1em;
+    font-size: 1vw;
 }
 
 #ricercaAnimali p, #introCuccioli p{
     width: 90%;
     text-align: center;
+    font-size: 1vw;
 }
 
 #introCuccioli p{
@@ -15,7 +16,7 @@
 
 #risultatiAnimali, #risultatiCuccioli{
     width: 100%;
-    margin-left: 5%; 
+    margin-left: 5%;
 }
 
 .containerAnimal{
@@ -63,13 +64,9 @@
     clear:both;
 }
 
-.clear{
-    clear: left;
-}
-
 #formRicerca{
     width: 90%;
-    padding:2%;
+    padding: 2%;
     float: center;
 }
 

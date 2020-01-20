@@ -34,6 +34,10 @@ a:hover {
     font-size: 2em;
 }
 
+.clear{
+    clear: left;
+}
+
 .main {
     display: flex;
     min-height: 60%;
@@ -42,13 +46,13 @@ a:hover {
 .messaggio {
     text-align: center;
     padding: 1.5%;
-    font-size: 1.3em;
+    font-size: 1vw;
 }
 
 .errorMessage {
     text-align: center;
     padding-top: 100px;
-    font-size: 1.5em;
+    font-size: 1vw;
     background: #c13636;
     width: 100%;
     color: white;
@@ -93,11 +97,10 @@ a:hover {
 }
 
 /* BREADCRUMBS */
-
 .map-position {
     background: #616161;
     padding: 0.8%;
-    color: white;
+    color: #FFFFFF;
     margin: 0.5% 0 0.5% 0;
     border-radius: 6px 6px 6px 6px;
     -moz-border-radius: 6px 6px 6px 6px;
@@ -105,15 +108,22 @@ a:hover {
 }
 
 /* STILE DELL'HEADER */
+#header a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#header a:hover {
+    text-decoration: none;
+}
 
 #header {
     font-size: 100%;
     max-width: 100%;
     margin: 1% 0 0 0;
-    border-top: 3px double black;
-    border-bottom: 3px double black;
+    border-top: 3px double #000000;
+    border-bottom: 3px double #000000;
     overflow: auto;
-    
 }
 
 .logoHeader {
@@ -134,35 +144,61 @@ a:hover {
 }
 
 /* STILE DEL FOOTER */
-
 #footer {
     text-align: center;
     max-width: 100%;
     margin: 0.5% 0;
-    border-top: 3px double black;
+    border-top: 3px double #000000;
     overflow: auto;
-}
-
-.logoFooter {
-    float: left;
-    width: 3%;
-    height: auto;
-    padding-left: 12%;
-    padding-right: 1%;
+    clear: both;
 }
 
 .parFooter {
-    font-size: 1.4vw;
+    font-size: 1vw;
     font-style: italic;
     text-align: center;
     padding: 0.5%;
 }
 
-/* STILE DEI PULSANTI SUBMIT */
+/* STILE HOME PAGE */
+#presentazioneSito{
+    text-align: justify;
+    font-size: 1vw;
+    clear: both;
+}
 
+.infoHome{
+    width: 63%;
+    padding-right: 1%;
+    float: left;
+}
+
+.infoHome p{
+    padding-bottom: 3%;
+}
+
+.infoHome li{
+    padding: 1%;
+}
+
+.boxProssimiEventi{
+    width: 35%;
+    height: 20%;
+    float: right;
+    border: 1px solid #000000;
+}
+
+.immaginiHome img{
+    width: auto;
+    height: auto;
+    float: right;
+    margin: 5%;
+}
+
+/* STILE DEI PULSANTI SUBMIT */
 input[type=submit] {
     background-color: #4CAF50;
-    color: white;
+    color: #FFFFFF;
     padding: 12px 16px;
     border: none;
     border-radius: 4px;
@@ -172,5 +208,5 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #58c25d;
+    background-color: #58C25D;
 }
