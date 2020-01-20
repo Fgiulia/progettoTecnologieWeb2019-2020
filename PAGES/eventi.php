@@ -26,9 +26,14 @@ if($dbh) {
     }
     if ($query->status) {
         if ($query->rows && count($query->rows) > 0) {
-            $result = "<dl id=\"risultatiEventi\">";
+            $result = "<div id=\"risultatiEventi\">";
             foreach($query->rows as $eventi) {
-                $result .= "<dt>".$eventi->Nome."</dt><dt>".$eventi->Prezzo."</dt><dt>".$eventi->Data."</dt><dt>".$eventi->Descrizione."</dt>";
+                $result .= "<div class=\"containerEventi\">
+                            <div class=\"nomeEvento\">".$eventi->Nome."</div>
+                            <div class=\"containerEventi\">".$eventi->Prezzo."</div>
+                            <div class=\"dataEvento\">".$eventi->Data."</div>
+                            <div class=\"descrizioneEventio\">".$eventi->Descrizione."</div>
+                            </div>";
             }
             $result .= "</dl>";
             
@@ -49,7 +54,7 @@ else {
 
 $output = str_replace("<eventiselezionati/>",$result,$output);
 echo $output;
-if(isset($data))
+
 
 
 ?>

@@ -15,7 +15,8 @@
 		<link rel="icon" type="images/png" href="../images/logo-solo-nutria.png" />
 
 		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
-	    <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+		<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+		<link rel="stylesheet" href="../CSS/Eventi.css" type="text/css"/>
 	</head>  
 
 	<body>
@@ -29,11 +30,16 @@
 				
 		
 		<div id="filtroEventi">
-			<p>Filtra per giorno della settimana</p>
+			<p>
+				<h1 class="titolo">I NOSTRI EVENTI!</h1>
+			</p>
+
+			<p>Cerca gli eventi disponibili nella data che preferisci!</p>
+			
 			<form id="FiltraData" action="../PAGES/eventi.php" method="POST">
-				<label for="cercaData"> Filtra per data </label>
+				<label for="cercaData"> RICERCA PER DATA </label>
 				<input type="date" id = "cercaData" name = "cercaData"/>
-				<input type="submit" id="FiltraEventi" value="Cerca" />  
+				<input type="submit" id="inviaRicerca" value="Cerca" />  
 			</form>
 		</div>
 
