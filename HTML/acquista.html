@@ -34,7 +34,7 @@
   <!--Contenuto Tab-->
   <div id="biglietti" class="contenutoTab">
     <h2>Biglietti</h2>
-    <form id="formAcquistoBiglietti" action="acquistaBiglietti.php" method="post">
+    <form id="formAcquistoBiglietti" action="../PHP/acquistaBiglietti.php" method="post">
         <label for="quantitaInteri">N° Biglietti interi</label>
         <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
         <label for="quantitaRidotti">N° Biglietti ridotti</label>
@@ -50,7 +50,7 @@
             <input type="date" name="searchDate" />
             <input type="submit" value="Cerca"></input>
         </form>
-        <form id="selectEventi" action="prenotaEventi.php" method="post">
+        <form id="selectEventi" action="../PHP/prenotaEventi.php" method="post">
             <label for="eventi">Seleziona Evento</label>
             <select name="eventi">
               <opzioni></opzioni>

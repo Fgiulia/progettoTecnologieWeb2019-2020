@@ -156,12 +156,12 @@
 		$data = date("YYYY-mm-dd");
 		$selectEvents = 'SELECT Nome, Prezzo, Data, Descrizione FROM Eventi WHERE Data=\''.$data.'\' OR Data>\''.$data.'\' ORDER BY Data ASC LIMIT 1';
 		$selectEventsResult = mysqli_query($this->connection,$selectEvents);
+		$eventi = array();
 
 		if(mysqli_num_rows($selectEventsResult)==0){
 			return null;
 		}
 		else{
-			$eventi = array();
 			while($row=mysqli_fetch_assoc($selectEventsResult)){
 				$arraySingoloEvento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data'],'Descrizione'=>$row['Descrizione']);
 				array_push($eventi,$arraySingoloEvento);
@@ -175,12 +175,12 @@
 		$data = date("Ymd");
 		$selectEventi = 'SELECT Nome, Prezzo, Data FROM Eventi WHERE Data>\''.$data.'\'';
 		$selectEventiResult = mysqli_query($this->connection,$selectEventi);
-
+		$eventi = array();
+		
 		if(mysqli_num_rows($selectEventiResult)==0){
 			return null;
 		}
 		else{
-			$eventi = array();
 			while($row=mysqli_fetch_assoc($selectEventiResult)){
 				$singoloEvento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data']);
 				array_push($eventi,$singoloEvento);

@@ -1,6 +1,6 @@
 <?php
-require("../config/config.php");
-require("../api/fnQuery.php");
+require("config/config.php");
+require("api/fnQuery.php");
 
 $response = (Object) [
 	"status" => 0
