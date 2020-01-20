@@ -180,7 +180,7 @@
 		}
 		else{
 			$eventi = array();
-			while($row=mysqli_fetch_assoc($selectResult)){
+			while($row=mysqli_fetch_assoc($selectEventiResult)){
 				$singoloEvento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data']);
 				array_push($eventi,$singoloEvento);
 			}
