@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(0);
+//error_reporting(0);
 require_once "../PHP/modulesInit.php";
 require("../PHP/config/config.php");
 require("../PHP/api/fnQuery.php");
@@ -26,7 +26,7 @@ if($dbh) {
     }
     if ($query->status) {
         if ($query->rows && count($query->rows) > 0) {
-            $result .= "<dl id=\"risultatiEventi\">";
+            $result = "<dl id=\"risultatiEventi\">";
             foreach($query->rows as $eventi) {
                 $result .= "<dt>".$eventi->Nome."</dt><dt>".$eventi->Prezzo."</dt><dt>".$eventi->Data."</dt><dt>".$eventi->Descrizione."</dt>";
             }
@@ -41,12 +41,12 @@ if($dbh) {
         
     }
     else {
-        $result .= "<p class=\"msgErr\">La query non è andata a buon fine&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+        $result = "<p class=\"msgErr\">La query non è andata a buon fine&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
         $output = str_replace("<eventiselezionati/>",$result,$output);
     }
 }
 else {
-    $result .= "<p class=\"msgErr\">Connessione al database degli eventi fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+    $result = "<p class=\"msgErr\">Connessione al database degli eventi fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
     $output = str_replace("<eventiselezionati/>",$result,$output);
 }
 
