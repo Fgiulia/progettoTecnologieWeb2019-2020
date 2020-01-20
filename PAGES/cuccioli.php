@@ -15,7 +15,7 @@
             $stringaCuccioli = "<div id=\"risultatiCuccioli\">";
             foreach($cuccioli as $puppies){
                 $stringaCuccioli .= "<div class=\"containerAnimal\">
-                                     <div class=\"nameAnimal\">".$puppies['NomeProprio']."</div>
+                                     <div class=\"namePuppy\">".$puppies['NomeProprio']."</div>
                                      <div class=\"photoAnimal\"><img src=\"".$puppies['Immagine']."\" alt=\"".$puppies['DescrizioneImmagine']."\" /></div>
                                      <div class=\"nameAnimal\">".$puppies['NomeComune']."</div>
                                      <div class=\"scientificNameAnimal\">".$puppies['NomeScientifico']."</div>
