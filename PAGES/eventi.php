@@ -10,7 +10,7 @@ $output = str_replace('<a href="eventi.php">','</a>',$output);
 $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
 $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Eventi"),$output);
 
-
+$result ='';
 if($dbh) {
 
     if(isset($_POST['cercaData'])) {
@@ -31,27 +31,23 @@ if($dbh) {
                 $result .= "<dt>".$eventi->Nome."</dt><dt>".$eventi->Prezzo."</dt><dt>".$eventi->Data."</dt><dt>".$eventi->Descrizione."</dt>";
             }
             $result .= "</dl>";
-            $output = str_replace("<eventiselezionati/>",$result,$output);
-          
+            
         } 
         else {
             $result = "Nessun evento disponibile nel giorno selezionato";
-            $output = str_replace("<eventiselezionati/>",$result,$output);
         }
-        
     }
     else {
         $result = "<p class=\"msgErr\">La query non è andata a buon fine&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
-        $output = str_replace("<eventiselezionati/>",$result,$output);
+        
     }
 }
 else {
     $result = "<p class=\"msgErr\">Connessione al database degli eventi fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
-    $output = str_replace("<eventiselezionati/>",$result,$output);
 }
 
 
-
+$output = str_replace("<eventiselezionati/>",$result,$output);
 echo $output;
 if(isset($data))
 
