@@ -130,6 +130,7 @@ fieldset{
 }
 
 #content{
+    margin-top: 0;
 	float:left;
     width:78%;
     text-align: center;

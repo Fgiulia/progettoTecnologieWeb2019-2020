@@ -85,7 +85,8 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 			case "eventi":
 				$breadcrumb = " >> Gestione eventi";
 				$contentItems = "<div id='content'>"."\n"
-								.modulesInit::getEventi()
+									."<p><b>Attenzione:</b> eliminando un evento, verranno eliminati anche gli acquisti degli utenti ad esso associati.</p>"."\n"
+									.modulesInit::getEventi()
 								."</div>"."\n";
 				break;
 			case "animali":
