@@ -8,7 +8,7 @@
     <meta name="description" content="Pagina di Acquisto biglietti ed eventi" />
     <meta name="language" content="italian it" />
 
-    <link rel="icon" type="images/png" href="../styles/images/logo-solo-nutria.png" />
+    <link rel="icon" type="images/png" href="../images/logo-solo-nutria.png" />
 
     <link rel="stylesheet" type="text/css" href="../CSS/acquista.css">
     <link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
@@ -19,8 +19,8 @@
 
 <body>
   <div id="header">
-		<a href="home.php"><img class="logoHeader" src="../styles/images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
-		<a href="home.php"><h1 class="nomeSito">PARCO FAUNISTICO EUGANEO</h1></a>
+    <a href="home.php"><img class="logoHeader" src="../images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
+    <p class="nomeSito"><a href="home.php">PARCO FAUNISTICO EUGANEO</a></p>
   </div>
 
   <breadcrumb></breadcrumb>
@@ -34,7 +34,7 @@
   <!--Contenuto Tab-->
   <div id="biglietti" class="contenutoTab">
     <h2>Biglietti</h2>
-    <form id="formAcquistoBiglietti" action="acquistaBiglietti.php" method="post">
+    <form id="formAcquistoBiglietti" action="../PHP/acquistaBiglietti.php" method="post">
         <label for="quantitaInteri">N° Biglietti interi</label>
         <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
         <label for="quantitaRidotti">N° Biglietti ridotti</label>
@@ -50,7 +50,7 @@
             <input type="date" name="searchDate" />
             <input type="submit" value="Cerca"></input>
         </form>
-        <form id="selectEventi" action="prenotaEventi.php" method="post">
+        <form id="selectEventi" action="../PHP/prenotaEventi.php" method="post">
             <label for="eventi">Seleziona Evento</label>
             <select name="eventi">
               <opzioni></opzioni>

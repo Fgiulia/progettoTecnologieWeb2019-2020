@@ -1,5 +1,16 @@
 <?php
 	class modulesInit{
+		#funzione controllo input validi
+		public function validName(){}
+
+		public function validDate(){}
+
+		public function validEmail(){}
+
+		public function validPhone(){}
+
+		public function validPrice(){}
+
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
 			$breadcrumb = "Ti trovi in&colon; ";

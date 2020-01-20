@@ -1,0 +1,157 @@
+.messaggioRicerca{
+    color: #616161;
+    margin-left: 5%;
+    font-size: 1vw;
+}
+
+#ricercaAnimali p, #introCuccioli p{
+    width: 90%;
+    text-align: center;
+    font-size: 1vw;
+}
+
+#introCuccioli p{
+    margin: 1%;
+}
+
+#risultatiAnimali, #risultatiCuccioli{
+    width: 100%;
+    margin-left: 5%;
+}
+
+.containerAnimal{
+    width: 40%;
+    padding: 1%;
+    margin: 1%;
+    float: left;
+    border: 1px solid#616161;
+    height: 50%;
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+    box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+}
+
+.photoAnimal{
+    width: 30%;
+    float: left;
+    max-height: 30%;
+    margin: 4%;
+    border: 1px solid #000000;
+    padding: 1%;
+}
+
+.photoAnimal img{
+    width: 100%;
+    max-height: 30%;
+}
+
+.namePuppy{
+    font-style: italic;
+    text-align: center;
+    font-size: 1.5vw;
+    background-color: lightgray;
+}
+
+.nameAnimal{
+    padding-top: 4%;
+    font-weight: bold; 
+    float: center;
+    font-size: 1.5vw;
+}
+
+.scientificNameAnimal{
+    font-style: italic; 
+    float: center;
+    font-size: 1.1vw;
+}
+
+.descAnimal{
+    text-align: justify;
+    font-size: 0.8vw;
+    clear:both;
+}
+
+#formRicerca{
+    width: 90%;
+    padding: 2%;
+    float: center;
+}
+
+input[type=text], select {
+    width: 28%;
+    padding: 1% 1.5%;
+    margin: 0.5% 0;
+    display: inline-block;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  #inviaRicerca {
+    width: 13%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1% 1.5%;
+    margin: 0.5% 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #inviaRicerca:hover {
+    background-color: #45a049;
+  }
+
+  @media (max-width:1000px){
+    .messaggioRicerca{
+        font-size: 2vw;
+    }
+    
+    #ricercaAnimali p, #introCuccioli p{
+        text-align: justify;
+        font-size: 2vw;
+    }
+
+    #risultatiAnimali, #risultatiCuccioli{
+        width: 100%;
+        margin-left: 0; 
+    }
+
+    .containerAnimal{
+        width: 100%;
+        padding: 1%;
+        margin: 0.5%;
+        float: left;
+        height: auto;
+    }
+    
+    .namePuppy{
+        font-size: 3vw;
+    }
+
+    .nameAnimal{
+        font-weight: bold; 
+        float: center;
+        font-size: 3vw;
+    }
+    
+    .scientificNameAnimal{
+        font-weight: italic; 
+        float: center;
+        font-size: 2.5vw;
+    }
+    
+    .descAnimal{
+        float: justify;
+        font-size: 1.8vw;
+        margin: 2%;
+    }
+
+    input[type=text], select {
+        width: 100%;
+    }
+
+    #inviaRicerca {
+        width: 100%;
+    }
+}

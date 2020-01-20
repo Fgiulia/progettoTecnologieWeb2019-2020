@@ -83,20 +83,20 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				$breadcrumb = "";
 				break;
 			case "eventi":
-				$breadcrumb = " >> Gestione eventi";
+				$breadcrumb = " &gt;&gt; Gestione eventi";
 				$contentItems = "<div id='content'>"."\n"
 									."<p><b>Attenzione:</b> eliminando un evento, verranno eliminati anche gli acquisti degli utenti ad esso associati.</p>"."\n"
 									.modulesInit::getEventi()
 								."</div>"."\n";
 				break;
 			case "animali":
-				$breadcrumb = " >> Gestione animali";
+				$breadcrumb = " &gt;&gt; Gestione animali";
 				$contentItems = "<div id='content'>"."\n"
 								.modulesInit::getAnimali()
 								."</div>"."\n";
 				break;
 			case "acquisti":
-				$breadcrumb = " >> Gestione acquisti";
+				$breadcrumb = " &gt;&gt; Gestione acquisti";
 				$contentItems = "<div class='containerAcquisti'>"."\n"
 								."	<div class='contentAcquisti'><h3>Biglietti</h3> "."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n"
 								."	<div class='contentAcquisti'><h3>Eventi</h3>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n"
@@ -104,15 +104,15 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				break;
 			case "biglietti":
 				$contentItems = "<div id='content'>"."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n";
-				$breadcrumb = " -> Biglietti acquistati";
+				$breadcrumb = " &gt;&gt; Biglietti acquistati";
 				break;
 			case "prenotazioni":
 				$contentItems = "<div id='content'>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n";
-				$breadcrumb = " >> Eventi prenotati";
+				$breadcrumb = " &gt;&gt; Eventi prenotati";
 				break;
 			case "messaggi":
 				$contentItems = "<div id='content'>"."\n".modulesInit::getMessaggi()."\n"."</div>"."\n";
-				$breadcrumb = " >> Messaggi";
+				$breadcrumb = " &gt;&gt; Messaggi";
 				break;
 			case "datiPersonali":
 				$response = find("UtenteBean",(Object)['Email' => $_SESSION["user"]]);
@@ -144,7 +144,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 								."</div>"."\n";
 				}
 				
-				$breadcrumb = " >> I tuoi dati";
+				$breadcrumb = " &gt;&gt; I tuoi dati";
 				break;
 			default:
 				$breadcrumb = "";

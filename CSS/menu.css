@@ -1,9 +1,11 @@
 #menu {
     background-color: #4CAF50 !important;
-    padding: 0;
+    padding: 0%;
     overflow: hidden;
-    overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 4%;
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
 }
 
 *.menuItem {

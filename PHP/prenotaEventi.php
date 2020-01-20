@@ -1,6 +1,6 @@
 <?php
-require("../config/config.php");
-require("../api/fnQuery.php");
+require("config/config.php");
+require("api/fnQuery.php");
 
 $response = (Object) [
 	"status" => 0
@@ -10,30 +10,34 @@ $response = (Object) [
 try {
   $user = $_SESSION["user"];
   $persone = $_POST["NumeroPersone"];
-  $evento = $_POST["eventi"];
+  $nomeEvento = $_POST["eventi"];
   $data = date("Ymd");
 
-	if ($dbh) {
-				$params = [$user, $persone, $evento, $data];
+  if($dbh){
+    $paramsID = [$nomeEvento];
+    $sqlID = "SELECT IDEvento FROM Eventi WHERE Nome = ?";
+    $queryID = query($dbh, $sqlID, $paramsID);
 
-				$sql = "INSERT INTO EventiUtenti (
-							Utente
-							,NumeroPersone
-							,IDEvento
-							,Data
-						) VALUES (?,?,?,?)";
+    $evento = $queryID->rows[0];
 
-				$query = query($dbh, $sql, $params);
+		$params = [$user, $persone, $evento->IDEvento, $data];
+		$sql = "INSERT INTO EventiUtenti (
+					Utente
+					,NumeroPersone
+					,IDEvento
+					,Data
+				) VALUES (?,?,?,?)";
+		$query = query($dbh, $sql, $params);
 
-				if ($query->status) {
-					$response->response = "Prenotazione effettuata con successo";
-					$response->status = true;
-				} else  {
-		        $response->response = $query->error;
-				}
-      } else {
-		      $response->response = "Connessione database fallita";
-      }
+		if ($query->status) {
+			$response->response = "Prenotazione effettuata con successo";
+			$response->status = true;
+		} else  {
+        $response->response = $query->error;
+		}
+  } else {
+      $response->response = "Connessione database fallita";
+  }
 } catch (Exception $e) {
 	$response->response = "Fatal error";
 	echo $e->getMessage();
