@@ -8,9 +8,6 @@
 #inizializzazione di variabili
 	public $connection = null;
 	public $data = null;
-	public $testo = null;
-	public $famiglia = null;
-	public $sezioneParco = null;
 
 #funzione per la connessione ad DB
 	public function apriConnessioneDB(){
@@ -30,16 +27,19 @@
 		$nomeScientifico = $_POST['nomeScientifico'];
 		$famiglia = $_POST['famiglia'];
 		$sezione = $_POST['sezioneParco'];
-		$descrizione = $_POST['descrizioneAnimale'];
-		$ritratto = "";
+		$descAnimale = $_POST['descrizioneAnimale'];
+		$immagine = "";
+		$descImmagine = $_POST['descrizioneImmagine'];
 		if(is_uploaded_file($_FILES["immagineAnimale"]["tmp_name"])){
 			$destination = "../styles/". basename($_FILES["immagineAnimale"]["name"]);
+			echo $destination;
 			if(move_uploaded_file($_FILES['immagineAnimale']["tmp_name"], $destination)){
-				$ritratto = "../styles/". basename($_FILES["immagineAnimale"]["name"]);
+				$immagine = "../styles/". basename($_FILES["immagineAnimale"]["name"]);
+				echo $immagine;
 			}
 		}
 
-		$insertAnimale = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descrizione','$ritratto')";
+		$insertAnimale = "INSERT INTO Animali() VALUES ('$nomeComune','$nomeProprio','$nomeScientifico','$famiglia','$sezione','$descAnimale','$immagine','$descImmagine')";
 		if ($this->connection->query($insertAnimale) === TRUE){
 			return true;
 		}
@@ -83,7 +83,7 @@
 
 #funzione per la lettura da DB per la pagina "cuccioli"
 	public function getCuccioli(){
-		$query = 'SELECT NomeComune, NomeProprio, Ritratto, Descrizione FROM Animali WHERE Famiglia=\'Cuccioli\' ORDER BY NomeComune ASC';
+		$query = 'SELECT NomeComune, NomeProprio, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE Famiglia=\'Cuccioli\' ORDER BY NomeComune ASC';
 		$queryResult = mysqli_query($this->connection,$query);
 
 		if(mysqli_num_rows($queryResult)==0){
@@ -92,7 +92,7 @@
 		else{
 			$result = array();
 			while($row=mysqli_fetch_assoc($queryResult)){
-				$arraySingoloCucciolo = array('NomeComune'=>$row['NomeComune'],'NomeProprio'=>$row['NomeProprio'],'Ritratto'=>$row['Ritratto'],'Descrizione'=>$row['Descrizione']);
+				$arraySingoloCucciolo = array('NomeComune'=>$row['NomeComune'],'NomeProprio'=>$row['NomeProprio'],'DescrizioneAnimale'=>$row['DescrizioneAnimale'],'Immagine'=>$row['Immagine'],'DescrizioneImmagine'=>$row['DescrizioneImmagine'],);
 				array_push($result,$arraySingoloCucciolo);
 			}
 			return $result;
@@ -106,36 +106,36 @@
         $sezioneParco = $_POST['sezioneParco'];
 
 		if($testo==null && $famiglia==null && $sezioneParco==null){
-			$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
+			$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
 		}
 		else{
 			#tutti i campi settati
 			if($testo!=null && $famiglia!=null && $sezioneParco!=null){
-				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia=\''.$famiglia.'\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+				$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia=\''.$famiglia.'\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
 			}
 			#ricerca per famiglia e sezioneParco
 			if($testo==null && $famiglia!=null && $sezioneParco!=null){
-				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia=\''.$famiglia.'\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+				$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE Famiglia=\''.$famiglia.'\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
 			}
 			#ricerca per testo e sezioneParco
 			if($testo!=null && $famiglia==null && $sezioneParco!=null){
-				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia!=\'Cuccioli\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+				$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia!=\'Cuccioli\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
 			}
 			#ricerca per testo e famiglia
 			if($testo!=null && $famiglia!=null && $sezioneParco==null){
-				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia=\''.$famiglia.'\' ORDER BY NomeComune ASC';
+				$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE (NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\') AND Famiglia=\''.$famiglia.'\' ORDER BY NomeComune ASC';
 			}
 			#ricerca per solo testo in input
 			if($testo!=null && $famiglia==null && $sezioneParco==null){
-				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\' AND Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
+				$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE NomeComune LIKE \'%'.$testo.'%\' OR NomeScientifico LIKE \'%'.$testo.'%\' AND Famiglia!=\'Cuccioli\' ORDER BY NomeComune ASC';
 			}
 			#ricerca per solo campo famiglia
 			if($testo==null && $famiglia!=null && $sezioneParco==null){
-				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia=\''.$famiglia.'\' ORDER BY NomeComune ASC';
+				$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE Famiglia=\''.$famiglia.'\' ORDER BY NomeComune ASC';
 			}
 			#ricerca per solo campo sezioneParco
 			if($testo==null && $famiglia==null && $sezioneParco!=null){
-				$select = 'SELECT NomeComune, NomeScientifico, Ritratto, Descrizione FROM Animali WHERE Famiglia!=\'Cuccioli\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
+				$select = 'SELECT NomeComune, NomeScientifico, DescrizioneAnimale, Immagine, DescrizioneImmagine FROM Animali WHERE Famiglia!=\'Cuccioli\' AND SezioneParco=\''.$sezioneParco.'\' ORDER BY NomeComune ASC';
 			}
 		}
 		$selectResult = mysqli_query($this->connection,$select);
@@ -146,7 +146,7 @@
 		else{
 			$animali = array();
 			while($row=mysqli_fetch_assoc($selectResult)){
-				$arraySingoloAnimale = array('NomeComune'=>$row['NomeComune'],'NomeScientifico'=>$row['NomeScientifico'],'Ritratto'=>$row['Ritratto'],'Descrizione'=>$row['Descrizione']);
+				$arraySingoloAnimale = array('NomeComune'=>$row['NomeComune'],'NomeScientifico'=>$row['NomeScientifico'],'DescrizioneAnimale'=>$row['DescrizioneAnimale'],'Immagine'=>$row['Immagine'],'DescrizioneImmagine'=>$row['DescrizioneImmagine']);
 				array_push($animali,$arraySingoloAnimale);
 			}
 			return $animali;

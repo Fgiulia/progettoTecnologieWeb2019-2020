@@ -1,3 +1,9 @@
+.messaggioRicerca{
+    color: #616161;
+    margin-left: 5%;
+    font-size: 1em;
+}
+
 #ricercaAnimali p{
     width: 90%;
     text-align: center;

@@ -54,8 +54,9 @@ CREATE TABLE IF NOT EXISTS Animali (
     NomeScientifico varchar(50),
     Famiglia varchar(20),
     SezioneParco varchar(20),
-    Descrizione text,
-    Ritratto text,
+    DescrizioneAnimale text,
+    Immagine text NULL,
+    DescrizioneImmagine text NULL,
     PRIMARY KEY(NomeComune,Famiglia)
 );
 

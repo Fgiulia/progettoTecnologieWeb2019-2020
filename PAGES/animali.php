@@ -25,7 +25,7 @@
         $stringaAnimali = "";
         
         if($_POST['testo']!=null || $_POST['scegliFamiglia']!=null || $_POST['sezioneParco']!=null){                
-            $stringaAnimali .= "<p class=\"messaggio\">Hai cercato&colon; ";
+            $stringaAnimali .= "<p class=\"messaggioRicerca\">Hai cercato&colon; ";
             if($_POST['testo']!=null){
                 $stringaAnimali .= "\"".$_POST['testo']."\" in ";
             }
@@ -44,29 +44,29 @@
         }
 
         if($animali==null){
-            $stringaAnimali .= "<p class=\"msgErr\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;</p><p class=\"msgErr\">Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
+            $stringaAnimali .= "<p class=\"messaggio\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;<br />Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
         }
         else{
             $stringaAnimali .= "<div id=\"risultatiAnimali\">";
             foreach($animali as $animals){
-                $stringaAnimali .= "<div class=\"containerAnimal\">";
-                $stringaAnimali .= "<div class=\"photoAnimal\"><img src=\"".$animals['Ritratto']."\" /></div>
+                $stringaAnimali .= "<div class=\"containerAnimal\">
+                                    <div class=\"photoAnimal\"><img src=\"".$animals['Immagine']."\" alt=\"".$animals['DescrizioneImmagine']."\" /></div>
                                     <div class=\"nameAnimal\">".$animals['NomeComune']."</div>
                                     <div class=\"scientificNameAnimal\">".$animals['NomeScientifico']."</div>
-                                    <div class=\"descAnimal\">".$animals['Descrizione']."</div>";
-                $stringaAnimali .= "</div>";
+                                    <div class=\"descAnimal\">".$animals['DescrizioneAnimale']."</div>
+                                    </div>";
                 }
-            $stringaAnimali .= "</div>";
-            $stringaAnimali .= "<div class=\"clear\"></div>";
+            $stringaAnimali .= "</div>
+                                <div class=\"clear\"></div>";
         }
     }
     else{
-        $stringaAnimali = "<p class=\"msgErr\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+        $stringaAnimali = "<p class=\"erroreMessaggio\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
     }
 
 #se la ricerca non è valida (input non valido)
     if($validText==false){
-        $stringaAnimali = "<p class=\"msgErr\">La ricerca non &egrave; valida&comma; per favore riprova&period;</p>";
+        $stringaAnimali = "<p class=\"erroreMessaggio\">La ricerca non &egrave; valida&comma; per favore riprova&period;</p>";
     }
 
     $output = file_get_contents("../HTML/animali.html");
