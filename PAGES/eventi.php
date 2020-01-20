@@ -1,4 +1,6 @@
 <?php
+
+error_reporting(0);
 require_once "../PHP/modulesInit.php";
 require("../PHP/config/config.php");
 require("../PHP/api/fnQuery.php");
@@ -14,7 +16,7 @@ if($dbh) {
     if(isset($_POST['cercaData'])) {
         $data = $_POST['cercaData'];
         $sql = "SELECT * FROM Eventi
-        WHERE Data = ?";
+        WHERE Data LIKE '{$data}%'";
         $query=query($dbh,$sql,$data);
     }
     else {
@@ -38,7 +40,10 @@ if($dbh) {
         }
         
     }
-
+    else {
+        $result .= "<p class=\"msgErr\">La query non è andata a buon fine&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+        $output = str_replace("<eventiselezionati/>",$result,$output);
+    }
 }
 else {
     $result .= "<p class=\"msgErr\">Connessione al database degli eventi fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
@@ -46,7 +51,9 @@ else {
 }
 
 
+
 echo $output;
 if(isset($data))
-echo $data;
+
+
 ?>
