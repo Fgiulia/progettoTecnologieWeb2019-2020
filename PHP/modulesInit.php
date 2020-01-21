@@ -394,7 +394,7 @@
 
 				foreach($query->response as $row) {
 
-					$output .= '<div class="acquisto">'."\n";
+					$output .= '<div class="acquisti">'."\n";
 
 					$time = strtotime($row->Data);
 					$dateInLocal = date("d-m-Y", $time);
