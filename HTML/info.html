@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
         <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+        <link rel="stylesheet" href="../CSS/info.css" type="text/css" />
         
         <script src="../JS/ControlloForm.js"></script>
 
@@ -29,29 +30,28 @@
         
         <breadcrumb></breadcrumb>
         <menu></menu>
-		
-        <div id="indirizzo">
-        <h2>DOVE TROVARCI?</h2>
-            <ul>
-                <li>Parco Faunistico Euganeo (PD)</li>
-                <l1>Via xxxxxxxxxxxxxx</l1>
-            </ul>
-        </div>
+        <div id="containerInfo">
+            <div id="indirizzo">
+                <div class="titolo"> DOVE TROVARCI? </div>
+                <ul>
+                    <li>Parco Faunistico Euganeo (PD)</li>
+                    <l1>Via xxxxxxxxxxxxxx</l1>
+                </ul>
+            </div>
 
-        <p>Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br />Testo<br /></p>
-        
-        <!--Importare mappa da Goole Maps qui-->
+            <!--Importare mappa da Goole Maps qui-->
 
-        <div id="contatti">
-            <h2>COME CONTATTARCI?</h2>
-            <ul>
-                <li>Email:</li>
-                <l1>Numero di telefono:</l1>
-                <l1>Numero di fax:</l1>
-            </ul>
+            <div id="contatti">
+                <div class="titolo"> COME CONTATTARCI? </div>
+                <ul>
+                    <li>Email: ParcoEuganeo@info.com</li>
+                    <l1>Numero di telefono: 0437 89456</l1>
+                    <l1>Numero di fax: xxxxxxxxxx</l1>
+                </ul>
+            </div>
+            <span>In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</span>
+
         </div>
-        <span>In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</span>
-        
         <form id="formContatti" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
             <p>I campi marcati con * sono obbligatori</p>
             

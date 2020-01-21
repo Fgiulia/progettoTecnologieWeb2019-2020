@@ -1,4 +1,5 @@
 .containerEventi{
+    position: relative;
     width: 60%;
     padding: 1%;
     margin-right: 20%;
@@ -49,11 +50,15 @@
 }
 
 .descrizioneEvento{
-    margin: 10%;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .buttonPrenota{
-    margin: 10%;
-    
-    
+    position: absolute;
+    bottom: 5%;
+    left: 75%;
 }
+
+

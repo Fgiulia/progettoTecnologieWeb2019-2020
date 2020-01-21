@@ -1,0 +1,16 @@
+#containerInfo{
+    text-align: center;
+    margin: 5%;
+}
+
+#indirizzo{
+    margin: 5%;
+}
+
+label{
+    display: block;
+}
+
+ul{
+    list-style: none;
+}
