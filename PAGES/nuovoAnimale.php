@@ -9,6 +9,7 @@
         $output = file_get_contents("../HTML/nuovoAnimale.html");
         $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Pannello Amministratore >> Inserimento Nuovo Animale"),$output);
+        $nuovoAnimale = "";
  
  #controllo se i campi obbligatori sono stati inseriti e se sono validi
         if(isset($_POST['nomeComune'])){
