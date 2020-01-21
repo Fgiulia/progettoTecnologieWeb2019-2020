@@ -1,18 +1,17 @@
-<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Animali &vert; Parco Faunistico Euganeo</title>
+		<title>Animali | Parco Faunistico Euganeo</title>
 		<meta name="title" content="Tutti gli animali del Parco Faunistico Euganeo" />
 		<meta name="description" content="pagina riguardante tutti gli animali del sito del Parco Faunistico Euganeo" />
 		<meta name="keywords" content="parco faunistico, zoo, animali, Padova, ricerca, mammiferi, rettili, uccelli" />
 		<meta name="language" content="italian it" />
 		<meta name="author" content="Giulia Fiorese" />
-
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 		<link rel="icon" type="images/png" href="../images/logo-solo-nutria.png" />
 		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
 		<link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
 		<link rel="stylesheet" href="../CSS/animali.css" type="text/css" />
@@ -29,11 +28,12 @@
 		
 		<div id="ricercaAnimali">
 			<h1 class="titolo">I NOSTRI ANIMALI</h1>
-			<p>Scopri tutti gli animali presenti nel nostro Parco e vieni a trovarli&excl;</p>
-			<p>Cerca l&apos;animale che vuoi vedere&comma; scrivendo il nome oppure seleziona una categoria dal men&ugrave; a tendina&period;</p>
+			<p>Scopri tutti gli animali presenti nel nostro Parco e vieni a trovarli!</p>
+			<p>Cerca l&apos;animale che vuoi vedere, scrivendo il nome oppure seleziona una categoria dal men&ugrave; a tendina.</p>
 			
 			<form id="formRicerca" action="animali.php" method="post">
 				<input type="text" placeholder="Scrivi qui..." id="testo" name="testo" tabindex="1" />
+				
 				<select name="scegliFamiglia" id="scegliFamiglia" tabindex="2">
 					<option value="" selected>Scegli una famiglia...</option>
 					<option value="">Tutti gli animali</option>
@@ -41,6 +41,7 @@
 					<option value="Rettili">Rettili</option>
 					<option value="Uccelli">Uccelli</option>
 				</select>
+				
 				<select name="sezioneParco" id="sezioneParco" tabindex="3">
 					<option value="" selected>Scegli un continente...</option>
 					<option value="Africa">Africa</option>
@@ -49,6 +50,7 @@
 					<option value="Europa">Europa</option>
 					<option value="Oceania">Oceania</option>
 				</select>
+				
 				<button type="submit" id="inviaRicerca" name="inviaRicerca" tabindex="4">Cerca</button>
 			</form>
 		</div>
