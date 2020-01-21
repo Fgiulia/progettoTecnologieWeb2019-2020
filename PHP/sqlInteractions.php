@@ -5,6 +5,8 @@
 	const user = 'admin';
 	const pass = 'admin';
 	const dbName = 'Zoo';
+	
+	public $data = "";
 
 #funzione per la connessione ad DB
 	public function apriConnessioneDB(){
@@ -67,8 +69,6 @@
 		$prezzo = $_POST['prezzo'];
 		$data = $_POST['data'];
 		$descrizione = $_POST['descrizioneEvento'];
-
-		$prezzo = floatval($prezzo);
 
 		$insertEvento = "INSERT INTO Eventi() VALUES ($nome','$prezzo','$data','$descrizione')";
 		if ($this->connection->query($insertEvento) === TRUE){
@@ -152,9 +152,27 @@
 	}
 
 #funzione per la lettura da DB del prossimo evento (per la homepage)
-	public function getEventi(){
+	public function getProssimoEvento(){
 		$data = date("YYYY-mm-dd");
 		$selectEvents = 'SELECT Nome, Prezzo, Data, Descrizione FROM Eventi WHERE Data=\''.$data.'\' OR Data>\''.$data.'\' ORDER BY Data ASC LIMIT 1';
+		$selectEventsResult = mysqli_query($this->connection,$selectEvents);
+		$eventi = array();
+
+		if(mysqli_num_rows($selectEventsResult)==0){
+			return null;
+		}
+		else{
+			while($row=mysqli_fetch_assoc($selectEventsResult)){
+				$arraySingoloEvento = array('Nome'=>$row['Nome'],'Prezzo'=>$row['Prezzo'],'Data'=>$row['Data'],'Descrizione'=>$row['Descrizione']);
+				array_push($eventi,$arraySingoloEvento);
+			}
+			return $eventi;
+		}
+	}
+
+#funzione per la lettura da DB degli eventi per una data (pagina acquista)
+	public function getEventi($data){
+		$selectEvents = 'SELECT Nome, Prezzo, Data, Descrizione FROM Eventi WHERE Data=\''.$data.'\' ORDER BY Data ASC';
 		$selectEventsResult = mysqli_query($this->connection,$selectEvents);
 		$eventi = array();
 

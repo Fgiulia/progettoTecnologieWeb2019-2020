@@ -10,7 +10,7 @@
     $connessione = $oggettoPagina->apriConnessioneDB();
 
     if($connessione){
-        $evento = $oggettoPagina->getEventi();
+        $evento = $oggettoPagina->getProssimoEvento());
 
         if($evento==null){
             $prossimiEventi .= "<p class=\"dataOdierna\">Oggi&comma; ".$oggi."</p><p class=\"messaggio\">Non ci sono eventi in programma al Parco Faunistico Euganeo&period;</p></div>";

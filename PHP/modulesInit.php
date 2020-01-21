@@ -52,18 +52,7 @@
 
 		public function validPhone(){}
 
-		public function validPrice($prezzo){
-			$float = (float)$prezzo;
-			echo $float;
-			if(is_float($float)){
-				return true;
-				echo "prezzo ok";
-			}
-			else{
-				return false;
-				echo "prezzo no";
-			}
-		}
+		public function validPrice(){}
 
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
