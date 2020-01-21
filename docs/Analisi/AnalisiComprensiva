@@ -1,0 +1,44 @@
+                                  ANALISI
+
+==> UTENZA
+
+  L'utenza del sito non può essere inquadrata in un target specifico poichè
+  destinata al pubblico del parco faunistico Euganeo/LungoPiovego il quale
+  non presenta restrizioni o interesse per gruppi definiti.
+  Ciò si traduce nell'esigenza di un sito dalla facile e immediata
+  comprensione e nella piena ottemperanza dei canoni di accessibilità.
+
+==> CASI D'USO
+
+  ==>  UTENTE GENERICO
+    È definito utente generico l’utente che:
+    -	visita il sito senza essersi registrato;
+    -	visita il sito senza effettuare il login.
+
+    ==> VISUALIZZAZIONE HOMEPAGE
+      L'utente generico visualizza la homepage come prima pagina entrando nel sito;
+      se si trova in altra sezione del sito vi puo accedere in due modi:
+        - cliccando il logo o il titolo "Parco Faunistico Euganeo" presente nell'header
+        - cliccando il pulsante "Home" dal menù di navigazione
+
+      Questa pagina si compone di tre parti visibili all'utente:
+        - del testo semplice di descrizione del parco con informazioni generiche
+        - una sezione "prossimi eventi"
+        - immagini rappresentative del parco
+
+    ==> VISUALIZZAZIONE ANIMALI DEL PARCO
+      La pagina dedicata agli animali del parco viene raggiunta dall'utente cliccando l'opzione
+      "tutti gli animali" del menù a tendina che appare sotto la voce principale animali del menù
+      di navigazione.
+      Qui l'utente puo vedere per ogni animale una foto accompagnata da una breve descrizione,
+      il nome comune e il nome scientifico.
+      Sono presenti tre filtri di ricerca, uno testuale e due selezioni a tendina per
+      restringere i risultati per famiglia e continente d'appartenenza.
+
+    ==> VISUALIZZAZIONE CUCCIOLI
+      La voce Animali del menu a tendina presenta inoltre l'opzione "cuccioli", la quale
+      indirizza l'utente alla pagina di presentazione dei cuccioli del parco.
+      In questa pagina sono visibili all'utente i soli cuccioli caratterizzati da un
+      nome proprio e una foto.
+
+    ==> VISUALIZZAZIONE EVENTI
