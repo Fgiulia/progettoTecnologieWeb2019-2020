@@ -30,10 +30,8 @@
 		$descImmagine = $_POST['descrizioneImmagine'];
 		if(is_uploaded_file($_FILES["immagineAnimale"]["tmp_name"])){
 			$destination = "../images/". basename($_FILES["immagineAnimale"]["name"]);
-			echo $destination;
 			if(move_uploaded_file($_FILES['immagineAnimale']["tmp_name"], $destination)){
 				$immagine = "../images/". basename($_FILES["immagineAnimale"]["name"]);
-				echo $immagine;
 			}
 		}
 

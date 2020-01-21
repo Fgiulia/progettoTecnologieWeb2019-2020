@@ -1,7 +1,42 @@
 <?php
 	class modulesInit{
 		#funzione controllo input validi
-		public function validName(){}
+		public function validName($name){
+			if(!empty($name)){
+				if(preg_match("/^[a-zA-Z ]*$/",$name)){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+
+		public function validDescription($testo){
+			if(!empty($testo)){
+				if(strlen("$testo")<=1200){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+
+		public function validImage($immagine){
+			if(getimagesize($immagine)){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 
 		public function validDate(){}
 
