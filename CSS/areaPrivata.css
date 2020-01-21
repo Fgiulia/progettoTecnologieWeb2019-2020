@@ -161,6 +161,10 @@ input#submitAnimale{
     margin-top: 100px;
 }
 
+#eventi {
+    display: block;
+}
+
 .containerAcquisti {
     float:left;
     width:78%;

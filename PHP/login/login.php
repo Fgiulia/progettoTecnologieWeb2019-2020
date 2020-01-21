@@ -70,9 +70,9 @@ try {
 $_SESSION["logged"] = $response;
 
 if($_SESSION["logged"]->status == 2) {
-	header("Location: http://localhost/progettoTecnologieWeb2019-2020/PAGES/areaPrivata.php?pageName=principale");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/areaPrivata.php?pageName=principale");
 } else {
-	header("Location: http://localhost/progettoTecnologieWeb2019-2020/PAGES/login.php");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
 }
 
 ?>
