@@ -198,8 +198,19 @@ input#submitAnimale{
     max-width: 40%;
 }
 
-.tab {
+.tabBar {
+    background-color: black;
+    overflow: hidden;
     display: none;
+}
+
+.barButton {
+    float: left;
+    color:white;
+}
+
+.barButton:hover {
+    background-color:#959494;
 }
 
 @media screen and (max-width: 1000px) {
@@ -254,4 +265,13 @@ input#submitAnimale{
         overflow: auto;
         width: 100%;
     }
+
+    #eventi {
+        display: none;
+    }
+
+    .tabBar {
+        display: block;
+    }
+    
 }

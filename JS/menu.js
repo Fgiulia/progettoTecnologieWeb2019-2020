@@ -6,3 +6,12 @@ function mobileMenu() {
 		x.className = "topnav";
 	}
 }
+
+function openTab(tabName) {
+	var i;
+	var x = document.getElementsByClassName("contentAcquisti");
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+	document.getElementById(tabName).style.display = "block";
+}
