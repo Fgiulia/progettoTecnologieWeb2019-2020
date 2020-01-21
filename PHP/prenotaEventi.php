@@ -44,9 +44,9 @@ try {
 }
 
 if($response->status) {
-	header("Location: http://localhost/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
 } else {
-	header("Location: http://localhost/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
 }
 
 ?>
