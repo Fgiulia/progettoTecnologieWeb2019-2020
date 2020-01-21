@@ -15,12 +15,12 @@ try {
 
   if($dbh){
     $paramsID = [$nomeEvento];
-    $sqlID = "SELECT IDEvento FROM Eventi WHERE Nome = ?";
+    $sqlID = "SELECT ID FROM Eventi WHERE Nome = ?";
     $queryID = query($dbh, $sqlID, $paramsID);
 
     $evento = $queryID->rows[0];
 
-		$params = [$user, $persone, $evento->IDEvento, $data];
+		$params = [$user, $persone, $evento, $data];
 		$sql = "INSERT INTO EventiUtenti (
 					Utente
 					,NumeroPersone
@@ -44,9 +44,9 @@ try {
 }
 
 if($response->status) {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/areaPrivata.php");
 } else {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
 }
 
 ?>
