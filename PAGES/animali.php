@@ -2,14 +2,6 @@
     require_once "../PHP/modulesInit.php";
     require_once "../PHP/sqlInteractions.php";
 
-#controllo sul testo in input
-    $validText=true;
-    if(isset($_POST['testo'])){
-        if(!preg_match("/^[a-zA-Z ]*$/",$_POST['testo'])){
-            $validText = false;
-        }
-    }
-
 #se non vengono inseriti filtri di ricerca (per esempio la prima volta che carico la pagina)
     if(!(isset($_POST['testo']) || isset($_POST['scegliFamiglia']) || isset($_POST['sezioneParco']))){
         $_POST['testo'] = null;
@@ -65,8 +57,10 @@
     }
 
 #se la ricerca non è valida (input non valido)
-    if($validText==false){
-        $stringaAnimali = "<p class=\"errorMessage\">La ricerca non &egrave; valida&comma; per favore riprova&period;<br />Il nome pu&ograve; contenere solo lettere e spazi&period;</p>";
+    if(isset($_POST['testo'])){
+        if(!(modulesInit::validName($_POST['testo']))){
+            $stringaAnimali = "<p class=\"errorMessage\">La ricerca non &egrave; valida&comma; per favore riprova&period;<br />Il nome pu&ograve; contenere solo lettere e spazi&period;</p>";
+        }
     }
 
     $output = file_get_contents("../HTML/animali.html");

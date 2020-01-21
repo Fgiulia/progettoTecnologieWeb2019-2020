@@ -1,7 +1,42 @@
 <?php
 	class modulesInit{
 		#funzione controllo input validi
-		public function validName(){}
+		public function validName($name){
+			if(!empty($name)){
+				if(preg_match("/^[a-zA-Z ]*$/",$name)){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+
+		public function validDescription($testo){
+			if(!empty($testo)){
+				if(strlen("$testo")<=1200){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+
+		public function validImage($immagine){
+			if(getimagesize($immagine)){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 
 		public function validDate(){}
 
@@ -26,13 +61,13 @@
 				session_start();
 			}
 
-			$menu_form = '<div id="menu">'."\n"
+			$menu_form = '<div class="topnav" id="menu">'."\n"
 						.'  <a class="menuItem" href="home.php">Home</a>'."\n"
 						.'  <div class="closeMenu">'."\n"
 						.'	  <div id="chiudiMenu">'."\n"
 						.'	  </div>'."\n"
 						.'  </div>'."\n"
-						.'  <div class="dropdown menuItem">'."\n"
+						.'  <div class="dropdown">'."\n"
 						.'	  <a class="dropbtn" href="animali.php">Animali'."\n"
 						.'		 <i class="fa fa-caret-down"></i>'."\n"
 						.'	  </a>'."\n"
@@ -66,7 +101,7 @@
 				$menu_form .= '   <a class="menuItem" href="login.php">Accedi</a>'."\n";
 			}
 
-			$menu_form .= '   <a href="javascript:void(0);" class="icon" onclick="myFunction()"></a>'."\n";
+			$menu_form .= '   <a href="javascript:void(0);" class="icon menuItem" onclick="mobileMenu()">&#9776;</a>'."\n";
 			$menu_form .= '</div>'."\n";
 
 			return $menu_form;
@@ -237,7 +272,7 @@
 
 					$output .= '<div class="acquisto">'."\n";
 
-					$output .= "	<img class='logoHeader' src='".$row->Ritratto."' alt='immagine animale' />"."\n"
+					$output .= "	<img class='logoHeader' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."' />"."\n"
 								.'	<div>'."\n"
 								.'		<h4>Nome</h4>'."\n"
 								.'		<p>'.$row->NomeComune.'</p>'."\n"
@@ -287,7 +322,7 @@
 
 				foreach($query->response as $row) {
 
-					$output .= '<div class="acquisto">'."\n";
+					$output .= '<div class="messaggio">'."\n";
 
 					if($_SESSION['admin'] == 1) {
 

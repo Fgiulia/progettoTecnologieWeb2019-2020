@@ -11,18 +11,10 @@ html, body {
 }
 
 body {
-    background-color: #f1f1f1;
+    background-color: #F1F1F1;
 }
 
-abbr {
-    text-decoration: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
+abbr, a, a:hover {
     text-decoration: none;
 }
 
@@ -30,7 +22,7 @@ a:hover {
     text-align: center;
     font-weight: bolder;
     display: block;
-    padding: 20px;
+    padding: 1.5%;
     font-size: 2em;
 }
 
@@ -51,11 +43,11 @@ a:hover {
 
 .errorMessage {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 5%;
     font-size: 1vw;
-    background: #c13636;
+    background: #C13636;
     width: 100%;
-    color: white;
+    color: #FFFFFF;
     padding: 0.3em 0em 0.3em 0em;
 }
 
@@ -64,7 +56,7 @@ a:hover {
 }
 
 .box-spacer{
-    border: 1px solid black ;
+    border: 1px solid #000000;
     box-sizing: border-box ;
     padding: 1em ;
     margin:  0.6em 0 0.6em 0 ;
@@ -72,7 +64,7 @@ a:hover {
 
 .button{
     background-color: #4CAF50;
-    color:white;
+    color: #FFFFFF;
     text-decoration: none;
     margin-left: 0.3em;
     font-weight: 500;
@@ -80,12 +72,12 @@ a:hover {
     padding: 0.2em 0.3em;
     border: 3px solid transparent;
     border-radius: 4px;
-    float: right ;
+    float: right;
 }
 
 .button:hover, .internal-button:hover{
-    color: #f0e9e9;
-    background-color: #58c25d;;
+    color: #F0E9E9;
+    background-color: #58C25D;
 }
 
 .internal-button{
@@ -93,7 +85,7 @@ a:hover {
     font-weight: 400;
     padding: 0.3em 0.5em;
     float: initial;
-    margin-left:0;
+    margin-left: 0;
 }
 
 /* BREADCRUMBS */
@@ -252,14 +244,56 @@ a:hover {
 input[type=submit] {
     background-color: #4CAF50;
     color: #FFFFFF;
-    padding: 12px 16px;
+    padding: 1.8% 2%;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 20px;
-    margin-top: 10px;;
+    font-size: 1.3vw;
+    margin-top: 1%;
 }
 
 input[type=submit]:hover {
     background-color: #58C25D;
+}
+
+@media (max-width:1000px){
+    .parFooter,
+    #presentazioneSito {
+        font-size: 2vw;
+    }
+
+    .infoHome,
+    .boxProssimiEventi,
+    .immaginiHome {
+        float: left;
+        width: 100%;
+        margin: 0;
+    }
+
+    .immaginiHome img{
+        float: left;
+        margin: 1.5% 0;
+    }
+
+    .boxProssimiEventi .titoloBoxEventi,
+    .prossimiEventi .eventName {
+        font-size: 2.2vw;
+    }
+
+    .prossimiEventi .eventDesc,
+    .prossimiEventi .eventPrice {
+        font-size: 1.8vw;
+        margin: 1.5%;
+    }
+
+    .prossimiEventi .dataOdierna{
+        margin: 1%;
+    }
+
+    .prossimiEventi #buttonHome {
+        padding: 0.8%;
+        font-size: 2vw;
+        width: 50%;
+        margin: 0.8%;
+    }
 }
