@@ -1,16 +1,30 @@
-#containerInfo{
+#containerPagina{
     text-align: center;
-    margin: 5%;
+}
+
+#containerInfo{
+    margin: 3%;
 }
 
 #indirizzo{
     margin: 5%;
 }
 
-label{
-    display: block;
-}
 
 ul{
     list-style: none;
+}
+
+#mappa{
+ text-align: center;
+
+}
+
+#contatti{
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.textbox{
+    
 }
