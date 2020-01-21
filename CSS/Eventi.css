@@ -1,18 +1,18 @@
 .containerEventi{
-    width: 40%;
+    width: 60%;
     padding: 1%;
-    margin: 1%;
-    float: left;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-bottom: 5%;
     border: 1px solid#616161;
     height: 50%;
-    -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
-    -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
 }
 
 #filtroEventi{
-    width: 90%;
+    width: 100%;
     text-align: center;
+    margin-bottom: 5%;
 }
 
 
@@ -27,3 +27,33 @@
     cursor: pointer;
   }
 
+#risultatiEventi{
+    float: center;
+    margin-left: 10%
+}
+
+.nomeEvento{
+    font-size: 1.5vw;
+    text-align: center;
+    font-weight: bolder;  
+
+}
+
+.prezzoEvento{
+    margin: 10%;
+}
+
+.dataEvento{
+    float: left;
+    margin: 10%;
+}
+
+.descrizioneEvento{
+    margin: 10%;
+}
+
+.buttonPrenota{
+    margin: 10%;
+    
+    
+}

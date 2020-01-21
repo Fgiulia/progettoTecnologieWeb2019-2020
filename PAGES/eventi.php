@@ -30,9 +30,12 @@ if($dbh) {
             foreach($query->rows as $eventi) {
                 $result .= "<div class=\"containerEventi\">
                             <div class=\"nomeEvento\">".$eventi->Nome."</div>
-                            <div class=\"containerEventi\">".$eventi->Prezzo."</div>
-                            <div class=\"dataEvento\">".$eventi->Data."</div>
-                            <div class=\"descrizioneEventio\">".$eventi->Descrizione."</div>
+                            <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
+                            <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
+                            <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
+                            <form action=\"../PAGES/acquista.php\">
+                                <input class=\"buttonPrenota\" type=\"submit\" value=\"PRENOTA ORA\"/>
+                            </form>
                             </div>";
             }
             $result .= "</dl>";

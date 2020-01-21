@@ -16,5 +16,4 @@ INSERT INTO Animali() VALUES
 INSERT INTO Eventi() VALUE
 (NULL,'Spettacolo delfini','12.50','2020-02-20','Non c&apos;è bambino al mondo che non si emozioni alla vista di un delfino: ed è per questo motivo che il nostro zoo è la location più indicata per le famiglie, grazie variegati spettacoli di delfini che vengono organizzati ogni giorno e che permettono di scoprire le meraviglie della vita marina in tutto il loro splendore.'),
 (NULL,'Animal explorer','15.00','2020-02-20','Il programma prevede una visita guidata e interattiva nelle aree zoologiche dei delfini, foche e leoni marini, pappagalli, pinguini e amici di zampa. La durata totale del programma è di 2 ore e mezza circa.'),
-(NULL,'Spettacolo tigri','7.50','2020-03-01','spettacolo tigri'),
-(NULL,'Casa dei rettili', '10.00','2020-01-20','Rettili');
+(NULL,'Casa dei rettili', '10.00','2020-03-01','Potrai ammirare tanti serpenti, di tutti i continenti, tra i più belli ed affascinanti, provenienti da tutto il mondo:pitoni africani, australiani ed indiani, tra cui spicca un esemplare albino, si potranno anche ammirare tanti altri rettili come, per esempio, il drago barbuto australiano, lo scinco dorato, ');
