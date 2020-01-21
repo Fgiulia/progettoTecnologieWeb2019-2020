@@ -182,6 +182,74 @@ fieldset{
     display: flex;
 }
 
+.messaggio {
+    margin: 20px;
+    padding: 1em;
+    border: 1px solid black;
+    background: white;
+    border-radius: 10px;
+    text-align: justify;
+    display: flex;
+}
+
 .testoMessaggio {
     max-width: 40%;
+}
+
+.tab {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    #content{
+        margin-top: 0;
+        text-align: center;
+        width: 100%;
+        float: none;
+    }
+
+    .titolo {
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .azioniRapide {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .acquisto {
+        margin: 10px 0;
+        font-size: 10px;
+    }
+
+    .acquisto img {
+        display: none;
+    }
+
+    .messaggio {
+        display: block;
+        margin: 10px 0;
+        font-size: 10px;
+    }
+
+    .messaggio div {
+        margin: 10px 0;
+    }
+
+    .testoMessaggio {
+        max-width: 100%;
+    }
+
+    .containerAcquisti {
+        float: none;
+        width: 100%;
+        display: block;
+    }
+
+    .contentAcquisti {
+        max-height: 100%;
+        overflow: auto;
+        width: 100%;
+    }
 }

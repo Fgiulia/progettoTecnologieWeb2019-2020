@@ -148,12 +148,6 @@ $beansMaps->EventoBean = (Object) [
 				"type" => "date"
 			]
 		]
-		,"Giorno" => (Object) [
-			"name" => "Giorno"
-			,"options" => (Object) [
-				"type" => null
-			]
-		]
 	]
 	,"pksMap" => [
 		"ID" => (Object) [
@@ -334,14 +328,21 @@ $beansMaps->AnimaleBean = (Object) [
 				"type" => null
 			]
 		]
-		,"Descrizione" => (Object) [
-			"name" => "Descrizione"
+		,"DescrizioneAnimale" => (Object) [
+			"name" => "DescrizioneAnimale"
 			,"options" => (Object) [
 				"type" => null
 			]
 		]
-		,"Ritratto" => (Object) [
-			"name" => "Ritratto"
+		,"Immagine" => (Object) [
+			"name" => "Immagine"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
+		
+		,"DescrizioneImmagine" => (Object) [
+			"name" => "DescrizioneImmagine"
 			,"options" => (Object) [
 				"type" => null
 			]

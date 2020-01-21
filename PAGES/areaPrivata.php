@@ -97,9 +97,14 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				break;
 			case "acquisti":
 				$breadcrumb = " &gt;&gt; Gestione acquisti";
+				
 				$contentItems = "<div class='containerAcquisti'>"."\n"
-								."	<div class='contentAcquisti'><h3>Biglietti</h3> "."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n"
-								."	<div class='contentAcquisti'><h3>Eventi</h3>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n"
+								."<div class='tab'>"."\n"
+								."	<button class='linkTab' onclick='apriTab(event, 'biglietti')' id='tabBiglietti'>Biglietti</button>"."\n"
+								."	<button class='linkTab' onclick='apriTab(event, 'eventi')'>Eventi</button>"."\n"
+								."</div>"."\n"
+								."	<div id='biglietti' class='contenutoTab contentAcquisti'><h3>Biglietti</h3> "."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n"
+								."	<div id='eventi' class='contenutoTab contentAcquisti'><h3>Eventi</h3>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n"
 								."</div>"."\n";
 				break;
 			case "biglietti":
