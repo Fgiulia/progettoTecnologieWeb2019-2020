@@ -23,6 +23,10 @@ if($SqlInterf->apriConnessioneDB()){
     }
   }
 }
+else{
+  $errore = "Connessione a Database fallita";
+  $output = str_replace("<tagErrore></tagErrore>","<p class='errorMessage'>$errore</p>",$output);
+}
 $output = file_get_contents("../HTML/Acquista.html");
 $output = str_replace('<a href="acquista.php">','</a>',$output);
 $output = str_replace("<menu></menu>",modulesInit::menu(),$output);

@@ -32,24 +32,25 @@
 		<div>
 			<section id="registerBox" class="outerBox">
 				<h1>Aggiungi un evento</h1>
-				<form id="registerForm" class="innerBox" action="" method="post">
+				<inserimentoNuovoEvento></inserimentoNuovoEvento>
+				<form id="registerForm" class="innerBox" action="nuovoEvento.php" method="POST">
 					<fieldset>
 						<legend>Dati generali</legend>
 						<p>I campi marcati con * sono obbligatori</p>
 
-						<label for="nome">*Nome</label>
+						<label for="nome">* Nome</label>
 						<input type="text" name="nome" id="nome" tabindex="1" required="required"/>
 
-						<label for="prezzo">*Prezzo</label>
+						<label for="prezzo">* Prezzo</label>
 						<input type="number" name="prezzo" id="prezzo" tabindex="2" required="required"/>
 
-						<label for="data">Data</label>
+						<label for="data">  Data</label>
 						<input type="date" name="data" id="data" tabindex="3" />
 
-						<label for="giorno">Giorno della settimana</label>
-						<input type="text" name="giorno" id="giorno" tabindex="4" />
+						<label for="descrizioneEvento">  Descrizione dell&apos;evento</label>
+						<input type="text" name="descrizioneEvento" id="descrizioneEvento" tabindex="4" />
 
-						<input type="submit" id="submitAnimale" value="Salva" />
+						<input type="submit" id="submitAnimale" value="Salva Evento" />
 					</fieldset>
 				</form>
 			</section>
