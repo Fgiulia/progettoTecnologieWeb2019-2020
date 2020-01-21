@@ -38,13 +38,32 @@
 			}
 		}
 
-		public function validDate(){}
+		public function validDate($data){
+			$oggi = date("YYYY-mm-dd");
+			if($data>$oggi){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 
 		public function validEmail(){}
 
 		public function validPhone(){}
 
-		public function validPrice(){}
+		public function validPrice($prezzo){
+			$float = (float)$prezzo;
+			echo $float;
+			if(is_float($float)){
+				return true;
+				echo "prezzo ok";
+			}
+			else{
+				return false;
+				echo "prezzo no";
+			}
+		}
 
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){

@@ -66,9 +66,11 @@
 		$nome = $_POST['nome'];
 		$prezzo = $_POST['prezzo'];
 		$data = $_POST['data'];
-		$giorno = $_POST['giorno'];
+		$descrizione = $_POST['descrizioneEvento'];
 
-		$insertEvento = "INSERT INTO Eventi() VALUES ('$nome','$prezzo','$data','$giorno')";
+		$prezzo = floatval($prezzo);
+
+		$insertEvento = "INSERT INTO Eventi() VALUES ($nome','$prezzo','$data','$descrizione')";
 		if ($this->connection->query($insertEvento) === TRUE){
 			return true;
 		}
