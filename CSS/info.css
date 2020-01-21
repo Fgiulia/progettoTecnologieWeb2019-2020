@@ -25,3 +25,15 @@ ul{
     margin-bottom: 10%;
 }
 
+textarea{
+    width: 60%;
+    vertical-align: top;
+    margin-top: 1em;
+    max-width: 60%;
+    height: 10em;
+}
+ #inviaMessaggio{
+     display: block;
+     
+ }
+
