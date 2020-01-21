@@ -153,7 +153,7 @@
 
 #funzione per la lettura da DB del prossimo evento (per la homepage)
 	public function getProssimoEvento(){
-		$data = date("YYYY-mm-dd");
+		$data = date("Y-m-d");
 		$selectEvents = 'SELECT Nome, Prezzo, Data, Descrizione FROM Eventi WHERE Data=\''.$data.'\' OR Data>\''.$data.'\' ORDER BY Data ASC LIMIT 1';
 		$selectEventsResult = mysqli_query($this->connection,$selectEvents);
 		$eventi = array();
