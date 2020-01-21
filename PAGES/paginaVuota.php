@@ -10,7 +10,7 @@
     $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Stai per essere reindirizzato..."),$output);
 
     if(isset($_SESSION["messagge"])) {
-        $mess = $_SESSION["messagge"]->response;
+        $mess = $_SESSION["messagge"];
         $output = str_replace("<messaggio></messaggio>","<p class='messaggio'>$mess</p>",$output);
         unset($_SESSION["messagge"]);
     }

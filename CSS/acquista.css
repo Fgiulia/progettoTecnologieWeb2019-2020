@@ -2,6 +2,9 @@
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
 }
 
 button {
@@ -12,6 +15,9 @@ button {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
 }
 
 button:hover {
@@ -29,6 +35,9 @@ button.active {
   border-top: none;
   -webkit-animation: fadeEffect 1.5s;
   animation: fadeEffect 1.5s;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
