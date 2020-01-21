@@ -17,8 +17,9 @@
         <link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
         <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
         <link rel="stylesheet" href="../CSS/info.css" type="text/css" />
+		<link rel="stylesheet" href="../CSS/areaPrivata.css" type="text/css" />
         
-        <script src="../JS/ControlloForm.js"></script>
+        <script src="../JS/controlloForm.js"></script>
 
     </head>
 
@@ -55,26 +56,30 @@
             <div>In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</div>
 
             <div class="main">
-            <section id="registerBox" class="outerBox">
-                    <form id="registrerForm" class="innerbox" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
-                        <p>I campi marcati con * sono obbligatori</p>
-                        
-                            <label for="nome">Nome *</label>
-                            <input type="text" name="nome" class="textbox" id="nome" tabindex="1" required="required" />
+                <section id="registerBox" class="outerBox">
+                    <form id="registerForm" class="innerbox" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
+                        <fieldset>
+                            <legend>Chiedi informazioni</legend>
+                                <p>I campi marcati con * sono obbligatori</p>
+                                
+                                <label for="nome">Nome *</label>
+                                <input type="text" name="nome" class="textbox" id="nome" tabindex="1" required="required" />
 
-                            <label for="cognome">Cognome *</label>
-                            <input type="text" name="cognome" class="textbox" id="cognome" tabindex="2" required="required" />
+                                <label for="cognome">Cognome *</label>
+                                <input type="text" name="cognome" class="textbox" id="cognome" tabindex="2" required="required" />
 
-                            <label for="email">*Email</label>
-                            <input type="email" name="email" class="textbox" id="email" tabindex="3" required="required" />
+                                <label for="email">*Email</label>
+                                <input type="email" name="email" class="textbox" id="email" tabindex="3" required="required" />
 
-                            <label for="numeroTelefono">Numero telefono</label>
-                            <input type="text" name="numeroTelefono" class="textbox"id="numeroTelefono" tabindex="4" />
+                                <label for="numeroTelefono">Numero telefono</label>
+                                <input type="text" name="numeroTelefono" class="textbox"id="numeroTelefono" tabindex="4" />
 
-                            <label for="messaggio">Il tuo messaggio *</label>
-                            <textarea name="messaggio" class="textbox" id="messaggio" tabindex="5" placeholder="Scrivi qui il tuo messaggio" required="required"></textarea>
-                        
-                        <input type="submit" id="inviaMessaggio" value="Invia" />
+                                <label for="messaggio">Il tuo messaggio *</label>
+                                <textarea name="messaggio" class="textbox" id="messaggio" tabindex="5" placeholder="Scrivi qui il tuo messaggio" required="required"></textarea>
+                                
+                                <input type="submit" id="inviaMessaggio" value="Invia" />
+                            </form>
+                        </fieldset>
                     </form>
                 </section>
             </div>
