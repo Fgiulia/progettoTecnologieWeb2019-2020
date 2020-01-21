@@ -5,6 +5,12 @@
     $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Registrazione"),$output);
     $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
 
+    if(!isset($_SESSION))
+        session_start();
+
+    if(isset($_SESSION['registrazione']))
+        $output = str_replace("<messaggio></messaggio>","<p class='messaggio'>".$_SESSION['registrazione']->response."</p>",$output);
+
     echo $output;
 
     unset($_SESSION["registrazione"]);

@@ -13,11 +13,10 @@
 		<link rel="icon" type="images/png" href="../images/logo-solo-nutria.png" />
 
 		<link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
-        <link rel="stylesheet" media="screen" href="../CSS/header.css" type="text/css" />
         <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
 		<link rel="stylesheet" href="../CSS/areaPrivata.css" type="text/css" />
 
-		<script src="../JS/registrati.js"></script>
+		<script src="../JS/controlloForm.js"></script>
 	</head>
 
 	<body>
@@ -31,8 +30,9 @@
 		
 		<div class="main">
 			<section id="registrationBox" class="outerBox">
+				<messaggio></messaggio>
 				<h1>Crea il tuo account!</h1>
-				<form id="registrationForm" class="innerBox " action="../PHP/login/registra.php" onsubmit="checkForm('registrationForm')" method="post" >
+				<form id="registrationForm" class="innerBox" action="../PHP/login/registra.php" method="post" >
 					<fieldset>
 						<legend>Dati personali</legend>
 

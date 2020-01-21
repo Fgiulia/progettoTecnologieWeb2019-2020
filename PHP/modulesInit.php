@@ -2,7 +2,7 @@
 	class modulesInit{
 		#funzione controllo input validi
 		public function validName($name){
-			if(!empty($name)){
+			if(isset($name) && !empty($name)){
 				if(preg_match("/^[a-zA-Z ]*$/",$name)){
 					return true;
 				}
@@ -16,7 +16,7 @@
 		}
 
 		public function validDescription($testo){
-			if(!empty($testo)){
+			if(isset($testo) && !empty($testo)){
 				if(strlen("$testo")<=1200){
 					return true;
 				}
@@ -48,9 +48,47 @@
 			}
 		}
 
-		public function validEmail(){}
+		public function validPass($pass){
+			if(isset($pass) && !empty($pass)){
+				if(preg_match("/^[a-zA-Z0-9]+$/",$pass)){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
 
-		public function validPhone(){}
+		public function validEmail($email){
+			if(isset($email) && !empty($email)){
+				if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+
+		public function validPhone($phone){
+			if(isset($phone) && !empty($phone)){
+				if(preg_match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/",$phone)){
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
 
 		public function validPrice(){}
 

@@ -3,6 +3,8 @@
 require("../config/config.php");
 require("../api/fnQuery.php");
 
+require_once "../modulesInit.php";
+
 $response = (Object) [
 	"status" => false
 	,"response" => "init"
@@ -15,6 +17,7 @@ try {
 	$cognome = $_POST["cognome"];
 	$nascita = $_POST["nascita"];
 	$pw = $_POST["password"];
+	$pwRi = $_POST["ripetiPassword"];
 	$cel = $_POST["cel"];
 
 	if ($dbh) {
@@ -30,27 +33,39 @@ try {
 				$response->response = "Nome utente già utilizzato";
 			} else {
 
-				$passHash = password_hash($pw, PASSWORD_DEFAULT);
+				if( modulesInit::validName($nome)
+					&& modulesInit::validName($cognome)
+					&& modulesInit::validEmail($mail)
+					&& modulesInit::validPhone($cel)
+					&& modulesInit::validPass($pw)
+					&& modulesInit::validPass($pwRi)
+					&& $pw === $pwRi
+					) {
 
-				$params = [$mail, $passHash, $nome, $cognome, "", $cell, $nascita, 0];
-				$sql = "INSERT INTO Utenti (
-							Email
-							,Password
-							,Nome
-							,Cognome
-							,Telefono
-							,Indirizzo
-							,DataNascita
-							,FlAdmin
-						) VALUES (?,?,?,?,?,?,?,?)";
+					$passHash = password_hash($pw, PASSWORD_DEFAULT);
 
-				$query = query($dbh, $sql, $params);
-
-				if ($query->status) {
-					$response->response = "Registrazione effettuata con successo";
-					$response->status = true;
-				} else  {
-					$response->response = $query->error;
+					$params = [$mail, $passHash, $nome, $cognome, "", $cell, $nascita, 0];
+					$sql = "INSERT INTO Utenti (
+								Email
+								,Password
+								,Nome
+								,Cognome
+								,Telefono
+								,Indirizzo
+								,DataNascita
+								,FlAdmin
+							) VALUES (?,?,?,?,?,?,?,?)";
+	
+					$query = query($dbh, $sql, $params);
+	
+					if ($query->status) {
+						$response->response = "Registrazione effettuata con successo. Puoi effettuare il login.";
+						$response->status = true;
+					} else  {
+						$response->response = $query->error;
+					}
+				} else {
+					$response->response = "Non &egrave; possibile procedere alla registrazione perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.";
 				}
 			}
 		} else {
@@ -66,10 +81,7 @@ try {
 
 $_SESSION["registrazione"] = $response;
 
-if($response->status) {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
-} else {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/registrati.php");
-}
+header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/registrati.php");
+
 
 ?>

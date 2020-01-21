@@ -250,6 +250,7 @@ input[type=submit] {
     cursor: pointer;
     font-size: 1.3vw;
     margin-top: 1%;
+    display: block;
 }
 
 input[type=submit]:hover {
