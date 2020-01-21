@@ -156,7 +156,7 @@
 
 				foreach($query->rows as $row) {
 
-					$output .= '<div class="acquisto">'."\n";
+					$output .= '<div class="acquisti">'."\n";
 
 					if($_SESSION['admin'] == 1) {
 						$output .= '	<div>'."\n"
@@ -221,7 +221,7 @@
 				
 				foreach($query->rows as $row) {
 
-					$output .= '<div class="acquisto">'."\n";
+					$output .= '<div class="acquisti">'."\n";
 
 					if($_SESSION['admin'] == 1) {
 						$output .= '	<div>'."\n"
@@ -270,7 +270,7 @@
 
 				foreach($query->response as $row) {
 
-					$output .= '<div class="acquisto">'."\n";
+					$output .= '<div class="acquisti">'."\n";
 
 					$output .= "	<img class='logoHeader' src='".$row->Immagine."' alt='".$row->DescrizioneImmagine."' />"."\n"
 								.'	<div>'."\n"
@@ -322,7 +322,7 @@
 
 				foreach($query->response as $row) {
 
-					$output .= '<div class="messaggio">'."\n";
+					$output .= '<div class="messaggi">'."\n";
 
 					if($_SESSION['admin'] == 1) {
 

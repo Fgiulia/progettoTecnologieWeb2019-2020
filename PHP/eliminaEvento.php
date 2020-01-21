@@ -30,7 +30,7 @@ try {
 }
 
 
-$_SESSION["messagge"] = $response;
+$_SESSION["messagge"] = $response->response;
 
 if($response->status) {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/areaPrivata.php?pageName=eventi");

@@ -174,7 +174,7 @@ input#submitAnimale{
     width: 49%;
 }
 
-.acquisto {
+.acquisti {
     margin: 20px;
     padding: 1em;
     border: 1px solid black;
@@ -184,7 +184,7 @@ input#submitAnimale{
     display: flex;
 }
 
-.messaggio {
+.messaggi {
     margin: 20px;
     padding: 1em;
     border: 1px solid black;
@@ -220,22 +220,22 @@ input#submitAnimale{
         margin: 20px 0;
     }
 
-    .acquisto {
+    .acquisti {
         margin: 10px 0;
         font-size: 10px;
     }
 
-    .acquisto img {
+    .acquisti img {
         display: none;
     }
 
-    .messaggio {
+    .messaggi {
         display: block;
         margin: 10px 0;
         font-size: 10px;
     }
 
-    .messaggio div {
+    .messaggi div {
         margin: 10px 0;
     }
 

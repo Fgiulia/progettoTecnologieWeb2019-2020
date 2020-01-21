@@ -38,13 +38,13 @@ abbr, a, a:hover {
 .messaggio {
     text-align: center;
     padding: 1.5%;
-    font-size: 1vw;
+    font-size: 1.3em;
 }
 
 .errorMessage {
     text-align: center;
     padding-top: 5%;
-    font-size: 1vw;
+    font-size: 1.3em;
     background: #C13636;
     width: 100%;
     color: #FFFFFF;

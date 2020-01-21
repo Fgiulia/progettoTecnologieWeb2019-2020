@@ -19,7 +19,7 @@ try {
 	$response->response = "Errore&comma; ".$e->getMessage()."Riprova ad effettuare il logout&comma; se il problema presiste contatta l&apos;amministratore";
 }
 
-$_SESSION["messagge"] = $response;
+$_SESSION["messagge"] = $response->response;
 header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php"); 
 
 ?>
