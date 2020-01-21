@@ -64,13 +64,13 @@
 	}
 
 #funzione per l'inserimento nel DB di un nuovo evento
-	public function insertEvent(){
-		$nome = $_POST['nome'];
-		$prezzo = $_POST['prezzo'];
-		$data = $_POST['data'];
-		$descrizione = $_POST['descrizioneEvento'];
+	public function insertEvent($evento){
+		$nome = $evento->nome;
+		$prezzo = floatval($evento->prezzo);
+		$data = date('Y-m-d', strtotime($evento->data));
+		$descrizione = $evento->descr;
 
-		$insertEvento = "INSERT INTO Eventi() VALUES ($nome','$prezzo','$data','$descrizione')";
+		$insertEvento = "INSERT INTO Eventi() VALUES (0,'$nome',$prezzo,$data,'$descrizione')";
 		if ($this->connection->query($insertEvento) === TRUE){
 			return true;
 		}

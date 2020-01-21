@@ -39,7 +39,7 @@
 		}
 
 		public function validDate($data){
-			$oggi = date("YYYY-mm-dd");
+			$oggi = date("Y-m-d");
 			if($data>$oggi){
 				return true;
 			}
