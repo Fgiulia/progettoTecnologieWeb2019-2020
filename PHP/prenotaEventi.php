@@ -8,19 +8,20 @@ $response = (Object) [
 ];
 
 try {
-	$user = $_SESSION["user"];
-	$persone = $_POST["NumeroPersone"];
-	$nomeEvento = $_POST["eventi"];
-	$data = date("Ymd");
+  $user = $_SESSION["user"];
+  $persone = $_POST["NumeroPersone"];
+  $nomeEvento = $_POST["eventi"];
+  $data = date("Ymd");
 
-	if($dbh){
-		$paramsID = [$nomeEvento];
-		$sqlID = "SELECT ID FROM Eventi WHERE Nome = ?";
-		$queryID = query($dbh, $sqlID, $paramsID);
+  if($dbh){
+    $paramsID = [$nomeEvento];
+    $sqlID = "SELECT ID FROM Eventi WHERE Nome = ?";
+    $queryID = query($dbh, $sqlID, $paramsID);
 
 		$evento = $queryID->rows[0];
+		$eventoID = $evento->ID;
 
-		$params = [$user, $persone, $evento, $data];
+		$params = [$user, $persone, $eventoID, $data];
 		$sql = "INSERT INTO EventiUtenti (
 					Utente
 					,NumeroPersone
@@ -35,9 +36,9 @@ try {
 		} else  {
         $response->response = $query->error;
 		}
-	} else {
-		$response->response = "Connessione database fallita";
-	}
+  } else {
+      $response->response = "Connessione database fallita";
+  }
 } catch (Exception $e) {
 	$response->response = "Fatal error";
 	echo $e->getMessage();
