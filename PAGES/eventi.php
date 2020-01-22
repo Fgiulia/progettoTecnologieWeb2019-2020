@@ -30,7 +30,7 @@ if($dbh) {
             $count = 1;
             foreach($query->rows as $eventi) {
                 $result .= "<div class=\"containerEventi\">
-                                <div id=\" class=\"nomeEvento\">".$eventi->Nome."</div>
+                                <div class=\"titoloEvento\">".$eventi->Nome."</div>
                                 <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
                                 <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
                                 <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>

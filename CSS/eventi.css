@@ -1,64 +1,67 @@
 .containerEventi{
     position: relative;
-    width: 60%;
+    text-align: center;
     padding: 1%;
     margin-right: 15%;
     margin-left: 15%;
     margin-bottom: 5%;
     border: 1px solid#616161;
-    height: 50%;
+    -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
+    -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
 }
 
 #filtroEventi{
     width: 100%;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
+#textLine{
+    margin-bottom: 1%;
+}
 
 #inviaRicerca {
-    width: 10%;
     background-color: #4CAF50;
-    color: white;
-    padding: 1% 1.1%;
-    margin: 0.5% 0;
-    border: none;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 0.3em;
+    font-weight: 500;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    padding: 0.2em 0.3em;
+    border: 3px solid transparent;
     border-radius: 4px;
-    cursor: pointer;
-  }
-
-#risultatiEventi{
-    float: center;
-    margin-left: 10%
+    display:inline-block;
 }
 
-.nomeEvento{
-    font-size: 1.5vw;
+.titoloEvento{
     text-align: center;
-    font-weight: bolder;  
-
+    font-weight: bolder;
+    display: block;
+    font-size: 2em;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-bottom: 1px solid;
+    
 }
 
 .prezzoEvento{
-    margin: 10%;
+    display:inline-block;
+    margin: 3%;
 }
 
 .dataEvento{
-    float: left;
-    margin: 10%;
+    display:inline-block;
+    margin: 3%;
 }
 
 .descrizioneEvento{
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 3%;
 }
 
 .buttonPrenota{
-    position: absolute;
-    bottom: 5%;
-    left: 75%;
+   display: block;
+   text-align: right;
 }
 
 
