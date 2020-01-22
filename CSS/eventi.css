@@ -1,11 +1,12 @@
 .containerEventi{
     position: relative;
     text-align: center;
-    padding: 1%;
+    font-size: 1.2em;
     margin-right: 15%;
     margin-left: 15%;
     margin-bottom: 5%;
     border: 1px solid#616161;
+    border-radius: 10px;
     -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
@@ -37,11 +38,12 @@
 .titoloEvento{
     text-align: center;
     font-weight: bolder;
+    font-size: 1.5em;
     display: block;
-    font-size: 2em;
     padding-top: 3%;
     padding-bottom: 3%;
-    border-bottom: 1px solid;
+    border-bottom: 1px double;
+    background-color: #d6cbd3
     
 }
 
@@ -57,11 +59,13 @@
 
 .descrizioneEvento{
     margin: 3%;
+    text-align: justify;
 }
 
 .buttonPrenota{
    display: block;
    text-align: right;
+   padding: 6px;
 }
 
 

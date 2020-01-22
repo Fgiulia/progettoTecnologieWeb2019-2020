@@ -1,6 +1,6 @@
 <?php
 
-//error_reporting(0);
+error_reporting(0);
 require_once "../PHP/modulesInit.php";
 require("../PHP/config/config.php");
 require("../PHP/api/fnQuery.php");
