@@ -55,14 +55,12 @@
 
 .nameAnimal{
     padding-top: 4%;
-    font-weight: bold; 
-    float: center;
+    font-weight: bold;
     font-size: 1.5vw;
 }
 
 .scientificNameAnimal{
-    font-style: italic; 
-    float: center;
+    font-style: italic;
     font-size: 1.1vw;
 }
 
@@ -75,7 +73,6 @@
 #formRicerca{
     width: 90%;
     padding: 2%;
-    float: center;
 }
 
 input[type=text], select {
@@ -131,19 +128,16 @@ input[type=text], select {
     }
 
     .nameAnimal{
-        font-weight: bold; 
-        float: center;
+        font-weight: bold;
         font-size: 3vw;
     }
     
     .scientificNameAnimal{
-        font-weight: italic; 
-        float: center;
+        font-style: italic;
         font-size: 2.5vw;
     }
     
     .descAnimal{
-        float: justify;
         font-size: 1.8vw;
         margin: 2%;
     }

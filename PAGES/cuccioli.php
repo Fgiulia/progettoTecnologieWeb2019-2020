@@ -9,7 +9,7 @@
         $cuccioli = $oggettoPagina->getCuccioli();
 
         if($cuccioli==null){
-            $stringaCuccioli = "<p class=\"messaggio\">Non sono presenti cuccioli in questo momento al Parco Faunistico Euganeo&period;</p>";
+            $stringaCuccioli = "<p class=\"messaggio\">Non sono presenti cuccioli in questo momento al Parco Faunistico Euganeo.</p>";
         }
         else{
             $stringaCuccioli = "<div id=\"risultatiCuccioli\">";
@@ -27,7 +27,7 @@
         }
     }
     else{
-        $stringaCuccioli = "<p class=\"errorMessage\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+        $stringaCuccioli = "<p class=\"errorMessage\">Connessione al database degli animali fallita. Per favore, riprova.</p>";
     }
     
     $output = file_get_contents("../HTML/cuccioli.html");

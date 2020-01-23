@@ -90,8 +90,6 @@
 			}
 		}
 
-		public function validPrice(){}
-
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
 			$breadcrumb = "Ti trovi in&colon; ";

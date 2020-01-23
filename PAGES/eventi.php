@@ -47,12 +47,12 @@ if($dbh) {
         }
     }
     else {
-        $result = "<p class=\"msgErr\">La query non è andata a buon fine&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+        $result = "<p class=\"msgErr\">La query non &egrave; andata a buon fine. Per favore, riprova.</p>";
         
     }
 }
 else {
-    $result = "<p class=\"msgErr\">Connessione al database degli eventi fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+    $result = "<p class=\"msgErr\">Connessione al database degli eventi fallita. Per favore, riprova.</p>";
 }
 
 

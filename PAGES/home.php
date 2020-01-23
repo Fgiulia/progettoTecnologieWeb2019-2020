@@ -13,7 +13,7 @@
         $evento = $oggettoPagina->getProssimoEvento();
 
         if($evento==null){
-            $prossimiEventi .= "<p class=\"dataOdierna\">Oggi&comma; ".$oggi."</p><p class=\"messaggio\">Non ci sono eventi in programma al Parco Faunistico Euganeo&period;</p></div>";
+            $prossimiEventi .= "<p class=\"dataOdierna\">Oggi, ".$oggi."</p><p class=\"messaggio\">Non ci sono eventi in programma al Parco Faunistico Euganeo.</p></div>";
         }
         else{
             foreach($evento as $event)
@@ -26,7 +26,7 @@
         }
     }
     else{
-        $prossimiEventi .= "<p class=\"errorMessage\">Connessione al database degli eventi fallita&period;<br />Per favore&comma; riprova&period;</p></div>";
+        $prossimiEventi .= "<p class=\"errorMessage\">Connessione al database degli eventi fallita.<br />Per favore, riprova.</p></div>";
     }
 
     $output = file_get_contents("../HTML/home.html");
