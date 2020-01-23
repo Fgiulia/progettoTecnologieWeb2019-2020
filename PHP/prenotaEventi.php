@@ -45,7 +45,9 @@ try {
 }
 
 if($response->status) {
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/areaPrivata.php");
+	$_SESSION["redirect"] = "areaPrivata";
+	$_SESSION["messagge"] = "Prenotazione effettuata con successo";
+	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
 } else {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
 }
