@@ -84,7 +84,7 @@
     else {
         $response = (Object) [
             "status" => -1
-            ,"response" => "Attenzione&colon; non hai effettuato il login&comma; verrai reindirizzato alla pagina di login&period;"
+            ,"response" => "Attenzione: non hai effettuato il login, verrai reindirizzato alla pagina di login."
         ];
         $_SESSION["logged"] = $response;
 

@@ -35,7 +35,7 @@ $output = str_replace("<opzioni></opzioni>",$options,$output);
 
 
 if(!isset($_SESSION["logged"])) {
-  $_SESSION["messagge"] = "Devi effettuare l'accesso prima di procedere con gli acquisti";
+  $_SESSION["messagge"] = "Devi effettuare l&apos;accesso prima di procedere con gli acquisti";
   header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
 }
 else {

@@ -164,7 +164,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 } else {
 	$response = (Object) [
 		"status" => -1
-		,"response" => "Attenzione&colon; non hai effettuato il login&perio; Verrai reindirizzato alla pagina di login&period;"
+		,"response" => "Attenzione: non hai effettuato il login. Verrai reindirizzato alla pagina di login."
 	];
 	$_SESSION["logged"] = $response;
 
