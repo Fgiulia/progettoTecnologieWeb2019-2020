@@ -234,10 +234,10 @@ abbr, a, a:hover {
 }
 
 .immaginiHome img{
-    width: auto;
+    width: 30%;
     height: auto;
     float: right;
-    margin: 1% 5%;    
+    margin: 1% 2%;    
 }
 
 /* STILE DEI PULSANTI SUBMIT */

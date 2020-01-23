@@ -17,7 +17,7 @@
         $stringaAnimali = "";
         
         if($_POST['testo']!=null || $_POST['scegliFamiglia']!=null || $_POST['sezioneParco']!=null){                
-            $stringaAnimali .= "<p class=\"messaggioRicerca\">Hai cercato&colon; ";
+            $stringaAnimali .= "<p class=\"messaggioRicerca\">Hai cercato: ";
             if($_POST['testo']!=null){
                 $stringaAnimali .= "\"".$_POST['testo']."\" in ";
             }
@@ -28,15 +28,15 @@
                 $stringaAnimali .= "tutti gli animali presenti in ";
             }
             if($_POST['sezioneParco']!=null){
-                $stringaAnimali .= $_POST['sezioneParco']."&period;</p>";
+                $stringaAnimali .= $_POST['sezioneParco'].".</p>";
             }
             else{
-                $stringaAnimali .= "tutti i continenti&period;</p>";
+                $stringaAnimali .= "tutti i continenti.</p>";
             }
         }
 
         if($animali==null){
-            $stringaAnimali .= "<p class=\"messaggio\">Non abbiamo trovato nessun animale collegato alla tua ricerca&period;<br />Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo&period;</p>";
+            $stringaAnimali .= "<p class=\"messaggio\">Non abbiamo trovato nessun animale collegato alla tua ricerca.<br />Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo.</p>";
         }
         else{
             $stringaAnimali .= "<div id=\"risultatiAnimali\">";
@@ -53,20 +53,20 @@
         }
     }
     else{
-        $stringaAnimali = "<p class=\"errorMessage\">Connessione al database degli animali fallita&period;</p><p class=\"msgErr\">Per favore&comma; riprova&period;</p>";
+        $stringaAnimali = "<p class=\"errorMessage\">Connessione al database degli animali fallita. Per favore, riprova.</p>";
     }
 
 #se la ricerca non è valida (input non valido)
     if(isset($_POST['testo'])){
-        if(!(modulesInit::validName($_POST['testo']))){
-            $stringaAnimali = "<p class=\"errorMessage\">La ricerca non &egrave; valida&comma; per favore riprova&period;<br />Il nome pu&ograve; contenere solo lettere e spazi&period;</p>";
+        if(!(preg_match("/^[a-zA-Z ]*$/",$_POST['testo']))){
+            $stringaAnimali = "<p class=\"errorMessage\">La ricerca non &egrave; valida, per favore riprova.<br />Il nome pu&ograve; contenere solo lettere e spazi.</p>";
         }
     }
 
     $output = file_get_contents("../HTML/animali.html");
     $output = str_replace('<a href="animali.php">','</a>',$output);
     $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
-    $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb('Animali &gt;&gt; Tutti gli animali'),$output);
+    $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb('Animali >> Tutti gli animali'),$output);
     $output = str_replace("<tuttiAnimali></tuttiAnimali>",$stringaAnimali,$output);
 
     echo $output;
