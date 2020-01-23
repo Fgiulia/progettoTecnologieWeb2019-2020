@@ -28,11 +28,30 @@
   <tagErrore></tagErrore>
 
   <div class="tab">
-    <button class="linkTab" onclick="apriTab(event, 'biglietti')" id="tabBiglietti">Biglietti</button>
     <button class="linkTab" onclick="apriTab(event, 'eventi')">Eventi</button>
+    <button class="linkTab" onclick="apriTab(event, 'biglietti')" id="tabBiglietti">Biglietti</button>
   </div>
 
   <!--Contenuto Tab-->
+  <div id="eventi" class="contenutoTab">
+    <h2>Eventi</h2>
+    <div id="formEventi">
+      <form id="cercaData" action="acquista.php" method="post">
+        <label for="searchDate">Filtra le date</label>
+        <input type="date" name="searchDate" />
+        <input type="submit" class="acquistaSubmit" value="Cerca"></input>
+      </form>
+      <form id="selectEventi" action="../PHP/prenotaEventi.php" method="post">
+        <label for="eventi">Seleziona Evento</label>
+        <select name="eventi">
+          <opzioni></opzioni>
+        </select>
+        <label for="NumeroPersone">N° Partecipanti</label>
+        <input type="number" name="NumeroPersone" id="quantita" tabindex="3" value="0" step="1" min="0" />
+        <input type="submit" class="acquistaSubmit" value="Prenota"></input>
+      </form>
+    </div>
+  </div>
   <div id="biglietti" class="contenutoTab">
     <h2>Biglietti</h2>
     <form id="formAcquistoBiglietti" action="../PHP/acquistaBiglietti.php" method="post">
@@ -40,27 +59,8 @@
         <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
         <label for="quantitaRidotti">N° Biglietti ridotti</label>
         <input type="number" name="quantitaRidotti" id="quantita" tabindex="2" value="0" step="1" min="0" />
-        <input type="submit" id="acquistaSubmit" value="Acquista" />
+        <input type="submit" class=""="acquistaSubmit" value="Acquista" />
     </form>
-  </div>
-  <div id="eventi" class="contenutoTab">
-    <h2>Eventi</h2>
-    <div id="formEventi">
-        <form id="cercaData" action="acquista.php">
-            <label for="searchDate">Filtra le date</label>
-            <input type="date" name="searchDate" />
-            <input type="submit" value="Cerca"></input>
-        </form>
-        <form id="selectEventi" action="../PHP/prenotaEventi.php" method="post">
-            <label for="eventi">Seleziona Evento</label>
-            <select name="eventi">
-              <opzioni></opzioni>
-            </select>
-            <label for="NumeroPersone">N° Partecipanti</label>
-            <input type="number" name="NumeroPersone" id="quantita" tabindex="3" value="0" step="1" min="0" />
-            <input type="submit" value="Prenota"></input>
-        </form>
-    </div>
   </div>
 
   <div id="footer">
