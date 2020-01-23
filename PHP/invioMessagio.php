@@ -1,5 +1,6 @@
 <?php
 
+require_once "../PHP/modulesInit.php";
 require("config/config.php");
 require("api/fnQuery.php");
 
@@ -15,25 +16,35 @@ $response = (Object) [
     $email = $_POST["email"];
     $telefono = $_POST["numeroTelefono"];
     $messaggio = $_POST["messaggio"];
-    
-    if ($dbh) {
-        
-        $params = [$nome, $cognome, $email, $telefono, $messaggio];
-        $sql = "INSERT INTO messaggi (Nome,Cognome,Email,NumeroTelefono,Messaggio) 
-                VALUES (?,?,?,?,?)";
-        $query = query($dbh, $sql, $params);
 
-        if ($query->status) {
-            $response->response = "Messaggio inviato";
-            $response->status = true;
-        } else  {
-            $response->response = "Si è verificato un errore durante l'invio";
+    if ($dbh) {
+        if( modulesInit::validName($nome)
+					&& modulesInit::validName($cognome)
+					&& modulesInit::validEmail($email)
+                    && (modulesInit::validPhone($telefono)
+                    || empty($telefono))
+					&& !empty($messaggio)
+					) {
+
+            $params = [$nome, $cognome, $email, $telefono, $messaggio];
+            $sql = "INSERT INTO messaggi (Nome,Cognome,Email,NumeroTelefono,Messaggio) 
+                    VALUES (?,?,?,?,?)";
+            $query = query($dbh, $sql, $params);
+
+            if ($query->status) {
+                $response->response = "Messaggio inviato";
+                $response->status = true;
+            } else  {
+                $response->response = "Si è verificato un errore durante l'invio";
+            }
         }
+        else
+        $response->response = "Non &egrave; possibile procedere all'invio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto.<br />Verifica di averli inseriti e riprova.";
+
     }
     else
-        echo "impossibile connettersi al database";
-    
+    $response->response = "impossibile connettersi al database";
     echo $response->response;
     
-
-    ?>
+   
+?>
