@@ -28,18 +28,35 @@ if($dbh) {
         if ($query->rows && count($query->rows) > 0) {
             $result = "<div id=\"risultatiEventi\">";
             $count = 1;
-            foreach($query->rows as $eventi) {
-                $result .= "<div class=\"containerEventi\">
-                                <div class=\"titoloEvento\">".$eventi->Nome."</div>
-                                <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
-                                <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
-                                <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
-                                <form class=\"buttonPrenota\" action=\"../PAGES/acquista.php\" method=\"POST\">
-                                    <button type=\"submit\" name=\"prenota\" value=\"$eventi->Nome\" class=\"button internal-button\"> PRENOTA ORA </button>
-                                </form>
-                            </div>";
+            if (isset($_SESSION["logged"])){
+                foreach($query->rows as $eventi) {
+                    $result .= "<div class=\"containerEventi\">
+                                    <div class=\"titoloEvento\">".$eventi->Nome."</div>
+                                    <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
+                                    <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
+                                    <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
+                                    <form class=\"buttonPrenota\" action=\"../PAGES/acquista.php\" method=\"POST\">
+                                        <button type=\"submit\" name=\"prenota\" value=\"$eventi->Nome\" class=\"button internal-button\"> PRENOTA ORA </button>
+                                    </form>
+                                </div>";
+                }
             }
-            $result .= "</dl>";
+            else{
+                foreach($query->rows as $eventi) {
+                    $result .= "<div class=\"containerEventi\">
+                                    <div class=\"titoloEvento\">".$eventi->Nome."</div>
+                                    <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
+                                    <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
+                                    <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
+                                    <form class=\"buttonPrenota\" action=\"../PHP/login/login.php\" method=\"POST\">
+                                        <button type=\"submit\" name=\"prenota\" class=\"button internal-button\"> PRENOTA ORA </button>
+                                    </form>
+                                </div>";
+
+            }
+        }
+
+        $result .= "</dl>";
             
         } 
         else {
