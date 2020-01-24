@@ -9,7 +9,7 @@ $response = (Object) [
 	,"response" => "init"
 ];
 
-
+    
 
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];
@@ -45,6 +45,6 @@ $response = (Object) [
     else
     $response->response = "Impossibile connettersi al database";
     echo $response->response;
+
     
-   
 ?>

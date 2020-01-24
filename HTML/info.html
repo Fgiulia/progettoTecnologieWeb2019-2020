@@ -56,31 +56,32 @@
             <div>In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</div>
 
             <div class="main">
+                <div id="registerBox" class="outerBox">
                 
-            <form id="registerForm" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
-                <fieldset>
-                    <legend>Chiedi informazioni</legend>
-                    <p>I campi marcati con * sono obbligatori</p>
-                    
-                    <label for="nome">* Nome</label>
-                    <input type="text" name="nome" class="textbox" id="nome" tabindex="1" />
+                    <form id="registerForm" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
+                        <fieldset>
+                            <legend>Chiedi informazioni</legend>
+                            <p>I campi marcati con * sono obbligatori</p>
+                            
+                            <label for="nome">* Nome</label>
+                            <input type="text" name="nome" class="textbox" id="nome" tabindex="1" />
 
-                    <label for="cognome">* Cognome</label>
-                    <input type="text" name="cognome" class="textbox" id="cognome" tabindex="2" />
+                            <label for="cognome">* Cognome</label>
+                            <input type="text" name="cognome" class="textbox" id="cognome" tabindex="2" />
 
-                    <label for="email">* Email</label>
-                    <input type="text" name="email" class="textbox" id="email" tabindex="3" />
+                            <label for="email">* Email</label>
+                            <input type="text" name="email" class="textbox" id="email" tabindex="3" />
 
-                    <label for="numeroTelefono">Numero telefono</label>
-                    <input type="text" name="numeroTelefono" class="textbox"id="numeroTelefono" tabindex="4" />
+                            <label for="numeroTelefono">Numero telefono</label>
+                            <input type="text" name="numeroTelefono" class="textbox"id="numeroTelefono" tabindex="4" />
 
-                    <label for="messaggio">* Messaggio</label>
-                    <textarea name="messaggio" class="textbox" id="messaggio" tabindex="5" cols="" rows="" ></textarea>
-                    
-                    <input type="submit" id="inviaMessaggio" value="Invia" />
-                </fieldset>
-            </form>
-
+                            <label for="messaggio">* Messaggio</label>
+                            <textarea name="messaggio" class="textbox" id="messaggio" tabindex="5" cols="" rows="" ></textarea>
+                            
+                            <input type="submit" id="inviaMessaggio" value="Invia" />
+                        </fieldset>
+                    </form>
+                </div>
             </div>
 
         </div>
