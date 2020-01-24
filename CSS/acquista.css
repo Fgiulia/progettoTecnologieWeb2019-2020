@@ -7,8 +7,32 @@
   -webkit-border-radius: 6px 6px 6px 6px;
 }
 
+#formAcquistoBiglietti{
+  margin: 10px 10px 10px 10px;
+}
+
+#formEventi{
+  margin: 8px  8px 8px 8px;
+}
+
 #biglietti {
   display: none;
+}
+
+#quantita {
+  display: inline-block;
+  margin: 8px 8px 8px 8px;
+}
+#selectEventi{
+  margin: 8px 8px 8px 8px;
+}
+
+#cercaData{
+  margin: 8px 8px 8px 8px;
+}
+
+label {
+  display: block;
 }
 
 button {
@@ -55,7 +79,8 @@ input[type=button], input[type=reset] {
 }
 
 select {
-  width: 100%;
+  display: block;
+  width: 35%;
   padding: 16px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -77,13 +102,15 @@ input[type=date]:focus, input[type=number]:focus, select:focus {
   border: 3px solid #555;
 }
 
-.acquistaSubmit {
+input.acquistaSubmit {
+  display: inline-block;
   background-color: #4CAF50;
   border: none;
+  font-size: 16px;
   color: white;
-  padding: 16px 32px;
+  padding: 1% 2%;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 4px 4px 4px 4px;
   cursor: pointer;
 }
 
@@ -95,4 +122,10 @@ input[type=date]:focus, input[type=number]:focus, select:focus {
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+@media screen and (max-width: 1000px) {
+  select{
+    width:100%;
+  }
 }

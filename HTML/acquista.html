@@ -10,9 +10,9 @@
     <link rel="icon" type="images/png" href="../images/logo-solo-nutria.png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="../CSS/acquista.css" type="text/css" />
     <link rel="stylesheet" href="../CSS/cssGenerale.css" type="text/css" />
     <link rel="stylesheet" href="../CSS/menu.css" type="text/css" />
+    <link rel="stylesheet" href="../CSS/acquista.css" type="text/css" />
 
     <script type="text/javascript" src="../JS/scripts.js"></script>
     <script type="text/javascript" src="../JS/acquista.js"></script>
@@ -39,12 +39,12 @@
     <div id="formEventi">
       <form id="cercaData" action="acquista.php" method="post">
         <label for="searchDate">Filtra le date</label>
-        <input type="date" name="searchDate" />
+        <input type="date" name="searchDate" tabindex="1"/>
         <input type="submit" class="acquistaSubmit" value="Cerca"></input>
       </form>
       <form id="selectEventi" action="../PHP/prenotaEventi.php" method="post">
         <label for="eventi">Seleziona Evento</label>
-        <select name="eventi">
+        <select name="eventi" tabindex="2">
           <opzioni></opzioni>
         </select>
         <label for="NumeroPersone">N° Partecipanti</label>
@@ -57,10 +57,10 @@
     <h2>Biglietti</h2>
     <form id="formAcquistoBiglietti" action="../PHP/acquistaBiglietti.php" method="post">
         <label for="quantitaInteri">N° Biglietti interi</label>
-        <input type="number" name="quantitaInteri" id="quantita" tabindex="1" value="0" step="1" min="0" />
+        <input type="number" name="quantitaInteri" id="quantita" tabindex="4" value="0" step="1" min="0" />
         <label for="quantitaRidotti">N° Biglietti ridotti</label>
-        <input type="number" name="quantitaRidotti" id="quantita" tabindex="2" value="0" step="1" min="0" />
-        <input type="submit" class=""="acquistaSubmit" value="Acquista" />
+        <input type="number" name="quantitaRidotti" id="quantita" tabindex="5" value="0" step="1" min="0" />
+        <input type="submit" class="acquistaSubmit" value="Acquista" />
     </form>
   </div>
 
