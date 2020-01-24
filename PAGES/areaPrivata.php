@@ -125,6 +125,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				if($response->status) {
 
 					$utente = $response->response[0];
+					$data = date('Y-m-d', strtotime($utente->DataNascita));
 
 					$contentItems ="<div id='content'>"."\n"
 								."	<h2>I tuoi dati personali</h2>"."\n"
@@ -139,7 +140,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 								."		</div>"."\n"
 								."		<div>"."\n"
 								."			<span>Data di nascita:</span>"."\n"
-								."			<span id='data'>".$utente->DataNascita."</span>"."\n"
+								."			<span id='data'>".$data."</span>"."\n"
 								."		</div>"."\n"
 								."		<div>"."\n"
 								."			<span>E-mail:</span>"."\n"

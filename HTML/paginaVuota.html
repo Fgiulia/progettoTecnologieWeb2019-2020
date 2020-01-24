@@ -22,20 +22,24 @@
     </head>
 
     <body>
-        <div id="header">
-			<a href="home.php"><img class="logoHeader" src="../images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
-			<p class="nomeSito"><a href="home.php">PARCO FAUNISTICO EUGANEO</a></p>
-		</div>
-        
-        <breadcrumb></breadcrumb>
-        <menu></menu>
+        <div class="flexbox-parent">
+            <div id="header" class="flexbox-item header">
+                <a href="home.php"><img class="logoHeader" src="../images/logo-nutria-nome.png" alt="logo del Parco faunistico" /></a>
+                <p class="nomeSito"><a href="home.php">PARCO FAUNISTICO EUGANEO</a></p>
+            </div>
 
-        <div class="main">
-            <messaggio></messaggio>
-        </div>
-
-        <div id="footer">
-            <p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
+            <breadcrumb></breadcrumb>
+            <menu></menu>
+            
+            <div class="flexbox-item fill-area content flexbox-item-grow">
+                <div class="fill-area-content flexbox-item-grow">
+                    <messaggio></messaggio>
+                </div>
+            </div>
+            
+            <div class="flexbox-item footer" id="footer">
+                <p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>
+            </div>
         </div>
     </body>
 

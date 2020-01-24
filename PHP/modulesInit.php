@@ -164,6 +164,7 @@
 			$class  = $errore ? "errorMessage" : "messaggio";
 
 			$output = file_get_contents("../HTML/paginaVuota.html");
+			$output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Errore"),$output);
 			$output = str_replace("<messaggio></messaggio>","<p class='$class'>$messaggio</p>",$output);
 
 			return $output;
