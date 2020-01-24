@@ -1,8 +1,11 @@
 <?php
 
 require_once "../PHP/modulesInit.php";
+
 require("../PHP/config/config.php");
+require("../PHP/api/beansMaps.php");
 require("../PHP/api/fnQuery.php");
+require("../PHP/api/fnFind.php");
 
 $output = file_get_contents("../HTML/eventi.html");
 $output = str_replace('<a href="eventi.php">','</a>',$output);
@@ -12,23 +15,21 @@ $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Event
 $result ='';
 if($dbh) {
 
+    $query = null;
+
     if(isset($_POST['cercaData'])) {
         $data = $_POST['cercaData'];
-        $sql = "SELECT * FROM Eventi
-        WHERE Data LIKE '{$data}%'";
-        $query=query($dbh,$sql,$data);
+        $query=find("EventoBean", (Object)['Data' => $data]);
     }
     else {
-    $params = array();    
-    $sql = "SELECT * FROM Eventi";
-    $query=query($dbh,$sql,$params);
+        $query=find("EventoBean", null);
     }
     if ($query->status) {
-        if ($query->rows && count($query->rows) > 0) {
+        if ($query->response && count($query->response) > 0) {
             $result = "<div id=\"risultatiEventi\">";
             $count = 1;
             if (isset($_SESSION["logged"])){
-                foreach($query->rows as $eventi) {
+                foreach($query->response as $eventi) {
                     $result .= "<div class=\"containerEventi\">
                                     <div class=\"titoloEvento\">".$eventi->Nome."</div>
                                     <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
@@ -41,7 +42,7 @@ if($dbh) {
                 }
             }
             else{
-                foreach($query->rows as $eventi) {
+                foreach($query->response as $eventi) {
                     $result .= "<div class=\"containerEventi\">
                                     <div class=\"titoloEvento\">".$eventi->Nome."</div>
                                     <div class=\"dataEvento\">Evento disponibile in data: ".$eventi->Data."</div>
@@ -63,7 +64,8 @@ if($dbh) {
         }
     }
     else {
-        $result = "<p class=\"msgErr\">La query non &egrave; andata a buon fine. Per favore, riprova.</p>";
+        $error = $query->response;
+        $result = "<p class=\"msgErr\">La query non &egrave; andata a buon fine. Per favore, riprova $error.</p>";
         
     }
 }

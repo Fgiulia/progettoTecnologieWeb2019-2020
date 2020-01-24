@@ -70,7 +70,7 @@
 		$data = date('Y-m-d', strtotime($evento->data));
 		$descrizione = $evento->descr;
 
-		$insertEvento = "INSERT INTO Eventi() VALUES (0,'$nome',$prezzo,$data,'$descrizione')";
+		$insertEvento = "INSERT INTO Eventi() VALUES (0,'$nome',$prezzo,'$data','$descrizione')";
 		if ($this->connection->query($insertEvento) === TRUE){
 			return true;
 		}

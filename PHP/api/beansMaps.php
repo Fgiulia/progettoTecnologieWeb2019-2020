@@ -148,6 +148,12 @@ $beansMaps->EventoBean = (Object) [
 				"type" => "date"
 			]
 		]
+		,"Descrizione" => (Object) [
+			"name" => "Descrizione"
+			,"options" => (Object) [
+				"type" => null
+			]
+		]
 	]
 	,"pksMap" => [
 		"ID" => (Object) [
