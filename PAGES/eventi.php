@@ -18,8 +18,15 @@ if($dbh) {
     $query = null;
 
     if(isset($_POST['cercaData'])) {
-        $data = $_POST['cercaData'];
-        $query=find("EventoBean", (Object)['Data' => $data]);
+        if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$_POST['cercaData'])){
+            $data = $_POST['cercaData'];
+            $query=find("EventoBean", (Object)['Data' => $data]);
+        }
+        else{
+            $result = "<p> La data deve essere nel formato ANNO-MESE-GIORNO </p>";
+            $output = str_replace("<errore></errore>", $result, $output);
+            $query=find("EventoBean", null);
+        }
     }
     else {
         $query=find("EventoBean", null);
