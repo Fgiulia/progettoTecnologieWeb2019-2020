@@ -32,7 +32,7 @@ if($dbh) {
                 foreach($query->response as $eventi) {
                     $result .= "<div class=\"containerEventi\">
                                     <div class=\"titoloEvento\">".$eventi->Nome."</div>
-                                    <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
+                                    <div class=\"dataEvento\"> Evento disponibile in data: ".date('Y-m-d',strtotime($eventi->Data))."</div>
                                     <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
                                     <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
                                     <form class=\"buttonPrenota\" action=\"../PAGES/acquista.php\" method=\"POST\">
@@ -45,7 +45,7 @@ if($dbh) {
                 foreach($query->response as $eventi) {
                     $result .= "<div class=\"containerEventi\">
                                     <div class=\"titoloEvento\">".$eventi->Nome."</div>
-                                    <div class=\"dataEvento\">Evento disponibile in data: ".$eventi->Data."</div>
+                                    <div class=\"dataEvento\">Evento disponibile in data: ".date('Y-m-d',strtotime($eventi->Data))."</div>
                                     <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
                                     <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
                                     <form class=\"buttonPrenota\" action=\"../PHP/login/login.php\" method=\"POST\">
