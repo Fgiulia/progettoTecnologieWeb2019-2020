@@ -1,0 +1,19 @@
+\fancypagestyle{styleDocPages}{
+	\thispagestyle{empty}
+	\thispagestyle{fancy}
+	\pagestyle{fancy}
+	% HEADER
+	\fancyhead{}
+	\fancyhfoffset[L]{\marginparwidth - \marginparsep}
+	\fancyhfoffset[R]{\marginparwidth - \marginparsep}
+	\fancyhead[R]{\uppercase{\textbf{\leftmark}}}
+	% FOOTER
+	\fancyfoot{}
+	\fancyfoot[L]{Parco Faunistico Euganeo}
+	\fancyfoot[R]{Pagina \thepage~di~\pageref{LastPage}}
+	\futurelet\TMPfootrule\def\footrule{{\TMPfootrule}}
+	\setcounter{page}{0}
+	\pagenumbering{arabic}
+	\renewcommand{\headrulewidth}{0.2pt}
+	\renewcommand{\footrulewidth}{0.2pt}
+}
