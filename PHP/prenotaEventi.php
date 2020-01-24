@@ -16,32 +16,36 @@ try {
   $nomeEvento = $_POST["eventi"];
   $data = date("Ymd");
 
-  if($dbh){
-    $paramsID = [$nomeEvento];
-    $sqlID = "SELECT ID FROM Eventi WHERE Nome = ?";
-    $queryID = query($dbh, $sqlID, $paramsID);
+	if(is_numeric($persone)){
+	  if($dbh){
+	    $paramsID = [$nomeEvento];
+	    $sqlID = "SELECT ID FROM Eventi WHERE Nome = ?";
+	    $queryID = query($dbh, $sqlID, $paramsID);
 
-		$evento = $queryID->rows[0];
-		$eventoID = $evento->ID;
+			$evento = $queryID->rows[0];
+			$eventoID = $evento->ID;
 
-		$params = [$user, $persone, $eventoID, $data];
-		$sql = "INSERT INTO EventiUtenti (
-					Utente
-					,NumeroPersone
-					,IDEvento
-					,Data
-				) VALUES (?,?,?,?)";
-		$query = query($dbh, $sql, $params);
+			$params = [$user, $persone, $eventoID, $data];
+			$sql = "INSERT INTO EventiUtenti (
+						Utente
+						,NumeroPersone
+						,IDEvento
+						,Data
+					) VALUES (?,?,?,?)";
+			$query = query($dbh, $sql, $params);
 
-		if ($query->status) {
-			$response->response = "Prenotazione effettuata con successo.";
-			$response->status = true;
-		} else  {
-        $response->response = $query->error;
-		}
-  } else {
-      $response->response = "Connessione al database fallita.";
-  }
+			if ($query->status) {
+				$response->response = "Prenotazione effettuata con successo.";
+				$response->status = true;
+			} else  {
+	        $response->response = $query->error;
+			}
+	  } else {
+	      $response->response = "Connessione al database fallita.";
+	  }
+	} else {
+		$response->status = false;
+	}
 } catch (Exception $e) {
 	$response->response = "Fatal error";
 	echo $e->getMessage();
@@ -51,6 +55,8 @@ if($response->status) {
   $_SESSION["success"] = "Prenotazione effettuata con successo";
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
 } else {
+	$_SESSION["messagge"] = "Attenzione input inserito non valido";
+	$_SESSION["redirect"] = "acquista";
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
 }
 

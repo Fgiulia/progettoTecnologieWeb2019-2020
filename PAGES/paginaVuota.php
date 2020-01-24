@@ -20,6 +20,9 @@
       if($_SESSION["redirect"] == "login"){
         header("refresh:5; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
       }
+      if($_SESSION["redirect"] == "acquista"){
+        header("refresh:5; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
+      }
     }
     else{
         header("refresh:5; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/home.php");
