@@ -1,5 +1,6 @@
 .tab {
   overflow: hidden;
+  margin-top: 1.5em;
   border: 0.0625em solid #ccc;
   background-color: #f1f1f1;
   border-radius: 0.375em 0.375em 0.375em 0.375em;
