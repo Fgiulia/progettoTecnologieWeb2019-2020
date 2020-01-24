@@ -1,6 +1,7 @@
 .containerEventi{
     position: relative;
     text-align: center;
+    background-color: #DCDCDC;
     font-size: 1.1em;
     margin-right: 15%;
     margin-left: 15%;
@@ -42,8 +43,10 @@
     display: block;
     padding-top: 3%;
     padding-bottom: 3%;
-    border-bottom: 1px double;
-    background-color: #d6cbd3
+    border-bottom: 1px double black;
+    color: #FFFFFF;
+    background-color: #4CAF50;
+    
     
 }
 
