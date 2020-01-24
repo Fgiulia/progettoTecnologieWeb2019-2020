@@ -30,27 +30,26 @@
 		<breadcrumb></breadcrumb>
         <menu></menu>
 		
-		<div class="main">
-			<section id="registerBox" class="outerBox">
-				<h1>Aggiungi un animale</h1>
-				<inserimentoNuovoAnimale></inserimentoNuovoAnimale>
-				<form id="registerForm" class="innerBox" action="nuovoAnimale.php" onsubmit="checkForm('registerForm')" method="post" enctype="multipart/form-data">
+		<div class="outerBox">
+			<h1>Aggiungi un animale</h1>
+			<inserimentoNuovoAnimale></inserimentoNuovoAnimale>
+			<form id="registerForm" class="innerBox" action="nuovoAnimale.php" onsubmit="checkForm('registerForm')" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend>Dati generali</legend>
 						<p>I campi marcati con * sono obbligatori</p>
 
 						<label for="nomeComune">* Nome comune</label>
-						<input type="text" name="nomeComune" id="nomeComune" tabindex="1" required />
+						<input type="text" name="nomeComune" id="nomeComune" tabindex="1" required="required"/>
 
 						<label for="nomeProprio">  Nome proprio</label>
 						<input type="text" name="nomeProprio" id="nomeProprio" tabindex="2" />
 
 						<label for="nomeScientifico">* Nome scientifico</label>
-						<input type="text" name="nomeScientifico" id="nomeScientifico" tabindex="3" required />
+						<input type="text" name="nomeScientifico" id="nomeScientifico" tabindex="3" required="required"/>
 
 						<label for="famiglia">* Famiglia</label>
-						<select name="famiglia" id="famiglia" tabindex="4" required>
-							<option value="null" selected disabled>Scegli una famiglia...</option>
+						<select name="famiglia" id="famiglia" tabindex="4">
+							<option value="null" selected="selected" disabled="disabled">Scegli una famiglia...</option>
 							<option value="cuccioli">Cuccioli</option>
 							<option value="mammiferi">Mammiferi</option>
 							<option value="rettili">Rettili</option>
@@ -59,7 +58,7 @@
 
 						<label for="sezioneParco">  Sezione del parco</label>
 						<select name="sezioneParco" id="sezioneParco" tabindex="5">
-							<option value="null" selected disabled>Scegli una sezione del parco...</option>
+							<option value="null" selected="selected" disabled="disabled">Scegli una sezione del parco...</option>
 							<option value="africa">Africa</option>
 							<option value="america">America</option>
 							<option value="asia">Asia</option>
@@ -67,19 +66,18 @@
 							<option value="europa">Europa</option>
 						</select>
 
-						<label for="immagine">  Immagine</label>
+						<label for="immagineAnimale">  Immagine</label>
 						<input type="file" name="immagineAnimale" id="immagineAnimale" tabindex="6" />
 
 						<label for="descrizioneImmagine">  Descrizione dell&apos;immagine</label>
 						<input type="text" name="descrizioneImmagine" id="descrizioneImmagine" tabindex="7" />
 
-						<label for="descrizioneAnimale">  Descrizione dell&apos;animale<br />&lpar;massimo 1200 caratteri&rpar;</label>
-						<textarea type="text" name="descrizioneAnimale" id="descrizioneAnimale" tabindex="8"></textarea>
+						<label for="descrizioneAnimale">  Descrizione dell&apos;animale<br />(massimo 1200 caratteri)</label>
+						<textarea rows="" cols="" name="descrizioneAnimale" id="descrizioneAnimale" tabindex="8"></textarea>
 
 						<input type="submit" id="submitAnimale" value="Salva" />
 					</fieldset>
-				</form>
-			</section>
+			</form>
 		</div>
 
 		<div id="footer">

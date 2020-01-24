@@ -9,6 +9,7 @@
 		$output = file_get_contents("../HTML/nuovoEvento.html");
 		$output = str_replace("<menu></menu>",modulesInit::menu(),$output);
 		$output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Pannello Amministratore >> Inserimento Nuovo Evento"),$output);
+		$nuovoEvento = "";
 	
 		$output = str_replace("<inserimentoNuovoEvento></inserimentoNuovoEvento>","<p class\"messaggio\">".$_SESSION["nuovoEvento"]."</p>",$output);
 		echo $output;
