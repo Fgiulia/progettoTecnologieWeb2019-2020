@@ -25,6 +25,10 @@ ul{
     margin-bottom: 10%;
 }
 
+fieldset{
+    text-align: center;
+}
+
 
 #messaggio{
     width: 60%;
