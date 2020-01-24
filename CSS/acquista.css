@@ -1,18 +1,18 @@
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 0.0625em solid #ccc;
   background-color: #f1f1f1;
-  border-radius: 6px 6px 6px 6px;
-  -moz-border-radius: 6px 6px 6px 6px;
-  -webkit-border-radius: 6px 6px 6px 6px;
+  border-radius: 0.375em 0.375em 0.375em 0.375em;
+  -moz-border-radius: 0.375em 0.375em 0.375em 0.375em;
+  -webkit-border-radius: 0.375em 0.375em 0.375em 0.375em;
 }
 
 #formAcquistoBiglietti{
-  margin: 10px 10px 10px 10px;
+  margin: 0.625em 0.625em 0.625em 0.625em;
 }
 
 #formEventi{
-  margin: 8px  8px 8px 8px;
+  margin: 0.5em 0.5em 0.5em 0.5em;
 }
 
 #biglietti {
@@ -21,14 +21,14 @@
 
 #quantita {
   display: inline-block;
-  margin: 8px 8px 8px 8px;
+  margin: 0.5em 0.5em 0.5em 0.5em;
 }
 #selectEventi{
-  margin: 8px 8px 8px 8px;
+  margin: 0.5em 0.5em 0.5em 0.5em;
 }
 
 #cercaData{
-  margin: 8px 8px 8px 8px;
+  margin: 0.5em 0.5em 0.5em 0.5em;
 }
 
 label {
@@ -41,11 +41,11 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 0.875em 1em;
   transition: 0.3s;
-  border-radius: 6px 6px 6px 6px;
-  -moz-border-radius: 6px 6px 6px 6px;
-  -webkit-border-radius: 6px 6px 6px 6px;
+  border-radius: 0.375em 0.375em 0.375em 0.375em;
+  -moz-border-radius: 0.375em 0.375em 0.375em 0.375em;
+  -webkit-border-radius: 0.375em 0.375em 0.375em 0.375em;
 }
 
 button:hover {
@@ -58,21 +58,21 @@ button.active {
 
 .contenutoTab {
   display: block;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
+  padding: 0.375em 0.75em;
+  border: 0.0625em solid #ccc;
   border-top: none;
   -webkit-animation: fadeEffect 1.5s;
   animation: fadeEffect 1.5s;
-  border-radius: 6px 6px 6px 6px;
-  -moz-border-radius: 6px 6px 6px 6px;
-  -webkit-border-radius: 6px 6px 6px 6px;
+  border-radius: 0.375em 0.375em 0.375em 0.375em;
+  -moz-border-radius: 0.375em 0.375em 0.375em 0.375em;
+  -webkit-border-radius: 0.375em 0.375em 0.375em 0.375em;
 }
 
 input[type=button], input[type=reset] {
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 1em 2em;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
@@ -81,20 +81,20 @@ input[type=button], input[type=reset] {
 select {
   display: block;
   width: 35%;
-  padding: 16px 20px;
+  padding: 1em 1.25em;
   box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  margin: 4px 2px;
+  border: 0.125em solid #ccc;
+  border-radius: 0.25em;
+  margin: 0.25em 0.125em;
   background-color: #f1f1f1;
 }
 
 input[type=date], input[type=number] {
-  padding: 16px 20px;
+  padding: 1em 1.25em;
   box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  margin: 4px 2px;
+  border: 0.125em solid #ccc;
+  border-radius: 0.25em;
+  margin: 0.25em 0.125em;
   background-color: #f1f1f1;
 }
 
@@ -106,11 +106,11 @@ input.acquistaSubmit {
   display: inline-block;
   background-color: #4CAF50;
   border: none;
-  font-size: 16px;
+  font-size: 1em;
   color: white;
-  padding: 1% 2%;
+  padding: 0.5em 0.75em;
   text-decoration: none;
-  margin: 4px 4px 4px 4px;
+  margin: 0.25em 0.25em 0.25em 0.25em;
   cursor: pointer;
 }
 

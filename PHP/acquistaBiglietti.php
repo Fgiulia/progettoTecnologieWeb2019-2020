@@ -2,6 +2,9 @@
 require("config/config.php");
 require("api/fnQuery.php");
 
+if(!isset($_SESSION))
+	session_start();
+
 $response = (Object) [
 	"status" => 0
 	,"response" => "init"
@@ -40,9 +43,8 @@ try {
 }
 
 if($response->status) {
-  $_SESSION["redirect"] = "areaPrivata";
-  $_SESSION["messagge"] = "Acquisto effettuato con successo.";
-  header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
+  $_SESSION["success"] = "Biglietti acquistati con successo";
+  header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
 } else {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
 }

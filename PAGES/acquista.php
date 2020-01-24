@@ -2,6 +2,9 @@
 require_once "../PHP/modulesInit.php";
 require_once "../PHP/sqlInteractions.php";
 
+if(!isset($_SESSION))
+	session_start();
+
 $SqlInterf= new sqlInteractions();
 $options = "";
 $eventi = array();
@@ -20,6 +23,7 @@ if($SqlInterf->apriConnessioneDB()){
       $errore = "Nessun evento nella data selezionata";
       $output = str_replace("<tagErrore></tagErrore>","<p class='errorMessage'>$errore</p>",$output);
     }
+    unset($_POST['searchDate']);
   }
   elseif(isset($_POST['prenota'])){
     $nomeEvento = $_POST['prenota'];
@@ -38,6 +42,12 @@ if($SqlInterf->apriConnessioneDB()){
 else{
   $errore = "Connessione a Database fallita";
   $output = str_replace("<tagErrore></tagErrore>","<p class='errorMessage'>$errore</p>",$output);
+}
+
+if(isset($_SESSION["success"])){
+  $successo = $_SESSION["success"];
+  $output = str_replace("<tagSuccesso></tagSuccesso>","<p class='successMessage'>$successo</p>",$output);
+  unset($_SESSION["success"]);
 }
 
 $output = str_replace('<a href="acquista.php">','</a>',$output);
