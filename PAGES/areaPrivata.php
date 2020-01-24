@@ -83,20 +83,20 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				$breadcrumb = "";
 				break;
 			case "eventi":
-				$breadcrumb = " &gt;&gt; Gestione eventi";
+				$breadcrumb = " >> Gestione eventi";
 				$contentItems = "<div id='content'>"."\n"
 									."<p><b>Attenzione:</b> eliminando un evento, verranno eliminati anche gli acquisti degli utenti ad esso associati.</p>"."\n"
 									.modulesInit::getEventi()
 								."</div>"."\n";
 				break;
 			case "animali":
-				$breadcrumb = " &gt;&gt; Gestione animali";
+				$breadcrumb = " >> Gestione animali";
 				$contentItems = "<div id='content'>"."\n"
 								.modulesInit::getAnimali()
 								."</div>"."\n";
 				break;
 			case "acquisti":
-				$breadcrumb = " &gt;&gt; Gestione acquisti";
+				$breadcrumb = " >> Gestione acquisti";
 				
 				$contentItems = "<div class='containerAcquisti'>"."\n"
 								."	<div class='tabBar'>"."\n"
@@ -109,15 +109,15 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 				break;
 			case "biglietti":
 				$contentItems = "<div id='content'>"."\n".modulesInit::bigliettiAcquistati()."\n"."</div>"."\n";
-				$breadcrumb = " &gt;&gt; Biglietti acquistati";
+				$breadcrumb = " >> Biglietti acquistati";
 				break;
 			case "prenotazioni":
 				$contentItems = "<div id='content'>"."\n".modulesInit::eventiPrenotati()."\n"."</div>"."\n";
-				$breadcrumb = " &gt;&gt; Eventi prenotati";
+				$breadcrumb = " >> Eventi prenotati";
 				break;
 			case "messaggi":
 				$contentItems = "<div id='content'>"."\n".modulesInit::getMessaggi()."\n"."</div>"."\n";
-				$breadcrumb = " &gt;&gt; Messaggi";
+				$breadcrumb = " >> Messaggi";
 				break;
 			case "datiPersonali":
 				$response = find("UtenteBean",(Object)['Email' => $_SESSION["user"]]);
@@ -149,7 +149,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 								."</div>"."\n";
 				}
 				
-				$breadcrumb = " &gt;&gt; I tuoi dati";
+				$breadcrumb = " >> I tuoi dati";
 				break;
 			default:
 				$breadcrumb = "";

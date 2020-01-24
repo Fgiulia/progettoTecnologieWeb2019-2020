@@ -73,7 +73,7 @@
                 }
             }
             else{
-                $nuovoAnimale = "Non &egrave; possibile procedere all&apos;inserimento del nuovo animale perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.";
+                $nuovoAnimale = "Non &egrave; possibile procedere all&apos;inserimento del nuovo animale perch&egrave; non sono presenti tutti i cambi obbligatori. Verifica di averli inseriti e riprova.";
             }
         }
         $output = str_replace("<inserimentoNuovoAnimale></inserimentoNuovoAnimale>","<p class\"messaggio\">".$nuovoAnimale."</p>",$output);

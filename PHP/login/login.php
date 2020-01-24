@@ -47,7 +47,7 @@ try {
 						$response->response = "Email e/o password sbagliati.";
 					}
 				} else {
-					$response->response = "Non risulti registrato. Verifica di aver inserito i dati corretti o registrati";
+					$response->response = "Non risulti registrato. Verifica di aver inserito i dati corretti o registrati.";
 					$response->status = 1;
 				}
 			} else {
@@ -58,7 +58,7 @@ try {
 			$response->response = "Errore durante il login.";
 		}
 	} else {
-		$response->response = "Connessione database fallita";
+		$response->response = "Connessione al database fallita.";
 		$response->status = 1;
 	}
 } catch (Exception $e) {

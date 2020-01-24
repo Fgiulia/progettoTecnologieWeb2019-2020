@@ -1,6 +1,5 @@
 <?php
 
-error_reporting(0);
 require_once "../PHP/modulesInit.php";
 require("../PHP/config/config.php");
 require("../PHP/api/fnQuery.php");
@@ -36,7 +35,7 @@ if($dbh) {
                                     <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
                                     <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
                                     <form class=\"buttonPrenota\" action=\"../PAGES/acquista.php\" method=\"POST\">
-                                        <button type=\"submit\" name=\"prenota\" value=\"$eventi->Nome\" class=\"button internal-button\"> PRENOTA ORA </button>
+                                        <button type=\"submit\" name=\"prenota\" value=\"$eventi->Nome\" class=\"button internal-button\">PRENOTA ORA</button>
                                     </form>
                                 </div>";
                 }
@@ -45,11 +44,11 @@ if($dbh) {
                 foreach($query->rows as $eventi) {
                     $result .= "<div class=\"containerEventi\">
                                     <div class=\"titoloEvento\">".$eventi->Nome."</div>
-                                    <div class=\"dataEvento\"> Evento disponibile in data: ".$eventi->Data."</div>
+                                    <div class=\"dataEvento\">Evento disponibile in data: ".$eventi->Data."</div>
                                     <div class=\"prezzoEvento\">Prezzo biglietto: ".$eventi->Prezzo."€</div>
                                     <div class=\"descrizioneEvento\">".$eventi->Descrizione."</div>
                                     <form class=\"buttonPrenota\" action=\"../PHP/login/login.php\" method=\"POST\">
-                                        <button type=\"submit\" name=\"prenota\" class=\"button internal-button\"> PRENOTA ORA </button>
+                                        <button type=\"submit\" name=\"prenota\" class=\"button internal-button\">PRENOTA ORA</button>
                                     </form>
                                 </div>";
 

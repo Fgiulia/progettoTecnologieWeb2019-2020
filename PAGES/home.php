@@ -26,7 +26,7 @@
         }
     }
     else{
-        $prossimiEventi .= "<p class=\"errorMessage\">Connessione al database degli eventi fallita.<br />Per favore, riprova.</p></div>";
+        $prossimiEventi .= "<p class=\"errorMessage\">Connessione al database degli eventi fallita.Per favore, riprova.</p></div>";
     }
 
     $output = file_get_contents("../HTML/home.html");

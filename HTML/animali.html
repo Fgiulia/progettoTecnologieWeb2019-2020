@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
-<html lang="it">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Animali | Parco Faunistico Euganeo</title>
@@ -35,26 +35,28 @@
 			<p>Cerca l&apos;animale che vuoi vedere, scrivendo il nome oppure seleziona una categoria dal men&ugrave; a tendina.</p>
 			
 			<form id="formRicerca" action="animali.php" method="post">
-				<input type="text" placeholder="Scrivi qui..." id="testo" name="testo" tabindex="1" />
+				<fieldset>
+					<input type="text" placeholder="Scrivi qui..." id="testo" name="testo" tabindex="1" />
+					
+					<select name="scegliFamiglia" id="scegliFamiglia" tabindex="2">
+						<option value="" selected="selected">Scegli una famiglia...</option>
+						<option value="">Tutti gli animali</option>
+						<option value="Mammiferi">Mammiferi</option>
+						<option value="Rettili">Rettili</option>
+						<option value="Uccelli">Uccelli</option>
+					</select>
 				
-				<select name="scegliFamiglia" id="scegliFamiglia" tabindex="2">
-					<option value="" selected>Scegli una famiglia...</option>
-					<option value="">Tutti gli animali</option>
-					<option value="Mammiferi">Mammiferi</option>
-					<option value="Rettili">Rettili</option>
-					<option value="Uccelli">Uccelli</option>
-				</select>
+					<select name="sezioneParco" id="sezioneParco" tabindex="3">
+						<option value="" selected="selected">Scegli un continente...</option>
+						<option value="Africa">Africa</option>
+						<option value="America">America</option>
+						<option value="Asia">Asia</option>
+						<option value="Europa">Europa</option>
+						<option value="Oceania">Oceania</option>
+					</select>
 				
-				<select name="sezioneParco" id="sezioneParco" tabindex="3">
-					<option value="" selected>Scegli un continente...</option>
-					<option value="Africa">Africa</option>
-					<option value="America">America</option>
-					<option value="Asia">Asia</option>
-					<option value="Europa">Europa</option>
-					<option value="Oceania">Oceania</option>
-				</select>
-				
-				<button type="submit" id="inviaRicerca" name="inviaRicerca" tabindex="4">Cerca</button>
+					<button type="submit" id="inviaRicerca" name="inviaRicerca" tabindex="4">Cerca</button>
+				</fieldset>
 			</form>
 		</div>
 		

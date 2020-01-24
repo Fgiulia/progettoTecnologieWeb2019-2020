@@ -35,15 +35,15 @@ $response = (Object) [
                 $response->response = "Messaggio inviato";
                 $response->status = true;
             } else  {
-                $response->response = "Si è verificato un errore durante l'invio";
+                $response->response = "Si &egrave; verificato un errore durante l&apos;invio";
             }
         }
         else
-        $response->response = "Non &egrave; possibile procedere all'invio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto.<br />Verifica di averli inseriti e riprova.";
+        $response->response = "Non &egrave; possibile procedere all&apos;invio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto.<br />Verifica di averli inseriti e riprova.";
 
     }
     else
-    $response->response = "impossibile connettersi al database";
+    $response->response = "Impossibile connettersi al database";
     echo $response->response;
     
    

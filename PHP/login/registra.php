@@ -30,7 +30,7 @@ try {
 
 		if ($query->status) {
 			if ($query->rows && count($query->rows) > 0) {
-				$response->response = "Nome utente già utilizzato";
+				$response->response = "Nome utente gi&agrave; utilizzato.";
 			} else {
 
 				if( modulesInit::validName($nome)
@@ -72,7 +72,7 @@ try {
 			$response->response = $query->error;
 		}
 	} else {
-		$response->response = "Connessione database fallita";
+		$response->response = "Connessione al database fallita.";
 	}
 } catch (Exception $e) {
 	$response->response = "Fatal error";

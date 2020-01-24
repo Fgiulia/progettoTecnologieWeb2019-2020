@@ -26,13 +26,13 @@ try {
 				$query = query($dbh, $sql, $params);
 
 				if ($query->status) {
-					$response->response = "Acquisto effettuato con successo";
+					$response->response = "Acquisto effettuato con successo.";
 					$response->status = true;
 				} else  {
 		        $response->response = $query->error;
 				}
       } else {
-		      $response->response = "Connessione database fallita";
+		      $response->response = "Connessione al database fallita.";
       }
 } catch (Exception $e) {
 	$response->response = "Fatal error";
@@ -41,7 +41,7 @@ try {
 
 if($response->status) {
   $_SESSION["redirect"] = "areaPrivata";
-  $_SESSION["messagge"] = "Acquisto effettuato con successo";
+  $_SESSION["messagge"] = "Acquisto effettuato con successo.";
   header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
 } else {
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
