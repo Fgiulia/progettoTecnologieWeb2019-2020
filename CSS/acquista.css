@@ -19,11 +19,12 @@
   display: none;
 }
 
-#quantita {
+.quantita {
   display: inline-block;
   margin: 0.5em 0.5em 0.5em 0.5em;
 }
-#selectEventi{
+
+#containerSelect{
   margin: 0.5em 0.5em 0.5em 0.5em;
 }
 
@@ -89,7 +90,7 @@ select {
   background-color: #f1f1f1;
 }
 
-input[type=date], input[type=number] {
+input[type=date], input[type=text], input[type=number] {
   padding: 1em 1.25em;
   box-sizing: border-box;
   border: 0.125em solid #ccc;
@@ -98,7 +99,7 @@ input[type=date], input[type=number] {
   background-color: #f1f1f1;
 }
 
-input[type=date]:focus, input[type=number]:focus, select:focus {
+input[type=date]:focus, input[type=number]:focus, input[type=text]:focus, select:focus {
   border: 3px solid #555;
 }
 
@@ -112,6 +113,10 @@ input.acquistaSubmit {
   text-decoration: none;
   margin: 0.25em 0.25em 0.25em 0.25em;
   cursor: pointer;
+}
+
+fieldset {
+  border: none;
 }
 
 @-webkit-keyframes fadeEffect {
