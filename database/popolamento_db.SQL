@@ -29,4 +29,4 @@ INSERT INTO Eventi() VALUE
 
 INSERT INTO Utenti() VALUE
 ('admin@admin.com', '$2y$12$4vKXzeexDXik2v4tWqsk4edq8ryWddtEHixUULDqTbfsSuI8GZps.', 'Admin', 'Admin', NULL, NULL, NULL, 1),
-('utente@utente.com', '$2y$12$Gwp0GdSZzz5bAYJxzuTbAuGYZeYlcl.n8w9Bu.xRwqZCDHfF40.Re.', 'Utente', 'DiProva', 999999999, 'Via Trieste, 63 - 35121 Padova (Italy)', '1970-01-01', 0);
+('utente@utente.com', '$2y$12$o95iEOJhmsksBmV6kXLG6e9XyJw7TmouJ7wYF7SOaFua0p7kHUkDu', 'Utente', 'DiProva', 999999999, 'Via Trieste, 63 - 35121 Padova (Italy)', '1970-01-01', 0);

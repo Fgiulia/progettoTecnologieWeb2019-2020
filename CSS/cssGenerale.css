@@ -8,6 +8,7 @@ html, body {
     max-width: 95%;
     margin: auto;
     padding: 0;
+    height: 100%;
 }
 
 body {
@@ -254,12 +255,12 @@ abbr, a, a:hover {
 input[type=submit] {
     background-color: #4CAF50;
     color: #FFFFFF;
-    padding: 1.8% 2%;
+    padding: 0.75em 1em;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1.3vw;
-    margin-top: 1%;
+    font-size: 1.25em;
+    margin-top: 0.625em;
     display: block;
 }
 
@@ -307,4 +308,43 @@ input[type=submit]:hover {
         width: 50%;
         margin: 0.8%;
     }
+}
+
+.flexbox-parent
+{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+            
+}
+
+.flexbox-item
+{
+    padding: 8px;
+}
+.flexbox-item-grow
+{
+    flex: 1; /* same as flex: 1 1 auto; */
+}
+
+.fill-area
+{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+    
+}
+.fill-area-content
+{
+    /* Needed for when the area gets squished too far and there is content that can't be displayed */
+    overflow: auto; 
 }

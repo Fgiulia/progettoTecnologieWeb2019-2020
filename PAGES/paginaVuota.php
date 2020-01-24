@@ -22,6 +22,6 @@
       }
     }
     else{
-      header("refresh:5; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/home.php");
+        header("refresh:5; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/home.php");
     }
 ?>
