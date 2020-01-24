@@ -60,7 +60,7 @@ a:hover.menuItem, .dropdown:hover .dropbtn {
 
 .dropdown-content a:hover {background-color: #dbdbdb;}
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content:not(.mobile) {
     display: block;
 }
 
@@ -68,13 +68,26 @@ a:hover.menuItem, .dropdown:hover .dropbtn {
     display: none;
 }
 
+.fa.fa-caret-down.mobile {
+    display: none;
+}
+
 @media screen and (max-width: 1000px) {
     .topnav a:not(:first-child), .dropdown .dropbtn {
         display: none;
     }
+
+    .dropdown:hover .dropdown-content.mobile {
+        display: block;
+    }
+
     .topnav a.icon {
         float: right;
         display: block;
+    }
+
+    .fa.fa-caret-down.mobile {
+        display: unset;
     }
 }
 

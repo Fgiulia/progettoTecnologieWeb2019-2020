@@ -92,7 +92,7 @@
 
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
-			$breadcrumb = "Ti trovi in&colon; ";
+			$breadcrumb = "Ti trovi: ";
 			foreach($sequenza as $element){
 				$breadcrumb .= "$element ";
 			}
@@ -135,7 +135,18 @@
 			if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
 
 				if($_SESSION['admin'] == 1) { //Sono l'admin
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Pannello Amministratore</a>'."\n";
+					$menu_form .= '<div class="dropdown menuItem">'."\n"
+								.'	<a class="dropbtn" href="areaPrivata.php?pageName=principale">Pannello Amministratore'."\n"
+								.'		 <i class="fa fa-caret-down mobile"></i>'."\n"
+								.'  </a>'."\n"
+								.'	<div class="dropdown-content mobile">'."\n"
+								.'		<a href="areaPrivata.php?pageName=principale">Area Privata</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=eventi">Eventi</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=animali">Animali</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=acquisti">Acquisti</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=messaggi">Messaggi</a>'."\n"
+								.'	</div>'."\n"
+								.'</div>'."\n";
 				} else {
 					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Area Personale</a>'."\n";
 				}
