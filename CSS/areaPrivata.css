@@ -45,8 +45,13 @@ textarea#descrizioneAnimale {
 }
 
 .outerBox label{
+    width: 30%;
     padding:1em 0.4em 0 0;
     text-align:right;
+}
+
+.outerBox.login label{
+    width: auto;
 }
 
 #outerbox{

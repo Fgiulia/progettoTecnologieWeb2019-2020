@@ -148,7 +148,16 @@
 								.'	</div>'."\n"
 								.'</div>'."\n";
 				} else {
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Area Personale</a>'."\n";
+					$menu_form .= '<div class="dropdown menuItem">'."\n"
+								.'	<a class="dropbtn" href="areaPrivata.php?pageName=principale">Area Personale'."\n"
+								.'		 <i class="fa fa-caret-down mobile"></i>'."\n"
+								.'  </a>'."\n"
+								.'	<div class="dropdown-content mobile">'."\n"
+								.'		<a class="azioniRapide" href="areaPrivata.php?pageName=messaggi">Messaggi</a>'."\n"
+								.'		<a class="azioniRapide" href="acquista.php">Acquista Biglietti</a>'."\n"
+								.'		<a class="azioniRapide" href="info.php">Contatta l\'Amministratore</a>'."\n"
+								.'	</div>'."\n"
+								.'</div>'."\n";
 				}
 
 				$menu_form .= '<a class="menuItem" href="../PHP/login/logout.php">Logout</a>'."\n";
