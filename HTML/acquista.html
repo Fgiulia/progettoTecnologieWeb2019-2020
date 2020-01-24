@@ -3,9 +3,10 @@
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Acquista | Parco Faunistico Euganeo</title>
-    <meta name="title" content="acquista" />
-    <meta name="description" content="Pagina di Acquisto biglietti ed eventi" />
+    <meta name="title" content="Parco Faunistico Euganeo - Acquista" />
+    <meta name="description" content="Pagina di Acquisto biglietti ed eventi del Parco Faunistico Euganeo" />
     <meta name="language" content="italian it" />
+		<meta name="author" content="Riccardo Conte" />
 
     <link rel="icon" type="images/png" href="../images/logo-solo-nutria.png" />
 
@@ -39,30 +40,36 @@
     <h2>Eventi</h2>
     <div id="formEventi">
       <form id="cercaData" action="acquista.php" method="post">
-        <label for="searchDate">Filtra le date</label>
-        <input type="date" name="searchDate" tabindex="1"/>
-        <input type="submit" class="acquistaSubmit" value="Cerca"></input>
-      </form>
-      <form id="selectEventi" action="../PHP/prenotaEventi.php" method="post">
-        <label for="eventi">Seleziona Evento</label>
-        <select name="eventi" tabindex="2">
-          <opzioni></opzioni>
-        </select>
-        <label for="NumeroPersone">N° Partecipanti</label>
-        <input type="number" name="NumeroPersone" id="quantita" tabindex="3" value="0" step="1" min="0" />
-        <input type="submit" class="acquistaSubmit" value="Prenota"></input>
-      </form>
+				<fieldset>
+	        <label for="dataInput">Filtra le date</label>
+	        <input type="text" name="searchDate" id="dataInput" tabindex="1"/>
+	        <input type="submit" class="acquistaSubmit" value="Cerca"></input>
+				</fieldset>
+			</form>
+      <form id="containerSelect" action="../PHP/prenotaEventi.php" method="post">
+				<fieldset>
+	        <label for="selectEventi">Seleziona Evento</label>
+	        <select name="eventi" id="selectEventi" tabindex="2">
+	          <opzioni></opzioni>
+	        </select>
+	        <label for="NumeroPersone">N° Partecipanti</label>
+	        <input type="text" name="NumeroPersone" id="NumeroPersone" class="quantita"  tabindex="3" value="0" />
+	        <input type="submit" class="acquistaSubmit" value="Prenota"></input>
+				</fieldset>
+			</form>
     </div>
   </div>
   <div id="biglietti" class="contenutoTab">
     <h2>Biglietti</h2>
     <form id="formAcquistoBiglietti" action="../PHP/acquistaBiglietti.php" method="post">
+			<fieldset>
         <label for="quantitaInteri">N° Biglietti interi</label>
-        <input type="number" name="quantitaInteri" id="quantita" tabindex="4" value="0" step="1" min="0" />
+        <input type="text" name="quantitaInteri" id="quantitaInteri" class="quantita" tabindex="4" value="0"/>
         <label for="quantitaRidotti">N° Biglietti ridotti</label>
-        <input type="number" name="quantitaRidotti" id="quantita" tabindex="5" value="0" step="1" min="0" />
+        <input type="text" name="quantitaRidotti" id="quantitaRidotti" class="quantita" tabindex="5" value="0"/>
         <input type="submit" class="acquistaSubmit" value="Acquista" />
-    </form>
+			</fieldset>
+		</form>
   </div>
 
   <div id="footer">
