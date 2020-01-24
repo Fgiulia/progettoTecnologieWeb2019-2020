@@ -339,7 +339,9 @@
 								.'	</div>'."\n"
 								.'	<div>'."\n"
 								.'	<form action="../PHP/eliminaAnimale.php" method="post">'."\n"
-								.'		<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'		<div>'."\n"
+								.'			<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'		</div>'."\n"
 								.'	</form>'."\n"
 								.'	</div>'."\n"
 								.'</div>';
@@ -399,7 +401,9 @@
 
 					if($_SESSION["admin"] == 1) {			
 						$output .= '<form action="" method="post">'."\n"
-								.'		<button type="submit" name="risposta" value="'.$row->ID.'" class="button internal-button">Rispondi</button>'."\n"
+								.'		<div>'."\n"
+								.'			<button type="submit" name="risposta" value="'.$row->ID.'" class="button internal-button">Rispondi</button>'."\n"
+								.'		</div>'."\n"
 								.'	</form>'."\n";
 					}
 
@@ -446,7 +450,9 @@
 								.'	</div>'."\n"
 								.'	<div>'."\n"
 								.'	<form action="../PHP/eliminaEvento.php" method="post">'."\n"
-								.'		<button type="submit" name="eliminaEvento" value="'.$row->ID.'" class="button internal-button">Elimina</button>'."\n"
+								.'		<div>'."\n"
+								.'			<button type="submit" name="eliminaEvento" value="'.$row->ID.'" class="button internal-button">Elimina</button>'."\n"
+								.'		</div>'."\n"
 								.'	</form>'."\n"
 								.'	</div>'."\n"
 								.'</div>';

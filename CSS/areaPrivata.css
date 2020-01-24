@@ -49,7 +49,7 @@ textarea#descrizioneAnimale {
     text-align:right;
 }
 
-#outerbox, section{
+#outerbox{
     max-width: none;
     padding: 1em;
     margin: 0em;
@@ -69,13 +69,6 @@ textarea#descrizioneAnimale {
     box-sizing: content-box;
     width:60%;
     background-color:white;
-}
-
-section {
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1em;
-    min-width: 30%;  
 }
 
 fieldset{
