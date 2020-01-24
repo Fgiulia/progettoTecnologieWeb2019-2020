@@ -1,4 +1,4 @@
-<DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	
 	<head>
@@ -31,16 +31,16 @@
 				
 		
 		<div id="filtroEventi">
-			<p>
-				<h1 class="titolo">I NOSTRI EVENTI!</h1>
-			</p>
-
-			<p id="textLine">Cerca gli eventi disponibili nella data che preferisci!</p>
 			
-			<form id="FiltraData" action="../PAGES/eventi.php" method="POST">
-				<label for="cercaData"> RICERCA PER DATA </label>
-				<input type="date" id = "cercaData" name = "cercaData"/>
-				<input type="submit" id="inviaRicerca" value="Cerca" />  
+			<h1 class="titolo"> I NOSTRI EVENTI! </h1>
+			<p id="textLine"> Cerca gli eventi disponibili nella data che preferisci! </p>
+			
+			<form id="FiltraData" action="../PAGES/eventi.php" method="post">
+				<fieldset>
+					<label for="cercaData"> Ricerca per data </label>
+					<input type="date" id = "cercaData" name = "cercaData"/>
+					<input type="submit" id="inviaRicerca" value="Cerca" />
+				</fieldset>  
 			</form>
 		</div>
 

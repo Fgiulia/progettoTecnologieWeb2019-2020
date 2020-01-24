@@ -52,6 +52,16 @@ abbr, a, a:hover {
     padding: 0.3em 0em 0.3em 0em;
 }
 
+.successMessage {
+    text-align: center;
+    padding-top: 5%;
+    font-size: 1.3em;
+    background: #4CAF50;
+    width: 100%;
+    color: #FFFFFF;
+    padding: 0.3em 0em 0.3em 0em;
+}
+
 .subtitle{
     font-weight: 600 !important;
 }
@@ -238,7 +248,7 @@ abbr, a, a:hover {
     width: 30%;
     height: auto;
     float: right;
-    margin: 1% 2%;    
+    margin: 1% 2%;
 }
 
 /* STILE DEI PULSANTI SUBMIT */
