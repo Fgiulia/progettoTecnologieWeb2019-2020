@@ -92,7 +92,7 @@
 
 		#funzione per scrivere i breadcrumb
 		public static function breadcrumb(...$sequenza){
-			$breadcrumb = "Ti trovi in&colon; ";
+			$breadcrumb = "Ti trovi: ";
 			foreach($sequenza as $element){
 				$breadcrumb .= "$element ";
 			}
@@ -135,9 +135,29 @@
 			if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) { //login effettuato correttamente
 
 				if($_SESSION['admin'] == 1) { //Sono l'admin
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Pannello Amministratore</a>'."\n";
+					$menu_form .= '<div class="dropdown menuItem">'."\n"
+								.'	<a class="dropbtn" href="areaPrivata.php?pageName=principale">Pannello Amministratore'."\n"
+								.'		 <i class="fa fa-caret-down mobile"></i>'."\n"
+								.'  </a>'."\n"
+								.'	<div class="dropdown-content mobile">'."\n"
+								.'		<a href="areaPrivata.php?pageName=principale">Area Privata</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=eventi">Eventi</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=animali">Animali</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=acquisti">Acquisti</a>'."\n"
+								.'		<a href="areaPrivata.php?pageName=messaggi">Messaggi</a>'."\n"
+								.'	</div>'."\n"
+								.'</div>'."\n";
 				} else {
-					$menu_form .= '<a class="menuItem" href="areaPrivata.php?pageName=principale">Area Personale</a>'."\n";
+					$menu_form .= '<div class="dropdown menuItem">'."\n"
+								.'	<a class="dropbtn" href="areaPrivata.php?pageName=principale">Area Personale'."\n"
+								.'		 <i class="fa fa-caret-down mobile"></i>'."\n"
+								.'  </a>'."\n"
+								.'	<div class="dropdown-content mobile">'."\n"
+								.'		<a class="azioniRapide" href="areaPrivata.php?pageName=messaggi">Messaggi</a>'."\n"
+								.'		<a class="azioniRapide" href="acquista.php">Acquista Biglietti</a>'."\n"
+								.'		<a class="azioniRapide" href="info.php">Contatta l\'Amministratore</a>'."\n"
+								.'	</div>'."\n"
+								.'</div>'."\n";
 				}
 
 				$menu_form .= '<a class="menuItem" href="../PHP/login/logout.php">Logout</a>'."\n";
@@ -328,7 +348,9 @@
 								.'	</div>'."\n"
 								.'	<div>'."\n"
 								.'	<form action="../PHP/eliminaAnimale.php" method="post">'."\n"
-								.'		<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'		<div>'."\n"
+								.'			<button type="submit" name="eliminaAnimale" value="'.$row->NomeComune.'" class="button internal-button">Elimina</button>'."\n"
+								.'		</div>'."\n"
 								.'	</form>'."\n"
 								.'	</div>'."\n"
 								.'</div>';
@@ -388,7 +410,9 @@
 
 					if($_SESSION["admin"] == 1) {			
 						$output .= '<form action="" method="post">'."\n"
-								.'		<button type="submit" name="risposta" value="'.$row->ID.'" class="button internal-button">Rispondi</button>'."\n"
+								.'		<div>'."\n"
+								.'			<button type="submit" name="risposta" value="'.$row->ID.'" class="button internal-button">Rispondi</button>'."\n"
+								.'		</div>'."\n"
 								.'	</form>'."\n";
 					}
 
@@ -435,7 +459,9 @@
 								.'	</div>'."\n"
 								.'	<div>'."\n"
 								.'	<form action="../PHP/eliminaEvento.php" method="post">'."\n"
-								.'		<button type="submit" name="eliminaEvento" value="'.$row->ID.'" class="button internal-button">Elimina</button>'."\n"
+								.'		<div>'."\n"
+								.'			<button type="submit" name="eliminaEvento" value="'.$row->ID.'" class="button internal-button">Elimina</button>'."\n"
+								.'		</div>'."\n"
 								.'	</form>'."\n"
 								.'	</div>'."\n"
 								.'</div>';

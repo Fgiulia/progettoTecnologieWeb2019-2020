@@ -13,6 +13,8 @@
     margin: 3% auto;
     background-color: #fafafa;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .4);   
+    width: 45%;
+    text-align: center;
 }
 
 .campoLogin {
@@ -43,12 +45,16 @@ textarea#descrizioneAnimale {
 }
 
 .outerBox label{
-    width:30%;
+    width: 30%;
     padding:1em 0.4em 0 0;
     text-align:right;
 }
 
-#outerbox, section{
+.outerBox.login label{
+    width: auto;
+}
+
+#outerbox{
     max-width: none;
     padding: 1em;
     margin: 0em;
@@ -68,13 +74,6 @@ textarea#descrizioneAnimale {
     box-sizing: content-box;
     width:60%;
     background-color:white;
-}
-
-section {
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1em;
-    min-width: 30%;  
 }
 
 fieldset{

@@ -65,7 +65,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."	<div id='container'>"."\n"
 					."		<a class='azioniRapide' href='areaPrivata.php?pageName=messaggi'>Messaggi</a>"."\n"
 					."		<a class='azioniRapide' href='acquista.php'>Acquista Biglietti</a>"."\n"
-					."		<a class='azioniRapide' href='info.php'>Contatta l&apos;Amministratore</a>"."\n"
+					."		<a class='azioniRapide' href='info.php'>Contatta l'Amministratore</a>"."\n"
 					."	</div>"."\n"
 					."</div>"."\n";
 	}

@@ -31,38 +31,38 @@
         <menu></menu>
 		
 		<div class="main">
-			<section id="registrationBox" class="outerBox">
+			<div id="registrationBox" class="outerBox">
 				<messaggio></messaggio>
 				<h1>Crea il tuo account!</h1>
-				<form id="registrationForm" class="innerBox" action="../PHP/login/registra.php" method="post" >
+				<form id="registrationForm" action="../PHP/login/registra.php" method="post" >
 					<fieldset>
 						<legend>Dati personali</legend>
 
 						<label for="email">Email*</label>
-						<input type="email" name="email" id="email" class="required" tabindex="1" required/>
+						<input type="text" name="email" id="email" class="" tabindex="1" />
 
 						<label for="nome">Nome*</label>
-						<input type="text" name="nome" id="nome" class="required" tabindex="2" required/>
+						<input type="text" name="nome" id="nome" class="" tabindex="2" />
 
 						<label for="cognome">Cognome*</label>
-						<input type="text" name="cognome" id="cognome" class="required" tabindex="3" required/>
+						<input type="text" name="cognome" id="cognome" class="" tabindex="3" />
 
 						<label for="cel">Telefono*</label>
-						<input type="text" name="cel" id="cel" class="required" tabindex="4" required/>
+						<input type="text" name="cel" id="cel" class="" tabindex="4" />
 
 						<label for="nascita">Data di nascita*</label>
-						<input type="date" name="nascita" id="nascita" class="required" tabindex="5" required />
+						<input type="text" name="nascita" id="nascita" class="" tabindex="5"  />
 
 						<label for="password">Password*</label>
-						<input type="password" name="password" id="password" class="required" tabindex="6" required/>
+						<input type="password" name="password" id="password" class="" tabindex="6" />
 
 						<label for="repeatpassword">Ripeti password*</label>
-						<input type="password" name="ripetiPassword" id="repeatpassword" tabindex="7" required/>
+						<input type="password" name="ripetiPassword" id="repeatpassword" tabindex="7" />
 
 						<input type="submit" id="registerSubmit" value="Registrati" />
 					</fieldset>
 				</form>
-			</section>
+			</div>
 		</div>
 
 		<div id="footer">
