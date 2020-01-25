@@ -9,7 +9,6 @@ try {
 	if(!isset($_SESSION))
 		session_start();
 
-	$_SESSION["post"] =$_POST;
 	#controllo se i campi obbligatori sono stati inseriti e se sono validi
 	if(isset($_POST['nomeComune']) && isset($_POST['nomeScientifico']) && isset($_POST['famiglia'])){
 		if(modulesInit::validName($_POST['nomeComune']) && modulesInit::validName($_POST['nomeScientifico'])){

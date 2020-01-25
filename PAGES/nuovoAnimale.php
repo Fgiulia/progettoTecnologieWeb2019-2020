@@ -10,7 +10,6 @@
         $output = str_replace("<menu></menu>",modulesInit::menu(),$output);
         $output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Pannello Amministratore >> Inserimento Nuovo Animale"),$output);
 
-        echo var_dump($_SESSION["post"]);
         if(isset($_SESSION["nuovoAnimale"]))
             $output = str_replace("<inserimentoNuovoAnimale></inserimentoNuovoAnimale>","<p class\"messaggio\">".$_SESSION["nuovoAnimale"]."</p>",$output);
             
