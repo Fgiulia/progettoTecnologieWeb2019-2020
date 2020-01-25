@@ -44,8 +44,6 @@ $response = (Object) [
         }
         else
         $response->response = "Impossibile connettersi al database";
-    $_SESSION['response']=$response;
-    header('location: ../PAGES/info.php');
-
+    echo $response->response;
     
 ?>
