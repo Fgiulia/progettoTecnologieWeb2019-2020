@@ -73,7 +73,9 @@ try {
 		$nuovoAnimale = "Non &egrave; possibile procedere all&apos;inserimento del nuovo animale perch&egrave; non sono presenti tutti i cambi obbligatori. Verifica di averli inseriti e riprova.";
 	}
 	$_SESSION["nuovoAnimale"] = $nuovoAnimale;
+
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/nuovoAnimale.php");
+
 } catch (Exception $e) {
 	$response->response = "Fatal error";
 	echo $e->getMessage();
