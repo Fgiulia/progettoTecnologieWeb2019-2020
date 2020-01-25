@@ -32,59 +32,59 @@
         <breadcrumb></breadcrumb>
         <menu></menu>
 
-        <div id="containerPagina">
-            <div id="containerInfo">
-                <div id="indirizzo">
-                    <div class="titolo"> DOVE TROVARCI? </div>
-                    <ul>
-                        <li>Parco Faunistico Euganeo (PD)</li>
-                        <li>Via Trieste, 6335121 Padova PD</li>
-                    </ul>
-                </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.898878593254!2d11.885283915518668!3d45.41137867910039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda58b44676df%3A0xfacae5884fca17f5!2sTorre%20Archimede%2C%20Via%20Trieste%2C%2063%2C%2035121%20Padova%20PD!5e0!3m2!1sit!2sit!4v1579617458853!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </div>
-
-            <div id="contatti">
-                <div class="titolo"> COME CONTATTARCI? </div>
+      
+        <div id="containerInfo">
+            <div id="indirizzo">
+                <div class="titolo"> DOVE TROVARCI? </div>
                 <ul>
-                    <li>Email: ParcoEuganeo@info.com</li>
-                    <li>Numero di telefono: 0437 89456</li>
-                    <li>Numero di fax: xxxxxxxxxx</li>
+                    <li>Parco Faunistico Euganeo (PD)</li>
+                    <li>Via Trieste, 6335121 Padova PD</li>
                 </ul>
             </div>
-
-            <div>In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</div>
-
-            <div class="main">
-                <div id="registerBox" class="outerBox">
-                
-                    <form id="registerForm" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
-                        <fieldset>
-                            <legend>Chiedi informazioni</legend>
-                            <p>I campi marcati con * sono obbligatori</p>
-                            
-                            <label for="nome">* Nome</label>
-                            <input type="text" name="nome" class="textbox" id="nome" tabindex="1" />
-
-                            <label for="cognome">* Cognome</label>
-                            <input type="text" name="cognome" class="textbox" id="cognome" tabindex="2" />
-
-                            <label for="email">* Email</label>
-                            <input type="text" name="email" class="textbox" id="email" tabindex="3" />
-
-                            <label for="numeroTelefono">Numero telefono</label>
-                            <input type="text" name="numeroTelefono" class="textbox"id="numeroTelefono" tabindex="4" />
-
-                            <label for="messaggio">* Messaggio</label>
-                            <textarea name="messaggio" class="textbox" id="messaggio" tabindex="5" cols="" rows="" ></textarea>
-                            
-                            <input type="submit" id="inviaMessaggio" value="Invia" />
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.898878593254!2d11.885283915518668!3d45.41137867910039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda58b44676df%3A0xfacae5884fca17f5!2sTorre%20Archimede%2C%20Via%20Trieste%2C%2063%2C%2035121%20Padova%20PD!5e0!3m2!1sit!2sit!4v1579617458853!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
+
+        <div id="contatti">
+            <div class="titolo"> COME CONTATTARCI? </div>
+            <ul>
+                <li>Email: ParcoEuganeo@info.com</li>
+                <li>Numero di telefono: 0437 89456</li>
+                <li>Numero di fax: xxxxxxxxxx</li>
+            </ul>
+        </div>
+
+        <div id="testo">In alternativa puoi compilare il form sottostante. Ti risponderemo quanto prima possibile.</div>
+
+        
+        <div class="outerBox">
+        
+            <form id="registerForm" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
+                <fieldset>
+                    <legend>Chiedi informazioni</legend>
+                    <p>I campi marcati con * sono obbligatori</p>
+                    
+                    <label for="nome">* Nome</label>
+                    <input type="text" name="nome" class="textbox" id="nome" tabindex="1" />
+
+                    <label for="cognome">* Cognome</label>
+                    <input type="text" name="cognome" class="textbox" id="cognome" tabindex="2" />
+
+                    <label for="email">* Email</label>
+                    <input type="text" name="email" class="textbox" id="email" tabindex="3" />
+
+                    <label for="numeroTelefono">Numero telefono</label>
+                    <input type="text" name="numeroTelefono" class="textbox"id="numeroTelefono" tabindex="4" />
+
+                    <label for="messaggio">* Messaggio</label>
+                    <textarea name="messaggio" class="textbox" id="messaggio" tabindex="5" cols="" rows="" ></textarea>
+                    
+                    <input type="submit" id="inviaMessaggio" value="Invia" />
+                </fieldset>
+            </form>
+        </div>
+        
+
+        
 
         <div id="footer">
             <p class="parFooter">Parco Faunistico Euganeo - Tutti i diritti riservati - A cura di <span xml:lang="en">TecWeb Group</span></p>

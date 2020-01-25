@@ -1,9 +1,7 @@
-#containerPagina{
-    text-align: center;
-}
 
 #containerInfo{
     margin: 4%;
+    text-align: center
 }
 
 #indirizzo{
@@ -22,7 +20,7 @@ ul{
 
 #contatti{
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 
@@ -38,8 +36,22 @@ ul{
     border-radius: 2px;
 }
 
- #inviaMessaggio{
-     display: block;
-     text-align: left;
+#testo{
+    text-align: justify;
 }
 
+ #inviaMessaggio{
+     display: block;
+     
+ }
+
+ @media (max-width:1000px){
+
+    body{
+        font-size: 0.8em;
+    }
+
+    .outerBox{
+        font-size: 3vw;
+    }
+ }
