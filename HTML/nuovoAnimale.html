@@ -33,7 +33,7 @@
 		<div class="outerBox">
 			<h1>Aggiungi un animale</h1>
 			<inserimentoNuovoAnimale></inserimentoNuovoAnimale>
-			<form id="registerForm" action="nuovoAnimale.php" onsubmit="checkForm('registerForm')" method="post" enctype="multipart/form-data">
+			<form id="registerForm" action="../PHP/salvaAnimale.php" onsubmit="checkForm('registerForm')" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend>Dati generali</legend>
 						<p>I campi marcati con * sono obbligatori</p>
@@ -72,7 +72,7 @@
 						<label for="descrizioneImmagine">  Descrizione dell&apos;immagine</label>
 						<input type="text" name="descrizioneImmagine" id="descrizioneImmagine" tabindex="7" />
 
-						<label for="descrizioneAnimale">  Descrizione dell&apos;animale<br />(massimo 1200 caratteri)</label>
+						<label for="descrizioneAnimale">*  Descrizione dell&apos;animale<br />(massimo 1200 caratteri)</label>
 						<textarea rows="" cols="" name="descrizioneAnimale" id="descrizioneAnimale" tabindex="8"></textarea>
 
 						<input type="submit" id="submitAnimale" value="Salva" />
