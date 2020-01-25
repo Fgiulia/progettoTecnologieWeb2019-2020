@@ -1,0 +1,13 @@
+@media (max-width:1000px){
+    .main{
+        font-size: 1.3em;
+        display: block;
+        margin-top: 5%;
+}
+
+        #registrationForm{
+            font-size: 1.6em;
+
+    }
+
+}

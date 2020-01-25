@@ -1,33 +1,17 @@
-                                                                   
-                                                                                          ì
-        
-    ANALISI INFO 
+UTENETE GENERICO:
 
-        La pagina contiene tutte le informazioni utili per mettersi in contatto con il personale del parco ed informazioni utili a fin che gli utenti riescano a raggiungere il parco comodamente, 
-        vi sono quindi:
-           • L’indirizzo del parco. 
-           • Un link che reindirizza al parco su google maps o in alternativa la mappa direttamente importata nel sito.
-           • Un indirizzo email.
-           • Un numero di telefono.
-           • Un numero di fax.
-           • Un form che l’utente puo utilizzare per mandare messaggi al personale del parco. 
-             Il form sarà composto dai campi nome, cognome, email ed un textbox da completare obbligatoriamente oltre ad un campo telefono opzionale.
-             Dopo essere stato inoltrato il form eseguirà uno script php per inviare il messaggio in una sezione dedicata del database
-             
+  Visualizzazione pagina info:
 
-        CASI D'USO
+    L’utente generico accede alla pagina info cliccando la sezione info presente nella navbar, vi è inoltre la possibilità di venire indirizzati direttamente alla sezione contatti della pagina cliccando sul link contatti che viene visualizzata passando il cursore sulla sezione info. La pagina offre informazioni e servizi utili all’utente come:
+      •	L’indirizzo del parco;
+      •	la mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da xhtml strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’ utente che visita la pagina;
+      •	Un indirizzo email;
+      •	Un numero di telefono;
+      •	Un numero di fax;
+      •	Un form che l’utente può utilizzare per mandare messaggi al personale del parco;
 
-          UTENTE GENERICO E REGISTRATO:
-             Tutti gli utenti potranno vedere ogni sezione della pagina e Il form potra essere utilizzato ugualmente da utenti loggati e non, 
-             in questa pagina non vi è quindi distinzione tra utente generico e registrato.
+    Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database.
 
-          
+UTENTE LOGGATO E AMMINISTRATORE:
 
-
-                    
-                     
-                      
-                       
-
-
-
+    Nella pagina info utente loggatto ed amministratore hanno gli stessi casi d'uso dell' utente generico.
