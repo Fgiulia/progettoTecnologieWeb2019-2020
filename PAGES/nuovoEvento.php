@@ -12,6 +12,7 @@
 	
 		if(isset($_SESSION["nuovoEvento"])) {
 			$output = str_replace("<inserimentonuovoevento></inserimentonuovoevento>","<p class\"messaggio\">".$_SESSION["nuovoEvento"]."</p>",$output);
+			unset($_SESSION["nuovoEvento"]);
 		}
 		echo $output;
 	}
