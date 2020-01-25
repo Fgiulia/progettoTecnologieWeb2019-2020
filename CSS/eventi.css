@@ -1,3 +1,8 @@
+#containerPagina{
+    margin: 2%;
+    width: 96%;
+}
+
 .containerEventi{
     position: relative;
     text-align: center;
@@ -14,7 +19,6 @@
 }
 
 #filtroEventi{
-    width: 100%;
     text-align: center;
     margin-bottom: 3%;
 }
@@ -63,6 +67,7 @@
 .descrizioneEvento{
     margin: 3%;
     text-align: justify;
+    font-size: 1em;
 }
 
 .buttonPrenota{
@@ -70,5 +75,31 @@
    text-align: right;
    padding: 6px;
 }
+
+#titolo{
+    width: 100%;
+}
+
+@media (max-width:1000px){
+    body{
+        font-size: 0.8em;
+    }
+
+    .containerEventi{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .prezzoEvento, .dataEvento{
+        display: block;
+    }
+    
+    #cercaData, label{
+        font-size: 1.3em;
+    }
+    
+}
+
+
 
 
