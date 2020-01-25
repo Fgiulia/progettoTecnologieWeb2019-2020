@@ -51,7 +51,6 @@
     color: #FFFFFF;
     background-color: #4CAF50;
     
-    
 }
 
 .prezzoEvento{
@@ -80,9 +79,10 @@
     width: 100%;
 }
 
+
 @media (max-width:1000px){
     body{
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 
     .containerEventi{
@@ -92,13 +92,22 @@
 
     .prezzoEvento, .dataEvento{
         display: block;
-    }
     
-    #cercaData, label{
-        font-size: 1.3em;
     }
-    
+
+
 }
+
+@media (max-width:500px){
+    
+    #cercaData, label, .internal-button, #inviaRicerca{
+        font-size: 0.8em;
+    }
+
+}
+
+
+
 
 
 
