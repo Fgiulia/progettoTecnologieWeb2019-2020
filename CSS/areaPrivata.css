@@ -216,7 +216,13 @@ input#submitAnimale{
     background-color:#959494;
 }
 
+/*  CSS MOBILE AREA PRIVATA */
+
 @media screen and (max-width: 1000px) {
+    *{
+        font-size: 1.35rem;
+    }
+
     #content{
         margin-top: 0;
         text-align: center;
@@ -277,4 +283,16 @@ input#submitAnimale{
         display: block;
     }
     
+    #registrationBox h1 {
+        margin: 0;
+        text-align: center;
+    }
+
+    #loginBox {
+        width: 100%;
+    }
+
+    #nav {
+        display: none !important;
+    }
 }

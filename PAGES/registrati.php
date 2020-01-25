@@ -10,6 +10,8 @@
 
     if(isset($_SESSION['registrazione']))
         $output = str_replace("<messaggio></messaggio>","<p class='messaggio'>".$_SESSION['registrazione']->response."</p>",$output);
+    else
+        $output = str_replace("<messaggio></messaggio>","",$output);
 
     echo $output;
 
