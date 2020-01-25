@@ -1,30 +1,42 @@
                   
 
-  ANALISI EVENTI                  
+UTENTE GENERICO:
+  Visualizzazione pagina eventi:
+    L’utente generico accede alla pagina eventi cliccando la sezione eventi presente nella navbar, la pagina offre all’utente una panoramica di tutti gli eventi che il parco offre ai visitatori, per ogni evento verranno visualizzate le seguenti informazioni obbligatorie:
+      •	Titolo dell’evento;
+      •	Data in cui l’evento si svolge;
+      •	Prezzo di acquisto del biglietto per l’evento in €;
+      •	Una descrizione dell’ evento;
 
-    Nella pagina eventi gli utenti possono informarsi su tutti gli spettacoli e attività speciali
-    che il parco offre ai visitatori,la pagina offrira:
-      • Una lista di tutti gli spettacoli ed attività che il parco offre ai visitatori,ogni evento sarà accompagnato dà:
-           1) Una breve descrizione dell' evento che si andrà a svolgere.
-           2) Una sezione con informazioni sui giorni e gli orari in cui i visitatori possono partecipare all' evento.
-           3) Un tasto prenota che reinderizza alla pagina acquisti->eventi nel caso l'utente sia loggato.
-      • Un filtro che gli utenti possono utilizzare per visualizzare solo gli eventi che si svolgono in uno 
-        specifico giorno della settimana. 
+  La pagina offre inoltre un filtro per visualizzare solo gli eventi che si svolgono nella data scelta dall’ utente, per ogni evento vi è inoltre un tasto “PRENOTA ORA” che se usato dall’ utente non loggato rimanda alla pagina di login.
 
-         
-      CASI D'USO
 
-        UTENTE GENERICO (non loggato):
-            L'utente generico puo visualizzare ogni sezione della pagina ma se proverà a prenotare un evento tramite
-            l'apposito tasto verrà reindirizzato alla pagina di login.
+UTENTE LOGGATO:
+  Prenotazione evento da pagina eventi:
 
-       UTENTE REGISTRATO:
-            L'utente registrato puo visualizzare ogni sezione della pagina è se proverà a prenotare un evento
-            verrà mandato alla pagina acquisti->eventi.
+    Nella pagina eventi, l’utente loggato, oltre ad avere a disposizione tutti i casi d’uso dell’ utente generico ha a disposizione la possibilità di utilizzare il tasto “PRENOTA ORA” presente per ogni evento, il tasto rimanderà alla pagina acquista con i filtri già preimpostati sull’evento selezionato.
 
-       UTENTE AMMINISTRATORE:
-            L'utente amministratore puo aggiungere e rimuovere eventi dalla pagina, 
-            puo inoltre modificarne le descrizione e gli orari. 
+
+UTENTE AMMINISTRATORE: 
+	Inserimento di un nuovo evento:
+
+    Accedendo al pannello amministratore l’utente amministratore ha l’opzione di poter inserire un nuovo evento nel database utilizzando il tasto “nuovo evento” che rimanda l’utente ad una pagina dove potrà compilare un form con i dati che desidera inserire nella base di dati.
+
+	Eliminazione di eventi:
+
+    Accedendo al pannello amministratore l’utente amministratore ha l’opzione di poter eliminare gli eventi presenti nel database, per farlo dovrà prima cliccare la voce eventi del menu a sinistra, così facendo verranno visualizzati tutti gli eventi presenti nella base di dati e l’amministratore potrà scegliere quale eliminare utilizzando il tasto “Elimina” a destra degli eventi che desidera rimuovere.
+																
+
+
+
+
+
+
+
+
+
+
+
 
 
 
