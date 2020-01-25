@@ -18,6 +18,7 @@ if($SqlInterf->apriConnessioneDB()){
       $evento = $eventi[0];
       $nomeEvento = $evento['Nome'];
       $options = $options."<option>$nomeEvento</option>";
+			$output = str_replace("<tagErrore></tagErrore>","<div></div>",$output);
     }
     else{
       $errore = "Nessun evento nella data selezionata";
@@ -48,6 +49,9 @@ if(isset($_SESSION["success"])){
   $successo = $_SESSION["success"];
   $output = str_replace("<tagSuccesso></tagSuccesso>","<p class='successMessage'>$successo</p>",$output);
   unset($_SESSION["success"]);
+}
+else{
+	$output = str_replace("<tagSuccesso></tagSuccesso>","<div></div>",$output);
 }
 
 $output = str_replace('<a href="acquista.php">','</a>',$output);
