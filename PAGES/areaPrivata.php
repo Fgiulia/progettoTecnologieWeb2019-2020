@@ -28,7 +28,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 		$sideNav = "<div id='nav'>"."\n"
 					."	<h3>Pannello Gestione</h3>"."\n"
 					."	<ul>"."\n"
-					."	   <li><a href='areaPrivata.php?pageName=principale'>Area Privata</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=principale'>Area Amministratore</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=eventi'>Eventi</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=animali'>Animali</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=acquisti'>Acquisti</a></li>"."\n"
@@ -37,7 +37,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."</div>"."\n";
 		
 		$contentItems = "<div id='content'>"."\n"
-						."	<h1 class='titolo'>Area Privata</h1>"."\n"
+						."	<h1 class='titolo'>Area Amministratore</h1>"."\n"
 						."	<h3>Azioni Rapide</h3>"."\n"
 						."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
 						."	<div id='container'>"."\n"
@@ -50,7 +50,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 		$sideNav = "<div id='nav'>"."\n"
 					."	<h3>Pannello Gestione</h3>"."\n"
 					."	<ul>"."\n"
-					."	   <li><a href='areaPrivata.php?pageName=principale'>Area Privata</a></li>"."\n"
+					."	   <li><a href='areaPrivata.php?pageName=principale'>Area Personale</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=biglietti'>Biglietti Acquistati</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=prenotazioni'>Eventi Prenotati</a></li>"."\n"
 					."	   <li><a href='areaPrivata.php?pageName=messaggi'>Messaggi</a></li>"."\n"
@@ -59,7 +59,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 					."</div>"."\n";
 
 		$contentItems = "<div id='content'>"."\n"
-					."	<h1 class='titolo'>Area Privata</h1>"."\n"
+					."	<h1 class='titolo'>Area Personale</h1>"."\n"
 					."	<h3>Azioni rapide</h3>"."\n"
 					."	<p>Benvenuto $utente! Scegli cosa fare dalle azioni rapide o naviga con il menu a sinistra!</p>"."\n"
 					."	<div id='container'>"."\n"

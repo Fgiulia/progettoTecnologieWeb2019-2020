@@ -1,23 +1,45 @@
 \section{Analisi}
 
-\subsection{Utenza}
-L'utenza del sito non può essere inquadrata in un target specifico poichè
-destinata al pubblico del parco faunistico Euganeo/LungoPiovego il quale
-non presenta restrizioni o interesse per gruppi definiti.
-Ciò si traduce nell'esigenza di un sito dalla facile e immediata
-comprensione e nella piena ottemperanza dei canoni di accessibilità.
+    \subsection{Utenza}
+        L'utenza del sito non può essere inquadrata in un target specifico poichè destinata al pubblico del parco faunistico Euganeo Lungo Piovego il quale non presenta restrizioni o interesse per gruppi definiti. Ciò si traduce nell'esigenza di un sito dalla facile e immediata comprensione e nella piena ottemperanza dei canoni di accessibilità.
 
-\subsection{Attori}
-Abbiamo individuato tre tipi di attori:
-\begin{itemize}
-    \item \textbf{Utente non registrato: } può visitare tutte le pagine del sito, eccetto la pagina "Acquista" e stretto, per esempio non puo commentare le pagine. Puo registrarsi attraverso
-    un apposito form e diventare un utente registrato;
-\end{itemize}
- Utente non registrato: 
- Utente registrato: e un utente che ha i premessi per scrivere commenti ed eli-
-minare solo i propri, accedere nella propria area riservata avendo la possibilita
-di creare nuove pagine, modicare ed eliminare solo le proprie;
- Admin: e un utente registrato con piu permessi di quest'ultimo. Puo elimina-
-re utenti, cancellare qualsiasi commento, accettare le pagine pendenti, creare,
-modicare ed eliminare qualsiasi pagina.
+    \subsection{Attori}
+        Abbiamo individuato tre tipi di attori:
+        \begin{itemize}
+            \item \textbf{Utente non registrato:} può visitare tutte le pagine del sito, eccetto la pagina "Acquista" e l'area personale; può registrarsi attraverso un apposito form e diventare un utente registrato;
+            \item \textbf{Utente registrato:} è un utente che ha i premessi per effettuare acquisti o prenotare la visita agli eventi, può accedere alla propria area riservata avendo la possibilità di visualizzare i propri acquisti e i messaggi;
+            \item \textbf{Admin:} è un utente registrato che gode di più permessi di quest'ultimo. Può eliminare e creare eventi, può inserire e eliminare nuovi animali e visualizzare gli acquisti e i messaggi di tutti gli utenti registrati.
+        \end{itemize}
+    
+    \subsection{Pagine del sito}
+        \subsubsection{Home}
+            La homepage del sito, la prima a cui l'utente accede, deve contenere le 5 W e presenta una breve descrizione del parco.
+            Prevede 3 sezioni:
+            \begin{enumerate}
+                \item il testo semplice con le informazioni generiche (5W+descrizione);
+                \item una sezione che mostra il prossimo evento del parco;
+                \item una sezione con alcune regole da rispettare nel parco.
+            \end{enumerate}
+            Se si desidera raggiungere la homepage mentre si sta visitando una pagina interna del sito, è possibile cliccare sulla voce home del menù oppure sul titolo/logo presente nell'header.
 
+        \subsubsection{Animali}
+            Questa sezione del sito si divide in due pagine:
+            \begin{itemize}
+                \item tutti gli animali del parco
+                \item i cuccioli
+            \end{itemize}
+            La pagina desiderata si raggiunge cliccando la voce omonima del menù a tendina che appare sotto la voce principale animali. L'utente generico e l'utente loggato vedono e possono interagire allo stesso modo con questa pagina, ovvero possono consultare le informazioni sugli animali semplicemente selezionando e cliccando sopra il nome comune dell'animale.
+            La pagina tutti gli animali prevede la visualizzazione di tutti gli animali (nome comune, nome scientifico foto e descrizione) con la possibilità di scorrere tra tutte le voci, oppure fare una ricerca scegliendo di scrivere in un campo editing il nome dell'animale cercato o di una specie in particolare o scegliere da un menù a tendina una categoria predefinita di animali. \\
+            La pagina i cuccioli prevede la visualizzazione dei soli cuccioli (nome proprio ,nome comune, nome scientifico foto e descrizione). L'utente generico e l'utente loggato vedono e possono interagire allo stesso modo con questa pagina, ovvero possono consultare le informazioni sugli animali.
+
+        \subsubsection{Eventi}
+        \subsubsection{Informazioni}
+        \subsubsection{Acquista}
+        \subsubsection{Login e registrazione}
+            Un utente non registrato ha la possibilità di registrarsi cliccando il link presente nella pagina Login, raggiungibile cliccando la corrispondente voce del menù. Se si è registrati, si può effettuare il login con le sue credenziali (email e password) e accedere alla proprio area personale.
+        \subsubsection{Area Privata}
+            L'area privata è diversa a seconda del tipo di utente che ha effettuato. Definiamo "Area personale" l'area privata di un utente generico registrato e loggato; definiamo "Area amministratore" l'area privata di un utente amministratore.
+            \paragraph{Area personale} Un utente generico che accede alla sua area privata, come prima pagina vedrà le azioni rapide che può eseguire, come leggere i messaggi, fare acquisti o contattare l'amministratore. Attraverso il "Pannello Gestione" potrà navigare all'interno dell'area privata e accedere alle sottosezioni presenti, ovvero i messaggi, i proprio acquisti (biglietti ed eventi) e visualizzare i propri dati personali.
+            \paragraph{Area amministratore} L'area privata dell'utente amministratore presenta due importanti funzionalità: l'inserimento e la cancellazione di un evento o animale. Per l'inserimento è sufficiente cliccare sui pulsanti presenti nelle "Azioni Rapide", mentre nelle sottosezioni dell'area amministrazione "Eventi" e "Animali", l'amministrazione può consultare ed eliminare i dati presenti nel database. Può inoltre consultare gli acquisti e i messaggi di tutti gli utenti registrati.
+
+\pagebreak

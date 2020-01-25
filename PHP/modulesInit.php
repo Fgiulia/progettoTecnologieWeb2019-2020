@@ -406,17 +406,8 @@
 					$output .=  '	<div class="testoMessaggio">'."\n"
 								.'		<h4>Messaggio</h4>'."\n"
 								.'		<p>'.$row->Messaggio.'</p>'."\n"
-								.'	</div>'."\n";
-
-					if($_SESSION["admin"] == 1) {			
-						$output .= '<form action="" method="post">'."\n"
-								.'		<div>'."\n"
-								.'			<button type="submit" name="risposta" value="'.$row->ID.'" class="button internal-button">Rispondi</button>'."\n"
-								.'		</div>'."\n"
-								.'	</form>'."\n";
-					}
-
-					$output .= '</div>';
+								.'	</div>'."\n"
+								.'</div>';
 				}
 			} else {
 				$output = "Errore: ".$query->response;
