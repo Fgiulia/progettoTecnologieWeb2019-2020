@@ -1,7 +1,7 @@
 \section{Analisi}
 
     \subsection{Utenza}
-        L'utenza del sito non può essere inquadrata in un target specifico poichè destinata al pubblico del parco faunistico Euganeo Lungo Piovego il quale non presenta restrizioni o interesse per gruppi definiti. Ciò si traduce nell'esigenza di un sito dalla facile e immediata comprensione e nella piena ottemperanza dei canoni di accessibilità.
+        L'utenza del sito non può essere inquadrata in un target specifico poiché destinata al pubblico del parco faunistico Euganeo Lungo Piovego il quale non presenta restrizioni o interesse per gruppi definiti. Ciò si traduce nell'esigenza di un sito dalla facile e immediata comprensione e nella piena ottemperanza dei canoni di accessibilità.
 
     \subsection{Attori}
         Abbiamo individuato tre tipi di attori:
@@ -36,23 +36,24 @@
             L’utente generico accede alla pagina eventi cliccando la sezione eventi presente nella navbar, la pagina offre all’utente una panoramica di tutti gli eventi che il parco offre ai visitatori, per ogni evento verranno visualizzate le seguenti informazioni obbligatorie:
             \begin{itemize}
                 \item Titolo dell’evento;
-      	        \itemData in cui l’evento si svolge;
-      	        \item Prezzo di acquisto del biglietto per l’evento in €;
-      	        \item Una descrizione dell’ evento;
-            La pagina offre inoltre un filtro per visualizzare solo gli eventi che si svolgono nella data scelta dall’ utente, per ogni evento vi è inoltre un tasto “PRENOTA ORA” che se usato dall’ utente non loggato rimanda alla pagina di login.
-            /paragraph{Utente loggato} Nella pagina eventi, l’utente loggato, oltre ad avere a disposizione tutti i casi d’uso dell’ utente generico ha a disposizione la possibilità di utilizzare il tasto “PRENOTA ORA” presente per ogni evento, il tasto rimanderà alla pagina acquista con i filtri già preimpostati sull’evento seleziona
+                \item Data in cui l’evento si svolge;
+                \item Prezzo di acquisto del biglietto per l’evento in Euro;
+                \item Una descrizione dell’evento.
+            \end{itemize}
+            La pagina offre inoltre un filtro per visualizzare solo gli eventi che si svolgono nella data scelta dall’utente, per ogni evento vi è inoltre un tasto “PRENOTA ORA” che se usato dall’utente non loggato rimanda alla pagina di login.
+            \paragraph{Utente loggato} Nella pagina eventi, l’utente loggato, oltre ad avere a disposizione tutti i casi d’uso dell’utente generico ha a disposizione la possibilità di utilizzare il tasto “PRENOTA ORA” presente per ogni evento, il tasto rimanderà alla pagina acquista con i filtri già preimpostati sull’evento seleziona.
         
-        \subsubsection{Informazioni}
-        L’utente generico accede alla pagina info cliccando la sezione info presente nella navbar, vi è inoltre la possibilità di venire indirizzati direttamente alla sezione contatti della pagina cliccando sul link contatti che viene visualizzata passando il cursore sulla sezione info. La pagina offre informazioni e servizi utili all’utente come:
-	        L’indirizzo del parco;
-	    la mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da xhtml strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’ utente che visita la pagina;
-	    \begin{itemize}
-            \item Un indirizzo email;
-	        \item Un numero di telefono;
-	        \item Un numero di fax;
-            \item Una mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da xhtml strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’ utente che visita la pagina;
-            \item Un form che l’utente può utilizzare per mandare messaggi al personale del parco;
-        Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database.
+            \subsubsection{Informazioni}
+            L’utente generico accede alla pagina info cliccando la sezione info presente nella navbar, vi è inoltre la possibilità di venire indirizzati direttamente alla sezione contatti della pagina cliccando sul link contatti che viene visualizzata passando il cursore sulla sezione info. La pagina offre informazioni e servizi utili all’utente come:
+            L’indirizzo del parco, la mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da XHTML 1.0 Strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’utente che visita la pagina.
+            \begin{itemize}
+                \item Un indirizzo email;
+                \item Un numero di telefono;
+                \item Un numero di fax;
+                \item Una mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da XHTML 1.0 Strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’ utente che visita la pagina;
+                \item Un form che l’utente può utilizzare per mandare messaggi al personale del parco.
+            \end{itemize}
+            Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database.
 
         \subsubsection{Acquista}
         \subsubsection{Login e registrazione}
