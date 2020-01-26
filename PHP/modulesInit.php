@@ -15,6 +15,20 @@
 			}
 		}
 
+		public function validNameP($nameP){
+			if(isset($nameP)){
+				if(preg_match("/^[a-zA-Z ]*$/",$nameP)){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			else{
+				return false;
+			}
+		}
+
 		public function validDescription($testo){
 			if(isset($testo) && !empty($testo)){
 				if(strlen("$testo")<=1200){
