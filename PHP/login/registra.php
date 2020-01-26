@@ -32,38 +32,41 @@ try {
 			if ($query->rows && count($query->rows) > 0) {
 				$response->response = "Nome utente gi&agrave; utilizzato.";
 			} else {
-
 				if( modulesInit::validName($nome)
 					&& modulesInit::validName($cognome)
 					&& modulesInit::validEmail($mail)
 					&& modulesInit::validPhone($cel)
 					&& modulesInit::validPass($pw)
 					&& modulesInit::validPass($pwRi)
+					&& modulesInit::checkDateFormat($nascita)
 					&& $pw === $pwRi
 					) {
+						if(modulesInit::checkBirthdate($nascita)) {
+							$passHash = password_hash($pw, PASSWORD_DEFAULT);
 
-					$passHash = password_hash($pw, PASSWORD_DEFAULT);
-
-					$params = [$mail, $passHash, $nome, $cognome, "", $cell, $nascita, 0];
-					$sql = "INSERT INTO Utenti (
-								Email
-								,Password
-								,Nome
-								,Cognome
-								,Telefono
-								,Indirizzo
-								,DataNascita
-								,FlAdmin
-							) VALUES (?,?,?,?,?,?,?,?)";
-	
-					$query = query($dbh, $sql, $params);
-	
-					if ($query->status) {
-						$response->response = "Registrazione effettuata con successo. Puoi effettuare il login.";
-						$response->status = true;
-					} else  {
-						$response->response = $query->error;
-					}
+							$params = [$mail, $passHash, $nome, $cognome, "", $cell, $nascita, 0];
+							$sql = "INSERT INTO Utenti (
+										Email
+										,Password
+										,Nome
+										,Cognome
+										,Telefono
+										,Indirizzo
+										,DataNascita
+										,FlAdmin
+									) VALUES (?,?,?,?,?,?,?,?)";
+			
+							$query = query($dbh, $sql, $params);
+			
+							if ($query->status) {
+								$response->response = "Registrazione effettuata con successo. Puoi effettuare il login.";
+								$response->status = true;
+							} else  {
+								$response->response = $query->error;
+							}
+						} else  {
+							$response->response = "Non &egrave; possibile procedere alla registrazione perch&egrave; devi essere maggiorenne per registrarti.";
+						}
 				} else {
 					$response->response = "Non &egrave; possibile procedere alla registrazione perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.";
 				}

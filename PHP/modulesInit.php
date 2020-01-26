@@ -38,6 +38,23 @@
 			}
 		}
 
+		public function checkDateFormat($data){
+			if (isset($data) && !empty($data) && preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$data))
+				return true;
+			
+			return false;
+		}
+
+		public function checkBirthdate($data){
+			$now = time();
+			$dob = strtotime($data);
+			$difference = $now - $dob;
+			//There are 31556926 seconds in a year.
+			$age = floor($difference / 31556926);
+
+			return $age >= 18;
+		}
+
 		public function validDate($data){
 			$oggi = date("Y-m-d");
 			if($data>$oggi){
