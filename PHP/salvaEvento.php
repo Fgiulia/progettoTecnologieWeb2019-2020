@@ -51,7 +51,7 @@ try {
 				}
 			}
 			else{
-				$nuovoEvento = "<p class=\"errorMessage\">Le informazioni inserite non sono valide. Riprova.<br />Ricorda che i nomi possono contentere solo lettere e spazi, che la data deve essere ne formato ANNO-MESE-GIORNO e che il prezzo accetta solo un numero con massimo due cifre decimali.</p>";
+				$nuovoEvento = "<p class=\"errorMessage\">Le informazioni inserite non sono valide. Riprova. Ricorda che i nomi possono contentere solo lettere e spazi, che la data deve essere nel formato ANNO-MESE-GIORNO e che il prezzo accetta solo un numero con massimo due cifre decimali.</p>";
 			}
 		}
 		else{
