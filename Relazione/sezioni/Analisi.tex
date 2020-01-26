@@ -10,6 +10,7 @@
             \item \textbf{Utente registrato:} è un utente che ha i premessi per effettuare acquisti o prenotare la visita agli eventi, può accedere alla propria area riservata avendo la possibilità di visualizzare i propri acquisti e i messaggi;
             \item \textbf{Admin:} è un utente registrato che gode di più permessi di quest'ultimo. Può eliminare e creare eventi, può inserire e eliminare nuovi animali e visualizzare gli acquisti e i messaggi di tutti gli utenti registrati.
         \end{itemize}
+        Nella relazione useremo il termine "utente generico" per indicare un utente registrato che non è amministratore.
 
     \subsection{Pagine del sito}
         In questa sezione sono presentate le varie pagine del sito, con le caratteristiche e le funzionalità che devono avere.
@@ -58,7 +59,7 @@
 
         \subsubsection{Acquista}
             L'utente che non ha eseguito l'accesso non possiede le credenziali necessarie per qualunque tipo di prevendita; per tali considerazioni non potrà in alcun modo visualizzare la pagina: per qualunque provenienza (clicando un evento dalla pagina Eventi o cliccando Acquista nel menu) verrà rediretto alla pagina di Login dopo aver visualizzato un breve messaggio di warning.
-            Per l'utente loggato questa pagina prevede due schede:
+            Per l'utente registrato questa pagina prevede due schede:
             \paragraph{Biglietti}la scheda Biglietti può essere visualizzata cliccandovici dalla scheda "Prenotazione Eventi" oppure cliccando la voce "Acquista" nella barra del menu. L'utente può modificare quantità per tipo di biglietti e confermare l'acquisto attraverso un semplice form. All'acquisto sarà visualizzato un messaggio di conferma e il totale speso all'inizio della pagina stessa, se l'inserimento a database ha dato esito negativo vedrà invece un messaggio di errore.
             \paragraph{Eventi}la scheda di prenotazione degli eventi è visualizzata all'apertura della pagina "Acquista" oppure cliccando prenota dal dettaglio di un evento futuro della pagina "Eventi" del sito. L'utente può scegliere l'evento desiderato attraverso un menu a tendina, inserire il numero di Partecipanti e in seguito confermare la prenotazione; in seguito alla quale vedrà un messaggio di conferma o errore essattamente come descritto per la scheda Biglietti.
         \subsubsection{Login e registrazione}
