@@ -33,7 +33,27 @@
             La pagina i cuccioli prevede la visualizzazione dei soli cuccioli (nome proprio ,nome comune, nome scientifico foto e descrizione). L'utente generico e l'utente loggato vedono e possono interagire allo stesso modo con questa pagina, ovvero possono consultare le informazioni sugli animali.
 
         \subsubsection{Eventi}
+            L’utente generico accede alla pagina eventi cliccando la sezione eventi presente nella navbar, la pagina offre all’utente una panoramica di tutti gli eventi che il parco offre ai visitatori, per ogni evento verranno visualizzate le seguenti informazioni obbligatorie:
+            \begin{itemize}
+                \item Titolo dell’evento;
+      	        \itemData in cui l’evento si svolge;
+      	        \item Prezzo di acquisto del biglietto per l’evento in €;
+      	        \item Una descrizione dell’ evento;
+            La pagina offre inoltre un filtro per visualizzare solo gli eventi che si svolgono nella data scelta dall’ utente, per ogni evento vi è inoltre un tasto “PRENOTA ORA” che se usato dall’ utente non loggato rimanda alla pagina di login.
+            /paragraph{Utente loggato} Nella pagina eventi, l’utente loggato, oltre ad avere a disposizione tutti i casi d’uso dell’ utente generico ha a disposizione la possibilità di utilizzare il tasto “PRENOTA ORA” presente per ogni evento, il tasto rimanderà alla pagina acquista con i filtri già preimpostati sull’evento seleziona
+        
         \subsubsection{Informazioni}
+        L’utente generico accede alla pagina info cliccando la sezione info presente nella navbar, vi è inoltre la possibilità di venire indirizzati direttamente alla sezione contatti della pagina cliccando sul link contatti che viene visualizzata passando il cursore sulla sezione info. La pagina offre informazioni e servizi utili all’utente come:
+	        L’indirizzo del parco;
+	    la mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da xhtml strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’ utente che visita la pagina;
+	    \begin{itemize}
+            \item Un indirizzo email;
+	        \item Un numero di telefono;
+	        \item Un numero di fax;
+            \item Una mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da xhtml strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’ utente che visita la pagina;
+            \item Un form che l’utente può utilizzare per mandare messaggi al personale del parco;
+        Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database.
+
         \subsubsection{Acquista}
         \subsubsection{Login e registrazione}
             Un utente non registrato ha la possibilità di registrarsi cliccando il link presente nella pagina Login, raggiungibile cliccando la corrispondente voce del menù. Se si è registrati, si può effettuare il login con le sue credenziali (email e password) e accedere alla proprio area personale.
