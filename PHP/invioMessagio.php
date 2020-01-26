@@ -4,13 +4,15 @@ require_once "../PHP/modulesInit.php";
 require("config/config.php");
 require("api/fnQuery.php");
 
+if (!isset($_SESSION))
+session_start();
+
 $response = (Object) [
 	"status" => false
 	,"response" => "init"
 ];
 
     
-
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];
     $email = $_POST["email"];
@@ -44,6 +46,9 @@ $response = (Object) [
         }
         else
         $response->response = "Impossibile connettersi al database";
-    echo $response->response;
+        $_SESSION["response"] = $response;
+        header("location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/info.php#contatti");
+        
+
     
 ?>
