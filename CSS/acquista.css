@@ -8,6 +8,22 @@
   -webkit-border-radius: 0.375em 0.375em 0.375em 0.375em;
 }
 
+
+.lemureAcquista{
+  float: right;
+  width: 33%;
+  height: auto;
+  margin-right: 2%;
+}
+
+
+.centrato{
+  text-align: center;
+  display: block;
+  padding: 0.8%;
+  font-size: 1em;
+}
+
 #formAcquistoBiglietti{
   margin: 0.625em 0.625em 0.625em 0.625em;
 }
@@ -22,7 +38,7 @@
 
 .quantita {
   display: inline-block;
-  margin: 0.5em 0.5em 0.5em 0.5em;
+  margin: 0.8em 0.5em 0.8em 0.5em;
 }
 
 #containerSelect{

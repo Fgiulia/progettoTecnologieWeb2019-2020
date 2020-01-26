@@ -31,10 +31,16 @@
   <tagErrore></tagErrore>
   <tagSuccesso></tagSuccesso>
 
+	<h1 class="titolo">PRODOTTI ACQUISTABILI</h1>
+	<p class="centrato">Ogni biglietto è valido per un ingresso al Parco Faunistico Euganeo</p>
+	<p class="centrato">I biglietti ridotti sono riservati ai bambini fino ai 10 anni.</p>
+
   <div class="tab">
     <button class="linkTab" onclick="apriTab(event, 'eventi')">Eventi</button>
     <button class="linkTab" onclick="apriTab(event, 'biglietti')" id="tabBiglietti">Biglietti</button>
   </div>
+
+	<img class="lemureAcquista" src="../images/lemure.png" alt="" />
 
   <!--Contenuto Tab-->
   <div id="eventi" class="contenutoTab">
@@ -64,9 +70,9 @@
     <h2>Biglietti</h2>
     <form id="formAcquistoBiglietti" action="../PHP/acquistaBiglietti.php" method="post">
 			<fieldset>
-        <label for="quantitaInteri">N° Biglietti interi</label>
+        <label for="quantitaInteri">N° Biglietti interi - € 12.50</label>
         <input type="text" name="quantitaInteri" id="quantitaInteri" class="quantita" tabindex="4" value="0"/>
-        <label for="quantitaRidotti">N° Biglietti ridotti</label>
+        <label for="quantitaRidotti">N° Biglietti ridotti - € 8.00</label>
         <input type="text" name="quantitaRidotti" id="quantitaRidotti" class="quantita" tabindex="5" value="0"/>
         <input type="submit" class="acquistaSubmit" value="Acquista" />
 			</fieldset>
