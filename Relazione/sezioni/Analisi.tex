@@ -10,7 +10,7 @@
             \item \textbf{Utente registrato:} è un utente che ha i premessi per effettuare acquisti o prenotare la visita agli eventi, può accedere alla propria area riservata avendo la possibilità di visualizzare i propri acquisti e i messaggi;
             \item \textbf{Admin:} è un utente registrato che gode di più permessi di quest'ultimo. Può eliminare e creare eventi, può inserire e eliminare nuovi animali e visualizzare gli acquisti e i messaggi di tutti gli utenti registrati.
         \end{itemize}
-    
+
     \subsection{Pagine del sito}
         In questa sezione sono presentate le varie pagine del sito, con le caratteristiche e le funzionalità che devono avere.
         \subsubsection{Home}
@@ -43,7 +43,7 @@
             \end{itemize}
             La pagina offre inoltre un filtro per visualizzare solo gli eventi che si svolgono nella data scelta dall’utente, per ogni evento vi è inoltre un tasto “PRENOTA ORA” che se usato dall’utente non loggato rimanda alla pagina di login.
             \paragraph{Utente loggato} Nella pagina eventi, l’utente loggato, oltre ad avere a disposizione tutti i casi d’uso dell’utente generico ha a disposizione la possibilità di utilizzare il tasto “PRENOTA ORA” presente per ogni evento, il tasto rimanderà alla pagina acquista con i filtri già preimpostati sull’evento seleziona.
-        
+
             \subsubsection{Informazioni}
             L’utente generico accede alla pagina info cliccando la sezione info presente nella navbar, vi è inoltre la possibilità di venire indirizzati direttamente alla sezione contatti della pagina cliccando sul link contatti che viene visualizzata passando il cursore sulla sezione info. La pagina offre informazioni e servizi utili all’utente come:
             L’indirizzo del parco, la mappa con le indicazioni per raggiungere il parco importata da Google Maps, nonostante non sia supportata da XHTML 1.0 Strict è stato scelto di tenerla dato che è compatibile con la maggior parte dei browser e fornisce un servizio non indifferente all’utente che visita la pagina.
@@ -57,6 +57,10 @@
             Il form è composto dai campi nome, cognome, email e messaggio da completare obbligatoriamente oltre ad un campo telefono opzionale, dopo essere stato inoltrato il form esegue uno script php per inviare il messaggio in una sezione dedicata del database.
 
         \subsubsection{Acquista}
+            L'utente che non ha eseguito l'accesso non possiede le credenziali necessarie per qualunque tipo di prevendita; per tali considerazioni non potrà in alcun modo visualizzare la pagina: per qualunque provenienza (clicando un evento dalla pagina Eventi o cliccando Acquista nel menu) verrà rediretto alla pagina di Login dopo aver visualizzato un breve messaggio di warning.
+            Per l'utente loggato questa pagina prevede due schede:
+            \paragraph{Biglietti}la scheda Biglietti può essere visualizzata cliccandovici dalla scheda "Prenotazione Eventi" oppure cliccando la voce "Acquista" nella barra del menu. L'utente può modificare quantità per tipo di biglietti e confermare l'acquisto attraverso un semplice form. All'acquisto sarà visualizzato un messaggio di conferma e il totale speso all'inizio della pagina stessa, se l'inserimento a database ha dato esito negativo vedrà invece un messaggio di errore.
+            \paragraph{Eventi}la scheda di prenotazione degli eventi è visualizzata all'apertura della pagina "Acquista" oppure cliccando prenota dal dettaglio di un evento futuro della pagina "Eventi" del sito. L'utente può scegliere l'evento desiderato attraverso un menu a tendina, inserire il numero di Partecipanti e in seguito confermare la prenotazione; in seguito alla quale vedrà un messaggio di conferma o errore essattamente come descritto per la scheda Biglietti.
         \subsubsection{Login e registrazione}
             Un utente non registrato ha la possibilità di registrarsi cliccando il link presente nella pagina Login, raggiungibile cliccando la corrispondente voce del menù. Se si è registrati, si può effettuare il login con le sue credenziali (email e password) e accedere alla proprio area personale.
         \subsubsection{Area Privata}
