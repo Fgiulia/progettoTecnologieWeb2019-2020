@@ -29,7 +29,7 @@ $response = (Object) [
 					) {
 
                 $params = [$nome, $cognome, $email, $telefono, $messaggio];
-                $sql = "INSERT INTO messaggi (Nome,Cognome,Email,NumeroTelefono,Messaggio) 
+                $sql = "INSERT INTO Messaggi (Nome,Cognome,Email,NumeroTelefono,Messaggio) 
                         VALUES (?,?,?,?,?)";
                 $query = query($dbh, $sql, $params);
 
