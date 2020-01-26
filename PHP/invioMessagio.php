@@ -41,7 +41,7 @@ $response = (Object) [
                 }
             }
             else
-            $response->response = "Non &egrave; possibile procedere all&apos;invio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto.<br />Verifica di averli inseriti e riprova.";
+            $response->response = "Non &egrave; possibile procedere all&apos;invio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto o il campo telefono inserito non è valido.<br />Ricorda che il campo telefono deve contenere un numero valido o essere vuoto e riprova.";
 
         }
         else
