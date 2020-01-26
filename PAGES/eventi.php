@@ -23,7 +23,7 @@ if($dbh) {
             $query=find("EventoBean", (Object)['Data' => $data]);
         }
         else{
-            $result = "<p> La data deve essere nel formato ANNO-MESE-GIORNO </p>";
+            $result = "<p class=\"errorMessage\"> La data deve essere nel formato ANNO-MESE-GIORNO </p>";
             $output = str_replace("<errore></errore>", $result, $output);
             $query=find("EventoBean", null);
         }
@@ -67,17 +67,17 @@ if($dbh) {
             
         } 
         else {
-            $result = "Nessun evento disponibile nel giorno selezionato";
+            $result = "<p class=\"errorMessage\">Nessun evento disponibile nel giorno selezionato.<p>";
         }
     }
     else {
         $error = $query->response;
-        $result = "<p class=\"msgErr\">La query non &egrave; andata a buon fine. Per favore, riprova $error.</p>";
+        $result = "<p class=\"errorMessage\">La query non &egrave; andata a buon fine. Per favore, riprova.</p>";
         
     }
 }
 else {
-    $result = "<p class=\"msgErr\">Connessione al database degli eventi fallita. Per favore, riprova.</p>";
+    $result = "<p class=\"errorMessage\">Connessione al database degli eventi fallita. Per favore, riprova.</p>";
 }
 
 
