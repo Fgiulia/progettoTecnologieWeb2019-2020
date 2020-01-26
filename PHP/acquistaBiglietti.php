@@ -32,6 +32,8 @@ try {
 					if ($query->status) {
 						$response->response = "Acquisto effettuato con successo.";
 						$response->status = true;
+						$totale = (($interi)*12.5) + (($ridotti)*8);
+						$totale = number_format((float)$totale, 2, ',', '.');
 					} else {
 			        $response->response = $query->error;
 					}
@@ -48,6 +50,7 @@ try {
 
 if($response->status) {
   $_SESSION["success"] = "Biglietti acquistati con successo";
+	$_SESSION["totale"] = $totale;
   header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
 } else {
 	$_SESSION["messagge"] = "Attenzione input inserito non valido";

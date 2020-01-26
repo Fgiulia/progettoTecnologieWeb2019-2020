@@ -47,8 +47,10 @@ else{
 
 if(isset($_SESSION["success"])){
   $successo = $_SESSION["success"];
+	$totale = "Totale : " . $_SESSION["totale"] . "€";
   $output = str_replace("<tagSuccesso></tagSuccesso>","<p class='successMessage'>$successo</p>",$output);
-  unset($_SESSION["success"]);
+	$output = str_replace("<tagErrore></tagErrore>","<p class='successMessage'>$totale</p>",$output);
+	unset($_SESSION["success"]);
 }
 else{
 	$output = str_replace("<tagSuccesso></tagSuccesso>","<div></div>",$output);

@@ -19,11 +19,12 @@ try {
 	if(is_numeric($persone)){
 	  if($dbh){
 	    $paramsID = [$nomeEvento];
-	    $sqlID = "SELECT ID FROM Eventi WHERE Nome = ?";
+	    $sqlID = "SELECT ID, Prezzo FROM Eventi WHERE Nome = ?";
 	    $queryID = query($dbh, $sqlID, $paramsID);
 
 			$evento = $queryID->rows[0];
 			$eventoID = $evento->ID;
+			$prezzoEvento = $evento->Prezzo;
 
 			$params = [$user, $persone, $eventoID, $data];
 			$sql = "INSERT INTO EventiUtenti (
@@ -37,6 +38,8 @@ try {
 			if ($query->status) {
 				$response->response = "Prenotazione effettuata con successo.";
 				$response->status = true;
+				$totale = ($persone) * ($prezzoEvento);
+				$totale = number_format((float)$totale, 2, ',', '.');
 			} else  {
 	        $response->response = $query->error;
 			}
@@ -53,6 +56,7 @@ try {
 
 if($response->status) {
   $_SESSION["success"] = "Prenotazione effettuata con successo";
+	$_SESSION["totale"] = $totale;
 	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
 } else {
 	$_SESSION["messagge"] = "Attenzione input inserito non valido";

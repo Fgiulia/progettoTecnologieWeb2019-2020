@@ -1,42 +1,42 @@
                      Analisi della sezione "Acquista"
-                          Prima Implementazione
+                          Seconda Implementazione
 
                           //Parte di ConteR
-//# ACQUISTA (è voce del menù non una pagina)
-//    - pagina biglietti
-//      (vedere sito https://shop.ranatick.com/parcocappeller/biglietto-regalo)
-//    - pagina prenotazioni eventi (per prenotarsi ad un evento)
-
-
--->UTENZA
-
-    L'utenza del sito non può essere inquadrata in un target specifico poichè
-    destinata al pubblico del parco faunistico Euganeo/LungoPiovego il quale
-    non presenta restrizioni o interesse per gruppi definiti.
-    Ciò si traduce nell'esigenza di un sito dalla facile e immediata
-    comprensione e nella piena ottemperanza dei canoni di accessibilità.
-
-
--->CASI D'USO
 
     -->Utente generico (utente che non ha effettuato l'accesso)
         L'utente che non ha eseguito l'accesso non possiede le credenziali
         necessarie per qualunque tipo di prevendita; per tali considerazioni
         non potrà in alcun modo visualizzare la pagina: per qualunque provenienza
-        (clicando un evento dalla pagina Eventi?/cliccando Acquista nel menu)
-        verrà rediretto alla pagina di Registrazione dopo aver visualizzato un
+        (clicando un evento dalla pagina Eventi o cliccando Acquista nel menu)
+        verrà rediretto alla pagina di Login dopo aver visualizzato un
         breve messaggio di warning.
 
     -->Utente Loggato (utente che ha effettuato l'accesso)
         Per l'utente loggato questa pagina prevede due schede:
-            -->Biglietti: può essere visuallizata cliccandovici dalla scheda
+            -->Biglietti: può essere visualizzata cliccandovici dalla scheda
                           "Prenotazione Eventi" oppure cliccando la voce "Acquista"
                           nella barra del menu.
                           Vi si trovano tutte le informazioni per tipologia di biglietto.
-                          L'utente può modificare quantità e tipo di biglietti e
+                          L'utente può modificare quantità per tipo di biglietti e
                           confermare l'acquisto attraverso un semplice form.
-            -->Prenotazione Eventi: può essere visuallizata cliccandovici dalla scheda
+                          All'acquisto sarà visualizzato un messaggio di conferma
+                          e il totale speso all'inizio della pagina stessa,
+                          se l'inserimento a database ha esito esito negativo
+                          vedrà invece un messaggio di errore.
+            -->Prenotazione Eventi: è visualizzata all'apertura della pagina
                           "Acquista" oppure cliccando prenota dal dettaglio di
                           un evento futuro della pagina "Eventi" del sito.
                           L'utente può scegliere l'evento desiderato attraverso
-                          un menu a tendina e in seguito confermare la prenotazione.
+                          un menu a tendina, inserire il numero di Partecipanti
+                          e in seguito confermare la prenotazione; in seguito alla
+                          quale vedrà un messaggio di conferma o errore essattamente
+                          come descritto per la scheda Biglietti.
+
+    -->Database
+        La pagina "Acquista" interagisce con le tabelle "EventiUtenti" e "BigliettiUtenti"
+        attraverso delle istruzioni di insert azionate dal pulsante submit delle rispettive
+        schede per tenere traccia delle prevendite associate all'utente;
+        la tabella "Eventi" è invece interrogata attraverso delle query di selezione
+        per mostrare nel menù a tendina le varie opzioni.
+        La tabella "Biglietti" è stata prevista per una migliore estensibilità del sito nel caso
+        cambiassero tipologia e prezzi dei biglietti nel tempo. 
