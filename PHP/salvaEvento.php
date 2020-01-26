@@ -40,22 +40,22 @@ try {
 
 					$inserimento = $oggettoPagina->insertEvent($evento);
 					if($inserimento){
-						$nuovoEvento = "Inserimento nuovo evento avvenuto con successo.";
+						$nuovoEvento = "<p class=\"successMessage\">Inserimento nuovo evento avvenuto con successo.</p>";
 					}
 					else{
-						$nuovoEvento = "Inserimento nuovo evento non avvenuto per un problema del database.";
+						$nuovoEvento = "<p class=\"errorMessage\">Inserimento nuovo evento non avvenuto per un problema del database.</p>";
 					}
 				}
 				else{
-					$nuovoEvento = "Connessione al database degli eventi fallita. Non &egrave; possibile procedere con l&apos;inserimento, riprova pi&ugrave; tardi.";
+					$nuovoEvento = "<p class=\"errorMessage\">Connessione al database degli eventi fallita. Non &egrave; possibile procedere con l&apos;inserimento, riprova pi&ugrave; tardi.</p>";
 				}
 			}
 			else{
-				$nuovoEvento = "Le informazioni inserite non sono valide. Riprova.<br />Ricorda che i nomi possono contentere solo lettere e spazi, che la data deve essere ne formato ANNO-MESE-GIORNO e che il prezzo accetta solo un numero con massimo due cifre decimali.";
+				$nuovoEvento = "<p class=\"errorMessage\">Le informazioni inserite non sono valide. Riprova.<br />Ricorda che i nomi possono contentere solo lettere e spazi, che la data deve essere ne formato ANNO-MESE-GIORNO e che il prezzo accetta solo un numero con massimo due cifre decimali.</p>";
 			}
 		}
 		else{
-			$nuovoEvento = "Non &egrave; possibile procedere all&apos;inserimento del nuovo evento perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.";
+			$nuovoEvento = "<p class=\"errorMessage\">Non &egrave; possibile procedere all&apos;inserimento del nuovo evento perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.</p>";
 		}
 	
 	$_SESSION["nuovoEvento"] = $nuovoEvento;

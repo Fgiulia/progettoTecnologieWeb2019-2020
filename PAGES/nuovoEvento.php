@@ -11,7 +11,7 @@
 		$output = str_replace("<breadcrumb></breadcrumb>",modulesInit::breadcrumb("Pannello Amministratore >> Inserimento Nuovo Evento"),$output);
 	
 		if(isset($_SESSION["nuovoEvento"])) {
-			$output = str_replace("<inserimentonuovoevento></inserimentonuovoevento>","<p class\"messaggio\">".$_SESSION["nuovoEvento"]."</p>",$output);
+			$output = str_replace("<inserimentonuovoevento></inserimentonuovoevento>",$_SESSION["nuovoEvento"],$output);
 			unset($_SESSION["nuovoEvento"]);
 		}
 		echo $output;

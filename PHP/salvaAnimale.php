@@ -19,7 +19,7 @@ try {
 				}
 				else{
 					$valid =false;
-					$nuovoAnimale .= "Il nome comune inserito non &egrave; valido. Ricorda che pu&ograve; contentere solo lettere e spazi.<br />";
+					$nuovoAnimale .= "<p class=\"errorMessage\">Il nome comune inserito non &egrave; valido. Ricorda che pu&ograve; contentere solo lettere e spazi.</p>";
 				}
 			}
 
@@ -28,7 +28,7 @@ try {
 					$valid = true;
 				}
 				else{
-					$nuovoAnimale .= "Il nome proprio inserito non &egrave; valido. Ricorda che pu&ograve; contentere solo lettere e spazi.<br />";
+					$nuovoAnimale .= "<p class=\"errorMessage\">Il nome proprio inserito non &egrave; valido. Ricorda che pu&ograve; contentere solo lettere e spazi.</p>";
 					$valid = false;
 				}
 			}
@@ -38,7 +38,7 @@ try {
 					$valid = true;
 				}
 				else{
-					$nuovoAnimale .= "Il nome scientifico inserito non &egrave; valido. Ricorda che pu&ograve; contentere solo lettere e spazi.<br />";
+					$nuovoAnimale .= "<p class=\"errorMessage\">Il nome scientifico inserito non &egrave; valido. Ricorda che pu&ograve; contentere solo lettere e spazi.</p>";
 					$valid = false;
 				}
 			}
@@ -48,7 +48,7 @@ try {
 						$valid = true;
 				}
 				else{
-					$nuovoAnimale .= "L&apos;immagine inserita non &egrave; valida.<br />";
+					$nuovoAnimale .= "<p class=\"errorMessage\">L&apos;immagine inserita non &egrave; valida.</p>";
 					$valid = false;
 				}
 			}
@@ -58,7 +58,7 @@ try {
 					$valid = true;
 				}
 				else{
-					$nuovoAnimale .= "La descrizione dell&apos;immagine inserita non &egrave; valida. Ricorda che pu&ograve; contentere solo lettere e spazi.<br />";
+					$nuovoAnimale .= "<p class=\"errorMessage\">La descrizione dell&apos;immagine inserita non &egrave; valida. Ricorda che pu&ograve; contentere solo lettere e spazi.</p>";
 					$valid = false;
 				}
 			}
@@ -68,7 +68,7 @@ try {
 					$valid = true;
 				}
 				else{
-					$nuovoAnimale .= "La descrizione dell&apos;animale inserita non &egrave; valida. Ricorda che pu&ograve; contentere solo 1200 caratteri.<br />";
+					$nuovoAnimale .= "<p class=\"errorMessage\">La descrizione dell&apos;animale inserita non &egrave; valida. Ricorda che pu&ograve; contentere solo 1200 caratteri.</p>";
 					$valid = false;
 				}
 			}
@@ -81,7 +81,7 @@ try {
 					$inserimento = $oggettoPagina->insertAnimal();
 
 					if($inserimento){
-						$nuovoAnimale .= "Inserimento nuovo animale avvenuto con successo.";
+						$nuovoAnimale .= "<p class=\"successMessage\">Inserimento nuovo animale avvenuto con successo.</p>";
 						unset($_POST['nomeComune']);
 						unset($_POST['nomeProprio']);
 						unset($_POST['nomeScientifico']);
@@ -92,16 +92,16 @@ try {
 						unset($_POST['descrizioneAnimale']);
 					}
 					else{
-						$nuovoAnimale .= "Inserimento nuovo animale non avvenuto per un problema del database.";
+						$nuovoAnimale .= "<p class=\"errorMessage\">Inserimento nuovo animale non avvenuto per un problema del database.</p>";
 					}
 				}
 				else{
-					$nuovoAnimale .= "Connessione al database degli animali fallita. Non &egrave; possibile procedere con l&apos;inserimento, riprova pi&ugrave; tardi.";
+					$nuovoAnimale .= "<p class=\"errorMessage\">Connessione al database degli animali fallita. Non &egrave; possibile procedere con l&apos;inserimento, riprova pi&ugrave; tardi.</p>";
 				}
 			}
 		}
 		else{
-			$nuovoAnimale = "Non &egrave; possibile procedere all&apos;inserimento del nuovo animale perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.";
+			$nuovoAnimale = "<p class=\"errorMessage\">Non &egrave; possibile procedere all&apos;inserimento del nuovo animale perch&egrave; non sono presenti tutti i cambi obbligatori, verifica di averli inseriti e riprova.</p>";
 		}
 	}
 

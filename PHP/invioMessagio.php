@@ -34,18 +34,18 @@ $response = (Object) [
                 $query = query($dbh, $sql, $params);
 
                 if ($query->status) {
-                    $response->response = "Messaggio inviato";
+                    $response->response = "<p class=\"successMessage\">Messaggio inviato.</p>";
                     $response->status = true;
                 } else  {
-                    $response->response = "Si &egrave; verificato un errore durante l&apos;invio";
+                    $response->response = "<p class=\"errorMessage\">Si &egrave; verificato un errore durante l&apos;invio.</p>";
                 }
             }
             else
-            $response->response = "Non &egrave; possibile procedere all&apos;invio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto o il campo telefono inserito non è valido.<br />Ricorda che il campo telefono deve contenere un numero valido o essere vuoto e riprova.";
+            $response->response = "<p class=\"errorMessage\">Non &egrave; possibile procedere all&apos;invio del messaggio perch&egrave; non sono stati inseriti tutti i cambi obbligatori in modo corretto o il numero di telefono inserito non &egrave; valido. Ricorda che il campo telefono deve contenere un numero telefonico valido o essere vuoto.</p>";
 
         }
         else
-        $response->response = "Impossibile connettersi al database";
+        $response->response = "<p class=\"errorMessage\">Impossibile connettersi al database.</p>";
         $_SESSION["response"] = $response;
         header("location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/info.php#contatti");
         
