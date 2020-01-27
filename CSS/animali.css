@@ -1,13 +1,13 @@
 .messaggioRicerca{
     color: #616161;
     margin-left: 5%;
-    font-size: 1vw;
+    font-size: 1em;
 }
 
 #ricercaAnimali p, #introCuccioli p{
     width: 90%;
     text-align: center;
-    font-size: 1vw;
+    font-size: 1.2em;
 }
 
 #introCuccioli p{
@@ -25,7 +25,7 @@
     margin: 1%;
     float: left;
     border: 1px solid#616161;
-    height: 25em;
+    height: 26em;
     -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
@@ -49,24 +49,24 @@
 .namePuppy{
     font-style: italic;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.3em;
     background-color: lightgray;
 }
 
 .nameAnimal{
     padding-top: 4%;
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 1.3em;
 }
 
 .scientificNameAnimal{
     font-style: italic;
-    font-size: 1.1vw;
+    font-size: 1em;
 }
 
 .descAnimal{
     text-align: justify;
-    font-size: 0.8vw;
+    font-size: 0.8em;
     clear:both;
 }
 
@@ -101,13 +101,9 @@ input[type=text], select {
   }
 
   @media (max-width:1000px){
-    .messaggioRicerca{
-        font-size: 2vw;
-    }
-    
     #ricercaAnimali p, #introCuccioli p{
         text-align: justify;
-        font-size: 2vw;
+
     }
 
     #risultatiAnimali, #risultatiCuccioli{
@@ -123,22 +119,16 @@ input[type=text], select {
         height: auto;
     }
     
-    .namePuppy{
-        font-size: 3vw;
-    }
-
     .nameAnimal{
         font-weight: bold;
-        font-size: 3vw;
     }
     
     .scientificNameAnimal{
         font-style: italic;
-        font-size: 2.5vw;
     }
     
     .descAnimal{
-        font-size: 1.8vw;
+        font-size: 1em;
         margin: 2%;
     }
 

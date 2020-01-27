@@ -282,6 +282,15 @@ input[type=submit]:hover {
 }
 
 @media (max-width:1000px){
+    #header .nomeSito{
+        padding-top: 0.5em;
+        font-size: 2em;
+    }
+
+    #header .logoHeader{
+        margin-left: 0.5em;
+    }
+
     .parFooter,
     #presentazioneSito {
         font-size: 1em;
