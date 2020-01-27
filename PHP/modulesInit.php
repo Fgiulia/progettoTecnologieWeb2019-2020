@@ -31,7 +31,7 @@
 
 		public function validDescription($testo){
 			if(isset($testo) && !empty($testo)){
-				if(strlen("$testo")<=1200){
+				if(strlen("$testo")<=1000){
 					return true;
 				}
 				else{
