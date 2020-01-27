@@ -25,16 +25,16 @@
     margin: 1%;
     float: left;
     border: 1px solid#616161;
-    height: 26em;
+    height: 30em;
     -webkit-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     -moz-box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
     box-shadow: 1px 1px 9px 0px rgba(97,97,97,1);
 }
 
 .photoAnimal{
-    width: 30%;
+    width: 10em;
     float: left;
-    max-height: 10em;
+    height: 10em;
     margin: 4%;
     text-align: center;
 }
@@ -54,17 +54,22 @@
 }
 
 .nameAnimal{
+    margin-right: 1em;
     padding-top: 4%;
     font-weight: bold;
     font-size: 1.3em;
+    text-align: right;
 }
 
 .scientificNameAnimal{
+    margin-right: 1em;
     font-style: italic;
     font-size: 1em;
+    text-align: right;
 }
 
 .descAnimal{
+    padding-top: 0.3em;
     text-align: justify;
     font-size: 0.8em;
     clear:both;
