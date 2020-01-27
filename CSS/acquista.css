@@ -38,7 +38,7 @@
 
 .quantita {
   display: inline-block;
-  margin: 0.8em 0.5em 0.8em 0.5em;
+  margin: 0.5em 0.1em 0.5em 0.1em;
 }
 
 #containerSelect{
@@ -112,7 +112,6 @@ input[type=date], input[type=text], input[type=number] {
   box-sizing: border-box;
   border: 0.125em solid #ccc;
   border-radius: 0.25em;
-  margin: 0.25em 0.125em;
   background-color: #f1f1f1;
 }
 
@@ -150,4 +149,32 @@ fieldset {
   select{
     width:100%;
   }
+
+  .tab {
+    margin-top: 6%;
+    border: 0.1em solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  #formAcquistoBiglietti{
+    margin: 2% 2% 2% 2%;
+  }
+
+  #formEventi{
+    margin: 2% 2% 2% 2%;
+  }
+
+  .quantita {
+    display: inline-block;
+    margin: 0.6em 0.05em 0.6em 0.05em;
+    width: 100%
+  }
+
+  .contenutoTab {
+    display: block;
+    padding: 0.375em 0.75em;
+    border: 0.1em solid #ccc;
+    border-top: none;
+  }
+
 }
