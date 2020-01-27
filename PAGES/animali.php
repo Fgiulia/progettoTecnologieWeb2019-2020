@@ -36,7 +36,7 @@
         }
 
         if($animali==null){
-            $stringaAnimali .= "<p class=\"messaggio\">Non abbiamo trovato nessun animale collegato alla tua ricerca.<br />Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo.</p>";
+            $stringaAnimali .= "<p class=\"errorMessage\">Non abbiamo trovato nessun animale collegato alla tua ricerca.<br />Pu&ograve; essere che non siano presenti gli animali che cerchi in questo momento al Parco Faunistico Euganeo.</p>";
         }
         else{
             $stringaAnimali .= "<div id=\"risultatiAnimali\">";
