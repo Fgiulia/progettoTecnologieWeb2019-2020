@@ -18,7 +18,7 @@ try {
 	$nascita = $_POST["nascita"];
 	$pw = $_POST["password"];
 	$pwRi = $_POST["ripetiPassword"];
-	$cel = $_POST["cel"];
+	$cel = $_POST["numeroTelefono"];
 
 	if ($dbh) {
 
@@ -38,9 +38,9 @@ try {
 					&& modulesInit::validPhone($cel)
 					&& modulesInit::validPass($pw)
 					&& modulesInit::validPass($pwRi)
-					&& modulesInit::checkDateFormat($nascita)
-					&& $pw === $pwRi
-					) {
+					&& $pw === $pwRi ) {
+
+					if(modulesInit::checkDateFormat($nascita)) {
 						if(modulesInit::checkBirthdate($nascita)) {
 							$passHash = password_hash($pw, PASSWORD_DEFAULT);
 
@@ -67,6 +67,9 @@ try {
 						} else  {
 							$response->response = "Non &egrave; possibile procedere alla registrazione perch&egrave; devi essere maggiorenne per registrarti.";
 						}
+					} else {
+						$response->response = "Inserisci la data nel formato yyyy-mm-dd o dd-mm-yyyy, prestando attenzioni a usare i trattini";
+					}
 				} else {
 					$response->response = "Non &egrave; possibile procedere alla registrazione perch&egrave; non sono presenti tutti i cambi obbligatori.<br />Verifica di averli inseriti e riprova.";
 				}

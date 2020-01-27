@@ -34,7 +34,7 @@
 			<div id="registrationBox" class="outerBox">
 				<messaggio></messaggio>
 				<h1>Crea il tuo account!</h1>
-				<form id="registrationForm" action="../PHP/login/registra.php" method="post" >
+				<form id="registrationForm" onsubmit="return checkForm('registrationForm');" action="../PHP/login/registra.php" method="post" >
 					<fieldset>
 						<legend>Dati personali</legend>
 
@@ -48,16 +48,16 @@
 						<input type="text" name="cognome" id="cognome" class="" tabindex="3" />
 
 						<label for="cel">Telefono*</label>
-						<input type="text" name="cel" id="cel" class="" tabindex="4" />
+						<input type="text" name="numeroTelefono" id="numeroTelefono" class="" tabindex="4" />
 
-						<label for="nascita">Data di nascita* (yyyy-mm-dd)</label>
+						<label for="nascita">Data di nascita* (dd-mm-yyyy)</label>
 						<input type="text" name="nascita" id="nascita" class="" tabindex="5"  />
 
 						<label for="password">Password*</label>
 						<input type="password" name="password" id="password" class="" tabindex="6" />
 
-						<label for="repeatpassword">Ripeti password*</label>
-						<input type="password" name="ripetiPassword" id="repeatpassword" tabindex="7" />
+						<label for="ripetiPassword">Ripeti password*</label>
+						<input type="password" name="ripetiPassword" id="ripetiPassword" tabindex="7" />
 
 						<input type="submit" id="registerSubmit" value="Registrati" />
 					</fieldset>

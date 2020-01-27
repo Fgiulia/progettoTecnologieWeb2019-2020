@@ -58,9 +58,8 @@
         
         <div class="outerBox">
             <response></response>
-            <form id="registerForm" action="../PHP/invioMessagio.php" onsubmit="checkform()" method="post">
+            <form id="info" onsubmit="return checkForm('info');" action="../PHP/invioMessagio.php"  method="post">
                 <fieldset>
-                   
                     <legend>Chiedi informazioni</legend>
                     <p>I campi marcati con * sono obbligatori</p>
                     
@@ -74,7 +73,7 @@
                     <input type="text" name="email" class="textbox" id="email" tabindex="3" />
 
                     <label for="numeroTelefono">Numero telefono</label>
-                    <input type="text" name="numeroTelefono" class="textbox"id="numeroTelefono" tabindex="4" />
+                    <input type="text" name="numeroTelefono" class="textbox" id="numeroTelefono" tabindex="4" />
 
                     <label for="messaggio">* Messaggio</label>
                     <textarea name="messaggio" class="textbox" id="messaggio" tabindex="5" cols="" rows="" ></textarea>
