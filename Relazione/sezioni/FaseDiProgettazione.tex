@@ -92,6 +92,16 @@
         \includegraphics[width=15cm]{./img/database.png}
         \caption{Schema del database}  \label{fig:xray}
     \end{figure}
+    Il database è composto dalle seguenti tabelle:
+    \begin{itemize}
+        \item \textbf{Utenti:} contiene i dati e le credenziali degli utenti registrati, la password è stata codificata con la funzione \textit{password\_hash} di PHP;
+        \item \textbf{Animali:} contiene i dati di tutti gli animali presenti nel parco;
+        \item \textbf{Biglietti:} contiene i dati dei biglietti disponibili all'acquisto;
+        \item \textbf{Eventi:} contiene i dati degli eventi del parco;
+        \item \textbf{BigliettiUtenti:} contiene i dati degli acquisti dei biglietti effettuati dagli utenti;
+        \item \textbf{EventiUtenti:} contiene i dati degli acquisti dei eventi effettuati dagli utenti;
+        \item \textbf{Messaggi:} contiene i messaggi inviati dagli utenti;
+    \end{itemize}
 	\subsubsection{Tabella Animali}
 	Inizialmente, il database non presentava questa tabella, ma altre due tabelle: AnimaliAdulti e AnimaliCuccioli. Ciò permetteva di avere nella tabella AnimaliAdulti il nome comune, il nome scientifico, la descrizione e l'immagine dell'animale specifico, mentre la tabella AnimaliCuccioli serviva a tenere traccia dei cuccioli nati  nel Parco solo attraverso il nome comune e il nome proprio dato al cucciolo.\\
 	In un secondo momento, durante l'incontro successivo alla progettazione del database, è stato invece deciso di unire le due tabelle nell'unica tabella Animale e di aggiungere l'attributo "Famiglia" per differenziare la categoria di appartenenza.
