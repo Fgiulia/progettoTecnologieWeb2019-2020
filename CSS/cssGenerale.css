@@ -38,14 +38,14 @@ abbr, a, a:hover {
 
 .messaggio {
     text-align: center;
-    padding: 1.5%;
+    padding: 1em;
     font-size: 1.3em;
 }
 
 .errorMessage {
     text-align: center;
     padding-top: 5%;
-    font-size: 1.2em;
+    font-size: 1.1em;
     background: #C13636;
     width: 100%;
     color: #FFFFFF;
@@ -59,7 +59,7 @@ abbr, a, a:hover {
 .successMessage {
     text-align: center;
     padding-top: 5%;
-    font-size: 1.3em;
+    font-size: 1.1em;
     background: #4CAF50;
     width: 100%;
     color: #FFFFFF;
@@ -76,9 +76,9 @@ abbr, a, a:hover {
 
 .box-spacer{
     border: 1px solid #000000;
-    box-sizing: border-box ;
-    padding: 1em ;
-    margin:  0.6em 0 0.6em 0 ;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0.6em 0 0.6em 0;
 }
 
 .button{
@@ -110,9 +110,9 @@ abbr, a, a:hover {
 /* BREADCRUMBS */
 .map-position {
     background: #616161;
-    padding: 0.8%;
+    padding: 0.5em;
     color: #FFFFFF;
-    margin: 0.5% 0 0.5% 0;
+    margin: 0.5em 0 0.5em 0;
     border-radius: 6px 6px 6px 6px;
     -moz-border-radius: 6px 6px 6px 6px;
     -webkit-border-radius: 6px 6px 6px 6px;
@@ -126,12 +126,13 @@ abbr, a, a:hover {
 
 #header a:hover {
     text-decoration: none;
+    cursor: pointer;
 }
 
 #header {
     font-size: 100%;
     max-width: 100%;
-    margin: 1% 0 0 0;
+    margin: 0.5em;
     border-top: 3px double #000000;
     border-bottom: 3px double #000000;
     overflow: auto;
@@ -141,122 +142,126 @@ abbr, a, a:hover {
     float: left;
     width: 10%;
     height: auto;
-    margin-left: 8%;
+    margin-left: 2em;
 }
 
 #header .nomeSito{
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 3vw;
+    font-size: 3.5em;
     font-style: italic;
     text-align: center;
     color: #000000;
-    padding-top: 4%;
-    margin-right: 18%;
+    padding-top: 1em;
 }
 
 /* STILE DEL FOOTER */
 #footer {
     text-align: center;
     max-width: 100%;
-    margin: 0.5% 0;
+    margin: 0.5em 0;
     border-top: 3px double #000000;
     overflow: auto;
     clear: both;
 }
 
 .parFooter {
-    font-size: 1vw;
+    font-size: 1em;
     font-style: italic;
     text-align: center;
-    padding: 0.5%;
+    padding: 0.5em;
 }
 
 /* STILE DELLA HOME PAGE */
 #presentazioneSito{
     text-align: justify;
-    font-size: 1vw;
+    font-size: 1em;
     clear: both;
 }
 
 .infoHome{
     width: 63%;
-    padding-right: 1%;
+    padding-right: 0.5em;
     float: left;
 }
 
 .infoHome p{
-    padding-bottom: 3%;
+    padding-bottom: 1em;
 }
 
 .infoHome li{
-    padding: 1%;
+    padding: 0.5em;
 }
 
 .boxProssimiEventi{
     width: 35%;
-    height: 33%;
+    height: 40%;
     float: right;
     border: 5px double #58C25D;
     text-align: center;
 }
 
 .boxProssimiEventi .titoloBoxEventi{
-    font-size: 1vw;
+    font-size: 1em;
     font-style: italic;
     border-bottom: 5px double #58C25D;
 }
 
 .prossimiEventi .dataOdierna{
-    margin: 2%;
+    margin: 0.5em;
     font-weight: bold;
 }
 
 .prossimiEventi .eventName{
-    font-size: 1vw;
+    font-size: 1.2em;
     font-style: inherit;
     background-color: lightgray;
 }
 
 .prossimiEventi .eventDesc{
     text-align: justify;
-    font-size: 0.8vw;
-    margin: 2.5%;
+    font-size: 1em;
+    margin: 0.5em;
 }
 
 .prossimiEventi .eventPrice{
-    margin: 0.5%;
-    font-size: 0.8vw;
+    margin: 0.5em;
+    font-size: 1em;
 }
 
-.prossimiEventi #buttonHome {
-    padding: 1%;
-    font-size: 1vw;
+.prossimiEventi .buttonHome {
+    width: 40%;
     background-color: #4CAF50;
-    width: 30%;
-    margin: 1%;
-    border: none;
+    color: #FFFFFF;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    text-align: center;
     border-radius: 4px;
+}
+
+.prossimiEventi .buttonHome:hover{
+    text-decoration: none;
+    background-color: #58C25D;
     cursor: pointer;
 }
 
-.prossimiEventi #buttonHome:hover{
-    background-color: #58C25D;
-}
-
-.prossimiEventi #buttonHome a{
+.prossimiEventi .buttonHome a,
+.prossimiEventi .buttonHome a:hover{
     text-decoration: none;
     color: #FFFFFF;
+    text-align: center;
 }
 
-.prossimiEventi #buttonHome a:hover{
-    text-decoration: none;
+.immaginiHome{
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
 .immaginiHome img{
     width: 30%;
     height: auto;
-    float: right;
-    margin: 1% 2%;
+    margin-top: 1em;
 }
 
 /* STILE DEI PULSANTI SUBMIT */
@@ -279,7 +284,7 @@ input[type=submit]:hover {
 @media (max-width:1000px){
     .parFooter,
     #presentazioneSito {
-        font-size: 2vw;
+        font-size: 1em;
     }
 
     .infoHome,
@@ -291,30 +296,27 @@ input[type=submit]:hover {
     }
 
     .immaginiHome img{
-        float: left;
-        margin: 1.5% 0;
+        width: 100%;
     }
 
     .boxProssimiEventi .titoloBoxEventi,
     .prossimiEventi .eventName {
-        font-size: 2.2vw;
+        font-size: 1em;
     }
 
     .prossimiEventi .eventDesc,
     .prossimiEventi .eventPrice {
-        font-size: 1.8vw;
-        margin: 1.5%;
+        font-size: 1em;
+        margin: 0.5em;
     }
 
     .prossimiEventi .dataOdierna{
-        margin: 1%;
+        margin: 0.5em;
     }
 
-    .prossimiEventi #buttonHome {
-        padding: 0.8%;
-        font-size: 2vw;
-        width: 50%;
-        margin: 0.8%;
+    .prossimiEventi .buttonHome {
+        font-size: 1em;
+        width: 90%;
     }
 }
 

@@ -17,16 +17,16 @@
         }
         else{
             foreach($evento as $event)
-            $prossimiEventi .= "<div class=\"dataOdierna\">".$event['Data']."</div>
+            $prossimiEventi .= "<div class=\"dataOdierna\">In data: ".date('d/m/Y', strtotime($event['Data']))."</div>
                                 <div class=\"eventName\">".$event['Nome']."</div>
                                 <div class=\"eventDesc\">".$event['Descrizione']."</div>
-                                <div class=\"eventPrice\"> Costo&colon; &euro; ".$event['Prezzo']."</div>
-                                <button id=\"buttonHome\" name=\"buttonHome\"><a href=\"acquista.php\">PRENOTA ORA</a></button>
+                                <div class=\"eventPrice\">Costo: &euro; ".$event['Prezzo']."</div>
+                                <div class=\"buttonHome\"><a href=\"acquista.php\">PRENOTA ORA</a></div>
                                 </div>";
         }
     }
     else{
-        $prossimiEventi .= "<p class=\"errorMessage\">Connessione al database degli eventi fallita.Per favore, riprova.</p></div>";
+        $prossimiEventi .= "<p class=\"errorMessage\">Connessione al database degli eventi fallita. Per favore, riprova.</p></div>";
     }
 
     $output = file_get_contents("../HTML/home.html");
