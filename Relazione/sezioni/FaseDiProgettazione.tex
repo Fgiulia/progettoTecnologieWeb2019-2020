@@ -84,11 +84,15 @@
             \item Pagina di inserimento nuovo animale (solo amministratore);
             \item Pagina di inserimento nuovo evento (solo amministratore).
     \end{itemize}
-    \subsection{Database}
 
+    \subsection{Database}
+    Viene riportata la rappresentazione del database, realizzata in fase di progettazione, durante la quale si è discussa la necessità di avere le diverse tabelle e per ogni tabella i necessari attributi, per poi utilizzarli al meglio.
     \begin{figure}[H]
         \centering
         \includegraphics[width=15cm]{./img/database.png}
         \caption{Schema del database}  \label{fig:xray}
     \end{figure}
+	\subsubsection{Tabella Animali}
+	Inizialmente, il database non presentava questa tabella, ma altre due tabelle: AnimaliAdulti e AnimaliCuccioli. Ciò permetteva di avere nella tabella AnimaliAdulti il nome comune, il nome scientifico, la descrizione e l'immagine dell'animale specifico, mentre la tabella AnimaliCuccioli serviva a tenere traccia dei cuccioli nati  nel Parco solo attraverso il nome comune e il nome proprio dato al cucciolo.\\
+	In un secondo momento, durante l'incontro successivo alla progettazione del database, è stato invece deciso di unire le due tabelle nell'unica tabella Animale e di aggiungere l'attributo "Famiglia" per differenziare la categoria di appartenenza.
 \pagebreak
