@@ -68,7 +68,7 @@ try {
 					$valid = true;
 				}
 				else{
-					$nuovoAnimale .= "<p class=\"errorMessage\">La descrizione dell&apos;animale inserita non &egrave; valida. Ricorda che pu&ograve; contentere solo 1200 caratteri.</p>";
+					$nuovoAnimale .= "<p class=\"errorMessage\">La descrizione dell&apos;animale inserita non &egrave; valida. Ricorda che pu&ograve; contentere solo 1000 caratteri.</p>";
 					$valid = false;
 				}
 			}

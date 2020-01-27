@@ -16,9 +16,17 @@ try {
 		else
 			$valid = false;
 
-		if (!empty($_POST['data']))
-			if (!modulesInit::checkDateFormat($_POST['data']) && $valid == true)
+		if (!empty($_POST['data']) && $valid == true){
+			if (modulesInit::checkDateFormat($_POST['data']) && modulesInit::validDate($_POST['data'])){
+				$valid = true;
+			}
+			else{
 				$valid = false;
+			}
+		}
+		else{
+			$valid=false;
+		}
 
 		if (!preg_match('/^[0-9]+(\.[0-9]{1,2})?$/', $_POST['prezzo']) && $valid == true)
 			$valid = false;
@@ -51,7 +59,7 @@ try {
 				}
 			}
 			else{
-				$nuovoEvento = "<p class=\"errorMessage\">Le informazioni inserite non sono valide. Riprova. Ricorda che i nomi possono contentere solo lettere e spazi, che la data deve essere nel formato ANNO-MESE-GIORNO e che il prezzo accetta solo un numero con massimo due cifre decimali.</p>";
+				$nuovoEvento = "<p class=\"errorMessage\">Le informazioni inserite non sono valide. Ricorda che i nomi possono contentere solo lettere e spazi, che la data deve essere nel futuro e nel formato ANNO-MESE-GIORNO e che il prezzo accetta solo un numero con massimo due cifre decimali (separato dal punto).</p>";
 			}
 		}
 		else{
