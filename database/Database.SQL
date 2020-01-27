@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS Zoo;
 USE Zoo;
 
 CREATE TABLE IF NOT EXISTS Utenti (
-    Email varchar(30),
+    Email varchar(50),
     Password varchar(100),
     Nome varchar(50),
     Cognome varchar(50),
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS Eventi (
 
 CREATE TABLE IF NOT EXISTS BigliettiUtenti (
     NumeroOrdine int AUTO_INCREMENT,
-    Utente varchar(30),
+    Utente varchar(50),
     NumGratis int(2),
     NumRidotti int(2),
     NumInteri int(2),
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS BigliettiUtenti (
 
 CREATE TABLE IF NOT EXISTS EventiUtenti (
     NumeroPrenotazione int AUTO_INCREMENT,
-    Utente varchar(30),
+    Utente varchar(50),
     NumeroPersone int(2),
     IDEvento int(11),
     Data date,
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS Messaggi (
     ID int AUTO_INCREMENT,
     Nome varchar(30),
     Cognome varchar(30),
-    Email varchar(30),
+    Email varchar(50),
     NumeroTelefono varchar(10),
     Messaggio text,
     PRIMARY KEY(ID)
