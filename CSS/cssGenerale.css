@@ -38,8 +38,8 @@ abbr, a, a:hover {
 
 .messaggio {
     text-align: center;
-    padding: 1em;
-    font-size: 1.3em;
+    padding: 0.5em;
+    font-size: 1.1em;
 }
 
 .errorMessage {
@@ -282,6 +282,10 @@ input[type=submit]:hover {
 }
 
 @media (max-width:1000px){
+    .messaggio{
+        margin: 0.5em;
+    }
+    
     #header .nomeSito{
         padding-top: 0.5em;
         font-size: 2em;
