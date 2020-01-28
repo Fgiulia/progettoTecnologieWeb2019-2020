@@ -7,6 +7,7 @@ regex["nomeProprio"] = /^[a-zA-Z]*$/;
 regex["nomeScientifico"] = /^[a-zA-Z]*$/;
 regex["cognome"] = /^[a-zA-Z]*$/;
 regex["messaggio"] = /^[a-zA-Z0-9]*$/;
+regex["indirizzo"] = /^[a-zA-Z0-9?$@#()'!,+\-=_.\s]*$/;
 regex["descrizioneImmagine"] = /^[a-zA-Z0-9]*$/;
 regex["descrizioneEvento"] = /^[a-zA-Z0-9]*$/;
 regex["numeroTelefono"] = /^([\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6})*$/;
@@ -59,5 +60,5 @@ function checkRegistrazione() {
 }
 
 function validInput(input, regex) {
-    return input.value != "" && regex.test(input.value)
+    return regex.test(input.value)
 }

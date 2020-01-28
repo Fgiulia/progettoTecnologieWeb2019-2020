@@ -26,7 +26,7 @@ La componente PHP risulta sicuramente come la più corposa del sito in quanto vi
 \item checkBirthdate(data): funzione che ritorna il valore booleano true solo se la data di nascita inserita è di un utente maggiorenne
 \item validDate(data): questa funzione controlla che la data inserita non sia precedente al giorno corrente, utile all'estrazione di eventi da DB
 \item validPass(pass): funzione di validazione della password, la password infatti può contenere solo alcuni tipi di caratteri
-\item validEmail(email): funzione che utilizza il filtro nativo di php FILTER_VALID_EMAIL in modo non venga inserita un'indirizzo email inesistente
+\item validEmail(email): funzione che utilizza il filtro nativo di php FILTER\_VALID\_EMAIL in modo non venga inserita un'indirizzo email inesistente
 \item validPhone(phone): funzione di validazione per il numero telefonico inserito dall'utente
 \item breadcrumb(...sequenza): questa funzione genera i breadcrumb, ovvero la posizione relativa dell'utente all'interno della gerarchia del sito, in tutte le pagine sostituendo nel file XHTML il placeholder <breadcrumb> con il path effettivo contenuto nell'array "sequenza" all'interno di appropriati tag
 \item menu(): funzione per la generazione del frammento XHTML relativo al menu orizzontale presente in ogni pagina del sito. A seconda del tipo di utente (loggato o meno) il menu generato sarà differente e presenterà diversi elementi (es. Area Personale)

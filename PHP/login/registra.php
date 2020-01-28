@@ -19,6 +19,7 @@ try {
 	$pw = $_POST["password"];
 	$pwRi = $_POST["ripetiPassword"];
 	$cel = $_POST["numeroTelefono"];
+	$indirizzo = $_POST["indirizzo"];
 
 	if ($dbh) {
 
@@ -44,7 +45,7 @@ try {
 						if(modulesInit::checkBirthdate($nascita)) {
 							$passHash = password_hash($pw, PASSWORD_DEFAULT);
 
-							$params = [$mail, $passHash, $nome, $cognome, "", $cell, $nascita, 0];
+							$params = [$mail, $passHash, $nome, $cognome, $cel, $indirizzo, $nascita, 0];
 							$sql = "INSERT INTO Utenti (
 										Email
 										,Password

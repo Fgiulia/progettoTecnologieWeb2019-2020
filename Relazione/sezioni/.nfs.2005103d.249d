@@ -1,0 +1,5 @@
+\section{Presentazione}
+
+\subsection{Pagine Animali e Cuccioli}
+Durante la fase di progettazione e la realizzazione delle bozze, si era pensato di creare due possibilità per la consultazione degli animali e dei cuccioli: una vista a griglia e una vista a lista. Successivamente però è stato deciso di non creare questa distinzione, ma tramite CSS di implementare l'ingrandimento, e quindi rendere la consultazione favorevole, nel caso in cui lo schermo del dispositivo da cui si accede al sito sia di piccole dimensioni.
+\pagebreak

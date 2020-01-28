@@ -9,7 +9,7 @@
         session_start();
 
     if(isset($_SESSION['registrazione'])) {
-        $class = $_SESSION['registrazione']->status ? "messaggio" : "errorMessage";
+        $class = $_SESSION['registrazione']->status ? "successMessage" : "errorMessage";
         $output = str_replace("<messaggio></messaggio>","<p class='$class'>".$_SESSION['registrazione']->response."</p>",$output);
     } else
         $output = str_replace("<messaggio></messaggio>","",$output);
