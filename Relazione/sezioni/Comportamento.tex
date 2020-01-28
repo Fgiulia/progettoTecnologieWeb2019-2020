@@ -1,66 +1,66 @@
 \section{Comportamento}
 Il comportamento del sito, ovvero i meccanismi di risposta all'interazione con l'utente, è suddiviso in script JavaScript (chiamati a lato client) e funzioni PHP (gestite a lato server).
-\subsection{JavaScript}
-L'utilizzo di JavaScript è stato circoscritto a funzioni utili alla validazione dei dati inseriti in input dall'utente e alla migliore resa grafica della presentazione.
-Questa scelta è stata dettata dalla necessità di mantenere la completa accesibilità del sito anche nel caso in cui JavaScript non fosse diponibile perchè disabilitato o non supportato dal browser; infatti i controlli sopracitati vengono eseguiti anche tramite PHP a lato server.
-\subsection{Funzioni}
-Le funzioni, descritte singolarmente nella lista di seguito, sono state suddivise in tre file sorgente: acquista.js per la funzione della pagina acquista, controlloForm.js per le funzioni di validazione lato client e script.js che contiene un paio di funzioni utili a tutto il progetto
-\begin{itemize}
-\item apriTab(): questa funzione permette nella pagina acquista di cambiare la scheda visibile, e di passare quindi dalla scheda eventi alla scheda biglietti e viceversa. Essa viene chiamata all'evento onClick dei pulsanti presenti alla sommità della scheda stessa e agisce semplicemente l'altra scheda. Ciò permette una facile navigazione, ma non comporta problemi all'accessibilità in quanto anche all'assenza della funzione le schede sono visualizzate ugualmente.
-\item checkForm(id): funzione per la validazione dei form. A seconda dell'identificativo CSS passato come parametro "id" valida ogni input, in quanto elemento del form, attraverso espressioni regolari create ad hoc per ciascuno di questi.
-\item checkRegistrazione(): altra funzione di validazione utile alla pagina di registrazione per i controlli sugli input di password e data di nascita poichè l'iscrizione è riservata ad utenti maggiorenni.
-\item validInput(input, espressioneRegolare): funzione simile alle due precedenti, ma con carattere più generale. Ritorna il valore booleano true se e solo se la stringa passata (parametro "input") è generabile utilizzando l'espressione regolare e non è una stringa vuota.
-\item mobileMenu(): funzione richiamata dall'evento onClick del burger menù nella versione mobile. Cambia le classi CSS degli elementi del menù in modo da mostrare una più comprensibile lista verticale di link.
-\item openTab(): come per la prima funzione descritta lo scopo di openTab() è lo scambio di schede attive nell'areaPrivata.
-\end{itemize}
-\subsection{PHP}
-La componente PHP risulta sicuramente come la più corposa del sito in quanto viene utilizzata non solo per i controlli (necessari ogniqualvolta JavaScript non sia disponibile), ma anche per la generazione di gran parte delle pagine, la generazione delle parti comuni a tutte le pagine e le interazioni con il database. La suddivisione in diversi file e classi rispecchia quanto appena detto: modulesInit racchiude le funzioni per la generazione delle pagine XHTML e per i controlli sull'input, sqlInteractions contiene le funzioni di base per l'interazione con il database, mentre le interazioni più complesse sono definite in file separati.
-\begin{itemize}
-\item modulesInit:
-\begin{itemize}
-\item validName(name): funzione per validare il nome di un animale all'inserimento di un nuovo record nella tabella Animali da un utente amministratore
-\item validNameP(nameP): funzione differente dalla precedente poichè si riferisce al nome proprio dell'animale in cui è possibile inserire una stringa vuota
-\item validDescription(testo): questa funzione assicura che la descrizione dell'animale inserita sia consistente e di lunghezza permissibile dal database
-\item validImage(immagine): funzione di validazione per le immagini degli animali che si basa sulle dimensioni delle stesse
-\item checkDateFormat(data): funzione di validazione delle date, utile per controllare che il formato inserito sia lo stesso accettato dal database
-\item checkBirthdate(data): funzione che ritorna il valore booleano true solo se la data di nascita inserita è di un utente maggiorenne
-\item validDate(data): questa funzione controlla che la data inserita non sia precedente al giorno corrente, utile all'estrazione di eventi da DB
-\item validPass(pass): funzione di validazione della password, la password infatti può contenere solo alcuni tipi di caratteri
-\item validEmail(email): funzione che utilizza il filtro nativo di php FILTER\_VALID\_EMAIL in modo non venga inserita un'indirizzo email inesistente
-\item validPhone(phone): funzione di validazione per il numero telefonico inserito dall'utente
-\item breadcrumb(...sequenza): questa funzione genera i breadcrumb, ovvero la posizione relativa dell'utente all'interno della gerarchia del sito, in tutte le pagine sostituendo nel file XHTML il placeholder <breadcrumb> con il path effettivo contenuto nell'array "sequenza" all'interno di appropriati tag
-\item menu(): funzione per la generazione del frammento XHTML relativo al menu orizzontale presente in ogni pagina del sito. A seconda del tipo di utente (loggato o meno) il menu generato sarà differente e presenterà diversi elementi (es. Area Personale)
-\item setMessaggio(messaggio, errore): richiamata in caso di un errore, rimpiazza i breadcrumb con la dicitura "errore" e visualizza il messaggio ad esso collegato
-\item bigliettiAcquistati(): funzione per la creazione della lista dei biglietti acquistati da visualizzare nell'area privata, ritorna il frammento XHTML relativo o in caso non vi sia alcun biglietto collegato all'utente, il messaggio "non ci sono biglietti da visualizzare"
-\item eventiPrenotati(): questa funzione riporta il medesimo comportamento della precedente per la lista degli eventi prenotati
-\item getAnimali(): nell'area privata di un utente amministratore ritorna sottoforma di frammento XHTML la lista degli animali inseriti a database da tale utente
-\item getMessaggi(): visualizza nell'area privata la lista dei messaggi, se l'utente è amministratore visualizzerà anche l'intestazione del mittente
-\item getEventi(): funzione che genera il frammento XHTML per tutti gli eventi disponibili al momento nel database
-\end{itemize}
-\item sqlInteraction:
-\begin{itemize}
-\item apriConnessioneDB(): funzione che avvia la connessione al database, ritorna true se il tentativo è andato a buon fine, altrimenti false
-\item insertAnimali(): funzione per l'inserimento di un nuovo animale nella tabella Animali del database, utilizza le variabili POST e una query di insert
-\item insertMessaggi(): funzione per l'inserimento dei messaggi creati dagli utenti nella tabella Messaggi del database
-\item insertEvent(): funzione per l'inserimento dei nuovi eventi creati dagli amministratori nella tabella Eventi del database
-\item getCuccioli(): funzione che ritorna da database tramite array le informazioni degli animali appartenenti alla categoria "cuccioli"
-\item getResultSearch(): questa funzione esegue un'istruzione di SELECT che ritorna tutti gli animali che rispettano i filtri impostati nelle variabili POST
-\item getProssimoEvento(): funzione per la lettura da database del prossimo evento disponibile a partire dalla data odierna, viene impiegata nella homepage
-\item getAllEventiFromToday(): funzione simile alla precedente, ma ritorna tutti gli eventi disponibili a partire dalla data odierna anzichè solo il prossimo
-\item getEventi(data): funzione che ritorna tutti gli eventi disponibili in una certa data passata per parametro
-\item getAcquisti(user): questa funzione esegue un'istruzione di SELECT per ritornare gli acquisti di un certo utente passato per parametro; se il parametro user è nullo ritorna tutti gli acquisti effettuati sul sito
-\end{itemize}
-\item acquistaBiglietti: viene richiamato al momento dell'acquisto di uno o più biglietti, inserisce tale transazione nel database e al termine rimanda l'utente alla pagina di acquisti con un messaggio di conferma contente il totale, in caso la transazione non abbia esito positivo visualizza il tipo di errore su pagina bianca
-\item eliminaAnimali: alla cancellazione di un animale da parte di utente amministratore elimina l'effettivo record dal database
-\item eliminaEvento: presenta il medesimo comportamento del precedente per l'eliminazione di un evento
-\item invioMessaggio: salva i messaggi inviati dagli utenti a database, se l'invio non va a buon fine crea un messaggio di errore alla sommita della pagina stessa
-\item prenotaEventi: viene richiamato al momento della prenotazione di un evento, inserisce tale transazione nel database e al termine rimanda l'utente alla pagina di acquisti con un messaggio di conferma contente il totale, in caso la transazione non abbia esito positivo visualizza il tipo di errore su pagina bianca
-\item salvaAnimale: salva un nuovo animale nel database alla creazione del record relativo allo stesso da parte di un amministratore
-\item salvaEvento: salva un nuovo evento nel database alla creazione del record relativo allo stesso da parte di un amministratore
-\end{itemize}
-Oltre ai file e funzioni appena descritte sono utilizzate per le interazioni con il database anche delle API (es. fnQuery, beansMap) che facilitano la creazione delle query per interrogare la base di dati.
-\subsection{Pagina Tutti gli animali}
-La pagina offre a qualunque tipologia di visitatore la possibilità di fare una ricerca per nome, inserendo in input del testo, o scegliendo da due menù a tendina la categoria di appartenenza e il continente a cui si è interessati.\\
-La ricerca può essere svolta sia compilando tutti e tre i filtri, sia compilandone solo due, sia compilandone uno solo. Inoltre non compilando nessun campo e cliccando sul tasto "Cerca" si avrà la lista completa di tutti gli animali. La compilazione del campo con testo in input non è case sensitive.\\
-In caso di ricerca andata a buon fine si visualizzeranno gli animali che rispettano le caratteristiche ricercate, altrimenti verrà visualizzato un messaggio di errore che indica, per quanto possibile, il genere di errore riscontrato.
+    \subsection{JavaScript}
+        L'utilizzo di JavaScript è stato utilizzato per la validazione dei dati inseriti in input dall'utente lato client e per la visualizzazione del menù con dispositivi mobile o schermi di piccole dimensioni.
+        I controlli JS vengono eseguiti anche tramite PHP a lato server, in modo tale da mantenere la completa accesibilità del sito anche nel caso in cui JavaScript non fosse disponibile perché disabilitato o non supportato dal browser.
+    \subsection{Funzioni}
+        Le funzioni, descritte singolarmente nella lista di seguito, sono state suddivise in tre file sorgente: acquista.js per la funzione della pagina acquista, controlloForm.js per le funzioni di validazione lato client e script.js che contiene un paio di funzioni utili a tutto il progetto
+        \begin{itemize}
+            \item apriTab(): questa funzione permette nella pagina acquista di cambiare la scheda visibile, e di passare quindi dalla scheda eventi alla scheda biglietti e viceversa. Essa viene chiamata all'evento onClick dei pulsanti presenti alla sommità della scheda stessa e agisce semplicemente l'altra scheda. Ciò permette una facile navigazione, ma non comporta problemi all'accessibilità in quanto anche all'assenza della funzione le schede sono visualizzate ugualmente.
+            \item checkForm(id): funzione per la validazione dei form. A seconda dell'identificativo CSS passato come parametro "id" valida ogni input, in quanto elemento del form, attraverso espressioni regolari create ad hoc per ciascuno di questi.
+            \item checkRegistrazione(): altra funzione di validazione utile alla pagina di registrazione per i controlli sugli input di password e data di nascita poiché l'iscrizione è riservata ad utenti maggiorenni.
+            \item validInput(input, espressioneRegolare): funzione simile alle due precedenti, ma con carattere più generale. Ritorna il valore booleano true se e solo se la stringa passata (parametro "input") è generabile utilizzando l'espressione regolare e non è una stringa vuota.
+            \item mobileMenu(): funzione richiamata dall'evento onClick del burger menù nella versione mobile. Cambia le classi CSS degli elementi del menù in modo da mostrare una più comprensibile lista verticale di link.
+            \item openTab(): come per la prima funzione descritta lo scopo di openTab() è lo scambio di schede attive nell'areaPrivata.
+        \end{itemize}
+    \subsection{PHP}
+        La componente PHP risulta sicuramente come la più corposa del sito in quanto viene utilizzata non solo per i controlli (necessari ogniqualvolta JavaScript non sia disponibile), ma anche per la generazione di gran parte delle pagine, la generazione delle parti comuni a tutte le pagine e le interazioni con il database. La suddivisione in diversi file e classi rispecchia quanto appena detto: modulesInit racchiude le funzioni per la generazione delle pagine XHTML e per i controlli sull'input, sqlInteractions contiene le funzioni di base per l'interazione con il database, mentre le interazioni più complesse sono definite in file separati.
+        \begin{itemize}
+            \item modulesInit:
+                \begin{itemize}
+                    \item validName(name): funzione per validare il nome di un animale all'inserimento di un nuovo record nella tabella Animali da un utente amministratore
+                    \item validNameP(nameP): funzione differente dalla precedente poiché si riferisce al nome proprio dell'animale in cui è possibile inserire una stringa vuota
+                    \item validDescription(testo): questa funzione assicura che la descrizione dell'animale inserita sia consistente e di lunghezza permissibile dal database
+                    \item validImage(immagine): funzione di validazione per le immagini degli animali che si basa sulle dimensioni delle stesse
+                    \item checkDateFormat(data): funzione di validazione delle date, utile per controllare che il formato inserito sia lo stesso accettato dal database
+                    \item checkBirthdate(data): funzione che ritorna il valore booleano true solo se la data di nascita inserita è di un utente maggiorenne
+                    \item validDate(data): questa funzione controlla che la data inserita non sia precedente al giorno corrente, utile all'estrazione di eventi da DB
+                    \item validPass(pass): funzione di validazione della password, la password infatti può contenere solo alcuni tipi di caratteri
+                    \item validEmail(email): funzione che utilizza FILTER\_VALID\_EMAIL, funziona nativa di PHP in modo non venga inserita un'indirizzo email inesistente
+                    \item validPhone(phone): funzione di validazione per il numero telefonico inserito dall'utente
+                    \item breadcrumb(...sequenza): questa funzione genera i breadcrumb, ovvero la posizione relativa dell'utente all'interno della gerarchia del sito, in tutte le pagine sostituendo nel file XHTML il placeholder $<$breadcrumb$>$ con il path effettivo contenuto nell'array "sequenza" all'interno di appropriati tag
+                    \item menu(): funzione per la generazione del frammento XHTML relativo al menu orizzontale presente in ogni pagina del sito. A seconda del tipo di utente (loggato o meno) il menu generato sarà differente e presenterà diversi elementi (es. Area Personale)
+                    \item setMessaggio(messaggio, errore): richiamata in caso di un errore, rimpiazza i breadcrumb con la dicitura "errore" e visualizza il messaggio ad esso collegato
+                    \item bigliettiAcquistati(): funzione per la creazione della lista dei biglietti acquistati da visualizzare nell'area privata, ritorna il frammento XHTML relativo o in caso non vi sia alcun biglietto collegato all'utente, il messaggio "non ci sono biglietti da visualizzare"
+                    \item eventiPrenotati(): questa funzione riporta il medesimo comportamento della precedente per la lista degli eventi prenotati
+                    \item getAnimali(): nell'area privata di un utente amministratore ritorna sotto forma di frammento XHTML la lista degli animali inseriti a database da tale utente
+                    \item getMessaggi(): visualizza nell'area privata la lista dei messaggi, se l'utente è amministratore visualizzerà anche l'intestazione del mittente
+                    \item getEventi(): funzione che genera il frammento XHTML per tutti gli eventi disponibili al momento nel database
+                \end{itemize}
+            \item sqlInteraction:
+                \begin{itemize}
+                    \item apriConnessioneDB(): funzione che avvia la connessione al database, ritorna true se il tentativo è andato a buon fine, altrimenti false
+                    \item insertAnimali(): funzione per l'inserimento di un nuovo animale nella tabella Animali del database, utilizza le variabili POST e una query di insert
+                    \item insertMessaggi(): funzione per l'inserimento dei messaggi nella tabella Messaggi del database
+                    \item insertEvent(): funzione per l'inserimento dei nuovi eventi creati dagli amministratori nella tabella Eventi del database
+                    \item getCuccioli(): funzione che ritorna da database un array con le informazioni degli animali appartenenti alla categoria "cuccioli"
+                    \item getResultSearch(): questa funzione esegue un'istruzione di SELECT che ritorna tutti gli animali che rispettano i filtri impostati nelle variabili POST
+                    \item getProssimoEvento(): funzione per la lettura da database del prossimo evento disponibile a partire dalla data odierna, viene impiegata nella homepage
+                    \item getAllEventiFromToday(): funzione simile alla precedente, ma ritorna tutti gli eventi disponibili a partire dalla data odierna anziché solo il prossimo
+                    \item getEventi(data): funzione che ritorna tutti gli eventi disponibili in una certa data passata per parametro
+                    \item getAcquisti(user): questa funzione esegue un'istruzione di SELECT per ritornare gli acquisti di un certo utente passato per parametro; se il parametro user è nullo ritorna tutti gli acquisti effettuati sul sito
+                \end{itemize}
+            \item acquistaBiglietti: viene richiamato al momento dell'acquisto di uno o più biglietti, inserisce tale transazione nel database e al termine rimanda l'utente alla pagina di acquisti con un messaggio di conferma contente il totale, in caso la transazione non abbia esito positivo visualizza il tipo di errore su pagina bianca
+            \item eliminaAnimali: alla cancellazione di un animale da parte di utente amministratore elimina l'effettivo record dal database
+            \item eliminaEvento: presenta il medesimo comportamento del precedente per l'eliminazione di un evento
+            \item invioMessaggio: salva i messaggi inviati dagli utenti a database, se l'invio non va a buon fine crea un messaggio di errore alla sommità della pagina stessa
+            \item prenotaEventi: viene richiamato al momento della prenotazione di un evento, inserisce tale transazione nel database e al termine rimanda l'utente alla pagina di acquisti con un messaggio di conferma contente il totale, in caso la transazione non abbia esito positivo visualizza il tipo di errore su pagina bianca
+            \item salvaAnimale: salva un nuovo animale nel database alla creazione del record relativo allo stesso da parte di un amministratore
+            \item salvaEvento: salva un nuovo evento nel database alla creazione del record relativo allo stesso da parte di un amministratore
+        \end{itemize}
+    Oltre ai file e funzioni appena descritte sono utilizzate per le interazioni con il database anche delle API (es. fnQuery, beansMap che facilitano la creazione delle query per interrogare la base di dati.
+    \subsection{Pagina Tutti gli animali}
+        La pagina offre a qualunque tipologia di visitatore la possibilità di fare una ricerca per nome, inserendo in input del testo, o scegliendo da due menù a tendina la categoria di appartenenza e il continente a cui si è interessati.\\
+        La ricerca può essere svolta sia compilando tutti e tre i filtri, sia compilandone solo due, sia compilandone uno solo. Inoltre non compilando nessun campo e cliccando sul tasto "Cerca" si avrà la lista completa di tutti gli animali. La compilazione del campo con testo in input non è case sensitive.\\
+        In caso di ricerca andata a buon fine si visualizzeranno gli animali che rispettano le caratteristiche ricercate, altrimenti verrà visualizzato un messaggio di errore che indica, per quanto possibile, il genere di errore riscontrato.
 \pagebreak
