@@ -88,7 +88,7 @@ try {
 
 $_SESSION["registrazione"] = $response;
 
-header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/registrati.php");
+header("Location: $url/PAGES/registrati.php");
 
 
 ?>

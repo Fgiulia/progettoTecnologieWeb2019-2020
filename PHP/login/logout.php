@@ -20,6 +20,6 @@ try {
 }
 
 $_SESSION["messagge"] = $response->response;
-header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php"); 
+header("Location: $url/PAGES/paginaVuota.php"); 
 
 ?>

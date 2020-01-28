@@ -175,7 +175,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"]->status == 2) {
 
 	echo modulesInit::setMessaggio($response->response, true);
 
-	header("refresh:5; url= http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/login.php");
+	header("refresh:5; url= $url/PAGES/login.php");
 }
 
 ?>

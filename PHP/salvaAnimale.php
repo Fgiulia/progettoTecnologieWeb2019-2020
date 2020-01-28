@@ -107,7 +107,7 @@ try {
 
 	$_SESSION["nuovoAnimale"] = $nuovoAnimale;
 
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/nuovoAnimale.php");
+	header("Location: $url/PAGES/nuovoAnimale.php");
 
 } catch (Exception $e) {
 	$response->response = "Fatal error";

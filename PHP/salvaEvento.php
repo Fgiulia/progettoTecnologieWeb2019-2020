@@ -1,6 +1,7 @@
 <?php
 require_once "../PHP/modulesInit.php";
 require_once "../PHP/sqlInteractions.php";
+require_once "../PHP/config/config.php";
 
 $nuovoEvento = null;
 
@@ -67,7 +68,7 @@ try {
 		}
 	
 	$_SESSION["nuovoEvento"] = $nuovoEvento;
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/nuovoEvento.php");
+	header("Location: $url/PAGES/nuovoEvento.php");
 } catch (Exception $e) {
 	$response->response = "Fatal error";
 	echo $e->getMessage();

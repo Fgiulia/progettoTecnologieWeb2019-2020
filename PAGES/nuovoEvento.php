@@ -1,6 +1,7 @@
 <?php
 	require_once "../PHP/modulesInit.php";
 	require_once "../PHP/sqlInteractions.php";
+	require_once "../PHP/config/config.php";
 
 	if(!isset($_SESSION))
 		session_start();
@@ -28,13 +29,13 @@
             $_SESSION["logged"] = $response;
             echo modulesInit::setMessaggio($response->response, true);
     
-            header("refresh:5; url= http://localhost:/progettoTecnologieWeb2019-2020/PAGES/home.php");
+            header("refresh:5; url= $url/PAGES/home.php");
         } else {
             $response->response = "Attenzione: non hai effettuato il login, verrai reindirizzato alla pagina di login.";
             $_SESSION["logged"] = $response;
             echo modulesInit::setMessaggio($response->response, true);
     
-            header("refresh:5; url= http://localhost/progettoTecnologieWeb2019-2020/PAGES/login.php");
+            header("refresh:5; url= $url/PAGES/login.php");
         }
 	}
 ?>

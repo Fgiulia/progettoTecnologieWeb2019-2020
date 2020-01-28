@@ -47,7 +47,7 @@ $response = (Object) [
         else
         $response->response = "<p class=\"errorMessage\">Impossibile connettersi al database.</p>";
         $_SESSION["response"] = $response;
-        header("location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/info.php#contatti");
+        header("location: $url/PAGES/info.php#contatti");
         
 
     

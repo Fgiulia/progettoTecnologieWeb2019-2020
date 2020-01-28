@@ -57,11 +57,11 @@ try {
 if($response->status) {
   $_SESSION["success"] = "Prenotazione effettuata con successo";
 	$_SESSION["totale"] = $totale;
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/acquista.php");
+	header("Location: $url/PAGES/acquista.php");
 } else {
 	$_SESSION["messagge"] = "Attenzione input inserito non valido";
 	$_SESSION["redirect"] = "acquista";
-	header("Location: http://localhost:8080/progettoTecnologieWeb2019-2020/PAGES/paginaVuota.php");
+	header("Location: $url/PAGES/paginaVuota.php");
 }
 
 ?>
