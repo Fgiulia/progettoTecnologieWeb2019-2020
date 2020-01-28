@@ -1,7 +1,3 @@
-CREATE DATABASE IF NOT EXISTS Zoo;
-
-USE Zoo;
-
 CREATE TABLE IF NOT EXISTS Utenti (
     Email varchar(50),
     Password varchar(100),

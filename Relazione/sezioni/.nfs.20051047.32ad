@@ -1,0 +1,50 @@
+\section{Fase di Realizzazione}
+Di seguito si elencano le parti realizzate da ciascun componente del gruppo:
+\begin{itemize}
+    \item Conte Riccardo:
+        \begin{enumerate}
+        \item pagine HTML: acquista;
+        \item CSS pagine HTML: acquista;
+        \item script PHP: acquistaBiglietti, prenotaEventi, alcune funzioni contenute nel file sqlInteractions.php;
+        \item pagine PHP: acquista;
+        \item parte del database.
+        \end{enumerate}
+    \item Corrò Giacomo:
+        \begin{enumerate}
+            \item pagine HTML: areaPrivata, login, nuovoAnimale, nuovoEvento, registrati, paginaVuota;
+            \item CSS pagine HTML areaPrivata, login e paginaVuota, CSS del menù;
+            \item script PHP: login, registrazione, eliminaAnimale, eliminaEvento, alcune funzioni contenute nel file sqlInteractions.php, alcune funzioni contenute nel file modulesInit.php;
+            \item pagine PHP: areaPrivata, login, registrati, paginaVuota;
+            \item parte del database.
+        \end{enumerate}
+    \item Fiorese Giulia:
+        \begin{enumerate}
+            \item pagine HTML: home, animali, cuccioli;
+            \item CSS pagine HTML home, animali, cuccioli, vari form e del menù;
+            \item script PHP: parte di salvaEvento, salvaAnimale, gran parte delle funzioni contenute nel file sqlInteractions.php, gran parte delle funzioni contenute nel file modulesInit.php;
+            \item pagine PHP: home, animali, cuccioli, salvaEvento, salvaAnimale;
+            \item parte del database.
+        \end{enumerate}
+    \item Tabacchi Erik:
+        \begin{enumerate}
+            \item pagine HTML: info, eventi;
+            \item CSS pagine HTML info e eventi;
+            \item script PHP: invioMessaggio, parte di salvaEvento, salvaAnimale, alcune funzioni contenute nel file sqlInteractions.php, alcune funzioni contenute nel file modulesInit.php;
+            \item pagine PHP: info, eventi;
+            \item parte del database.
+        \end{enumerate}
+\end{itemize}
+Il punto di partenza dello sviluppo è stato la creazione le pagine in HTML, definendo prima l'header, il footer e il menù insieme e poi inserendo i contenuti separatamente. Successivamente le pagine HTML sono state convertite in pagine PHP a cui è stato aggiunto il contenuto vero e proprio, ovvero quello proveniente dal database, il quale è stato sviluppato in parallelo alle pagine PHP. \\
+Il passo successivo è stato scrivere tutte quelle funzioni PHP per l'interazione con il database, contenute nel file sqlInteractions.php. Per non appesantirlo troppo, quegli script che richiedevano maggiori controlli sono stati inseriti in file separati (esempio salvaAnimale.php); ciò ha reso l'attività di debug molto più veloce e mirata ma ha anche permesso di gestire al meglio eventuali errori di inserimento dei dati da parte dell'utente, fornendo messaggi d'errore precisi.
+In seguito, una parte dei controlli sulla validità degli input dei form, sono stati tradotti in JavaScript, in modo da effettuare un primo controllo client side.\\
+L'ultima parte della realizzazione è stata aggiungere CSS al sito, avendo cura che la visualizzazione del sito fosse la stessa su vari dispositivi desktop. Per quando riguarda l'aspetto mobile, abbiamo apportato modifiche di layout in modo da rendere il sito accessibile anche da smartphone.\\
+Per quanto riguarda la relazione, ognuno ha scritto la parte di analisi relativa alla propria sezione del sito. Le parti generali della relazione sono state scritte da tutti i membri del gruppo.
+Vengono elencate nel dettaglio le varie parti:
+\begin{itemize}
+    \item Giulia Fiorese: capitolo 1, sezioni 2.3.1, 2.3.2, 3.2, 7.2, appendice B.
+    \item Giacomo Corrò: sezioni 2.3.6, 2.3.7, 3.1, 7.1, capitolo 4 e 8, appendice A e C.
+    \item Erik Tabacchi: sezioni 2.3.3, 2.3.4, capitolo 5.
+    \item Riccardo Conte: sezioni 2.3.5, 2.3.4, capitolo 6.
+\end{itemize}
+Tutte le parti della relazione non elencate sono state scritte durante gli incontri, quindi tutto il gruppo ha preso parte alla stesura.
+\pagebreak

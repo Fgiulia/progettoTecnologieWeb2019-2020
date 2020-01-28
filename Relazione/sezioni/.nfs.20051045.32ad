@@ -1,0 +1,17 @@
+\appendix
+    \section{Note}
+    Per scelta del gruppo ogni utente che si registra al sito è considerato generico, ovvero non amministratore. Per inserire un nuovo amministratore bisogna prima registrarsi attraverso l'apposito form e poi cambiare attraverso un query SQL o phpMyAdmin il campo FlAdmin della tabella Utenti da 0 a 1.
+
+    \section{Popolamento}
+    Per avere un reale utilizzo del sito, sono già stati inseriti alcuni animali ed eventi. Inoltre per l'utente generico sono stati effettuati degli acquisti e aggiunti dei messaggi visualizzabili nell'area privata.\\
+    Eventuali non corrispondenze tra gli animali inseriti e la realtà, non sono da considerarsi un difetto del sito, ma dovuti alla necessità di avere esempi per ogni tipologia di ricerca implementata.
+
+    \section{Strumenti utilizzati}
+    \begin{itemize}
+        \item \textbf{GitHub:} per il versionamento; 
+        \item \textbf{Visual Studio Code:} editor per la scrittura del codice; 
+        \item \textbf{XAMPP:} per testare sopratutto la parte dinamica del sito (PHP e SQL);
+        \item \textbf{Draw.io:} usato per UML e bozza grafica del sito;
+        \item \textbf{Telegram:} per le comunicazioni interne al gruppo;
+    \end{itemize}
+\pagebreak

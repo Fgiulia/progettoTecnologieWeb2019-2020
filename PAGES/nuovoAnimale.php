@@ -1,7 +1,7 @@
 <?php
     require_once "../PHP/modulesInit.php";
     require_once "../PHP/sqlInteractions.php";
-    require_once "../PHP/config/config.php"
+    require_once "../PHP/config/config.php";
 
     if(!isset($_SESSION))
         session_start();
