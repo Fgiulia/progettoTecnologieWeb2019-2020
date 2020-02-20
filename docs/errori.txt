@@ -1,0 +1,24 @@
+HTML
+-codificare tutti i caratteri
+-fare attenzione con i tag "inventati": devo essere SEMPRE sostituiti (anche con la stringa vuota)
+-il menu' deve essere un elenco di link: <a>...</a><a>...</a><a>...</a>
+
+CSS
+-sottolineare i link
+-i link visitati devono essere diversificati da quelli ancora non visitati
+
+JAVASCRIPT
+-non usare funzioni come style: usare JS per cambiare la classe al tag che si vuole modificare
+-controllo sugli input anche sulla consistenza (un nome deve avere almeno tre lettere non uguali, ect...)
+
+PHP
+-utilizzare funzioni php per la codifica e la decodifica del testo (sia quello in lettura/scrittura da database, sia quello che aggiunge php ad html)
+-controllo sugli input anche sulla consistenza (un nome deve avere almeno tre lettere non uguali, ect...)
+
+RELAZIONE
+-non serve essere così dettagliati nelle funzioni
+-meglio approfondire la parte sui test per l'accessibilita' (spiegare come si sono svolti)
+
+ALTRO
+-i link sono assoluti non vanno bene, e' necessario usare solo link relativi: uso del tag <base href="" /> nell'head delle pagine
+-controllo sulla dimensione delle immagini: 1MG a immagine e' troppo!
